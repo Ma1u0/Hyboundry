@@ -1,7 +1,7 @@
 // Initialize the map centered over Europe
 var map = L.map('map').setView([54.5, 10], 5);
 
-// Add default OpenStreetMap tiles
+// Carto Light tiles
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
     subdomains: 'abcd',
