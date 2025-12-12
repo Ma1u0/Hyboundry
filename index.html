@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Russian Drone Incursions Tracker</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Russian Drone Incursions Tracker</h1>
-  <p>The map will appear here soon.</p>
+  <header>
+    <h1>Russian Drone Incursions Tracker</h1>
+  </header>
+
+  <div id="container">
+    <aside id="sidebar">
+      <h2>Incidents</h2>
+      <p>Click a marker on the map to see details.</p>
+      <!-- You can add a filter or list here later -->
+    </aside>
+
+    <main id="map"></main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
