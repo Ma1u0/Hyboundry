@@ -21,31 +21,31 @@ function createIcon(file) {
 /* =========================
    UAV ICONS
 ========================= */
-const uavRed = createIcon("uav-red.png");
-const uavOrange = createIcon("uav-orange.png");
-const uavYellow = createIcon("uav-yellow.png");
-const uavGreen = createIcon("uav-green.png");
-const uavBlue = createIcon("uav-blue.png");
+const droneRed = createIcon("red_drone.png");
+const droneOrange = createIcon("orange_drone.png");
+const droneYellow = createIcon("yellow_drone.png");
+const droneGreen = createIcon("green_drone.png");
+const droneBlue = createIcon("blue_drone.png");
 
 /* =========================
    JET ICONS
 ========================= */
-const jetRed = createIcon("jet-red.png");
-const jetOrange = createIcon("jet-orange.png");
-const jetYellow = createIcon("jet-yellow.png");
-const jetGreen = createIcon("jet-green.png");
-const jetBlue = createIcon("jet-blue.png");
+const jetRed = createIcon("red_jet.png");
+const jetOrange = createIcon("orange_jet.png");
+const jetYellow = createIcon("yellow_jet.png");
+const jetGreen = createIcon("green_jet.png");
+const jetBlue = createIcon("blue_jet.png");
 
 /* =========================
    BALLOON ICONS
 ========================= */
-const balloonRed = createIcon("balloon-red.png");
-const balloonOrange = createIcon("balloon-orange.png");
-const balloonYellow = createIcon("balloon-yellow.png");
-const balloonGreen = createIcon("balloon-green.png");
-const balloonBlue = createIcon("balloon-blue.png");
+const balloonRed = createIcon("red_balloon.png");
+const balloonOrange = createIcon("orange_balloon.png");
+const balloonYellow = createIcon("yellow_balloon.png");
+const balloonGreen = createIcon("green_balloon.png");
+const balloonBlue = createIcon("blue_balloon.png");
 
 // Example marker with UAV red
-L.marker([55.6761, 12.5683], { icon: uavRed })
+L.marker([55.6761, 12.5683], { icon: droneYellow })
   .addTo(map)
   .bindPopup("Copenhagen – UAV Red Test");
