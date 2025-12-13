@@ -1,6 +1,3 @@
-// Test that JS is running
-alert("JS is running!");
-
 // Initialize the map centered over Europe
 var map = L.map('map').setView([54.5, 10], 5);
 
