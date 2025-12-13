@@ -52,7 +52,7 @@ const balloonBlue = createIcon("blue_balloon.png");
 L.marker([55.6181, 12.6508], { icon: droneOrange })
   .addTo(map)
   .bindPopup(`
-    <b> Copenhagen Airport, Denmark 🇩🇰 </b> <br>
+    <b> Copenhagen Airport, Denmarka 🇩🇰 </b> <br>
     <b>Date/Time:</b> 22 Sep 2025, ~20:26–00:30<br>
     <b>Type:</b> Drone sighting<br>
     <b>Details:</b> Copenhagen Airport was temporarily closed after 2–3 drones were spotted.<br>
