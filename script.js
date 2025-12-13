@@ -20,6 +20,7 @@ function createIcon(file) {
         popupAnchor: [0, -30]
     });
 }
+}
 
 // UAV icons
 const uavRed = createIcon("uav-red.png");
