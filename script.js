@@ -12,7 +12,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 function createIcon(file) {
     return L.icon({
         iconUrl: `icons/${file}`,
-        iconSize: [36, 36],
+        iconSize: [3600, 3600],
         iconAnchor: [18, 36],
         popupAnchor: [0, -30]
     });
