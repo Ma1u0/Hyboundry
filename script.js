@@ -46,6 +46,6 @@ const balloonGreen = createIcon("green_balloon.png");
 const balloonBlue = createIcon("blue_balloon.png");
 
 // Example marker with UAV red
-L.marker([55.6761, 12.5683], { icon: droneYellow })
+L.marker([55.6761, 12.5683], { icon: droneRed })
   .addTo(map)
   .bindPopup("Copenhagen – UAV Red Test");
