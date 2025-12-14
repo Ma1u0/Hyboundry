@@ -307,7 +307,7 @@ L.marker([55.60529, 13.00016], { icon: droneGreen })
   `);
 
 
-L.marker([55.60529, 13.00016], { icon: droneYellow })
+L.marker([56.15935, 15.57863], { icon: droneYellow })
   .addTo(map)
   .bindPopup(`
     <b> <a href="https://www.sverigesradio.se/artikel/suspected-drones-spotted-near-karlskrona-naval-base" target="_blank">Karlskrona naval base, Sweden 🇸🇪</a> </b> <br>
