@@ -70,7 +70,7 @@ L.marker([55.6181, 12.6508], { icon: droneOrange })
     <b>Type:</b> Drone sighting<br>
     <b>Details:</b> Copenhagen Airport was temporarily closed after 2–3 drones were spotted.<br>
     Danish authorities stated the drones were operated by a "capable actor". <br>
-    <b>Source:</b> <a href="https://news.sky.com/story/flights-suspended-at-copenhagen-airport-after-drone-sightings-13436457" target="_blank">Source</a>
+    <b>Source:</b> <a href="https://news.sky.com/story/flights-suspended-at-copenhagen-airport-after-drone-sightings-13436457" target="_blank">Source</a> <br>
     <br>
     Invoking NATO Article 4 was considered but ultimately Denmark decided against it <br>
     <br>
@@ -90,7 +90,7 @@ L.marker([59.81732, 26.36000], { icon: jetRed })
     <b>Date/Time:</b> 19 Sep 2025, entered airspace between 09:58 and 10:10 <br>
     <b>Type:</b> Airspace incursion by Russian fighter jets <br>
     <b>Details:</b> Three Russian jets breached Estonian airspace up to 10 km deep for 12 minutes before being escorted by NATO jets <br>
-    <b>Source:</b> <a href="https://www.osw.waw.pl/en/publikacje/analyses/2025-09-22/russian-fighter-jets-estonian-airspace-a-test-natos-unity" target="_blank">Source</a>
+    <b>Source:</b> <a href="https://www.osw.waw.pl/en/publikacje/analyses/2025-09-22/russian-fighter-jets-estonian-airspace-a-test-natos-unity" target="_blank">Source</a> <br>
     <br>
     Invoking NATO Article 4 was considered but ultimately Denmark decided against it
   `);
