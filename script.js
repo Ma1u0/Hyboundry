@@ -93,7 +93,7 @@ L.marker([59.81732, 26.36000], { icon: jetRed })
     Invoking NATO Article 4 was considered but ultimately Denmark decided against it
   `);
 
-L.marker([57.80556, 26.97528], { icon: yellowDrone })
+L.marker([57.80556, 26.97528], { icon: droneYellow })
   .addTo(map)
   .bindPopup(`
     <b> <a href="https://www.stripes.com/theaters/europe/2025-10-29/estonia-drone-shotdown-19584290.html" target="_blank">Reedo military barracks, Estonia 🇪🇪</a> </b> <br>
@@ -105,7 +105,7 @@ L.marker([57.80556, 26.97528], { icon: yellowDrone })
   `);
 
 
-L.marker([59.24755, 24.23912], { icon: redJet })
+L.marker([59.24755, 24.23912], { icon: jetRed })
   .addTo(map)
   .bindPopup(`
     <b> <a href="https://www.ilgiornale.it/news/difesa/scramble-efa-italiani-hanno-intercettato-raro-aereo-russo-2572772.html" target="_blank">Ämari, Estonia 🇪🇪</a> </b> <br>
