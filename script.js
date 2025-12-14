@@ -210,7 +210,7 @@ L.marker([53.42829, -6.24727], { icon: droneYellow })
   N E T H E R L A N D S
 ========================= */
 
-L.marker([55.6181, 12.6508], { icon: droneYellowe })
+L.marker([55.6181, 12.6508], { icon: droneYellow })
   .addTo(map)
   .bindPopup(`
     <b> Volkel Air Base, Netherlands 🇳🇱 </b><br><br>
