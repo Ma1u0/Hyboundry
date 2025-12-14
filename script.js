@@ -137,7 +137,7 @@ L.marker([47.74672, 7.33899], { icon: droneYellow })
     The police has no evidence to say wether it was a intentional or unintentional flight over these areas
   `);
 
-L.marker([47.74672, 7.33899], { icon: droneYellow })
+L.marker([44.84260, 0.51143], { icon: droneYellow })
   .addTo(map)
   .bindPopup(`
    <b> <a href="https://www.lemonde.fr/societe/article/2025/11/12/mulhouse-enquete-ouverte-apres-le-survol-d-un-convoi-de-chars-leclerc_6653159_3224.html" target="_blank">Bergerac, France 🇫🇷</a> </b> <br>
@@ -148,7 +148,7 @@ L.marker([47.74672, 7.33899], { icon: droneYellow })
   `);
 
 
-L.marker([48.30461, 4.50851], { icon: droneYellow })
+L.marker([48.304611, -4.50851], { icon: droneYellow })
   .addTo(map)
   .bindPopup(`
    <b> <a href="https://www.lemonde.fr/pixels/article/2025/12/05/la-base-sous-marine-de-l-ile-longue-qui-abrite-les-sous-marins-nucleaires-lanceurs-d-engins-survolee-par-des-drones_6656098_4408996.html" target="_blank">Île Longue, France 🇫🇷 </a> </b> <br>
