@@ -94,7 +94,7 @@ L.marker([55.6181, 12.6508], { icon: droneOrange })
    <b> <a href="https://news.sky.com/story/flights-suspended-at-copenhagen-airport-after-drone-sightings-13436457" target="_blank">Copenhagen Airport, Denmark 🇩🇰</a> </b> <br>
     <br>
     <b>Date/Time:</b> 22 Sep 2025; air traffic halted ~20:26–00:30<br>
-    <b>Type:</b> Drone sighting<br>
+    <b>Type:</b> Drone sighting / airport closure <br>
     <b>Details:</b> Copenhagen Airport was temporarily closed after 2–3 drones were spotted.<br>
     Danish authorities stated the drones were operated by a "capable actor". <br>
     <br>
@@ -200,6 +200,123 @@ L.marker([48.304611, -4.50851], { icon: droneYellow })
 /* =========================
    G E R M A N Y
 ========================= */
+
+L.marker([54.19488, 9.09282], { icon: droneYellow })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html" target="_blank">Heide, Germany 🇩🇪</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 25 Sep 2025 <br>
+    <b>Type:</b> Drone sighting <br>
+    <b>Details:</b> Drones have been spotted over the refinery in Heide <br>
+     <br>    
+    <a href="https://www.n-tv.de/politik/Bundeswehr-widerspricht-Bericht-ueber-Drohnensichtungen-article26071379.html" target="_blank"> Experts rule out that most of those drones were illegal/part of hybrid warfare</a>
+  `);
+
+L.marker([54.20812, 9.57218], { icon: droneYellow })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html" target="_blank">Kiel Canal, Germany 🇩🇪</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 25 Sep 2025 <br>
+    <b>Type:</b> Drone sighting <br>
+    <b>Details:</b> Drones have flew over the Kiel canal from East to West <br>
+     <br>    
+    <a href="https://www.n-tv.de/politik/Bundeswehr-widerspricht-Bericht-ueber-Drohnensichtungen-article26071379.html" target="_blank"> Experts rule out that most of those drones were illegal/part of hybrid warfare</a>
+  `);
+
+L.marker([54.32271, 10.13556], { icon: droneYellow })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html" target="_blank"> Kiel, Germany 🇩🇪 </a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 25 Sep 2025, starting at ~21:00 <br>
+    <b>Type:</b> Drone sighting <br>
+    <b>Details:</b> Two drones were first spotted over a TKMS plant in Kiel. Shortly afterwards, a drone cluster with mother drone was reported at the University clinic of the University of Kiel. Later multiple drones were spotted at the Kiel fjord, where they were flying in parallel paths and measuring the fjord <br>
+    The state parliament and the coastal power station in Kiel also had drone sightings <br>
+     <br>    
+    <a href="https://www.n-tv.de/politik/Bundeswehr-widerspricht-Bericht-ueber-Drohnensichtungen-article26071379.html" target="_blank"> Experts rule out that most of those drones were illegal/part of hybrid warfare</a>
+  `);
+
+
+L.marker([54.08870, 12.14049], { icon: droneYellow })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html" target="_blank"> Rostock, Germany 🇩🇪 </a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 25? Sep 2025 <br>
+    <b>Type:</b> Drone sighting <br>
+    <b>Details:</b> Coordinated and connected drones were spotted over the overseas port and the marine command in Rostock <br>
+    The state parliament and the coastal power station in Kiel also had drone sightings <br>
+     <br>    
+    <a href="https://www.n-tv.de/politik/Bundeswehr-widerspricht-Bericht-ueber-Drohnensichtungen-article26071379.html" target="_blank"> Spiegel also reported a sighting over the Bundeswehr location in Sanitz, Mecklenburg-Vorpommern which was denied by the Bundeswehr </a>
+  `);
+
+
+L.marker([48.35396, 11.77859], { icon: droneYellow })
+  .addTo(map)
+  .bindPopup(`
+    <b> Munich Airport, Germany 🇩🇪 </b><br><br>
+    
+    <b> <a href="https://www.munich-airport.de/presse-drohnensichtung-am-flughafen-muenchen-35699498" target="_blank">Incident 1</a> </b> <br>
+   <b> Date/Time:</b> 2 Oct 2025, sightings 20:30 - ~00:00, airport closed 22:18 after the first drone sighting on airport territory at 22:10 <br>
+   <b> Type: </b> Drone sightings / airport closure <br>
+   <b> Details:</b> An unknown amount of drones was reported near and at the airport; the police wasn't able to find any suspects <br>
+    <br><br>
+    
+  <b> <a href="https://www.tagesschau.de/inland/muenchen-flughafen-drohnen-102.html'" target="_blank">Incident 2</a> </b> <br>
+   <b> Date/Time:</b> 03 Oct 2025, airport closed: 21:36 <br>
+   <b> Type: </b> Drone sighting / airport closure <br>
+   <b> Details:</b>Two drones were spotted near the runways but disappeared before they were identified <br>
+    <br>
+    <hr>
+    <i>V The Oktoberfest was taking place during both incidents </i>
+  `);
+
+L.marker([52.38492, 10.53923], { icon: droneGreen })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.zeit.de/news/2025-10/04/drohnensichtung-nahe-gifhorn-gemeldet" target="_blank">Meine, Germany 🇩🇪</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 04 Oct 2025, ~21:00 <br>
+    <b>Type:</b> Drone sighting <br>
+    <b>Details:</b> Police got a report of three drones flying in a formation flight up to 100km/h at a height of ~100m. The federal police has a flight squadron in Gifhorn (10km from Meine) <br>
+    <br>
+  `);
+
+L.marker([52.36593, 13.48864], { icon: droneYellow })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.rbb24.de/panorama/beitrag/2025/10/ber-flughafen-unterbrochen-drohne-polizei.html" target="_blank">Berlin Brandenburg Airport, Germany 🇩🇪</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 31 Oct 2025, ~20:00 - ~22:00 <br>
+    <b>Type:</b> Drone sighting / airport closure <br>
+    <b>Details:</b> Police confirmed a drone sighting at BER but the drone later disappeared despite using police helicopter <br>
+    <br>
+  `);
+
+L.marker([53.04534, 8.78964], { icon: droneYellow })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.butenunbinnen.de/nachrichten/drohne-flughafen-bremen-102.html" target="_blank">Bremen Airport, Germany 🇩🇪</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 2 Nov 2025, airspace  was closed in the evening for 40 minutes <br>
+    <b>Type:</b> Drone sighting / airport closure <br>
+    <b>Details:</b> Drone sighting reported; police won't give information about the drone; espionage is unlikely but not ruled out according to the investigators <br>
+    <br>
+  `);
+
+
+L.marker([52.46144, 9.68633], { icon: droneYellow })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.bild.de/news/flug-nach-muenchen-umgeleitet-drohnen-alarm-am-flughafen-hannover-690bce570580923d09988aec" target="_blank">Hannover Airport, Germany 🇩🇪</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 5 Nov 2025, 22:00 - 22:45 <br>
+    <b>Type:</b> Drone sighting / airport closure <br>
+    <b>Details:</b> A pilot sighted a drone while landing at the airport which caused the airport to close it's airspace; the drone reportedly flew over an industrial area next to the airport <br>
+    <br>
+  `);
 
 /* =========================
    I R E L A N D
