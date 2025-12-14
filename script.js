@@ -64,7 +64,7 @@ const balloonBlue = createIcon("blue_balloon.png");
 L.marker([55.6181, 12.6508], { icon: droneOrange })
   .addTo(map)
   .bindPopup(`
-   <b> <a href="https://news.sky.com/story/flights-suspended-at-copenhagen-airport-after-drone-sightings-13436457?utm_source=chatgpt.com" target="_blank">Copenhagen Airport, Denmark 🇩🇰</a> </b> <br>
+   <b> <a href="https://news.sky.com/story/flights-suspended-at-copenhagen-airport-after-drone-sightings-13436457" target="_blank">Copenhagen Airport, Denmark 🇩🇰</a> </b> <br>
     <br>
     <b>Date/Time:</b> 22 Sep 2025; air traffic halted ~20:26–00:30<br>
     <b>Type:</b> Drone sighting<br>
@@ -131,6 +131,21 @@ L.marker([59.24755, 24.23912], { icon: jetRed })
 /* =========================
    I R E L A N D
 ========================= */
+
+
+L.marker([53.42829, -6.24727], { icon: droneYellow })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.thejournal.ie/drones-dublin-ireland-hybrid-warfare-russia-6893104-Dec2025/" target="_blank">Dublin Airport, Ireland 🇮🇪</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 01 Dec 2025, shortly before 23:00 <br>
+    <b>Type:</b> Drone sighting<br>
+    <b>Details:</b> Four military grade drones flew near the airport when Zelensky´s plane was supposed to land ; the lights were on therefore authorities assume that it was only supposed to be a disruption of the landing<br>
+    The drones were likely launched near Howth, from where they first flew above a naval vessel and then towards the location where Zelensky´s plane was supposed to be but his plane was slightly ahead of schedule <br>
+    Invoking NATO Article 4 was considered but ultimately Denmark decided against it <br>
+    <br>
+    Authorities believe the drones were quadcopters
+  `);
 
 /* =========================
    L I T H U A N I A
