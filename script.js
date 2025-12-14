@@ -282,6 +282,49 @@ L.marker([52.24350, 5.63432], { icon: droneYellow })
    R O M A N I A
 ========================= */
 
+L.marker([45.16667, 28.80000], { icon: droneRed })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.radio  timisoara.ro/administratie-politica/administratie-public/mapn-fortele-aeriene-au-interceptat-o-drona-in-spatiul-aerian-national-364449.html" target="_blank">Tulcea county, Romania 🇷🇴</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 13 Sep 2025, spotted at 18:23 <br>
+    <b>Type:</b> Drone incursion <br>
+    <b>Details:</b>  Russian drone flew up to ~10 km into Romanian airspace before returning to Ukrainian airspace. Spotted and tracked by Romanian F‑16 jets <br>
+  `);
+
+
+L.marker([45.40710, 28.20130], { icon: droneRed })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.reuters.com/business/aerospace-defense/romania-finds-suspected-drone-fragments-after-russian-attack-ukraine-2025-11-11/" target="_blank">Grindu, Romania 🇷🇴</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 11 Nov 2025 <br>
+    <b>Type:</b> Drone crash <br>
+    <b>Details:</b> Russian drone entered Romanian airspace but due to the weather NATO jets weren't able to be scrambled; the remains were found 5km deep in it's territory <br>
+  `);
+
+L.marker([45.41417, 29.28919], { icon: droneRed })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.digi24.ro/stiri/actualitate/mapn-a-ridicat-doua-avioane-de-lupta-in-timpul-noptii-dupa-ce-o-drona-a-intrat-in-spatiul-aerian-national-a-fost-emis-mesaj-ro-alert-3509181" target="_blank">Periprava / Chilia Veche / Foltești, Romania 🇷🇴</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 19 Nov 2025, 00:20 - 01:00 <br>
+    <b>Type:</b> Drone incursion <br>
+    <b>Details:</b> Russian drone flew up to ~8 km into Romanian airspace where it disappeared from the radars. The drone later reappeared in Moldovan airspace from where it reentered Romania and was spotted in Foltești, Galați county again <br>
+    It is unknown what eventually happened to it <br>
+  `);
+
+L.marker([46.42270, 27.48516], { icon: droneRed })
+  .addTo(map)
+  .bindPopup(`
+   <b> <a href="https://www.reuters.com/world/romania-scrambles-fighter-jets-after-drones-breach-its-airspace-2025-11-25/" target="_blank">Puiești, Romania 🇷🇴</a> </b> <br>
+    <br>
+    <b>Date/Time:</b> 25 Nov 2025,  <br>
+    <b>Type:</b> Drone incursion <br>
+    <b>Details:</b> wo Russian drones flew into Romanian airspace through Ukraine and Moldova; two German Eurofighters were scrambled and given permission to shot the drones down, but they didn't to avoid colateral damage; one flew back into Ukrainian airspace, the other crashed in Puiești, despite being spotted further inside the country earlier (Galati county) <br>
+    <br>
+  `);
+
 /* =========================
    S P A I N
 ========================= */
