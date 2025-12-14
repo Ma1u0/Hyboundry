@@ -45,6 +45,23 @@ const balloonYellow = createIcon("yellow_balloon.png");
 const balloonGreen = createIcon("green_balloon.png");
 const balloonBlue = createIcon("blue_balloon.png");
 
+function getPopupWidth(zoom) {
+  if (zoom <= 5) return 200;
+  if (zoom <= 7) return 300;
+  if (zoom <= 9) return 420;
+  return 550;
+}
+
+map.on('zoomend', function () {
+  const zoom = map.getZoom();
+
+  map.eachLayer(layer => {
+    if (layer instanceof L.Marker && layer.getPopup()) {
+      layer.getPopup().options.maxWidth = getPopupWidth(zoom);
+    }
+  });
+});
+
 /* =========================
    INCIDENT MARKERS
 ========================= */
