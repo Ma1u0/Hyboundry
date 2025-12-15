@@ -31,10 +31,12 @@
     min-width: 40px;                        /* <- add this line */
 }
 
-      #legend-content {
-        display: none;
-        margin-top: 5px;
-      }
+    #legend-content {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 5px;
+    transition: max-height 0.3s ease;
+}
 
       /* Button styling */
       #legend-toggle {
@@ -53,8 +55,8 @@
       }
 
         #map-legend.expanded #legend-content {
-    display: block !important;
-    }
+    max-height: 500px; /* big enough to show all legend items */
+}
 
       #map-legend.expanded #legend-toggle {
         transform: rotate(90deg); /* arrow points down when expanded */
