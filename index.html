@@ -1,122 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Drone Incursions Map</title>
+<meta charset="UTF-8">
+<title>Drone Incursions Map</title>
 
-    <!-- Leaflet CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
-    <style>
-      html, body { height: 100%; margin: 0; }
-      #map { width: 100%; height: 100vh; }
+<style>
+  html, body { height: 100%; margin: 0; }
+  #map { width: 100%; height: 100vh; }
 
-      /* =========================
-         Legend styling
-      ======================== */
-#map-legend {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background: white;
-    padding: 10px;
-    font-family: sans-serif;
-    font-size: 14px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: width 0.3s, padding 0.3s;  /* <- add this line */
-    min-width: 40px;                        /* <- add this line */
-}
+  /* =========================
+     Legend styling
+  ======================== */
+  #map-legend {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: white;
+      font-family: sans-serif;
+      font-size: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 40px; /* small width for arrow */
+      padding: 5px;
+      transition: width 0.3s ease, padding 0.3s ease;
+  }
 
-    #legend-content {
-    max-height: 0;
-    overflow: hidden;
-    margin-top: 5px;
-    transition: max-height 0.3s ease;
-}
+  /* Button styling */
+  #legend-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      transition: transform 0.3s;
+      padding: 0;
+      margin-bottom: 5px;
+  }
 
-      /* Button styling */
-      #legend-toggle {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-        transition: transform 0.3s;
-      }
+  /* Legend content */
+  #legend-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      width: 400px; /* expanded width */
+  }
 
-      /* Expanded legend */
-      #map-legend.expanded {
-        width: 500px;      /* how wide the legend should be when opened */
-        max-height: 70vh;  /* how tall it can grow (70% of viewport height) */
-        padding: 20px;     /* more space inside the box */
-      }
+  #map-legend.expanded {
+      width: 450px;  /* expand container slightly */
+      padding: 15px;
+  }
 
-        #map-legend.expanded #legend-content {
-    max-height: 500px; /* big enough to show all legend items */
-}
+  #map-legend.expanded #legend-toggle {
+      transform: rotate(90deg); /* arrow points down */
+  }
 
-      #map-legend.expanded #legend-toggle {
-        transform: rotate(90deg); /* arrow points down when expanded */
-      }
+  #map-legend.expanded #legend-content {
+      max-height: 500px; /* enough to show all items */
+  }
 
-      #map-legend ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
+  #map-legend ul {
+      list-style: none;
+      padding: 0;
+      margin: 5px 0 0 0;
+  }
 
-      #map-legend li {
-        margin: 4px 0;
-        display: flex;
-        align-items: center;
-      }
+  #map-legend li {
+      margin: 4px 0;
+      display: flex;
+      align-items: center;
+  }
 
-      #map-legend img {
-        margin-right: 6px;
-      }
-    </style>
+  #map-legend img {
+      margin-right: 6px;
+  }
+</style>
 </head>
 <body>
 
-    <!-- Legend container -->
-    <div id="map-legend">
-        <button id="legend-toggle">▸</button>
-        <div id="legend-content">
-            <h4>Legend</h4>
-            <ul>
-                <li><img src="icons/red_drone.png" width="24" height="24"> High-risk drone</li>
-                <li><img src="icons/orange_drone.png" width="24" height="24"> Medium-risk drone</li>
-                <li><img src="icons/yellow_drone.png" width="24" height="24"> Low-risk drone</li>
-                <li><img src="icons/green_drone.png" width="24" height="24"> Minor drone</li>
-                <li><img src="icons/blue_drone.png" width="24" height="24"> Observed drone</li>
-            </ul>
-        </div>
+<!-- Legend container -->
+<div id="map-legend">
+    <button id="legend-toggle">▸</button>
+    <div id="legend-content">
+        <h4>Legend</h4>
+        <ul>
+            <li><img src="icons/red_drone.png" width="24" height="24"> High-risk drone</li>
+            <li><img src="icons/orange_drone.png" width="24" height="24"> Medium-risk drone</li>
+            <li><img src="icons/yellow_drone.png" width="24" height="24"> Low-risk drone</li>
+            <li><img src="icons/green_drone.png" width="24" height="24"> Minor drone</li>
+            <li><img src="icons/blue_drone.png" width="24" height="24"> Observed drone</li>
+        </ul>
     </div>
+</div>
 
-    <div id="map"></div>
+<div id="map"></div>
 
-   <!-- Leaflet JS -->
+<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="script.js?v=1"></script>
 
-    <!-- Legend toggle script -->
-    <script>
+<script>
+  // Toggle legend
   const legend = document.getElementById('map-legend');
-const toggle = document.getElementById('legend-toggle');
+  const toggle = document.getElementById('legend-toggle');
+  toggle.addEventListener('click', () => {
+      legend.classList.toggle('expanded');
+  });
 
-toggle.addEventListener('click', () => {
-    legend.classList.toggle('expanded');
-});
+  // Initialize Leaflet map
+  const map = L.map('map').setView([0, 0], 2);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19
+  }).addTo(map);
 
-      // Initialize Leaflet map
-      const map = L.map('map').setView([0, 0], 2);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19
-      }).addTo(map);
-    </script>
+  // Example markers
+  const drones = [
+      {lat: 10, lng: 10, icon: 'red_drone.png'},
+      {lat: 20, lng: -20, icon: 'orange_drone.png'},
+      {lat: -10, lng: 30, icon: 'yellow_drone.png'},
+  ];
+
+  drones.forEach(d => {
+      const icon = L.icon({
+          iconUrl: 'icons/' + d.icon,
+          iconSize: [24,24],
+          iconAnchor: [12,12]
+      });
+      L.marker([d.lat, d.lng], {icon}).addTo(map);
+  });
+</script>
 
 </body>
 </html>
