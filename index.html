@@ -1,65 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Map with Legend</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<style>
-  html, body { margin:0; padding:0; height:100%; }
-  #map { width:100%; height:100%; }
-  #map-legend { position:absolute; top:15px; right:15px; width:260px; background:rgba(255,255,255,0.95); border-radius:8px; box-shadow:0 0 12px rgba(0,0,0,0.4); z-index:1000; overflow:hidden; max-height:40px; transition:max-height 0.3s ease; }
-  #map-legend.expanded { max-height:500px; }
-  #legend-toggle { display:block; padding:10px 14px; background:#0078A8; color:white; font-weight:bold; cursor:pointer; text-align:center; }
-  #legend-content { padding:10px 14px; overflow-y:auto; max-height:450px; }
-  #legend-content p { margin:6px 0; font-size:14px; }
-  #legend-content img { vertical-align: middle; width:22px; height:22px; margin-right:8px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone & Air Incident Map</title>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    /* Map full screen */
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+
+    /* Legend styling */
+    #map-legend {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      font-family: sans-serif;
+      max-width: 200px;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    #legend-toggle {
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    #map-legend.expanded .legend-items {
+      display: block;
+    }
+
+    .legend-items {
+      display: none;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .legend-item img {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+    }
+  </style>
 </head>
 <body>
 
-<div id="map"></div>
+  <div id="map"></div>
 
-<div id="map-legend">
-  <div id="legend-toggle">Legend ⬇</div>
-  <div id="legend-content">
-    <p><img src="icons/red_drone.png">Red Drone: High alert</p>
-    <p><img src="icons/orange_drone.png">Orange Drone: Medium alert</p>
-    <p><img src="icons/yellow_drone.png">Yellow Drone: Low alert</p>
-    <p><img src="icons/green_drone.png">Green Drone: Observed</p>
-    <p><img src="icons/red_jet.png">Red Jet: Airspace incursion</p>
+  <!-- Legend -->
+  <div id="map-legend">
+    <div id="legend-toggle">Legend</div>
+    <div class="legend-items">
+      <div class="legend-item"><img src="icons/red_drone.png" />Red Drone</div>
+      <div class="legend-item"><img src="icons/orange_drone.png" />Orange Drone</div>
+      <div class="legend-item"><img src="icons/yellow_drone.png" />Yellow Drone</div>
+      <div class="legend-item"><img src="icons/green_drone.png" />Green Drone</div>
+      <div class="legend-item"><img src="icons/blue_drone.png" />Blue Drone</div>
+      <div class="legend-item"><img src="icons/red_jet.png" />Red Jet</div>
+      <!-- Add more legend items as needed -->
+    </div>
   </div>
-</div>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script>
-  // Initialize map once
-  window.map = L.map('map').setView([54.5, 10], 5);
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
-
-  // Legend toggle
-  const legend = document.getElementById('map-legend');
-  document.getElementById('legend-toggle').addEventListener('click', () => {
-    legend.classList.toggle('expanded');
-    map.invalidateSize();
-  });
-
-  // Icon factory
-  window.createIcon = function(file) {
-    return L.icon({
-      iconUrl: `icons/${file}`,
-      iconSize: [32, 32],
-      iconAnchor: [18, 36],
-      popupAnchor: [0, -30]
-    });
-  };
-</script>
-
-<!-- LOAD YOUR SCRIPT AFTER MAP EXISTS -->
-<script src="script.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Your custom JS -->
+  <script src="script.js"></script>
 
 </body>
 </html>
