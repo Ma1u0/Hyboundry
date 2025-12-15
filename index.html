@@ -17,59 +17,76 @@
       /* =========================
          Legend styling
       ======================== */
-      #map-legend {
-          position: absolute;
-          bottom: 10px;
-          right: 10px;
-          background: white;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 6px;
-          font-family: sans-serif;
-          font-size: 14px;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-          z-index: 1000;
-      }
+    #map-legend {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: sans-serif;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
 
-      #legend-content {
-          display: none; /* Hidden by default */
-          margin-top: 5px;
-      }
+#legend-content {
+    display: none;
+    margin-top: 5px;
+}
 
-      #map-legend ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-      }
+/* Button styling */
+#legend-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
 
-      #map-legend li {
-          margin: 4px 0;
-          display: flex;
-          align-items: center;
-      }
+#map-legend.expanded #legend-content {
+    display: block;
+}
 
-      #map-legend img {
-          margin-right: 6px;
-      }
-    </style>
-</head>
+#map-legend.expanded #legend-toggle {
+    transform: rotate(90deg); /* arrow points down when expanded */
+}
+
+#map-legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#map-legend li {
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+}
+
+#map-legend img {
+    margin-right: 6px;
+}
+        </style>
+    </head>
 <body>
 
     <!-- Legend container -->
-    <div id="map-legend" class="legend-collapsed">
-       <button id="legend-toggle">▸</button>
-        <div id="legend-content">
-            <h4>Legend</h4>
-            <ul>
-                <li><img src="icons/red_drone.png" width="24" height="24"> High-risk drone</li>
-                <li><img src="icons/orange_drone.png" width="24" height="24"> Medium-risk drone</li>
-                <li><img src="icons/yellow_drone.png" width="24" height="24"> Low-risk drone</li>
-                <li><img src="icons/green_drone.png" width="24" height="24"> Minor drone</li>
-                <li><img src="icons/blue_drone.png" width="24" height="24"> Observed drone</li>
-                <!-- Repeat for jet, balloon icons if needed -->
-            </ul>
-        </div>
+<div id="map-legend">
+    <button id="legend-toggle">▸</button>
+    <div id="legend-content">
+        <h4>Legend</h4>
+        <ul>
+            <li><img src="icons/red_drone.png" width="24" height="24"> High-risk drone</li>
+            <li><img src="icons/orange_drone.png" width="24" height="24"> Medium-risk drone</li>
+            <li><img src="icons/yellow_drone.png" width="24" height="24"> Low-risk drone</li>
+            <li><img src="icons/green_drone.png" width="24" height="24"> Minor drone</li>
+            <li><img src="icons/blue_drone.png" width="24" height="24"> Observed drone</li>
+            <!-- Add more icons if needed -->
+        </ul>
     </div>
+</div>
 
     <div id="map"></div>
 
