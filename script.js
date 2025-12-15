@@ -19,11 +19,6 @@ const toggleBtn = document.getElementById('legend-toggle');
 toggleBtn.addEventListener('click', () => {
     legend.classList.toggle('expanded');
 });
-
-toggleBtn.addEventListener('click', () => {
-    legend.classList.toggle('expanded');
-});
-
 /* =========================
    ICON FACTORY
 ========================= */
