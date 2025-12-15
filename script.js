@@ -212,7 +212,6 @@ L.marker([55.73502, 9.12933], { icon: droneGreen })
     <b>Date/Time:</b> 25 Sep 2025, Reported 02:21, airport closed 04:40 - ~05:50 <br>
     <b>Type:</b> Drone sighting / airspace closure <br>
     <b>Details:</b> The police was unable to verify the drone sighting <br>
-    <br>   
   `);
 
 L.marker([55.06486, 14.75415], { icon: droneGreen })
@@ -223,7 +222,6 @@ L.marker([55.06486, 14.75415], { icon: droneGreen })
     <b>Date/Time:</b> 25 Sep 2025, ~05:49 <br>
     <b>Type:</b> Drone sighting <br>
     <b>Details:</b> Police confirmed that they have seen blinking lights over the airport; the police doesn't deny or confirm if those lights were a drone <br>
-    <br>   
   `);
 
 L.marker([55.33158, 11.13699], { icon: droneGreen })
@@ -234,7 +232,6 @@ L.marker([55.33158, 11.13699], { icon: droneGreen })
     <b>Date/Time:</b> 25 Sep 2025 <br>
     <b>Type:</b> Drone sighting <br>
     <b>Details:</b> The police responded to reports of drones over the Port of Korsør; no further information published since then <br>
-    <br>   
   `);
 
 /* =========================
@@ -261,7 +258,6 @@ L.marker([57.80556, 26.97528], { icon: droneYellow })
     <b>Date/Time:</b> 17 Oct 2025  <br>
     <b>Type:</b> Drone sighting / drone downed  <br>
     <b>Details:</b> A drone flying near the US camp Reedo was downed by an anti-drone gun; authorities couldn't find the remains of the drone in the area it was presumably shot down <br>
-    <br>
   `);
 
 
@@ -273,7 +269,6 @@ L.marker([59.24755, 24.23912], { icon: jetRed })
     <b>Date/Time:</b> 24 Nov 2025,  <br>
     <b>Type:</b> Airspace incursion by Russian fighter jets <br>
     <b>Details:</b> Two Italian Eurofighters escorted the "Black Pearl", a Tupolev T-134 which trains strategic bomber pilots, two escort fighters, and one SU-24; it's assumed that this plane was en route to Kaliningrad, possibly transporting generals <br>
-    <br>
   `);
 
 /* =========================
@@ -415,7 +410,6 @@ L.marker([52.38492, 10.53923], { icon: droneGreen })
     <b>Date/Time:</b> 04 Oct 2025, ~21:00 <br>
     <b>Type:</b> Drone sighting <br>
     <b>Details:</b> Police got a report of three drones flying in a formation flight up to 100km/h at a height of ~100m. The federal police has a flight squadron in Gifhorn (10km from Meine) <br>
-    <br>
   `);
 
 L.marker([52.36593, 13.48864], { icon: droneYellow })
@@ -426,7 +420,6 @@ L.marker([52.36593, 13.48864], { icon: droneYellow })
     <b>Date/Time:</b> 31 Oct 2025, ~20:00 - ~22:00 <br>
     <b>Type:</b> Drone sighting / airport closure <br>
     <b>Details:</b> Police confirmed a drone sighting at BER but the drone later disappeared despite using police helicopter <br>
-    <br>
   `);
 
 L.marker([53.04534, 8.78964], { icon: droneYellow })
@@ -437,7 +430,6 @@ L.marker([53.04534, 8.78964], { icon: droneYellow })
     <b>Date/Time:</b> 2 Nov 2025, airspace  was closed in the evening for 40 minutes <br>
     <b>Type:</b> Drone sighting / airport closure <br>
     <b>Details:</b> Drone sighting reported; police won't give information about the drone; espionage is unlikely but not ruled out according to the investigators <br>
-    <br>
   `);
 
 
@@ -449,7 +441,6 @@ L.marker([52.46144, 9.68633], { icon: droneYellow })
     <b>Date/Time:</b> 5 Nov 2025, 22:00 - 22:45 <br>
     <b>Type:</b> Drone sighting / airport closure <br>
     <b>Details:</b> A pilot sighted a drone while landing at the airport which caused the airport to close it's airspace; the drone reportedly flew over an industrial area next to the airport <br>
-    <br>
   `);
 
 /* =========================
@@ -608,7 +599,6 @@ L.marker([46.42270, 27.48516], { icon: droneRed })
     <b>Date/Time:</b> 25 Nov 2025,  <br>
     <b>Type:</b> Drone incursion <br>
     <b>Details:</b> wo Russian drones flew into Romanian airspace through Ukraine and Moldova; two German Eurofighters were scrambled and given permission to shot the drones down, but they didn't to avoid colateral damage; one flew back into Ukrainian airspace, the other crashed in Puiești, despite being spotted further inside the country earlier (Galati county) <br>
-    <br>
   `);
 
 /* =========================
@@ -649,7 +639,6 @@ L.marker([55.60529, 13.00016], { icon: droneGreen })
     <b>Type:</b> Drone sighting <br>
     <b>Details:</b> A couple from Malmö reported seeing a large drone from their balcony. The drone headed eastwards
     The police confirmed getting multiple calls about drone sighting but couldn't verify those reports themselves <br>
-    <br>
   `);
 
 
@@ -661,7 +650,6 @@ L.marker([56.15935, 15.57863], { icon: droneYellow })
     <b>Date/Time:</b> 26 Sep 2025, at night <br>
     <b>Type:</b> Drone sighting <br>
     <b>Details:</b> An unidentified drone was seen about a mile from the naval base; the drone did not fly over any restricted objects <br>
-    <br>
   `);
 
 L.marker([57.66242, 12.28776], { icon: droneYellow })
@@ -672,5 +660,4 @@ L.marker([57.66242, 12.28776], { icon: droneYellow })
     <b>Date/Time:</b> 06 Nov 2025, 17:41 - 21:30 <br>
     <b>Type:</b> Drone sighting / airport closure <br>
     <b>Details:</b> AOne or more drones have been observed at the coast, close to the airport; air traffic resumed at around 21:30 <br>
-    <br>
   `);
