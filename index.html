@@ -67,10 +67,12 @@ html, body {
   right: 10px;
 }
 
-/* Legend icon size */
+.filter-row img,
 .legend-row img {
   width: 32px;
   height: 32px;
+  vertical-align: middle;
+  margin-right: 6px;
 }
   
 </style>
@@ -86,11 +88,20 @@ html, body {
     <span>Filters</span>
     <button onclick="togglePanel('filters')">▾</button>
   </div>
-  <div class="panel-content">
-    <label><input type="checkbox" checked onchange="applyFilters()"> Drone</label><br>
-    <label><input type="checkbox" checked onchange="applyFilters()"> Jet</label><br>
-    <label><input type="checkbox" checked onchange="applyFilters()"> Balloon</label>
+<div class="panel-content">
+  <div class="filter-row">
+    <input type="checkbox" checked onchange="applyFilters()">
+    <img src="icons/uav.png"> Drone
   </div>
+  <div class="filter-row">
+    <input type="checkbox" checked onchange="applyFilters()">
+    <img src="icons/fighter-plane.png"> Jet
+  </div>
+  <div class="filter-row">
+    <input type="checkbox" checked onchange="applyFilters()">
+    <img src="icons/balloon.png"> Balloon
+  </div>
+</div>
 </div>
 
 <!-- LEGEND -->
