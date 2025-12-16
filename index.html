@@ -91,11 +91,11 @@ h3 {
   <strong>Type</strong>
   <div class="filter-row">
     <input type="checkbox" checked id="filter-drone">
-    <img src="icons/red_drone.png"> Drone
+    <img src="icons/uav.png"> Drone
   </div>
   <div class="filter-row">
     <input type="checkbox" checked id="filter-jet">
-    <img src="icons/red_jet.png"> Jet
+    <img src="icons/fighter-plane.png"> Jet
   </div>
   <div class="filter-row">
     <input type="checkbox" checked id="filter-balloon">
@@ -120,11 +120,11 @@ h3 {
   <div class="legend-row"><img src="icons/balloon.png"> Balloon</div>
 
   <strong>Risk</strong>
-  <div class="legend-row">🔴 High</div>
-  <div class="legend-row">🟠 Medium</div>
-  <div class="legend-row">🟡 Low</div>
-  <div class="legend-row">🟢 Minor</div>
-  <div class="legend-row">🔵 Observed</div>
+  <div class="legend-row">🔴 Confirmed to be Russian</div>
+  <div class="legend-row">🟠 Suspected to be Russian</div>
+  <div class="legend-row">🟡 Unknown actor</div>
+  <div class="legend-row">🟢 Unverified sighting</div>
+  <div class="legend-row">🔵 Safety zone breach</div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -145,7 +145,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const icons = {
   drone: L.icon({ iconUrl: 'icons/red_drone.png', iconSize: [32,32] }),
   jet: L.icon({ iconUrl: 'icons/red_jet.png', iconSize: [32,32] }),
-  balloon: L.icon({ iconUrl: 'icons/balloon.png', iconSize: [32,32] })
+  balloon: L.icon({ iconUrl: 'icons/red_balloon.png', iconSize: [32,32] })
 };
 
 /* =======================
