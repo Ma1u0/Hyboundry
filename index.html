@@ -85,52 +85,56 @@ h3 {
 <div id="map"></div>
 
 <!-- FILTERS -->
-<div id="filters">
+<div id="filters" class="panel">
   <div class="panel-header">
     <span>Filters</span>
     <button class="panel-toggle" data-target="filters">▾</button>
   </div>
 
-  <strong>Type</strong>
-  <div class="filter-row">
-    <input type="checkbox" checked id="filter-drone">
-    <img src="icons/uav.png"> Drone
-  </div>
-  <div class="filter-row">
-    <input type="checkbox" checked id="filter-jet">
-    <img src="icons/fighter-plane.png"> Jet
-  </div>
-  <div class="filter-row">
-    <input type="checkbox" checked id="filter-balloon">
-    <img src="icons/balloon.png"> Balloon
-  </div>
+  <div class="panel-content">
+    <strong>Type</strong>
+    <div class="filter-row">
+      <input type="checkbox" checked id="filter-drone">
+      <img src="icons/uav.png"> Drone
+    </div>
+    <div class="filter-row">
+      <input type="checkbox" checked id="filter-jet">
+      <img src="icons/fighter-plane.png"> Jet
+    </div>
+    <div class="filter-row">
+      <input type="checkbox" checked id="filter-balloon">
+      <img src="icons/balloon.png"> Balloon
+    </div>
 
-  <strong>Risk</strong>
-  <div class="filter-row"><input type="checkbox" checked data-risk="red"> Red</div>
-  <div class="filter-row"><input type="checkbox" checked data-risk="orange"> Orange</div>
-  <div class="filter-row"><input type="checkbox" checked data-risk="yellow"> Yellow</div>
-  <div class="filter-row"><input type="checkbox" checked data-risk="green"> Green</div>
-  <div class="filter-row"><input type="checkbox" checked data-risk="blue"> Blue</div>
+    <strong>Risk</strong>
+    <div class="filter-row"><input type="checkbox" checked data-risk="red"> Red</div>
+    <div class="filter-row"><input type="checkbox" checked data-risk="orange"> Orange</div>
+    <div class="filter-row"><input type="checkbox" checked data-risk="yellow"> Yellow</div>
+    <div class="filter-row"><input type="checkbox" checked data-risk="green"> Green</div>
+    <div class="filter-row"><input type="checkbox" checked data-risk="blue"> Blue</div>
+  </div>
 </div>
 
 <!-- LEGEND -->
-<div id="legend">
+<div id="legend" class="panel">
   <div class="panel-header">
     <span>Legend</span>
     <button class="panel-toggle" data-target="legend">▾</button>
   </div>
 
-  <strong>Type</strong>
-  <div class="legend-row"><img src="icons/uav.png"> Drone</div>
-  <div class="legend-row"><img src="icons/fighter-plane.png"> Jet</div>
-  <div class="legend-row"><img src="icons/balloon.png"> Balloon</div>
+  <div class="panel-content">
+    <strong>Type</strong>
+    <div class="legend-row"><img src="icons/uav.png"> Drone</div>
+    <div class="legend-row"><img src="icons/fighter-plane.png"> Jet</div>
+    <div class="legend-row"><img src="icons/balloon.png"> Balloon</div>
 
-  <strong>Risk</strong>
-  <div class="legend-row">🔴 Confirmed to be Russian</div>
-  <div class="legend-row">🟠 Suspected to be Russian</div>
-  <div class="legend-row">🟡 Unknown actor</div>
-  <div class="legend-row">🟢 Unverified sighting</div>
-  <div class="legend-row">🔵 Safety zone breach</div>
+    <strong>Risk</strong>
+    <div class="legend-row">🔴 Confirmed</div>
+    <div class="legend-row">🟠 Suspected</div>
+    <div class="legend-row">🟡 Unknown</div>
+    <div class="legend-row">🟢 Unverified</div>
+    <div class="legend-row">🔵 Safety zone</div>
+  </div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
