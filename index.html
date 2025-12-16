@@ -11,60 +11,34 @@
 
 <div id="map"></div>
 
-<!-- FILTER PANEL -->
+<!-- Filters Panel -->
 <div id="filters" class="panel collapsed">
   <div class="panel-header">
     <span>Filters</span>
     <button class="panel-toggle" data-target="filters">▸</button>
   </div>
   <div class="panel-content">
-    <strong>Type</strong>
-    <div class="filter-row">
-      <input type="checkbox" checked id="filter-drone">
-      <img src="icons/uav.png" /> Drone
-    </div>
-    <div class="filter-row">
-      <input type="checkbox" checked id="filter-jet">
-      <img src="icons/fighter-plane.png" /> Jet
-    </div>
-    <div class="filter-row">
-      <input type="checkbox" checked id="filter-balloon">
-      <img src="icons/balloon.png" /> Balloon
-    </div>
-
-    <strong>Risk</strong>
-    <div class="filter-row"><input type="checkbox" checked data-risk="red"> Red</div>
-    <div class="filter-row"><input type="checkbox" checked data-risk="orange"> Orange</div>
-    <div class="filter-row"><input type="checkbox" checked data-risk="yellow"> Yellow</div>
-    <div class="filter-row"><input type="checkbox" checked data-risk="green"> Green</div>
-    <div class="filter-row"><input type="checkbox" checked data-risk="blue"> Blue</div>
+    <div class="filter-row"><input type="checkbox" checked data-type="drone"> Drone</div>
+    <div class="filter-row"><input type="checkbox" checked data-type="jet"> Jet</div>
+    <div class="filter-row"><input type="checkbox" checked data-type="balloon"> Balloon</div>
   </div>
 </div>
 
-<!-- LEGEND PANEL -->
+<!-- Legend Panel -->
 <div id="legend" class="panel collapsed">
   <div class="panel-header">
     <span>Legend</span>
     <button class="panel-toggle" data-target="legend">▸</button>
   </div>
   <div class="panel-content">
-    <strong>Type</strong>
-    <div class="legend-row"><img src="icons/uav.png" /> Drone</div>
-    <div class="legend-row"><img src="icons/fighter-plane.png" /> Jet</div>
-    <div class="legend-row"><img src="icons/balloon.png" /> Balloon</div>
-
-    <strong>Risk</strong>
-    <div class="legend-row">🔴 Confirmed</div>
-    <div class="legend-row">🟠 Suspected</div>
-    <div class="legend-row">🟡 Unknown</div>
-    <div class="legend-row">🟢 Unverified</div>
-    <div class="legend-row">🔵 Safety zone</div>
+    <div class="legend-row">Drone 🛸</div>
+    <div class="legend-row">Jet ✈️</div>
+    <div class="legend-row">Balloon 🎈</div>
   </div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="map.js"></script>
 <script src="panels.js"></script>
-
 </body>
 </html>
