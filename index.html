@@ -2,43 +2,131 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>World Incident Map</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Leaflet CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<style>
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+#map {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Panels */
+.panel {
+  position: absolute;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  font-family: sans-serif;
+  width: 200px;
+  z-index: 1000;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  font-weight: bold;
+  background: #f0f0f0;
+}
+
+.panel button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.panel-content {
+  padding: 8px;
+}
+
+.collapsed .panel-content {
+  display: none;
+}
+
+#filters {
+  top: 10px;
+  left: 10px;
+}
+
+#legend {
+  top: 10px;
+  right: 10px;
+}
+</style>
 </head>
+
 <body>
 
 <div id="map"></div>
 
-<!-- Filters Panel -->
-<div id="filters" class="panel collapsed">
+<!-- FILTERS -->
+<div id="filters" class="panel">
   <div class="panel-header">
     <span>Filters</span>
-    <button class="panel-toggle" data-target="filters">▸</button>
+    <button onclick="togglePanel('filters')">▾</button>
   </div>
   <div class="panel-content">
-    <div class="filter-row"><input type="checkbox" checked data-type="drone"> Drone</div>
-    <div class="filter-row"><input type="checkbox" checked data-type="jet"> Jet</div>
-    <div class="filter-row"><input type="checkbox" checked data-type="balloon"> Balloon</div>
+    <label><input type="checkbox" checked onchange="applyFilters()"> Drone</label><br>
+    <label><input type="checkbox" checked onchange="applyFilters()"> Jet</label><br>
+    <label><input type="checkbox" checked onchange="applyFilters()"> Balloon</label>
   </div>
 </div>
 
-<!-- Legend Panel -->
-<div id="legend" class="panel collapsed">
+<!-- LEGEND -->
+<div id="legend" class="panel">
   <div class="panel-header">
     <span>Legend</span>
-    <button class="panel-toggle" data-target="legend">▸</button>
+    <button onclick="togglePanel('legend')">▾</button>
   </div>
   <div class="panel-content">
-    <div class="legend-row">Drone 🛸</div>
-    <div class="legend-row">Jet ✈️</div>
-    <div class="legend-row">Balloon 🎈</div>
+    🛸 Drone<br>
+    ✈️ Jet<br>
+    🎈 Balloon
   </div>
 </div>
 
+<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="map.js"></script>
-<script src="panels.js"></script>
+
+<script>
+/* MAP — THIS IS THE IMPORTANT PART */
+const map = L.map('map').setView([20, 0], 2);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19
+}).addTo(map);
+
+/* MARKERS */
+const drone = L.marker([51, 0]).addTo(map).bindPopup('Drone UK');
+const jet = L.marker([40, -74]).addTo(map).bindPopup('Jet USA');
+const balloon = L.marker([35, 139]).addTo(map).bindPopup('Balloon Japan');
+
+const markers = [drone, jet, balloon];
+
+/* FILTERS (DUMMY FOR NOW) */
+function applyFilters() {
+  // no-op, just placeholder
+}
+
+/* PANEL TOGGLE */
+function togglePanel(id) {
+  document.getElementById(id).classList.toggle('collapsed');
+}
+</script>
+
 </body>
 </html>
