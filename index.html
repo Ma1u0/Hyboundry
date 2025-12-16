@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>World Incidents Map</title>
 
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- MAP -->
+  <div id="map"></div>
+
+  <!-- LEGEND -->
+  <div id="map-legend" class="collapsed">
+    <div id="legend-header">
+      <span>Legend</span>
+      <button id="legend-toggle">☰</button>
+    </div>
+
+    <div id="legend-content">
+
+      <h4>Type</h4>
+      <label><input type="checkbox" data-layer="jets" checked> Jets</label><br>
+      <label><input type="checkbox" data-layer="drones" checked> Drones</label><br>
+      <label><input type="checkbox" data-layer="balloons" checked> Balloons</label>
+
+      <h4>Risk</h4>
+      <label><input type="checkbox" data-layer="red" checked> Red</label><br>
+      <label><input type="checkbox" data-layer="orange" checked> Orange</label><br>
+      <label><input type="checkbox" data-layer="yellow" checked> Yellow</label><br>
+      <label><input type="checkbox" data-layer="green" checked> Green</label><br>
+      <label><input type="checkbox" data-layer="blue" checked> Blue</label>
+
+      <h4>Location</h4>
+      <label><input type="checkbox" data-layer="airport" checked> Airport</label><br>
+      <label><input type="checkbox" data-layer="military" checked> Military Base</label><br>
+      <label><input type="checkbox" data-layer="other" checked> Other</label>
+
+      <hr>
+      <button id="activate-all">Activate all</button>
+
+    </div>
+  </div>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/map.js"></script>
+
+</body>
+</html>
