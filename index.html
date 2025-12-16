@@ -1,54 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>World Incidents Map</title>
+<meta charset="UTF-8">
+<title>World Incident Map</title>
 
-  <!-- Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
-  <link rel="stylesheet" href="css/style.css">
+<style>
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+}
+
+/* =======================
+   LEGEND
+======================= */
+#legend {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: sans-serif;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  width: 220px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.legend-row img {
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
+}
+
+/* =======================
+   FILTER PANEL
+======================= */
+#filters {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: sans-serif;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  width: 220px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.filter-row img {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+h3 {
+  margin: 6px 0;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- MAP -->
-  <div id="map"></div>
+<div id="map"></div>
 
-  <!-- LEGEND -->
-  <div id="map-legend" class="collapsed">
-    <div id="legend-header">
-      <span>Legend</span>
-      <button id="legend-toggle">☰</button>
-    </div>
+<!-- FILTERS -->
+<div id="filters">
+  <h3>Filters</h3>
 
-    <div id="legend-content">
-
-      <h4>Type</h4>
-      <label><input type="checkbox" data-layer="jets" checked> Jets</label><br>
-      <label><input type="checkbox" data-layer="drones" checked> Drones</label><br>
-      <label><input type="checkbox" data-layer="balloons" checked> Balloons</label>
-
-      <h4>Risk</h4>
-      <label><input type="checkbox" data-layer="red" checked> Confirmed Russian</label><br>
-      <label><input type="checkbox" data-layer="orange" checked> Assumed Russian</label><br>
-      <label><input type="checkbox" data-layer="yellow" checked> Actor unknown</label><br>
-      <label><input type="checkbox" data-layer="green" checked> Sighting not verified by authorities</label><br>
-      <label><input type="checkbox" data-layer="blue" checked> Safety zone violation</label>
-
-      <h4>Location</h4>
-      <label><input type="checkbox" data-layer="airport" checked> Airport</label><br>
-      <label><input type="checkbox" data-layer="military" checked> Military Base</label><br>
-      <label><input type="checkbox" data-layer="other" checked> Other</label>
-
-      <hr>
-      <button id="activate-all">Activate all</button>
-
-    </div>
+  <strong>Type</strong>
+  <div class="filter-row">
+    <input type="checkbox" checked id="filter-drone">
+    <img src="icons/red_drone.png"> Drone
+  </div>
+  <div class="filter-row">
+    <input type="checkbox" checked id="filter-jet">
+    <img src="icons/red_jet.png"> Jet
+  </div>
+  <div class="filter-row">
+    <input type="checkbox" checked id="filter-balloon">
+    <img src="icons/balloon.png"> Balloon
   </div>
 
-  <!-- Leaflet -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="js/map.js"></script>
+  <strong>Risk</strong>
+  <div class="filter-row"><input type="checkbox" checked data-risk="red"> Red</div>
+  <div class="filter-row"><input type="checkbox" checked data-risk="orange"> Orange</div>
+  <div class="filter-row"><input type="checkbox" checked data-risk="yellow"> Yellow</div>
+  <div class="filter-row"><input type="checkbox" checked data-risk="green"> Green</div>
+  <div class="filter-row"><input type="checkbox" checked data-risk="blue"> Blue</div>
+</div>
+
+<!-- LEGEND -->
+<div id="legend">
+  <h3>Legend</h3>
+
+  <strong>Type</strong>
+  <div class="legend-row"><img src="icons/red_drone.png"> Drone</div>
+  <div class="legend-row"><img src="icons/red_jet.png"> Jet</div>
+  <div class="legend-row"><img src="icons/balloon.png"> Balloon</div>
+
+  <strong>Risk</strong>
+  <div class="legend-row">🔴 High</div>
+  <div class="legend-row">🟠 Medium</div>
+  <div class="legend-row">🟡 Low</div>
+  <div class="legend-row">🟢 Minor</div>
+  <div class="legend-row">🔵 Observed</div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+/* =======================
+   MAP INIT
+======================= */
+const map = L.map('map').setView([20, 0], 2);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19
+}).addTo(map);
+
+/* =======================
+   ICONS
+======================= */
+const icons = {
+  drone: L.icon({ iconUrl: 'icons/red_drone.png', iconSize: [32,32] }),
+  jet: L.icon({ iconUrl: 'icons/red_jet.png', iconSize: [32,32] }),
+  balloon: L.icon({ iconUrl: 'icons/balloon.png', iconSize: [32,32] })
+};
+
+/* =======================
+   MARKER DATA
+======================= */
+const incidents = [
+  { lat: 51, lng: 0, type: 'drone', risk: 'red', text: 'Drone over UK' },
+  { lat: 40, lng: -74, type: 'jet', risk: 'orange', text: 'Jet intercept USA' },
+  { lat: 35, lng: 139, type: 'balloon', risk: 'blue', text: 'Balloon Japan' }
+];
+
+const markers = [];
+
+/* =======================
+   ADD MARKERS
+======================= */
+incidents.forEach(i => {
+  const marker = L.marker([i.lat, i.lng], { icon: icons[i.type] })
+    .bindPopup(i.text)
+    .addTo(map);
+
+  marker.meta = i;
+  markers.push(marker);
+});
+
+/* =======================
+   FILTER LOGIC
+======================= */
+function applyFilters() {
+  markers.forEach(m => {
+    const showType =
+      (m.meta.type === 'drone' && document.getElementById('filter-drone').checked) ||
+      (m.meta.type === 'jet' && document.getElementById('filter-jet').checked) ||
+      (m.meta.type === 'balloon' && document.getElementById('filter-balloon').checked);
+
+    if (showType) {
+      map.addLayer(m);
+    } else {
+      map.removeLayer(m);
+    }
+  });
+}
+
+document.querySelectorAll('#filters input').forEach(i => {
+  i.addEventListener('change', applyFilters);
+});
+</script>
 
 </body>
 </html>
