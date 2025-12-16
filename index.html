@@ -17,70 +17,20 @@ html, body {
   height: 100vh;
   width: 100vw;
 }
+/* Panels styles (filters + legend) */
+.panel { position: absolute; background:white; border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,0.3); font-family:sans-serif; width:200px; z-index:1000; }
+.panel-header { display:flex; justify-content:space-between; padding:8px; font-weight:bold; background:#f0f0f0; }
+.panel button { background:none; border:none; font-size:16px; cursor:pointer; }
+.panel-content { padding:8px; }
+.collapsed .panel-content { display:none; }
 
-/* Panels */
-.panel {
-  position: absolute;
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  font-family: sans-serif;
-  width: 200px;
-  z-index: 1000;
-}
-.panel-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px;
-  font-weight: bold;
-  background: #f0f0f0;
-}
-.panel button {
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-.panel-content {
-  padding: 8px;
-}
-.collapsed .panel-content {
-  display: none;
-}
-
-#filters {
-  bottom: 10px;
-  right: 10px;
-}
-#legend {
-  top: 10px;
-  right: 10px;
-}
-
-.filter-columns {
-  display: flex;
-  gap: 20px;
-}
-.filter-columns .filter-column {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.filter-column label img {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-  margin-right: 6px;
-}
-.legend-row img {
-  width: 28px;
-  height: 28px;
-  vertical-align: middle;
-  margin-right: 6px;
-}
-.legend-row {
-  margin-bottom: 8px;
-}
+#filters { bottom:10px; right:10px; }
+#legend { top:10px; right:10px; }
+.filter-columns { display:flex; gap:20px; }
+.filter-columns .filter-column { display:flex; flex-direction:column; gap:4px; }
+.filter-column label img { width:24px; height:24px; vertical-align:middle; margin-right:6px; }
+.legend-row img { width:28px; height:28px; vertical-align:middle; margin-right:6px; }
+.legend-row { margin-bottom:8px; }
 </style>
 </head>
 
@@ -88,7 +38,7 @@ html, body {
 
 <div id="map"></div>
 
-<!-- FILTERS -->
+<!-- FILTERS PANEL -->
 <div id="filters" class="panel collapsed">
   <div class="panel-header">
     <span>Filters</span>
@@ -96,14 +46,13 @@ html, body {
   </div>
   <div class="panel-content">
     <div class="filter-columns">
-      <!-- Column 1: Type -->
+      <!-- Type -->
       <div class="filter-column">
         <label><input type="checkbox" value="drone" checked> <img src="icons/uav.png"> Drones</label>
         <label><input type="checkbox" value="jet" checked> <img src="icons/fighter-plane.png"> Jets</label>
         <label><input type="checkbox" value="balloon" checked> <img src="icons/balloon.png"> Balloons</label>
       </div>
-
-      <!-- Column 2: Risk -->
+      <!-- Risk -->
       <div class="filter-column">
         <label><input type="checkbox" value="red" checked> 🔴 Confirmed</label>
         <label><input type="checkbox" value="orange" checked> 🟠 Suspected</label>
@@ -111,8 +60,7 @@ html, body {
         <label><input type="checkbox" value="green" checked> 🟢 Unverified</label>
         <label><input type="checkbox" value="blue" checked> 🔵 Safety</label>
       </div>
-
-      <!-- Column 3: Location -->
+      <!-- Location -->
       <div class="filter-column">
         <label><input type="checkbox" value="airports" checked> <img src="icons/airport.png"> Airports</label>
         <label><input type="checkbox" value="militarybases" checked> <img src="icons/soldier.png"> Military bases</label>
@@ -122,7 +70,7 @@ html, body {
   </div>
 </div>
 
-<!-- LEGEND -->
+<!-- LEGEND PANEL -->
 <div id="legend" class="panel">
   <div class="panel-header">
     <span>Legend</span>
