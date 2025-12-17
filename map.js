@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Incident data
   const incidents = [
-    { lat: 53.42829, lng: -6.24727, icon: icons.droneYellow, type:'drone', risk:'yellow', location:'airport', date:'01 Dec 2025, shortly before 23:00',
+    { lat: 53.42829, lng: -6.24727, icon: icons.droneYellow, type:'drone', risk:'yellow', place:'airport', year:'2025', date:'01 Dec 2025, shortly before 23:00',
       details:"Four military grade drones flew near the airport when Zelensky´s plane was supposed to land; lights were on, authorities assume it was a disruption of the landing. Drones likely launched near Howth, flew above naval vessel, then towards plane.", 
       link:"https://www.thejournal.ie/drones-dublin-ireland-hybrid-warfare-russia-6893104-Dec2025/", country:"Dublin Airport, Ireland 🇮🇪" },
 
@@ -68,11 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const l = m.meta.location;
 
       const typeMatch = (t==='drone' && showDrone) || (t==='jet' && showJet) || (t==='balloon' && showBalloon) || 
-                        (t==='airport' && showAirports) || (t==='militarybases' && showMilitary) || (t==='others' && showOthers);
       const riskMatch = (r==='red' && showRed) || (r==='orange' && showOrange) || (r==='yellow' && showYellow) ||
                         (r==='green' && showGreen) || (r==='blue' && showBlue);
+      const placeMatch = (t==='airport' && showAirports) || (t==='militarybases' && showMilitary) || (t==='others' && showOthers);
+      const yearMatch = (r==='2025' && show25) || (r==='2026' && show26);
 
-      if(typeMatch && riskMatch) markerCluster.addLayer(m);
+      if(typeMatch && riskMatch && placeMatch && yearMatch) markerCluster.addLayer(m);
       else markerCluster.removeLayer(m);
     });
   }
