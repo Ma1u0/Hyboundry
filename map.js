@@ -202,27 +202,27 @@ document.addEventListener('DOMContentLoaded', () => {
   icon: icons.droneYellow,
   type: 'drone',        // used for filtering
   risk: 'yellow',
-  place: 'militarybases',
+  place: 'militarybase',
   year: '2025',
   country: "Volkel Air Base, Netherlands 🇳🇱",
+
+  note: "Volkel Air Base is believed to host U.S. B61 nuclear weapons under NATO nuclear sharing arrangements.",
 
   incidents: [
     {
       popupType: 'Drone sighting',
-      date: ' 20 Nov 2025, sightings between 19:00 and 21:00',
-      details: "An unspecified amount of drones was spotted at the Volkel air base and were chased away",
+      date: '20 Nov 2025, sightings between 19:00 and 21:00',
+      details: "An unspecified number of drones was spotted over Volkel Air Base and were subsequently chased away.",
       link: "https://www.rtl.nl/nieuws/binnenland/artikel/5540368/drones-eindhoven-volkel-tuinman-brekelmans-verjaagd"
     },
     {
       popupType: 'Drone incursion',
       date: '22 Nov 2025',
-      details: "Additional unidentified drones were observed near sensitive infrastructure.",
+      details: "Additional unidentified drones were observed near sensitive infrastructure in the area.",
       link: "https://www.rtl.nl/nieuws/binnenland/artikel/5540368/drones-eindhoven-volkel-tuinman-brekelmans-verjaagd"
     }
-
-    Volkel is one of the two bases which are home to Dutch F-35 jets
   ]
-},
+}
     
      /* =========================
        N O R W A Y
@@ -342,13 +342,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Add markers to cluster
  incidents.forEach(i => {
+   
+const popupHtml = `
+  <b>${i.country}</b><br>
 
-  const popupHtml = `
-    <b>${i.country}</b><br><br>
+  ${i.note ? `<em>${i.note}</em><br><br>` : ''}
 
-    ${
-      Array.isArray(i.incidents)
-        ? i.incidents.map((inc, idx) => `
+  ${
+    Array.isArray(i.incidents)
+      ? i.incidents.map((inc, idx) => `
             <b>Incident ${idx + 1}</b><br>
             <b>Type:</b> ${inc.popupType}<br>
             <b>Date:</b> ${inc.date}<br>
