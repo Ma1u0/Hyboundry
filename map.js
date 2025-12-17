@@ -254,9 +254,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     popupType: 'Drone sighting / airport closure ', // shown in popup
     date: '23 Sep 2025, 00:30-04:00',
-    details: "Two Chinese nationals have been arrested for flying a drone <br><br> The area is surrounded by fjords, a popular tourist attraction",
+    details: "Two Chinese nationals have been arrested for flying a drone",
     link: "https://www.nrk.no/norge/fly-omdirigert-etter-droneobservasjon-1.17589626",
-    country: "Bardufoss Airport, Norway 🇳🇴"
+    country: "Bardufoss Airport, Norway 🇳🇴",
+    note: "The area is surrounded by fjords, a popular tourist attraction",
   },
 
   {
