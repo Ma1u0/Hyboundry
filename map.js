@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
       details:"Four military grade drones flew near the airport when Zelensky´s plane was supposed to land; lights were on, authorities assume it was a disruption of the landing. Drones likely launched near Howth, flew above naval vessel, then towards plane.", 
       link:"https://www.thejournal.ie/drones-dublin-ireland-hybrid-warfare-russia-6893104-Dec2025/", country:"Dublin Airport, Ireland 🇮🇪" },
 
-    { lat: 40.7128, lng: -74.0060, icon: icons.jetRed, type:'jet', risk:'red', place:'others', date:'2025-10-12', details:"Jet over US airspace.", link:"#", country:"USA 🇺🇸" },
-    { lat: 35.6895, lng: 139.6917, icon: icons.balloonBlue, type:'balloon', risk:'blue', place:'others', date:'2025-11-05', details:"Balloon over Japan.", link:"#", country:"Japan 🇯🇵" },
-    { lat: 51.4700, lng: -0.4543, icon: icons.airportGreen, type:'airport', risk:'green', place:'airports', date:'2025-10-01', details:"Heathrow Airport.", link:"#", country:"UK 🇬🇧" }
+    { lat: 40.7128, lng: -74.0060, icon: icons.jetRed, type:'jet', risk:'red', place:'others',year:'2026', date:'2025-10-12', details:"Jet over US airspace.", link:"#", country:"USA 🇺🇸" },
+    { lat: 35.6895, lng: 139.6917, icon: icons.balloonBlue, type:'balloon', risk:'blue', place:'others',year:'2026', date:'2025-11-05', details:"Balloon over Japan.", link:"#", country:"Japan 🇯🇵" },
+    { lat: 51.4700, lng: -0.4543, icon: icons.airportGreen, type:'airport', risk:'green', place:'airports',year:'2025', date:'2025-10-01', details:"Heathrow Airport.", link:"#", country:"UK 🇬🇧" }
   ];
 
   const markers = [];
