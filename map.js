@@ -200,6 +200,51 @@ document.addEventListener('DOMContentLoaded', () => {
        N O R W A Y
     ========================= */
 
+    {
+    lat: 60.19315,
+    lng: 11.09682,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '23 Sep 2025, 00:30-04:00',
+    details: "The airspace was closed following a drone sighting; a few hours earlier two foreign nationals were arrested for operating a different drone <br> Authorities do not rule out a connection to the incident in Copenhagen",
+    link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+    country: "Oslo Gardermoen Airport, Norway 🇳🇴"
+  },
+
+  {
+    lat: 69.05483,
+    lng: 18.54067,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '23 Sep 2025, 00:30-04:00',
+    details: "Two Chinese nationals have been arrested for flying a drone <br><br> The area is surrounded by fjords, a popular tourist attraction",
+    link: "https://www.nrk.no/norge/fly-omdirigert-etter-droneobservasjon-1.17589626",
+    country: "Bardufoss Airport, Norway 🇳🇴"
+  },
+
+  {
+    lat: 65.45869,
+    lng: 12.21145,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '29 Sep 2025, 20:18',
+    details: "The police confirms the drone sighting and say that it has seen five to six drone in the sky. The police lost sight of the drones. <br><br>The police considers the Ørland incident, which was reported at the same time, as a likely false alarm",
+    link: "https://www.nrk.no/nordland/politiet-om-droner-ved-bronnoysund-lufthavn_-_-sa-fem-seks-stykker-1.17590655#:~:text=Nyhetssenter%20Nordland-,Politiet%20om%20droner%20ved%20Brønnøysund%20lufthavn%3A%20–%20Så%20fem%2Dseks,vei%20fra%20Bodø%20til%20Trondheim.",
+    country: "Brønnøysund Airport, Norway 🇳🇴"
+  },
+    
      /* =========================
         P O L A N D
     ========================= */
@@ -263,10 +308,6 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.trtworld.com/article/efc330793d51",
     country: "Black Sea, Türkiye 🇹🇷"
   },
-    
-    { lat: 40.7128, lng: -74.0060, icon: icons.jetRed, type:'jet', risk:'red', place:'others',year:'2026', date:'2025-10-12', details:"Jet over US airspace.", link:"#", country:"USA 🇺🇸" },
-    { lat: 35.6895, lng: 139.6917, icon: icons.balloonBlue, type:'balloon', risk:'blue', place:'others',year:'2026', date:'2025-11-05', details:"Balloon over Japan.", link:"#", country:"Japan 🇯🇵" },
-    { lat: 51.4700, lng: -0.4543, icon: icons.airportGreen, type:'airport', risk:'green', place:'airport',year:'2025', date:'2025-10-01', details:"Heathrow Airport.", link:"#", country:"UK 🇬🇧" }
   ];
 
   const markers = [];
