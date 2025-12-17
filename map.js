@@ -75,21 +75,97 @@ document.addEventListener('DOMContentLoaded', () => {
     risk: 'yellow',
     place: 'militarybase',
     year: '2025',
-    popupType: 'Airspace incursion ', // shown in popup
-    date: ' 19 Sep 2025, entered airspace between 09:58 and 10:10',
-    details: "Three Russian jets breached Estonian airspace up to 10 km deep for 12 minutes before being escorted by NATO jets <br><br> NATO Article 4 was invoked following this incident",
-    link: "https://www.trtworld.com/article/efc330793d51",
+    popupType: 'Drone sighting / drone downed ', // shown in popup
+    date: '17 Oct 2025',
+    details: "A drone flying near the US camp Reedo was downed by an anti-drone gun; authorities couldn't find the remains of the drone in the area it was presumably shot down",
+    link: "https://www.stripes.com/theaters/europe/2025-10-29/estonia-drone-shotdown-19584290.html",
     country: "Reedo military barracks, Estonia 🇪🇪"
+  },
+
+   {
+    lat: 59.24755,
+    lng: 24.23912,
+    icon: icons.jetRed,
+    type: 'jet',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2025',
+    popupType: 'Airspace incursion ', // shown in popup
+    date: ' 24 Nov 2025 ',
+    details: "Two Italian Eurofighters escorted the 'Black Pearl', a Tupolev T-134 which trains strategic bomber pilots, two escort fighters, and one SU-24; it's assumed that this plane was en route to Kaliningrad, possibly transporting generals",
+    link: "https://www.ilgiornale.it/news/difesa/scramble-efa-italiani-hanno-intercettato-raro-aereo-russo-2572772.html",
+    country: "Ämari, Estonia 🇪🇪"
   },
     
      /* =========================
        F I N L A N D
     ========================= */
 
+  {
+    lat: 66.42822,
+    lng: 25.53514,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone sighting ', // shown in popup
+    date: ' 24 Nov 2025 ',
+    details: "An unknown perpetrator flew a drone over the power plant",
+    link: "https://yle.fi/a/74-20185326",
+    country: "Valajaskoski Power Plant, Finland 🇫🇮"
+  },
+                          
      /* =========================
        F R A N C E
     ========================= */
 
+{
+    lat: 47.74672,
+    lng: 7.33899,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone sightings ', // shown in popup
+    date: ' 07 Nov 2025, 23:45 - 23:50 ',
+    details: "1: A Policeman reported a drone sighting at the Mulhouse Police station (he didn't see the drone but could hear it) at 23:45 <br> 2: At 23:50 a drone was reported at the Mulhouse Nord station, where a convoy of Leclerc tanks was stationed at 23:30; the drone flew without any lights on over the convoy and disappeared to an unknown location <br> <br> The police has no evidence to say wether it was a intentional or unintentional flight over these areas",
+    link: "https://www.lemonde.fr/societe/article/2025/11/12/mulhouse-enquete-ouverte-apres-le-survol-d-un-convoi-de-chars-leclerc_6653159_3224.html",
+    country: "Mulhouse, France 🇫🇷"
+  },
+
+    {
+    lat: 44.84260,
+    lng: 0.51143,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone sighting ', // shown in popup
+    date: ' 10 Nov 2025, 19:00 ',
+    details: "A drone flew twice over the Eurenco plant which produces gunpowder for the French Army; the drones couldn't be identified or downed",
+    link: "https://www.lemonde.fr/pixels/article/2025/12/05/la-base-sous-marine-de-l-ile-longue-qui-abrite-les-sous-marins-nucleaires-lanceurs-d-engins-survolee-par-des-drones_6656098_4408996.html",
+    country: "Bergerac, France 🇫🇷"
+  },
+
+    
+    {
+    lat: 48.30461,
+    lng: -4.50851,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'militarybase',
+    year: '2025',
+    popupType: 'Drone sighting ', // shown in popup
+    date: ' 04 Dec 2025, 19:30 ',
+    details: "Five drones were spotted over the base with the help of anti drone systems; the stationed battalion shot at the drones <br><br> Île Longue is home to French nuclear ballistic missile submarines",
+    link: "https://www.lemonde.fr/societe/article/2025/11/12/mulhouse-enquete-ouverte-apres-le-survol-d-un-convoi-de-chars-leclerc_6653159_3224.html",
+    country: "Bergerac, France 🇫🇷"
+  },
+    
      /* =========================
        G E R M A N Y
     ========================= */
