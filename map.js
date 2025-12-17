@@ -25,13 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
    /* =========================
        C Z E C H I A
     ========================= */
-    {lat: 49.74390, lng: 15.33811, 
-     icon: icons.droneYellow, 
-     type:'drone', risk:'yellow', place:'other', year:'2025', 
-     date:'2025',
-     details:" On September 10th, the Czech army reported an growing number of drone sightings over it's military bases; no further details were provided", 
-     link:"https://www.reuters.com/business/aerospace-defense/russias-suspected-hybrid-war-puts-european-air-defences-test-2025-11-05/", 
-     country:"Czechia 🇨🇿" },
+    {
+    lat: 49.74390,
+    lng: 15.33811,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'other',
+    year: '2025',
+    popupType: 'Drone sightings ', // shown in popup
+    details: "On September 10th, the Czech army reported an growing number of drone sightings over it's military bases; no further details were provided",
+    link: "https://www.reuters.com/business/aerospace-defense/russias-suspected-hybrid-war-puts-european-air-defences-test-2025-11-05/",
+    country: "Czech Republic 🇨🇿"
+  },
     
    /* =========================
        I R E L A N D
@@ -46,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     popupType: 'Drone sighting ', // shown in popup
     date: '01 Dec 2025, shortly before 23:00',
-    details: "Four military grade drones flew near the airport when Zelensky´s plane was supposed to land ; the lights were on therefore authorities assume that it was only supposed to be a disruption of the landing",
+    details: "Four military grade drones flew near the airport when Zelensky´s plane was supposed to land; the lights were on therefore authorities assume that it was only supposed to be a disruption of the landing",
     link: "https://www.thejournal.ie/drones-dublin-ireland-hybrid-warfare-russia-6893104-Dec2025/",
     country: "Dublin Airport, Ireland 🇮🇪"
   },
