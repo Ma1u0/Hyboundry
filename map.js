@@ -202,6 +202,188 @@ document.addEventListener('DOMContentLoaded', () => {
      /* =========================
        G E R M A N Y
     ========================= */
+
+    {
+    lat: 54.19488,
+    lng: 9.09282,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone sighting ', // shown in popup
+    date: ' 25 Sep 2025 ',
+    details: " Drones have been spotted over the refinery in Heide",
+    link: "https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html",
+    country: "Heide, Germany 🇩🇪",
+  },
+
+
+  {
+    lat: 54.20812,
+    lng: 9.57218,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone sighting ', // shown in popup
+    date: ' 25 Sep 2025 ',
+    details: "Drones have flew over the Kiel canal from East to West",
+    link: "https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html",
+    country: "Kiel Canal, Germany 🇩🇪",
+  },
+
+  {
+    lat: 54.32271,
+    lng: 10.13556,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone sightings ', // shown in popup
+    date: '25 Sep 2025, starting at ~21:00',
+    details: "Two drones were first spotted over a TKMS plant in Kiel. Shortly afterwards, a drone cluster with mother drone was reported at the University clinic of the University of Kiel. Later multiple drones were spotted at the Kiel fjord, where they were flying in parallel paths and measuring the fjord. <br> The state parliament and the coastal power station in Kiel also had drone sightings",
+    link: "https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html",
+    country: "Kiel, Germany 🇩🇪",
+  },
+
+  {
+    lat: 54.08870,
+    lng: 12.14049,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'militarybases',
+    year: '2025',
+    popupType: 'Drone sightings ', // shown in popup
+    date: '25? Sep 2025',
+    details: "Coordinated and connected drones were spotted over the overseas port and the marine command in Rostock",
+    link: "https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html",
+    country: "Rostock, Germany 🇩🇪",
+    note: "Spiegel also reported a sighting over the Bundeswehr location in Sanitz, Mecklenburg-Vorpommern which was denied by the Bundeswehr",
+  },
+
+{
+  lat: 48.35396,
+  lng: 11.77859,
+  icon: icons.droneYellow,
+  type: 'drone',        // used for filtering
+  risk: 'yellow',
+  place: 'airport',
+  year: '2025',
+  country: "Munich Airport, Germany 🇩🇪",
+
+  note: "The Oktoberfest was taking place during both incidents",
+
+  incidents: [
+    {
+      popupType: 'Drone sighting / airport closure',
+      date: '02  Oct 2025, sightings 20:30 - ~00:00, airspace closed 22:18 after the first drone sighting on airport territory at 22:10',
+      details: "An unknown amount of drones was reported near and at the airport; the police wasn't able to find any suspects.",
+      link: "https://www.munich-airport.de/presse-drohnensichtung-am-flughafen-muenchen-35699498"
+    },
+    {
+      popupType: 'Drone sighting / airport closure',
+      date: '03 Oct 2025, airspace closed: 21:36',
+      details: "Two drones were spotted near the runways but disappeared before they were identified",
+      link: "https://www.tagesschau.de/inland/muenchen-flughafen-drohnen-102.html'"
+    }
+  ]
+},
+
+   {
+    lat: 52.38492,
+    lng: 10.53923,
+    icon: icons.droneGreen,
+    type: 'drone',      // used for filtering
+    risk: 'green',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '04 Oct 2025, ~21:00',
+    details: "Police got a report of three drones flying in a formation flight up to 100km/h at a height of ~100m. The federal police has a flight squadron in Gifhorn (10km from Meine)",
+    link: "https://www.zeit.de/news/2025-10/04/drohnensichtung-nahe-gifhorn-gemeldet",
+    country: "Meine, Germany 🇩🇪",
+  },
+
+   {
+    lat: 52.36593,
+    lng: 13.48864,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: ' 31 Oct 2025, ~20:00 - ~22:00',
+    details: "Police confirmed a drone sighting at BER but the drone later disappeared despite using police helicopters",
+    link: "https://www.rbb24.de/panorama/beitrag/2025/10/ber-flughafen-unterbrochen-drohne-polizei.html",
+    country: "Berlin-Brandenburg Airport, Germany 🇩🇪",
+  },
+
+   {
+    lat: 53.04534,
+    lng: 8.78964,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '2 Nov 2025, airspace  was closed in the evening for 40 minutes',
+    details: "Drone sighting reported; police won't give information about the drone; espionage is unlikely but not ruled out according to the investigators",
+    link: "https://www.butenunbinnen.de/nachrichten/drohne-flughafen-bremen-102.html",
+    country: "Bremen Airport, Germany 🇩🇪",
+  },
+
+   {
+    lat: 52.46144,
+    lng: 9.68633,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '5 Nov 2025, 22:00 - 22:45',
+    details: "A pilot sighted a drone while landing at the airport which caused the airport to close it's airspace; the drone reportedly flew over an industrial area next to the airport",
+    link: "https://www.bild.de/news/flug-nach-muenchen-umgeleitet-drohnen-alarm-am-flughafen-hannover-690bce570580923d09988aec",
+    country: "Hannover Airport, Germany 🇩🇪",
+  },
+
+  {
+    lat: 52.59799,
+    lng: 10.03044,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'militarybases',
+    year: '2025',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '11 Dec 2025, 19:00 - 23:00',
+    details: "Up to 25 drones flew over the barracks for multiple hours; the police says that it was a professional actor; the colonel says that they were supposed to be seen as they had all lights on <br> The drones were large and flew in formation <br><br> The Bundeswehr didn't shoot them down or chase them away because there was nothing to spy on and no danger to the public or air traffic ",
+    link: "https://www.haz.de/der-norden/luftalarm-bei-der-bundeswehr-zwei-dutzend-drohnen-kreisen-ueber-celler-kaserne-73NJM63WX5E45P4QOAUCX23OC4.html",
+    country: "Immelmann barracks, Celle, Germany 🇩🇪",
+    note: "The colonel suspects those drones to be Russian",
+  },
+
+  {
+    lat: 52.91350,
+    lng: 10.18650,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'militarybases',
+    year: '2025',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '15 Dec 2025',
+    details: "Security personnel has spotted multiple drones over the northern part of the Air Base; the drone disappeared eastwards shortly afterwards; the drones flew in formation <br><br> Police and Bundeswehr didn't react to those drones because they didn't pose any immediate threat",
+    link: "https://www.cz.de/lokales/celle-lk/celle/provokationen-gehen-weiter-unbekannte-drohnen-jetzt-auch-beim-bundeswehr-fliegerhorst-fassberg-QCF3BDQLM5DRJMUGOGQRZCJWEA.html",
+    country: "Faßberg Air Base, Germany 🇩🇪",
+    note: "Faßberg is home to the Air Force Technical Training Center",
+  },
     
    /* =========================
        I R E L A N D
@@ -249,7 +431,7 @@ document.addEventListener('DOMContentLoaded', () => {
       link: "https://www.rtl.nl/nieuws/binnenland/artikel/5540368/drones-eindhoven-volkel-tuinman-brekelmans-verjaagd"
     },
     {
-      popupType: 'Drone incursion',
+      popupType: 'Drone sighting',
       date: '22 Nov 2025',
       details: "Additional unidentified drones were observed near sensitive infrastructure in the area.",
       link: "https://www.rtl.nl/nieuws/binnenland/artikel/5540368/drones-eindhoven-volkel-tuinman-brekelmans-verjaagd"
