@@ -224,6 +224,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ]
 },
+
+  {
+    lat: 51.45190,
+    lng: 5.37488,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '22 Nov 2025,  ~19:00 - 23:00',
+    details: "Air traffic was halted following the sighting of multiple drones at the airport ",
+    link: "https://www.rtl.nl/nieuws/binnenland/artikel/5540318/vliegverkeer-eindhoven-airport-weer-hervat-na-eerdere-sluiting",
+    country: "Eindhoven Airport, Netherlands 🇳🇱",
+    note: "Eindhoven airport is both a publicly and militarily used airport",
+  },
+
+ {
+    lat: 52.24350,
+    lng: 5.63432,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '07 Dec 2025, 10:20',
+    details: "A drone entered Dutch airspace on an level where identification is required; the lack of it triggered the Quick Reaction Alert and two F-35  jets were scrambled; the drone left Dutch airspace ",
+    link: "https://www.defensie.nl/actueel/nieuws/2025/12/07/f-35-gevechtsvliegtuigen-ingezet-voor-onbekend-object",
+    country: "Netherlands 🇳🇱",
+  },
     
      /* =========================
        N O R W A Y
@@ -283,6 +314,66 @@ document.addEventListener('DOMContentLoaded', () => {
        R O M A N I A
     ========================= */
 
+ {
+    lat: 45.16667,
+    lng: 28.80000,
+    icon: icons.droneRed,
+    type: 'drone',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone incursion ', // shown in popup
+    date: '3 Sep 2025, spotted at 18:23',
+    details: "Russian drone flew up to ~10 km into Romanian airspace before returning to Ukrainian airspace. Spotted and tracked by Romanian F‑16 jets",
+    link: "https://www.reuters.com/world/drone-breaches-romanian-airspace-during-russian-attack-neighboring-ukraine-2025-09-13/",
+    country: "Tulcea county, Romania 🇷🇴",
+  },
+
+  {
+    lat: 45.40710,
+    lng: 28.20130,
+    icon: icons.droneRed,
+    type: 'drone',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone crash ', // shown in popup
+    date: '11 Nov 2025',
+    details: "Russian drone entered Romanian airspace but due to the weather NATO jets weren't able to be scrambled; the remains were found 5km deep in Romania's territory",
+    link: "https://www.reuters.com/business/aerospace-defense/romania-finds-suspected-drone-fragments-after-russian-attack-ukraine-2025-11-11/",
+    country: "Grindu, Romania 🇷🇴",
+  },
+
+  {
+    lat: 45.41417,
+    lng: 29.28919,
+    icon: icons.droneRed,
+    type: 'drone',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone incursion ', // shown in popup
+    date: '19 Nov 2025, 00:20 - 01:00 ',
+    details: "Russian drone flew up to ~8 km into Romanian airspace where it disappeared from the radars. The drone later reappeared in Moldovan airspace from where it reentered Romania and was spotted in Foltești, Galați county again <br> It is unknown what eventually happened to it",
+    link: "https://www.digi24.ro/stiri/actualitate/mapn-a-ridicat-doua-avioane-de-lupta-in-timpul-noptii-dupa-ce-o-drona-a-intrat-in-spatiul-aerian-national-a-fost-emis-mesaj-ro-alert-3509181",
+    country: "Periprava / Chilia Veche / Foltești, Romania 🇷🇴",
+  },
+
+   {
+    lat: 46.42270,
+    lng: 27.48516,
+    icon: icons.droneRed,
+    type: 'drone',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone incursion ', // shown in popup
+    date: '25 Nov 2025, ',
+    details: "Two Russian drones flew into Romanian airspace through Ukraine and Moldova; two German Eurofighters were scrambled and given permission to shot the drones down, but they didn't to avoid colateral damage; one flew back into Ukrainian airspace, the other crashed in Puiești, despite being spotted further inside the country earlier (Galati county)",
+    link: "https://www.reuters.com/world/romania-scrambles-fighter-jets-after-drones-breach-its-airspace-2025-11-25/",
+    country: "Puiești, Romania 🇷🇴",
+  },
+    
  /* =========================
        S P A I N
     ========================= */
