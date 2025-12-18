@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lat: 58.99872,
     lng: 27.73583,
     icon: icons.jetRed,
-    type: 'jet',      // used for filtering
+    type: 'border',      // used for filtering
     risk: 'red',
     place: 'others',
     year: '2025',
@@ -538,6 +538,7 @@ const popupHtml = (() => {
     const showDrone = document.querySelector('#filters input[value="drone"]').checked;
     const showJet = document.querySelector('#filters input[value="jet"]').checked;
     const showBalloon = document.querySelector('#filters input[value="balloon"]').checked;
+    const showSoldier = document.querySelector('#filters input[value="soldier"]').checked;
     const showRed = document.querySelector('#filters input[value="red"]').checked;
     const showOrange = document.querySelector('#filters input[value="orange"]').checked;
     const showYellow = document.querySelector('#filters input[value="yellow"]').checked;
@@ -555,7 +556,7 @@ const popupHtml = (() => {
       const p = m.meta.place;
       const y = m.meta.year;
 
-      const typeMatch = (t==='drone' && showDrone) || (t==='jet' && showJet) || (t==='balloon' && showBalloon);
+      const typeMatch = (t==='drone' && showDrone) || (t==='jet' && showJet) || (t==='balloon' && showBalloon) || (t==='border' && showSoldier);
       const riskMatch = (r==='red' && showRed) || (r==='orange' && showOrange) || (r==='yellow' && showYellow) ||
                         (r==='green' && showGreen) || (r==='blue' && showBlue);
       const placeMatch = (p==='airport' && showAirports) || (p==='militarybases' && showMilitary) || (p==='others' && showOthers);
