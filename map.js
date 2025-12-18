@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       date: '25 Sep 2025, ~23:40–00:35',
       details: "Air traffic was halted following a suspected drone observation by the police. Police wasn't able to confirm their sighting",
       link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10242688"
-    }
+    },
     {
       popupType: 'Drone sighting / airport closure',
       date: '14 Nov 2025, 22:10–23:00',
