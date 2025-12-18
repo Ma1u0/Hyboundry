@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
     icon: icons.droneYellow,
     type: 'drone',      // used for filtering
     risk: 'yellow',
-    place: 'others',
+    place: 'infrastructure',
     year: '2025',
     popupType: 'Drone sighting ', // shown in popup
     date: ' 24 Nov 2025 ',
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
     icon: icons.droneYellow,
     type: 'drone',      // used for filtering
     risk: 'yellow',
-    place: 'others',
+    place: 'infrastructure',
     year: '2025',
     popupType: 'Drone sighting ', // shown in popup
     date: ' 25 Sep 2025 ',
@@ -430,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
     icon: icons.droneYellow,
     type: 'drone',      // used for filtering
     risk: 'yellow',
-    place: 'others',
+    place: 'infrastructure',
     year: '2025',
     popupType: 'Drone sightings ', // shown in popup
     date: '25 Sep 2025, starting at ~21:00',
