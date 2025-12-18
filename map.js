@@ -293,6 +293,23 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 },
 
+  {
+    lat: 50.80317,
+    lng: 6.48208,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'others',
+    year: '2025',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '03 Oct 2025, 01:45',
+    details: " The 15 drones from the Elsenborn military base were last spotted over Düren by the police",
+    link: "https://www.vrt.be/vrtnws/en/2025/10/03/drones-spotted-above-belgian-military-bases/",
+    country: "Düren, Germany 🇩🇪",
+    note: "The Belgian security service considers the drones in Belgium to be Russian",
+    noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
+  },
+
    {
     lat: 52.38492,
     lng: 10.53923,
