@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
   {
     lat: 58.99872,
     lng: 27.73583,
-    icon: icons.jetRed,
+    icon: icons.borderRed,
     type: 'border',      // used for filtering
     risk: 'red',
     place: 'others',
