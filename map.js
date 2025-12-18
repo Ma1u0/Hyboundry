@@ -64,6 +64,196 @@ document.addEventListener('DOMContentLoaded', () => {
        D E N M A R K
     ========================= */
 
+  {
+    lat: 55.60913,
+    lng: 12.65098,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '22 Sep 2025, flights halted ~20:26–00:30',
+    details: "Copenhagen Airport was temporarily closed after two–three drones were spotted. Danish authorities said that the drones were operated by a 'capable actor.' <br><br> Invoking NATO Article 4 was considered but ultimately Denmark decided against it",
+    link: "https://news.sky.com/story/flights-suspended-at-copenhagen-airport-after-drone-sightings-13436457",
+    country: "Copenhagen Airport, Denmark 🇩🇰",
+    note: "The Danish intelligence service considers these drones to be Russian",
+    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+  },
+
+  
+{
+  lat: 57.08644,
+  lng: 9.86798,
+  icon: icons.droneOrange,
+  type: 'drone',        // used for filtering
+  risk: 'orange',
+  place: 'airport',
+  year: '2025',
+  country: "Aalborg Airport, Denmark 🇩🇰",
+
+  note: "Aalborg airport is both a publicly and militarily used airport <br><br> The Danish intelligence service considers these drones to be Russian",
+   noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war",
+
+  incidents: [
+    {
+      popupType: 'Drone sighting / airport closure',
+      date: '24 Sep 2025,, 21:45 -  ~3:00; airspace closed ~23:16- ~03:15',
+      details: "Multiple unidentified drones reported on the area of the Aalborg airport; authorities claim the pattern was similar to the accident in Copenhagen",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10234855"
+    },
+    {
+      popupType: 'Suspected false alarm  / airport closure',
+      date: '25 Sep 2025, ~23:40–00:35',
+      details: "Air traffic was halted following a suspected drone observation by the police. Police wasn't able to confirm their sighting",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10242688"
+    }
+    {
+      popupType: 'Drone sighting / airport closure',
+      date: '14 Nov 2025, 22:10–23:00',
+      details: "Air traffic halted after possible drone sighting",
+      link: "https://nordicstoday.com/article/aalborg-airport-airspace-closed-drone-activity"
+    }
+  ]
+},
+  
+  {
+    lat: 56.29746,
+    lng: 9.12463,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '24 Sep 2025, 20:15',
+    details: "One or two drones were seen over the air base. The drones weren't taken down",
+    link: "https://www.france24.com/en/europe/20250927-new-drones-sighted-over-denmark-s-largest-military-base",
+    country: "Karup Air Base, Denmark 🇩🇰",
+    note: "All Danish military helicopters, airspace surveillance, the flight school, support functions, and the defence command are stationed in Karup <br><br> Karup Air Base shares one runway with the Midtjylland civilian airport <br><br> The Danish intelligence service considers these drones to be Russian <br><br> The Danish intelligence service considers these drones to be Russian",
+    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+  },
+
+  {
+    lat: 55.52572,
+    lng: 8.55197,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '24 Sep 2025, sightings ~22:00 - 02:08',
+    details: " Drones were reported in the airspace of Esbjerg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights being scheduled until the morning",
+    link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+    country: "Esbjerg Airport, Denmark 🇩🇰",
+    note: "The Danish intelligence service considers these drones to be Russian",
+    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+  },
+
+  {
+    lat: 55.22555,
+    lng: 9.26393,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'militarybases',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '24 Sep 2025, sightings ~22:00 - 02:08',
+    details: "Drones were reported in the airspace of Esbjerg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights scheduled until the morning",
+    link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+    country: "Skrydstrup Air Base, Denmark 🇩🇰",
+    note: "The Danish intelligence service considers these drones to be Russian",
+    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+  },
+
+  {
+    lat: 54.96255,
+    lng: 9.79265,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Drone sighting / airport closure ', // shown in popup
+    date: '24 Sep 2025, sightings ~22:00 - 02:08',
+    details: "Drones were reported in the airspace near Sønderborg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights being scheduled until the morning",
+    link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+    country: "Sønderborg Airport, Denmark 🇩🇰",
+    note: "The Danish intelligence service considers these drones to be Russian",
+    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+  },
+
+  {
+    lat: 56.34824,
+    lng: 8.60471,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'militarybases',
+    year: '2025',
+    popupType: 'Drone sighting', // shown in popup
+    date: '25 Sep 2025, sightings ~03:00',
+    details: "The police confirmed that a drone was flying here after receiving reports about an unidentified drone",
+    link: "https://www.kristeligt-dagblad.dk/drone-spottet-ved-kaserne-i-holstebro",
+    country: "Jutland Dragoon Regiment barracks in Holstebro, Denmark 🇩🇰",
+    note: "The Danish intelligence service considers these drones to be Russian",
+    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+  },
+
+  {
+    lat: 55.73502,
+    lng: 9.12933,
+    icon: icons.droneGreen,
+    type: 'drone',      // used for filtering
+    risk: 'green',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Unverified Drone sighting / airspace closure ', // shown in popup
+    date: '25 Sep 2025, Reported 02:21, airspace closed 04:40 - ~05:50',
+    details: "The police was unable to verify the drone sighting",
+    link: "https://www.politico.eu/article/denmark-closes-airports-after-wave-drone-sightings-across-country/",
+    country: "Billund Airport, Denmark 🇩🇰",
+    note: "The Danish intelligence service considers these drones to be Russian",
+    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+  },
+
+      {
+    lat: 55.06486,
+    lng: 14.75415,
+    icon: icons.droneGreen,
+    type: 'drone',      // used for filtering
+    risk: 'green',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Unverified Drone sighting ', // shown in popup
+    date: '25 Sep 2025, sightings ~05:49',
+    details: "Police confirmed that they have seen blinking lights over the airport but won't deny or confirm if those lights were a drone",
+    link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10235614",
+    country: "Rønne Airport, Denmark 🇩🇰",
+    note: "The Danish intelligence service considers these drones to be Russian",
+    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+  },
+
+
+  {
+    lat: 55.33158,
+    lng: 11.13699,
+    icon: icons.droneGreen,
+    type: 'drone',      // used for filtering
+    risk: 'green',
+    place: 'others',
+    year: '2025',
+    popupType: 'Unverified Drone sighting ', // shown in popup
+    date: '25 Sep 2025',
+    details: "The police responded to reports of drones over the Port of Korsør; no further information published since then",
+    link: "https://x.com/ssj_lfpoliti/status/1971177421018890658?s=61",
+    country: "Port of Korsør, Denmark 🇩🇰",
+    note: "The Danish intelligence service considers these drones to be Russian",
+    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+  },
+    
  /* =========================
        E S T O N I A
     ========================= */
