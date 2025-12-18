@@ -549,38 +549,60 @@ const popupHtml = (() => {
   markerCluster.addLayer(marker);
 });
 
-  // Filter function
-  function applyFilters() {
-    const showDrone = document.querySelector('#filters input[value="drone"]').checked;
-    const showJet = document.querySelector('#filters input[value="jet"]').checked;
-    const showBalloon = document.querySelector('#filters input[value="balloon"]').checked;
-    const showBorder = document.querySelector('#filters input[value="border"]').checked;
-    const showRed = document.querySelector('#filters input[value="red"]').checked;
-    const showOrange = document.querySelector('#filters input[value="orange"]').checked;
-    const showYellow = document.querySelector('#filters input[value="yellow"]').checked;
-    const showGreen = document.querySelector('#filters input[value="green"]').checked;
-    const showBlue = document.querySelector('#filters input[value="blue"]').checked;
-    const showAirports = document.querySelector('#filters input[value="airports"]').checked;
-    const showMilitary = document.querySelector('#filters input[value="militarybases"]').checked;
-    const showOthers = document.querySelector('#filters input[value="others"]').checked;
-    const show25 = document.querySelector('#filters input[value="2025"]').checked;
-    const show26 = document.querySelector('#filters input[value="2026"]').checked;
+ function applyFilters() {
+  markerCluster.clearLayers();
 
-    markers.forEach(m => {
-      const t = m.meta.type;
-      const r = m.meta.risk;
-      const p = m.meta.place;
-      const y = m.meta.year;
+  const showDrone = document.querySelector('#filters input[value="drone"]').checked;
+  const showJet = document.querySelector('#filters input[value="jet"]').checked;
+  const showBalloon = document.querySelector('#filters input[value="balloon"]').checked;
+  const showBorder = document.querySelector('#filters input[value="border"]').checked;
 
-      const typeMatch = (t==='drone' && showDrone) || (t==='jet' && showJet) || (t==='balloon' && showBalloon) || (t==='border' && showBorder);
-      const riskMatch = (r==='red' && showRed) || (r==='orange' && showOrange) || (r==='yellow' && showYellow) ||
-                        (r==='green' && showGreen) || (r==='blue' && showBlue);
-      const placeMatch = (p==='airport' && showAirports) || (p==='militarybases' && showMilitary) || (p==='others' && showOthers);
-      const yearMatch = (y==='2025' && show25) || (y==='2026' && show26);
+  const showRed = document.querySelector('#filters input[value="red"]').checked;
+  const showOrange = document.querySelector('#filters input[value="orange"]').checked;
+  const showYellow = document.querySelector('#filters input[value="yellow"]').checked;
+  const showGreen = document.querySelector('#filters input[value="green"]').checked;
+  const showBlue = document.querySelector('#filters input[value="blue"]').checked;
 
-      if(typeMatch && riskMatch && placeMatch && yearMatch) markerCluster.addLayer(m);
-      else markerCluster.removeLayer(m);
-    });
+  const showAirports = document.querySelector('#filters input[value="airports"]').checked;
+  const showMilitary = document.querySelector('#filters input[value="militarybases"]').checked;
+  const showOthers = document.querySelector('#filters input[value="others"]').checked;
+
+  const show25 = document.querySelector('#filters input[value="2025"]').checked;
+  const show26 = document.querySelector('#filters input[value="2026"]').checked;
+
+  const visible = [];
+
+  markers.forEach(m => {
+    const { type:t, risk:r, place:p, year:y } = m.meta;
+
+    const typeMatch =
+      (t === 'drone' && showDrone) ||
+      (t === 'jet' && showJet) ||
+      (t === 'balloon' && showBalloon) ||
+      (t === 'border' && showBorder);
+
+    const riskMatch =
+      (r === 'red' && showRed) ||
+      (r === 'orange' && showOrange) ||
+      (r === 'yellow' && showYellow) ||
+      (r === 'green' && showGreen) ||
+      (r === 'blue' && showBlue);
+
+    const placeMatch =
+      (p === 'airport' && showAirports) ||
+      (p === 'militarybases' && showMilitary) ||
+      (p === 'others' && showOthers);
+
+    const yearMatch =
+      (y === '2025' && show25) ||
+      (y === '2026' && show26);
+
+    if (typeMatch && riskMatch && placeMatch && yearMatch) {
+      visible.push(m);
+    }
+  });
+
+  markerCluster.addLayers(visible);
   }
 
   // Add event listeners for filters
