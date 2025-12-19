@@ -5,14 +5,63 @@
 <title>Calendar - World Incident Map</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Shared CSS -->
-<link rel="stylesheet" href="style.css"> <!-- sidebar + panel styles -->
+<!-- Sidebar CSS -->
+<link rel="stylesheet" href="style.css"> <!-- your shared sidebar styles -->
 
 <!-- FullCalendar CSS -->
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
 
 <style>
-  /* Ensure calendar fills content area */
+  body, html {
+    margin: 0;
+    height: 100%;
+    font-family: sans-serif;
+  }
+
+  /* Sidebar positioning */
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #f9f9f9;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+  }
+
+  #sidebar-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+  }
+
+  #sidebar-handle {
+    position: absolute;
+    right: -30px;
+    top: 20px;
+    width: 30px;
+    height: 40px;
+    background: white;
+    border-radius: 0 6px 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.3);
+  }
+
+  /* Main content area */
+  #main-content {
+    margin-left: 260px; /* width of sidebar + spacing */
+    padding: 20px;
+  }
+
+  /* Calendar styling */
   #calendar {
     max-width: 900px;
     margin: 20px auto;
@@ -31,7 +80,7 @@
 </div>
 
 <!-- Main content -->
-<div id="main-content" style="margin-left:260px; padding:20px;">
+<div id="main-content">
   <h1>Calendar View</h1>
   <div id="calendar"></div>
 </div>
@@ -39,32 +88,41 @@
 <!-- FullCalendar JS -->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
 
-<!-- Sidebar toggle JS -->
-<script src="sidebar.js"></script>
+<!-- Sidebar toggle -->
+<script>
+const sidebar = document.getElementById('sidebar');
+const handle = document.getElementById('sidebar-handle');
+
+handle.addEventListener('click', () => {
+  if(sidebar.style.transform === "translateX(-250px)") {
+    sidebar.style.transform = "translateX(0)";
+  } else {
+    sidebar.style.transform = "translateX(-250px)";
+  }
+});
+</script>
 
 <script>
-  // Initialize FullCalendar
-  document.addEventListener('DOMContentLoaded', function() {
-    const calendarEl = document.getElementById('calendar');
+document.addEventListener('DOMContentLoaded', function() {
+  const calendarEl = document.getElementById('calendar');
 
-    const calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      initialDate: '2025-09-01', // starts September 2025
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-      },
-      events: [
-        // Example events (replace with your incident data)
-        { title: 'Drone Sighting', start: '2025-09-03' },
-        { title: 'Border Crossing', start: '2025-09-07' },
-        { title: 'Jet Activity', start: '2025-09-15' }
-      ]
-    });
-
-    calendar.render();
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    initialDate: '2025-09-01', // start September 2025
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+    events: [
+      { title: 'Drone Sighting', start: '2025-09-03' },
+      { title: 'Border Crossing', start: '2025-09-07' },
+      { title: 'Jet Activity', start: '2025-09-15' }
+    ]
   });
+
+  calendar.render();
+});
 </script>
 
 </body>
