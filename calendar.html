@@ -27,13 +27,16 @@ body, html {
   z-index: 1000;
   overflow-y: auto;
   transition: transform 0.3s ease;
-  transform: translateX(-250px); /* fully hidden */
+  transform: translateX(-220px); /* mostly hidden */
+  display: flex;
+  flex-direction: column;
 }
 
 #sidebar.sidebar-open {
   transform: translateX(0);
 }
 
+/* Sidebar links */
 #sidebar-content a {
   display: block;
   padding: 10px 15px;
@@ -41,11 +44,11 @@ body, html {
   color: black;
 }
 
-/* Hamburger handle (outside sidebar so always visible) */
+/* Hamburger handle (inside sidebar, moves with it) */
 #sidebar-handle {
-  position: fixed;
+  position: absolute;
+  right: -30px; /* sticks out when closed */
   top: 20px;
-  left: 0;
   width: 30px;
   height: 40px;
   background: white;
@@ -61,13 +64,13 @@ body, html {
 
 /* Main content */
 #main-content {
-  margin-left: 40px; /* leave space for hamburger */
+  margin-left: 30px; /* leave space for the protruding hamburger */
   padding: 20px;
   transition: margin-left 0.3s ease;
 }
 
 #sidebar.sidebar-open ~ #main-content {
-  margin-left: 260px; /* sidebar width + spacing */
+  margin-left: 260px; /* sidebar width + small spacing */
 }
 
 /* Calendar container */
@@ -85,10 +88,8 @@ body, html {
     <p><a href="index.html">🗺️ Map</a></p>
     <p><a href="calendar.html">📅 Calendar</a></p>
   </div>
+  <div id="sidebar-handle">&#9776;</div>
 </div>
-
-<!-- Hamburger (always visible) -->
-<div id="sidebar-handle">&#9776;</div>
 
 <!-- Main content -->
 <div id="main-content">
