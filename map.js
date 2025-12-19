@@ -1031,9 +1031,93 @@ document.addEventListener('DOMContentLoaded', () => {
       date: '21 Oct 2025, 22:23 - 06:40',
       details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport",
       link: "https://www.vilnius-airport.lt/en/news/flights-and-operations-at-vilnius-airport-fully-resumed-on-wednesday-morning-delays-possible-throughout-the-day"
-    }
+    },
+     {
+      popupType: ' Weather balloons / Smuggle balloons / Airport closure',
+      date: '  24 Oct 2025, 20:31 - 02:35',
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport",
+      link: "https://www.vilnius-airport.lt/en/news/on-saturday-night-flight-operations-at-vilnius-and-kaunas-airports-were-fully-restored-although-flight-delays-may-occur-throughout-the-day"
+    },
+    {
+      popupType: 'Weather balloons / Smuggle balloons / Airport closure',
+      date: '25 Oct 2025, 21:35 - 03:30',
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport",
+      link: "https://www.vilnius-airport.lt/en/news/on-sunday-night-flight-operations-at-vilnius-airport-were-fully-restored-some-flight-delays-may-still-occur-throughout-the-day"
+    },
+       {
+      popupType: ' Weather balloons / Smuggle balloons / Airport closure',
+      date: '26 Oct 2025, 21:42 - 04:30',
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport",
+      link: "https://www.vilnius-airport.lt/en/news/on-monday-night-flights-and-operations-at-vilnius-airport-were-fully-resumed-however-flight-delays-may-occur-throughout-the-day"
+    },
+    {
+      popupType: 'Weather balloons / Smuggle balloons / Airport closure',
+      date: '30 Oct 2025, 20:10 - 22:43',
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport",
+      link: "https://www.vilnius-airport.lt/en/news/flights-and-operations-fully-resumed-at-vilnius-airport-overnight-minor-delays-possible-during-the-day"
+    },
+     {
+      popupType: ' Weather balloons / Smuggle balloons / Airport closure',
+      date: ' 08 Nov 2025, 20:45 - 21:50',
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport",
+      link: "https://www.vilnius-airport.lt/en/news/vilnius-airport-operations-temporarily-disrupted-on-saturday-evening-have-been-restored"
+    },
+    {
+      popupType: 'Weather balloons / Smuggle balloons / Airport closure',
+      date: '24 / 25 Nov 2025, 18:55 - 00:25; 01:40 - 03:25',
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport",
+      link: "https://www.vilnius-airport.lt/en/news/vilnius-airport-operations-disrupted-on-november-23-24"
+    },
+    {
+      popupType: 'Weather balloons / Smuggle balloons / Airport closure',
+      date: ' 28 / 29 Nov 2025, 23:15 - 07:03; 01:40 - 03:25',
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport",
+      link: "(https://www.vilnius-airport.lt/en/news/airspace-restrictions-at-vilnius-airport-on-november-28-29"
+    },
+     {
+      popupType: ' Weather balloons / Smuggle balloons / Airport closure',
+      date: '30 Nov 2025, 18:09 - 05:00 ',
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport",
+      link: "https://www.vilnius-airport.lt/en/news/temporary-airspace-restrictions-above-vilnius-airport-lifted-operations-restored"
+    },
+    {
+      popupType: 'Weather balloons / Smuggle balloons / Airport closure',
+      date: '03 / 04 Dec 2025, 19:36 - 21:06; 22:24 - 00:56; 01:15 - 02:30',
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport <br>The report by the airport called this attack a 'hybrid attack by Belarus'",
+      link: "https://www.vilnius-airport.lt/en/news/temporary-disruptions-at-vilnius-airport-resolved"
+    },
   ]
 },
+
+{
+    lat: 55.10704,
+    lng: 21.91684,
+    icon: icons.jetRed,
+    type: 'jet',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2025',
+    popupType: 'Airspace incursion ', // shown in popup
+    date: '23 Oct 2025, 17:00',
+    details: "Two Russian military aircraft (SU-30 fighter jet & Il-78 refueling tanker) entered Lithuanian airspace for ~18 seconds",
+    link: "https://www.euronews.com/2025/10/23/two-russian-military-aircraft-enter-nato-member-lithuanias-airspace-military-says",
+    country: "Border region with Kaliningrad, Lithuania 🇱🇹"
+  },
+
+{
+    lat: 54.96462,
+    lng: 24.08813,
+    icon: icons.balloonYellow,
+    type: 'balloon',      // used for filtering
+    risk: 'yellow',
+    place: 'airport',
+    year: '2025',
+    popupType: 'Weather balloons / Smuggle balloons / Airport closure ', // shown in popup
+    date: '24 Oct 2025, 20:36 - 02:35',
+    details: "Air traffic was halted due to balloons moving in he direction of Kaunas Airport",
+    link: "https://www.vilnius-airport.lt/en/news/on-saturday-night-flight-operations-at-vilnius-and-kaunas-airports-were-fully-restored-although-flight-delays-may-occur-throughout-the-day",
+    country: "Kaunas Airport, Lithuania 🇱🇹"
+  },
     
      /* =========================
         N E T H E R L A N D S
