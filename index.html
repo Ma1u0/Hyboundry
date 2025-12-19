@@ -91,16 +91,17 @@ html, body {
   top: 0;
   left: 0;
   height: 100%;
+  background: transparent;
   z-index: 1000;
   display: flex;
 }
 
 /* Actual white panel */
 #sidebar-content {
-  width: 250px;
-  background: rgba(255,255,255,0.96);
-  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
+  height: 100%;
+  background: rgba(255,255,255,0.97);
+  box-shadow: 2px 0 10px rgba(0,0,0,0.25);
+  padding: 12px;
 }
 
 .sidebar-closed {
