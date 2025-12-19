@@ -5,9 +5,6 @@
 <title>Calendar - World Incident Map</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Sidebar CSS -->
-<link rel="stylesheet" href="style.css"> <!-- your shared sidebar styles -->
-
 <!-- FullCalendar CSS -->
 <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
 
@@ -18,7 +15,7 @@
     font-family: sans-serif;
   }
 
-  /* Sidebar positioning */
+  /* Sidebar */
   #sidebar {
     position: fixed;
     top: 0;
@@ -30,7 +27,7 @@
     z-index: 1000;
     overflow-y: auto;
     transition: transform 0.3s ease;
-    transform: translateX(0);
+    transform: translateX(-220px); /* closed by default */
   }
 
   #sidebar-content a {
@@ -53,15 +50,22 @@
     justify-content: center;
     cursor: pointer;
     box-shadow: 2px 0 6px rgba(0,0,0,0.3);
+    font-size: 20px;
+    z-index: 1001;
   }
 
-  /* Main content area */
+  /* Main content */
   #main-content {
-    margin-left: 260px; /* width of sidebar + spacing */
+    margin-left: 30px; /* start near sidebar handle */
     padding: 20px;
+    transition: margin-left 0.3s ease;
   }
 
-  /* Calendar styling */
+  #sidebar.sidebar-open ~ #main-content {
+    margin-left: 260px; /* sidebar width + spacing */
+  }
+
+  /* Calendar */
   #calendar {
     max-width: 900px;
     margin: 20px auto;
@@ -88,17 +92,12 @@
 <!-- FullCalendar JS -->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
 
-<!-- Sidebar toggle -->
 <script>
 const sidebar = document.getElementById('sidebar');
 const handle = document.getElementById('sidebar-handle');
 
 handle.addEventListener('click', () => {
-  if(sidebar.style.transform === "translateX(-250px)") {
-    sidebar.style.transform = "translateX(0)";
-  } else {
-    sidebar.style.transform = "translateX(-250px)";
-  }
+  sidebar.classList.toggle('sidebar-open');
 });
 </script>
 
@@ -108,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
-    initialDate: '2025-09-01', // start September 2025
+    initialDate: '2025-09-01', // start in September 2025
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
