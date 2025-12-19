@@ -1763,15 +1763,15 @@ document.addEventListener('DOMContentLoaded', () => {
    {
     lat: 40.86296,
     lng: 30.02798,
-    icon: icons.droneYellow,
+    icon: icons.droneOrange,
     type: 'drone',      // used for filtering
-    risk: 'yellow',
+    risk: 'orange',
     place: 'others',
     year: '2025',
     popupType: 'Drone incursion / crash site ', // shown in popup
     date: '19 Dec 2025',
-    details: "A crashed, unidentified UAV was found by citizens. The camera is still working. <br> The drone is 1.5m long and has a wingspan of 2.5m",
-    link: "https://en.haberler.com/a-drone-has-crashed-in-izmit-its-camera-is-19372026/",
+    details: "A crashed, unidentified UAV was found by citizens. The camera is still working. <br> The drone is an Russian-made Orlan-10 drone, which is used for surveillance and reconnaissance ",
+    link: "https://www.trtworld.com/article/82a95c0936d0",
     country: "Çubuklubala neighborhood, Izmit, Turkey 🇹🇷"
   },
     
