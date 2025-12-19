@@ -32,6 +32,7 @@ body, html {
   flex-direction: column;
 }
 
+/* Sidebar open class */
 #sidebar.sidebar-open {
   transform: translateX(0);
 }
@@ -44,7 +45,7 @@ body, html {
   color: black;
 }
 
-/* Hamburger handle (inside sidebar, moves with it) */
+/* Hamburger handle inside sidebar */
 #sidebar-handle {
   position: absolute;
   right: -30px; /* sticks out when closed */
@@ -62,15 +63,15 @@ body, html {
   z-index: 1001;
 }
 
-/* Main content */
+/* Main content adjusts when sidebar opens */
 #main-content {
-  margin-left: 30px; /* leave space for the protruding hamburger */
+  margin-left: 30px; /* leave room for burger when closed */
   padding: 20px;
   transition: margin-left 0.3s ease;
 }
 
 #sidebar.sidebar-open ~ #main-content {
-  margin-left: 260px; /* sidebar width + small spacing */
+  margin-left: 260px; /* sidebar width + spacing */
 }
 
 /* Calendar container */
@@ -85,7 +86,7 @@ body, html {
 <!-- Sidebar -->
 <div id="sidebar">
   <div id="sidebar-content">
-    <p><a href="index.html">🗺️ Map</a></p>
+    <p><a href="index.html">🏠 Home</a></p>
     <p><a href="calendar.html">📅 Calendar</a></p>
   </div>
   <div id="sidebar-handle">&#9776;</div>
@@ -116,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
-    initialDate: '2025-09-01', // September 2025
+    initialDate: '2025-09-01',
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
