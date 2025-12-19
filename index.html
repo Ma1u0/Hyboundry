@@ -85,6 +85,34 @@ html, body {
 .filter-column label img { width:24px; height:24px; vertical-align:middle; margin-right:6px; }
 .legend-row img { width:28px; height:28px; vertical-align:middle; margin-right:6px; }
 .legend-row { margin-bottom:8px; }
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px; /* adjust as needed */
+  height: 100%;
+  background: rgba(255,255,255,0.95);
+  z-index: 1000; /* make sure it’s above map and filters */
+  transition: transform 0.3s ease;
+}
+
+.sidebar-closed {
+  transform: translateX(-100%);
+}
+
+#sidebar:hover {
+  transform: translateX(0);
+}
+
+#sidebar-handle {
+  position: absolute;
+  right: -30px; /* sticks out as handle */
+  top: 20px;
+  cursor: pointer;
+  font-size: 24px;
+}
+  
 </style>
 
 <link
@@ -99,6 +127,16 @@ html, body {
 </head>
 
 <body>
+  
+<div id="sidebar" class="sidebar-closed">
+  <div id="sidebar-handle">&#9776;</div> <!-- the three lines / hamburger -->
+  <div id="sidebar-content">
+    <h3>Statistics</h3>
+    <div id="stats-per-month"></div>
+    <div id="stats-per-country"></div>
+    <div id="stats-per-incident"></div>
+  </div>
+</div>
 
 <div id="map"></div>
 
@@ -176,7 +214,13 @@ html, body {
 function togglePanel(id) {
   document.getElementById(id).classList.toggle('collapsed');
 }
+
+  document.getElementById('sidebar-handle').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('sidebar-closed');
+});
+  
 </script>
 
 </body>
+  
 </html>
