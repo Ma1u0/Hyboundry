@@ -105,16 +105,17 @@ html, body {
   padding: 12px;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
+  position: relative; /* needed for handle positioning inside */
 }
 
 #sidebar:not(.sidebar-closed) #sidebar-content {
   transform: translateX(0);
 }
 
-/* Hamburger handle */
+/* Hamburger handle inside the sidebar */
 #sidebar-handle {
   position: absolute;
-  left: 0; /* fixed handle on the left */
+  left: -30px; /* sticks out to the left */
   top: 20px;
   width: 30px;
   height: 40px;
@@ -126,7 +127,6 @@ html, body {
   box-shadow: 2px 0 6px rgba(0,0,0,0.3);
   cursor: pointer;
   font-size: 20px;
-  z-index: 1001; /* above sidebar */
 }
   
 </style>
