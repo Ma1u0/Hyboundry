@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize map
-const map = window.map;  // use the global map from HTML
+  const map = L.map('map', { zoomControl: false }).setView([20, 0], 2);
 
-L.control.zoom({
-  position: 'bottomleft' // or 'bottomleft'
-}).addTo(map);
-
+  // Add tile layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+
+  // Add zoom control
+  L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
   // Initialize MarkerCluster group
   const markerCluster = L.markerClusterGroup();
   map.addLayer(markerCluster);
 
+  // …rest of your map code…
+});
   // Icons
   const icons = {
     droneRed: L.icon({ iconUrl: 'icons/red_drone.png', iconSize: [28,28] }),
