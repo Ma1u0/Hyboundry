@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '03 Oct 2025, before 01:45',
     details: "15 drones were spotted by chance due to the test of anti drone equipment was tested",
     link: "https://www.vrt.be/vrtnws/en/2025/10/03/drones-spotted-above-belgian-military-bases/",
-    country: "Elsenborn Military Base, Belgium 🇧🇪",
+    country: "Elsenborn Military Base, Belgium 🇧🇪AAAAAAAAAAAAA",
     note: "The Belgian security service considers the drones in Belgium to be Russian",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
