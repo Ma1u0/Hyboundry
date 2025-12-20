@@ -1895,8 +1895,6 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.hurriyet.com.tr/gundem/balikesirde-insansiz-hava-araci-dustu-inceleme-icin-ankaraya-gonderildi-43060797",
     country: "Manyas, Turkey 🇹🇷"
   },
-    
-  ];
     // Add more incidents below using the same structure
   ];
 
