@@ -1870,6 +1870,23 @@ L.control.zoom({
     link: "https://www.trtworld.com/article/82a95c0936d0",
     country: "Izmit, Turkey 🇹🇷"
   },
+
+
+   {
+    lat: 40.04769,
+    lng: 27.96799,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+     month: '12',
+    popupType: 'Drone incursion / crash site ', // shown in popup
+    date: ' Found 10 Dec in the evening, reported 20 Dec 2025',
+    details: "A crashed, unidentified UAV was found by citizens in the Balıkesir’s Manyas district in an uninhabited field. <br> The drone is an Russian Merlin VR drone, which is used for reconnaissance and has a range of ~600km ",
+    link: "https://www.hurriyet.com.tr/gundem/balikesirde-insansiz-hava-araci-dustu-inceleme-icin-ankaraya-gonderildi-43060797",
+    country: "Manyas, Turkey 🇹🇷"
+  },
     
   ];
 
