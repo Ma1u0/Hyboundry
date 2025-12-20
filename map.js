@@ -1934,7 +1934,32 @@ document.addEventListener('DOMContentLoaded', () => {
     markerCluster.addLayers(visible);
   }
 
-  document.querySelectorAll('#filters input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', applyFilters);
+function applyFilters() {
+  markerCluster.clearLayers();
+
+  const actor = document.getElementById('f-actor').value;   // red, orange, yellow, green, blue, any
+  const type = document.getElementById('f-type').value;    // drone, jet, balloon, border, any
+  const location = document.getElementById('f-location').value; // airports, militarybases, infrastructure, others, any
+  const month = document.getElementById('f-month').value;  // 1-12 or any
+  const year = document.getElementById('f-year').value;    // 2025, 2026, any
+
+  const visible = markers.filter(m => {
+    const { risk, type: t, place, month: mth, year: y } = m.meta;
+
+    const actorMatch = actor === 'any' || risk === actor;
+    const typeMatch = type === 'any' || t === type;
+    const placeMatch = location === 'any' || place === location;
+    const monthMatch = month === 'any' || mth === month.padStart(2, '0');
+    const yearMatch = year === 'any' || y === year;
+
+    return actorMatch && typeMatch && placeMatch && monthMatch && yearMatch;
   });
+
+  markerCluster.addLayers(visible);
+}
+
+// Add event listeners for selects
+document.querySelectorAll('#filters select').forEach(sel => {
+  sel.addEventListener('change', applyFilters);
+});
 });
