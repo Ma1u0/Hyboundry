@@ -1891,7 +1891,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const markers = [];
 
   // Add markers to cluster
- incidents.forEach(i => {
+ incidents.forEach(i => {  }
    
 const popupHtml = (() => {
   let html = `<b>${i.link ? `<a href="${i.link}" target="_blank">${i.country}</a>` : i.country}</b><br>`;
