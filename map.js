@@ -105,38 +105,32 @@ document.addEventListener('DOMContentLoaded', () => {
   ],
 }
 
-  {
-  lat: 50.24550,
-  lng: 4.62085,
+    {
+  lat: 50.23922,
+  lng: 5.50552,
   icon: icons.droneOrange,
   type: 'drone',        // used for filtering
   risk: 'orange',
   place: 'militarybases',
   year: '2025',
-  month: ['10', '11'],
-  country: "Florennes Air Base, Belgium 🇧🇪",
+  month: '10',
+  country: "Marche-en-Famenne Air Base, Belgium 🇧🇪",
 
-  note: "Florennes air base is home to Belgium's F-35 jets <br><br> The Belgian security service considers the drones in Belgium to be Russian",
+  note: "The Belgian security service considers the drones in Belgium to be Russian",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
 
   incidents: [
     {
       popupType: 'Drone sighting',
-      date: '30 Oct 2025, 20:30',
-      details: "Employees at the base and local police report seeing drone-like lights",
-      link: "https://www.rtbf.be/article/intrusions-de-drones-dans-l-espace-aerien-suspicion-de-vol-de-drones-a-proximite-de-la-base-aerienne-de-florennes-11627078"
+      date: '25 Oct 2025, evening',
+      details: "Four to five drones, flying above critical areas of the base, were reported by soldiers",
+      link: "https://www.vrt.be/vrtnws/en/2025/10/29/drones-spotted-above-belgian-military-base/"
     },
     {
       popupType: 'Drone sighting',
-      date: ' 04 Nov 2025, 20:30',
-      details: "Local citizens reported drones over the air base",
-      link: "https://www.vrt.be/vrtnws/en/2025/11/05/air-traffic-halted-last-night-due-to-drones-at-brussels-airport/"
-    },
-     {
-      popupType: 'Drone sighting',
-      date: '06 Nov 2025, evening, before 21:30',
-      details: "Drone sighting close to the Air Base; Police can't confirm that sighting but considers it to be very likely true",
-      link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDYxMDA1NDQ4"
+      date: '28 Oct 2025',
+      details: "Several drones have been spotted over the air base",
+      link: "https://www.vrt.be/vrtnws/en/2025/10/29/drones-spotted-above-belgian-military-base/"
     }
   ]
 },
