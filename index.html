@@ -11,8 +11,8 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
 
 <style>
-html, body { margin:0; height:100%; }
-#map { height:100vh; width:100vw; }
+html, body { margin:0; height:100%; font-family:sans-serif; }
+#map { position:absolute; top:0; left:0; right:0; bottom:0; transition:left 0.3s; }
 
 /* Sidebar */
 #sidebar {
@@ -30,13 +30,12 @@ html, body { margin:0; height:100%; }
 #sidebar.sidebar-open { transform: translateX(0); }
 #sidebar-content { padding:12px; }
 
-/* Hamburger handle inside sidebar */
+/* Hamburger handle */
 #sidebar-handle {
   position: absolute;
   top:20px;
-  right:-30px; /* sticks outside the sidebar */
-  width:30px;
-  height:40px;
+  right:-30px;
+  width:30px; height:40px;
   background:white;
   border-radius:0 6px 6px 0;
   display:flex; align-items:center; justify-content:center;
@@ -168,7 +167,7 @@ html, body { margin:0; height:100%; }
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
-<!-- Your Map JS -->
+<!-- Your map.js -->
 <script src="map.js"></script>
 
 <script>
@@ -180,10 +179,12 @@ const sidebar = document.getElementById('sidebar');
 const handle = document.getElementById('sidebar-handle');
 handle.addEventListener('click', e => {
   sidebar.classList.toggle('sidebar-open');
+  // Shift map when sidebar opens
+  document.getElementById('map').style.left = sidebar.classList.contains('sidebar-open') ? '250px' : '0';
   e.stopPropagation();
 });
 
-// Sentence filter logic
+// Filters
 function getSelectedFilters(){return{
   actor: document.getElementById('f-actor').value,
   type: document.getElementById('f-type').value,
