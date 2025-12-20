@@ -2,67 +2,70 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Hybrid War Tracker Calendar</title>
+<title>Aerial Aggression Tracker</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Oswald&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   GENERAL RESET
-   ========================= */
-html, body { margin:0; padding:0; font-family: 'Oswald', sans-serif; background:#f9f9f9; }
-button { cursor:pointer; }
+html, body { margin:0; height:100%; font-family:sans-serif; }
 
-/* =========================
-   SIDEBAR
-   ========================= */
+/* Map */
+#map { position:absolute; top:0; left:0; right:0; bottom:0; z-index:0; }
+
+/* Sidebar */
 #sidebar {
-  position: fixed;
-  top:0;
-  left:0;
-  height:100%;
-  width:250px;
+  position: fixed; top:0; left:0;
+  height:100%; width:250px;
   background: rgba(255,255,255,0.97);
   box-shadow: 2px 0 10px rgba(0,0,0,0.25);
-  z-index: 1001;
+  z-index:1001;
   transform: translateX(-250px);
   transition: transform 0.3s ease;
   font-family: 'Fjalla One', sans-serif;
-  font-size: 20px;
+  font-size: 28px;
 }
 #sidebar.sidebar-open { transform: translateX(0); }
 #sidebar-content { padding:12px; }
-#sidebar a { text-decoration:none; color:#000; display:block; margin-bottom:8px; font-size:18px; }
+#sidebar a { font-size: 18px; }
+
+/* Burger handle */
 #sidebar-handle {
-  position: fixed;
-  left:0; top:20px;
+  position: fixed; top:20px; left:0;
   width:30px; height:40px;
   background:white;
   border-radius:0 6px 6px 0;
-  display:flex; align-items:center; justify-content:center;
+  display:flex; justify-content:center; align-items:center;
   box-shadow:2px 0 6px rgba(0,0,0,0.3);
+  cursor:pointer;
   font-size:22px;
   z-index:1002;
 }
 
-/* =========================
-   CALENDAR LAYOUT
-   ========================= */
-#calendar-container { margin-left:0; padding:20px; max-width:800px; margin:auto; }
-#month-navigation { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
-#month-navigation button { padding:6px 12px; font-family: 'Bebas Neue', sans-serif; font-size:16px; }
-#month-label { font-family: 'Bebas Neue', sans-serif; font-size:22px; }
+/* Panels */
+.panel { position:absolute; background:white; border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,0.3); z-index:1000; }
+.panel-header { display:flex; justify-content:space-between; padding:8px; font-family:'Bebas Neue', sans-serif; font-size:22px; }
+.panel button { background:none; border:none; font-size:16px; cursor:pointer; }
+.panel-content { padding:8px; font-family:'Bebas Neue', sans-serif; font-size:14px; }
+.collapsed .panel-content { display:none; }
 
-#calendar { display:grid; grid-template-columns:repeat(7, 1fr); gap:5px; }
-.day, .header { padding:10px; text-align:center; border-radius:4px; }
-.header { font-weight:bold; background:#eee; }
-.day { background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.1); cursor:pointer; }
-.day:hover { background:#f0f0f0; }
+/* Filters panel */
+#filters { bottom:10px; right:10px; width:780px; }
+#filters.collapsed { width:120px; height:40px; }
 
-/* Optional: highlight today */
-.day.today { border:2px solid #ff5555; }
+/* Calendar */
+#calendar { position:absolute; top:60px; right:10px; width:300px; background:white; border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,0.3); z-index:1000; padding:8px; }
+#calendar-header { display:flex; justify-content:space-between; margin-bottom:6px; }
+#calendar-grid { display:grid; grid-template-columns:repeat(7, 1fr); gap:2px; }
+.day { width:38px; height:38px; display:flex; align-items:center; justify-content:center; border-radius:4px; cursor:default; }
+.day:hover { background: #eee; }
+
 </style>
 </head>
 <body>
@@ -70,94 +73,143 @@ button { cursor:pointer; }
 <!-- Sidebar -->
 <div id="sidebar">
   <div id="sidebar-content">
-    <p><a href="../index.html">🗺️ Map</a></p>
-    <p><a href="calendar.html">📅 Calendar</a></p>
+    <p><a href="#">🗺️ Map</a></p>
+    <p><a href="#">📅 Calendar</a></p>
   </div>
 </div>
 <div id="sidebar-handle">&#9776;</div>
 
-<!-- Calendar -->
-<div id="calendar-container">
-  <div id="month-navigation">
-    <button id="prev-month">&lt; Previous</button>
-    <div id="month-label"></div>
-    <button id="next-month">Next &gt;</button>
+<!-- Map -->
+<div id="map"></div>
+
+<!-- Calendar Panel -->
+<div id="calendar" class="panel">
+  <div id="calendar-header">
+    <button id="prevMonth">◀</button>
+    <span id="calendar-month"></span>
+    <button id="nextMonth">▶</button>
   </div>
-  <div id="calendar"></div>
+  <div id="calendar-grid"></div>
 </div>
 
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
 <script>
-// ------------------------
-// Sidebar toggle
-// ------------------------
-const sidebar = document.getElementById('sidebar');
-const handle = document.getElementById('sidebar-handle');
-handle.addEventListener('click', e => {
-  sidebar.classList.toggle('sidebar-open');
-  handle.style.left = sidebar.classList.contains('sidebar-open') ? '250px' : '0px';
-});
+document.addEventListener('DOMContentLoaded', () => {
+  // ------------------------
+  // Map setup
+  // ------------------------
+  const map = L.map('map', { zoomControl: false }).setView([20, 0], 2);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+  L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-// ------------------------
-// Calendar logic
-// ------------------------
-const calendarEl = document.getElementById('calendar');
-const monthLabel = document.getElementById('month-label');
-const prevBtn = document.getElementById('prev-month');
-const nextBtn = document.getElementById('next-month');
+  const markerCluster = L.markerClusterGroup();
+  map.addLayer(markerCluster);
 
-let currentYear = 2025;
-let currentMonth = 8; // September (0-indexed)
+  const icons = {
+    droneYellow: L.icon({ iconUrl: 'icons/yellow_drone.png', iconSize: [28,28] }),
+  };
 
-function renderCalendar(year, month){
-  calendarEl.innerHTML = '';
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month+1, 0).getDate();
+  const markers = [];
+  const mapIncidents = [
+    {
+      lat: 40.04769,
+      lng: 27.96799,
+      icon: icons.droneYellow,
+      type: 'drone',
+      risk: 'yellow',
+      place: 'others',
+      year: '2025',
+      month: '12',
+      popupType: 'Drone incursion / crash site',
+      date: 'Found 10 Dec in the evening, reported 20 Dec 2025',
+      details: "A crashed, unidentified UAV was found in Turkey.",
+      link: "https://www.hurriyet.com.tr",
+      country: "Manyas, Turkey 🇹🇷"
+    }
+  ];
 
-  const weekdays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  weekdays.forEach(d => {
-    const header = document.createElement('div');
-    header.className = 'header';
-    header.innerText = d;
-    calendarEl.appendChild(header);
+  mapIncidents.forEach(i => {
+    const popupHtml = `
+      <b>${i.link ? `<a href="${i.link}" target="_blank">${i.country}</a>` : i.country}</b><br>
+      <b>Type:</b> ${i.popupType}<br>
+      <b>Date:</b> ${i.date}<br>
+      <b>Details:</b> ${i.details}<br>
+      ${i.link ? `<a href="${i.link}" target="_blank">Source</a>` : ''}
+    `;
+    const marker = L.marker([i.lat,i.lng], {icon:i.icon}).bindPopup(popupHtml, {maxHeight:300, autoPan:true});
+    marker.meta = i;
+    markers.push(marker);
+    markerCluster.addLayer(marker);
   });
 
-  // Empty slots
-  for(let i=0; i<firstDay; i++){
-    const empty = document.createElement('div');
-    calendarEl.appendChild(empty);
+  // ------------------------
+  // Sidebar toggle
+  // ------------------------
+  const sidebar = document.getElementById('sidebar');
+  const handle = document.getElementById('sidebar-handle');
+  handle.addEventListener('click', e => {
+    sidebar.classList.toggle('sidebar-open');
+    e.stopPropagation();
+    map.invalidateSize();
+  });
+
+  // ------------------------
+  // Calendar setup
+  // ------------------------
+  const calendarEl = document.getElementById('calendar-grid');
+  const calendarMonthEl = document.getElementById('calendar-month');
+  let currentDate = new Date(2025,8,1); // September 2025
+
+  const incidents = [
+    { date:'2025-09-15', title:'Drone sighting in Turkey', count:1 },
+    { date:'2025-09-18', title:'Multiple drones over Belgian base', count:3 },
+    { date:'2025-10-10', title:'Drone crash site in Turkey', count:1 }
+  ];
+
+  function renderCalendar() {
+    calendarEl.innerHTML = '';
+    const month = currentDate.getMonth();
+    const year = currentDate.getFullYear();
+    const daysInMonth = new Date(year, month+1, 0).getDate();
+
+    const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    calendarMonthEl.innerText = `${monthNames[month]} ${year}`;
+
+    for(let day=1; day<=daysInMonth; day++){
+      const dayEl = document.createElement('div');
+      dayEl.className = 'day';
+      dayEl.innerText = day;
+      const fullDate = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+
+      const dayIncidents = incidents.filter(inc => inc.date === fullDate);
+      if(dayIncidents.length === 1) dayEl.style.backgroundColor='orange';
+      if(dayIncidents.length > 1) dayEl.style.backgroundColor='red';
+
+      if(dayIncidents.length>0){
+        dayEl.title = dayIncidents.map(i => i.title).join('\n');
+        dayEl.style.cursor='pointer';
+        dayEl.addEventListener('click',()=>alert(dayIncidents.map(i=>`${i.title} (${i.count} incident${i.count>1?'s':'')})`).join('\n')));
+      }
+
+      calendarEl.appendChild(dayEl);
+    }
   }
 
-  for(let day=1; day<=daysInMonth; day++){
-    const dayEl = document.createElement('div');
-    dayEl.className = 'day';
-    dayEl.innerText = day;
-    calendarEl.appendChild(dayEl);
-  }
+  document.getElementById('prevMonth').addEventListener('click', ()=>{
+    currentDate.setMonth(currentDate.getMonth()-1);
+    renderCalendar();
+  });
 
-  const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  monthLabel.innerText = `${monthNames[month]} ${year}`;
-}
+  document.getElementById('nextMonth').addEventListener('click', ()=>{
+    currentDate.setMonth(currentDate.getMonth()+1);
+    renderCalendar();
+  });
 
-prevBtn.addEventListener('click', ()=>{
-  currentMonth--;
-  if(currentMonth < 0){
-    currentMonth = 11;
-    currentYear--;
-  }
-  renderCalendar(currentYear, currentMonth);
+  renderCalendar();
 });
-
-nextBtn.addEventListener('click', ()=>{
-  currentMonth++;
-  if(currentMonth > 11){
-    currentMonth = 0;
-    currentYear++;
-  }
-  renderCalendar(currentYear, currentMonth);
-});
-
-// Initial render
-renderCalendar(currentYear, currentMonth);
 </script>
 </body>
 </html>
