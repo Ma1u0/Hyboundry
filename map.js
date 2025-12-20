@@ -1543,7 +1543,7 @@ L.control.zoom({
     type: 'drone',      // used for filtering
     risk: 'red',
     place: 'others',
-    year: '2025',#
+    year: '2025',
     month: '09',    
     popupType: 'Drone incursion / crash site ', // shown in popup
     date: ' 09–10 Sep 2025, ~23:30–06:45',
@@ -1936,13 +1936,26 @@ const popupHtml = (() => {
   const showInfrastructure = document.querySelector('#filters input[value="infrastructure"]').checked;
   const showOthers = document.querySelector('#filters input[value="others"]').checked;
 
+  const show01 = document.querySelector('#filters input[value="01"]').checked;
+  const show02 = document.querySelector('#filters input[value="02"]').checked;
+  const show03 = document.querySelector('#filters input[value="03"]').checked;
+  const show04 = document.querySelector('#filters input[value="04"]').checked;
+  const show05 = document.querySelector('#filters input[value="05"]').checked;
+  const show06 = document.querySelector('#filters input[value="06"]').checked;
+  const show07 = document.querySelector('#filters input[value="07"]').checked;
+  const show08 = document.querySelector('#filters input[value="08"]').checked;
+  const show09 = document.querySelector('#filters input[value="09"]').checked;
+  const show10 = document.querySelector('#filters input[value="10"]').checked;
+  const show11 = document.querySelector('#filters input[value="11"]').checked;
+  const show12 = document.querySelector('#filters input[value="12"]').checked;
+   
   const show25 = document.querySelector('#filters input[value="2025"]').checked;
   const show26 = document.querySelector('#filters input[value="2026"]').checked;
 
   const visible = [];
 
   markers.forEach(m => {
-    const { type:t, risk:r, place:p, year:y } = m.meta;
+    const { type:t, risk:r, place:p, year:y, month:m } = m.meta;
 
     const typeMatch =
       (t === 'drone' && showDrone) ||
@@ -1967,7 +1980,21 @@ const popupHtml = (() => {
       (y === '2025' && show25) ||
       (y === '2026' && show26);
 
-    if (typeMatch && riskMatch && placeMatch && yearMatch) {
+     const monthMatch =
+      (m === '01' && show01) ||
+      (m === '02' && show02) ||
+      (m === '03' && show03) ||
+      (m === '04' && show04) ||
+      (m === '05' && show05) ||
+      (m === '06' && show06) ||
+      (m === '07' && show07) ||
+      (m === '08' && show08) ||
+      (m === '09' && show09) ||
+      (m === '10' && show10) ||
+      (m === '11' && show11) ||
+      (m === '12' && show12);
+
+    if (typeMatch && riskMatch && placeMatch && yearMatch && monthMatch) {
       visible.push(m);
     }
   });
