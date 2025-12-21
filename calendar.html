@@ -13,7 +13,6 @@ html, body {
   margin: 0;
   height: 100%;
   font-family: Oswald, sans-serif;
-  background: #f5f5f5;
 }
 
 /* =========================
@@ -33,13 +32,9 @@ html, body {
   font-family: 'Fjalla One', sans-serif;
 }
 
-#sidebar.sidebar-open {
-  transform: translateX(0);
-}
+#sidebar.sidebar-open { transform: translateX(0); }
 
-#sidebar-content {
-  padding: 20px;
-}
+#sidebar-content { padding: 20px; }
 
 #sidebar a {
   display: block;
@@ -68,9 +63,8 @@ html, body {
   transition: left 0.3s ease;
 }
 
-.sidebar-open + #sidebar-handle {
-  left: 250px;
-}
+/* Move burger when sidebar is open */
+.sidebar-open + #sidebar-handle { left: 250px; }
 
 /* =========================
    CALENDAR
@@ -78,81 +72,58 @@ html, body {
 #calendar-container {
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 40px;
 }
 
 #calendar {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  display: inline-block;
+  text-align: center;
 }
 
 #calendar-header {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 20px;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 28px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-#calendar-header button {
+#calendar-header select, #calendar-header button {
   font-size: 20px;
   cursor: pointer;
 }
 
 #calendar-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 60px);
   gap: 6px;
-  max-width: 420px;
 }
 
-/* Weekdays */
 .weekday {
-  text-align: center;
   font-weight: bold;
 }
 
-/* Days */
 .day {
   height: 60px;
   border: 1px solid #ccc;
   display: flex;
-  align-items: center;
   justify-content: center;
-  cursor: default;
-  border-radius: 6px;
-  font-size: 16px;
+  align-items: center;
 }
 
-/* Incident colors */
-.day.single {
-  background: yellow;
-}
-
-.day.multi {
-  background: red;
-  color: white;
-}
-
-/* Disabled days */
-.day.disabled {
-  background: #eee;
-  color: #999;
-}
+.day.single { background: yellow; }
+.day.multi { background: red; color: white; }
 </style>
 </head>
-
 <body>
 
 <!-- Sidebar -->
 <div id="sidebar">
   <div id="sidebar-content">
-    <a href="/index.html">🗺️ Map</a>
-    <a href="/calendar/calendar.html">📅 Calendar</a>
+    <a href="index.html">🗺️ Map</a>
+    <a href="calendar.html">📅 Calendar</a>
   </div>
 </div>
 <div id="sidebar-handle">&#9776;</div>
@@ -163,7 +134,10 @@ html, body {
     <div id="calendar-header">
       <button id="prevMonth">◀</button>
       <select id="monthSelect"></select>
-      <select id="yearSelect"></select>
+      <select id="yearSelect">
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+      </select>
       <button id="nextMonth">▶</button>
     </div>
     <div id="calendar-grid"></div>
@@ -176,7 +150,6 @@ html, body {
    ========================= */
 const sidebar = document.getElementById('sidebar');
 const handle = document.getElementById('sidebar-handle');
-
 handle.addEventListener('click', () => {
   sidebar.classList.toggle('sidebar-open');
   handle.style.left = sidebar.classList.contains('sidebar-open') ? '250px' : '0';
@@ -186,47 +159,41 @@ handle.addEventListener('click', () => {
    INCIDENT DATA
    ========================= */
 const incidentsByDate = {
-  '2025-09-15': 1,
-  '2025-09-18': 3,
-  '2025-10-10': 2,
-  '2025-12-20': 1
+  '2025-09-10': 1,
+  '2025-09-15': 2,
+  '2025-10-05': 1,
+  '2025-12-20': 3
 };
 
 /* =========================
    CALENDAR LOGIC
    ========================= */
-let currentDate = new Date(2025, 8, 1); // September 2025
-
+const weekdays = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
 const monthSelect = document.getElementById('monthSelect');
 const yearSelect = document.getElementById('yearSelect');
 const grid = document.getElementById('calendar-grid');
 
-const weekdays = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+let currentYear = 2025;
+let currentMonth = 8; // September
 
 // Populate month select
 const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-monthNames.forEach((m,i) => {
-  const opt = document.createElement('option');
-  opt.value = i;
-  opt.textContent = m;
-  monthSelect.appendChild(opt);
-});
+function updateMonthOptions() {
+  monthSelect.innerHTML = '';
+  const start = (currentYear===2025)?8:0; // disable months before Sept in 2025
+  for (let i=start; i<12; i++) {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = monthNames[i];
+    if (i===currentMonth) opt.selected = true;
+    monthSelect.appendChild(opt);
+  }
+}
+updateMonthOptions();
 
-// Populate year select (only 2025 & 2026)
-[2025, 2026].forEach(y => {
-  const opt = document.createElement('option');
-  opt.value = y;
-  opt.textContent = y;
-  yearSelect.appendChild(opt);
-});
-
+// Render calendar
 function renderCalendar() {
   grid.innerHTML = '';
-  const year = currentDate.getFullYear();
-  const month = currentDate.getMonth();
-
-  monthSelect.value = month;
-  yearSelect.value = year;
 
   // Weekday headers
   weekdays.forEach(d => {
@@ -236,56 +203,52 @@ function renderCalendar() {
     grid.appendChild(el);
   });
 
-  const firstDay = new Date(year, month, 1);
-  const startOffset = (firstDay.getDay() + 6) % 7;
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const firstDay = new Date(currentYear, currentMonth, 1);
+  const startOffset = (firstDay.getDay() + 6) % 7; // Mon=0
+  const daysInMonth = new Date(currentYear, currentMonth+1,0).getDate();
 
   // Empty cells
-  for(let i=0;i<startOffset;i++){
-    grid.appendChild(document.createElement('div'));
-  }
+  for (let i=0;i<startOffset;i++) grid.appendChild(document.createElement('div'));
 
-  // Days
-  for(let day=1; day<=daysInMonth; day++){
+  for (let day=1;day<=daysInMonth;day++) {
     const el = document.createElement('div');
     el.className = 'day';
     el.textContent = day;
 
-    const key = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-
-    if(incidentsByDate[key] === 1) el.classList.add('single');
-    if(incidentsByDate[key] > 1) el.classList.add('multi');
-
-    // Disable months before Sept 2025
-    if(year===2025 && month<8) el.classList.add('disabled');
+    const key = `${currentYear}-${String(currentMonth+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+    if (incidentsByDate[key]===1) el.classList.add('single');
+    if (incidentsByDate[key]>1) el.classList.add('multi');
 
     grid.appendChild(el);
   }
 }
 
-document.getElementById('prevMonth').onclick = () => {
-  if(currentDate.getFullYear()===2025 && currentDate.getMonth()===8) return; // no before Sept 2025
-  currentDate.setMonth(currentDate.getMonth()-1);
-  renderCalendar();
-};
-
-document.getElementById('nextMonth').onclick = () => {
-  currentDate.setMonth(currentDate.getMonth()+1);
-  renderCalendar();
-};
-
-monthSelect.onchange = () => {
-  currentDate.setMonth(parseInt(monthSelect.value));
-  renderCalendar();
-};
-
-yearSelect.onchange = () => {
-  currentDate.setFullYear(parseInt(yearSelect.value));
-  if(currentDate.getFullYear()===2025 && currentDate.getMonth()<8) currentDate.setMonth(8);
-  renderCalendar();
-};
-
 renderCalendar();
+
+// Navigation
+document.getElementById('prevMonth').addEventListener('click', ()=> {
+  if (currentMonth>0) currentMonth--;
+  else { currentMonth=11; currentYear--; }
+  if (currentYear<2025) currentYear=2025;
+  updateMonthOptions();
+  renderCalendar();
+});
+document.getElementById('nextMonth').addEventListener('click', ()=> {
+  if (currentMonth<11) currentMonth++;
+  else { currentMonth=0; currentYear++; }
+  if (currentYear>2026) currentYear=2026;
+  updateMonthOptions();
+  renderCalendar();
+});
+monthSelect.addEventListener('change', e=>{
+  currentMonth = parseInt(e.target.value);
+  renderCalendar();
+});
+yearSelect.addEventListener('change', e=>{
+  currentYear = parseInt(e.target.value);
+  updateMonthOptions();
+  renderCalendar();
+});
 </script>
 
 </body>
