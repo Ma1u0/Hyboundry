@@ -77,23 +77,24 @@ html, body {
    ========================= */
 #calendar-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: center; /* centers calendar wrapper */
   padding: 40px 20px;
   gap: 40px;
 }
 
+/* Calendar wrapper for centering */
+#calendar-wrapper {
+  width: 600px;
+  flex-shrink: 0;
+}
+
 /* Incident list on the right */
 #incidents-list {
-  width: 250px;
+  width: 280px; /* slightly more space */
   font-size: 14px;
 }
 
 /* Calendar */
-#calendar {
-  width: 600px;
-}
-
 #calendar-header {
   display: flex;
   align-items: center;
@@ -183,7 +184,7 @@ html, body {
 
 <!-- Calendar + Incidents -->
 <div id="calendar-container">
-  <div id="calendar">
+  <div id="calendar-wrapper">
     <div id="calendar-header">
       <button id="prevMonth">◀</button>
       <select id="monthSelect"></select>
@@ -243,7 +244,6 @@ const unknownNote = document.getElementById('unknown-incidents-note');
 const incidentsList = document.getElementById('incidents-list');
 
 const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
 let currentDate = new Date(2025, 8, 1); // September 2025
 
 // Populate month and year selects
@@ -284,7 +284,7 @@ function renderCalendar() {
 
   const firstDay = new Date(currentYear, currentMonth, 1);
   const startOffset = (firstDay.getDay()+6)%7; // Monday=0
-  const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
+  const daysInMonth = new Date(currentYear, currentMonth+1,0).getDate();
 
   // Empty cells
   for(let i=0;i<startOffset;i++) grid.appendChild(document.createElement('div'));
