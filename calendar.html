@@ -73,12 +73,13 @@ html, body {
 }
 
 /* =========================
-   CALENDAR
+   CALENDAR & INCIDENTS
    ========================= */
-#calendar-container {
+#main-container {
   display: flex;
   justify-content: center;
   padding: 40px 20px;
+  gap: 40px;
 }
 
 #calendar {
@@ -151,22 +152,31 @@ html, body {
   background: #c70000;
 }
 
-/* Incident details */
-.incident-details {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: #fffbe6;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 6px;
-  font-size: 14px;
-  z-index: 10;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+/* Incident list on right */
+#incident-list {
+  width: 400px;
+  font-family: Oswald, sans-serif;
 }
 
-.incident-details a {
+#incident-list h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.incident-item {
+  margin-bottom: 12px;
+  padding: 6px;
+  border-left: 4px solid #e74c3c;
+  background: #fff8e1;
+  border-radius: 4px;
+}
+
+.incident-item.single {
+  border-left-color: #FFD966;
+}
+
+.incident-item a {
   color: #1a73e8;
   text-decoration: underline;
 }
@@ -184,8 +194,9 @@ html, body {
 </div>
 <div id="sidebar-handle">&#9776;</div>
 
-<!-- Calendar -->
-<div id="calendar-container">
+<!-- Main content -->
+<div id="main-container">
+  <!-- Calendar -->
   <div id="calendar">
     <div id="calendar-header">
       <button id="prevMonth">◀</button>
@@ -194,6 +205,12 @@ html, body {
       <button id="nextMonth">▶</button>
     </div>
     <div id="calendar-grid"></div>
+  </div>
+
+  <!-- Incident list -->
+  <div id="incident-list">
+    <h2>Incidents</h2>
+    <div id="incident-items">Click a day to see incidents</div>
   </div>
 </div>
 
@@ -234,12 +251,13 @@ const incidentsByDate = {
 const monthSelect = document.getElementById('monthSelect');
 const yearSelect = document.getElementById('yearSelect');
 const grid = document.getElementById('calendar-grid');
+const incidentItems = document.getElementById('incident-items');
 
 const months = [
   'January','February','March','April','May','June','July','August','September','October','November','December'
 ];
 
-let currentDate = new Date(2025, 8, 1); // Start in September 2025
+let currentDate = new Date(2025, 8, 1); // September 2025
 
 // Populate month and year selects
 months.forEach((m, idx) => {
@@ -273,7 +291,7 @@ function renderCalendar() {
   });
 
   const firstDay = new Date(currentYear, currentMonth, 1);
-  const startOffset = (firstDay.getDay()+6)%7; // Monday=0
+  const startOffset = (firstDay.getDay()+6)%7;
   const daysInMonth = new Date(currentYear, currentMonth+1,0).getDate();
 
   // Empty cells
@@ -290,27 +308,19 @@ function renderCalendar() {
       el.classList.add(incidentsByDate[key].length>1 ? 'multi' : 'single');
     }
 
-    // Click to toggle incident details
+    // Click to show incidents on the right
     el.addEventListener('click', () => {
-      // Remove any existing details inside this day
-      const existing = el.querySelector('.incident-details');
-      if(existing) {
-        existing.remove();
+      incidentItems.innerHTML = '';
+      if(!incidentsByDate[key]) {
+        incidentItems.textContent = 'No incidents on this day';
         return;
       }
-
-      if(!incidentsByDate[key]) return;
-
-      const detailsDiv = document.createElement('div');
-      detailsDiv.className = 'incident-details';
-
       incidentsByDate[key].forEach(inc => {
-        const p = document.createElement('p');
-        p.innerHTML = inc.link ? `<a href="${inc.link}" target="_blank">${inc.details}</a>` : inc.details;
-        detailsDiv.appendChild(p);
+        const div = document.createElement('div');
+        div.className = 'incident-item ' + (incidentsByDate[key].length>1 ? 'multi' : 'single');
+        div.innerHTML = inc.link ? `<a href="${inc.link}" target="_blank">${inc.details}</a>` : inc.details;
+        incidentItems.appendChild(div);
       });
-
-      el.appendChild(detailsDiv);
     });
 
     grid.appendChild(el);
@@ -342,6 +352,5 @@ yearSelect.onchange = () => {
 
 renderCalendar();
 </script>
-
 </body>
 </html>
