@@ -13,7 +13,6 @@ html, body {
   margin: 0;
   height: 100%;
   font-family: Oswald, sans-serif;
-  background: #f3f3f3;
 }
 
 /* =========================
@@ -68,47 +67,51 @@ html, body {
   transition: left 0.3s ease;
 }
 
+/* Moves with sidebar */
+.sidebar-open + #sidebar-handle {
+  left: 250px;
+}
+
 /* =========================
-   CENTERED CALENDAR
+   CALENDAR
    ========================= */
-#calendar-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 #calendar-container {
-  background: white;
-  padding: 20px 24px 24px;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  margin-left: 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Header */
 #calendar-header {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 20px;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 28px;
 }
 
 #calendar-header button {
-  font-size: 22px;
+  font-size: 20px;
   cursor: pointer;
-  border: none;
-  background: none;
 }
 
-/* Grid */
+#calendar-header select {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+}
+
 #calendar-grid {
   margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 6px;
-  width: 600px;
+  max-width: 600px;
 }
 
 /* Weekdays */
@@ -124,15 +127,17 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: default;
+  transition: background 0.2s;
 }
 
 /* Incident colors */
 .day.single {
-  background: #f5d742; /* YELLOW (1 incident) */
+  background: yellow;
 }
 
 .day.multi {
-  background: #c62828; /* RED (multiple incidents) */
+  background: red;
   color: white;
 }
 </style>
@@ -144,22 +149,20 @@ html, body {
 <div id="sidebar">
   <div id="sidebar-content">
     <a href="index.html">🗺️ Map</a>
-    <a href="calendar/calendar.html">📅 Calendar</a>
+    <a href="calendar.html">📅 Calendar</a>
   </div>
 </div>
 <div id="sidebar-handle">&#9776;</div>
 
 <!-- Calendar -->
-<div id="calendar-wrapper">
-  <div id="calendar-container">
-    <div id="calendar-header">
-      <button id="prevMonth">◀</button>
-      <div id="monthLabel"></div>
-      <button id="nextMonth">▶</button>
-    </div>
-
-    <div id="calendar-grid"></div>
+<div id="calendar-container">
+  <div id="calendar-header">
+    <button id="prevMonth">◀</button>
+    <select id="monthSelect"></select>
+    <select id="yearSelect"></select>
+    <button id="nextMonth">▶</button>
   </div>
+  <div id="calendar-grid"></div>
 </div>
 
 <script>
@@ -170,8 +173,8 @@ const sidebar = document.getElementById('sidebar');
 const handle = document.getElementById('sidebar-handle');
 
 handle.addEventListener('click', () => {
-  const open = sidebar.classList.toggle('sidebar-open');
-  handle.style.left = open ? '250px' : '0';
+  sidebar.classList.toggle('sidebar-open');
+  handle.style.left = sidebar.classList.contains('sidebar-open') ? '250px' : '0';
 });
 
 /* =========================
@@ -189,18 +192,45 @@ const incidentsByDate = {
    ========================= */
 let currentDate = new Date(2025, 8, 1); // September 2025
 
-const monthLabel = document.getElementById('monthLabel');
 const grid = document.getElementById('calendar-grid');
+const monthSelect = document.getElementById('monthSelect');
+const yearSelect = document.getElementById('yearSelect');
+
+const months = [
+  'January','February','March','April','May','June',
+  'July','August','September','October','November','December'
+];
+
+// Populate month dropdown
+months.forEach((m, i) => {
+  const opt = document.createElement('option');
+  opt.value = i;
+  opt.textContent = m;
+  monthSelect.appendChild(opt);
+});
+
+// Populate year dropdown
+for (let y = 2024; y <= 2030; y++) {
+  const opt = document.createElement('option');
+  opt.value = y;
+  opt.textContent = y;
+  yearSelect.appendChild(opt);
+}
+
+// Sync dropdowns
+function syncDropdowns() {
+  monthSelect.value = currentDate.getMonth();
+  yearSelect.value = currentDate.getFullYear();
+}
+
+// Weekday headers
 const weekdays = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
 
 function renderCalendar() {
   grid.innerHTML = '';
+  syncDropdowns();
 
-  monthLabel.textContent = currentDate.toLocaleString('en-US', {
-    month: 'long',
-    year: 'numeric'
-  });
-
+  // Weekday headers
   weekdays.forEach(d => {
     const el = document.createElement('div');
     el.className = 'weekday';
@@ -215,10 +245,12 @@ function renderCalendar() {
   const startOffset = (firstDay.getDay() + 6) % 7;
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
+  // Empty cells
   for (let i = 0; i < startOffset; i++) {
     grid.appendChild(document.createElement('div'));
   }
 
+  // Days
   for (let day = 1; day <= daysInMonth; day++) {
     const el = document.createElement('div');
     el.className = 'day';
@@ -226,23 +258,38 @@ function renderCalendar() {
 
     const key = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
 
-    if (incidentsByDate[key] === 1) el.classList.add('single');
-    if (incidentsByDate[key] > 1) el.classList.add('multi');
+    if (incidentsByDate[key] === 1) {
+      el.classList.add('single');
+    }
+    if (incidentsByDate[key] > 1) {
+      el.classList.add('multi');
+    }
 
     grid.appendChild(el);
   }
 }
 
+// Prev/Next buttons
 document.getElementById('prevMonth').onclick = () => {
   currentDate.setMonth(currentDate.getMonth() - 1);
   renderCalendar();
 };
-
 document.getElementById('nextMonth').onclick = () => {
   currentDate.setMonth(currentDate.getMonth() + 1);
   renderCalendar();
 };
 
+// Month/Year dropdowns
+monthSelect.addEventListener('change', () => {
+  currentDate.setMonth(parseInt(monthSelect.value));
+  renderCalendar();
+});
+yearSelect.addEventListener('change', () => {
+  currentDate.setFullYear(parseInt(yearSelect.value));
+  renderCalendar();
+});
+
+// Initial render
 renderCalendar();
 </script>
 
