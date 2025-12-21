@@ -1951,29 +1951,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // ------------------------
   // 7️⃣ Filter logic
   // ------------------------
-  function applyFilters() {
-    markerCluster.clearLayers();
+function applyFilters() {
+  markerCluster.clearLayers();
 
-    const fActor = document.getElementById('f-actor').value;
-    const fType = document.getElementById('f-type').value;
-    const fLocation = document.getElementById('f-location').value;
-    const fMonth = document.getElementById('f-month').value;
-    const fYear = document.getElementById('f-year').value;
+  const fActor = document.getElementById('f-actor').value;
+  const fType = document.getElementById('f-type').value;
+  const fLocation = document.getElementById('f-location').value;
+  const fMonth = document.getElementById('f-month').value;
+  const fYear = document.getElementById('f-year').value;
 
-    const visible = markers.filter(m => {
-      const { risk, type, place, month, year } = m.meta;
+  const visible = markers.filter(m => {
+    const { risk, type, place, month, year } = m.meta;
 
-      const matchActor = fActor === 'any' || risk === fActor;
-      const matchType = fType === 'any' || type === fType;
-      const matchPlace = fLocation === 'any' || place === fLocation;
-      const matchMonth = fMonth === 'any' || month === fMonth.padStart(2,'0');
-      const matchYear = fYear === 'any' || year === fYear;
+    const matchActor = fActor === 'any' || risk === fActor;
+    const matchType = fType === 'any' || type === fType;
+    const matchPlace = fLocation === 'any' || place === fLocation;
+    const matchMonth = fMonth === 'any' || 
+      (Array.isArray(month) ? month.includes(fMonth.padStart(2,'0')) : month === fMonth.padStart(2,'0'));
+    const matchYear = fYear === 'any' || year === fYear;
 
-      return matchActor && matchType && matchPlace && matchMonth && matchYear;
-    });
+    return matchActor && matchType && matchPlace && matchMonth && matchYear;
+  });
 
-    markerCluster.addLayers(visible);
-  }
+  markerCluster.addLayers(visible);
+}
 
   // ------------------------
   // 8️⃣ Attach event listeners to filters
