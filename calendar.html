@@ -78,11 +78,12 @@ html, body {
 #calendar-container {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   padding: 40px 20px;
   gap: 40px;
 }
 
-/* Incident list */
+/* Incident list on the right */
 #incidents-list {
   width: 250px;
   font-size: 14px;
@@ -182,7 +183,6 @@ html, body {
 
 <!-- Calendar + Incidents -->
 <div id="calendar-container">
-  <div id="incidents-list"></div>
   <div id="calendar">
     <div id="calendar-header">
       <button id="prevMonth">◀</button>
@@ -195,6 +195,8 @@ html, body {
       * The incident in the Czech Republic happened in September but can't be added to the calendar because no exact date was reported
     </div>
   </div>
+
+  <div id="incidents-list"></div>
 </div>
 
 <script>
@@ -223,13 +225,12 @@ const incidentsByDate = {
     {country:'Czech', details:'Drone reported near Brno'}
   ],
   '2025-09-23': [{country:'France', details:'Drone sighting'}],
-  '2025-09-24': [
-    {country:'Belgium', details:'Multiple drones reported'}
-  ],
-  '2025-09-25': [
-    {country:'Denmark', details:'Drone sighting at Aalborg Airport'}
-  ],
-  // Add more dates as needed
+  '2025-09-24': [{country:'Belgium', details:'Multiple drones reported'}],
+  '2025-09-25': [{country:'Denmark', details:'Drone sighting at Aalborg Airport'}],
+  '2025-10-02': [{country:'Italy', details:'Drone reported near airport'}],
+  '2025-10-03': [{country:'Sweden', details:'Drone seen over Malmö'}],
+  '2025-11-01': [{country:'Norway', details:'Drone spotted near Oslo'}],
+  '2025-11-04': [{country:'Finland', details:'Drone sighting near Helsinki'}]
 };
 
 /* =========================
@@ -300,7 +301,6 @@ function renderCalendar() {
     if(dayIncidents) {
       el.classList.add(dayIncidents.length>1 ? 'multi' : 'single');
       el.addEventListener('click', () => {
-        // populate incidents list
         incidentsList.innerHTML = '';
         dayIncidents.forEach(inc => {
           const item = document.createElement('div');
