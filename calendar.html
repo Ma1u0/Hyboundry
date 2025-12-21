@@ -73,14 +73,22 @@ html, body {
 }
 
 /* =========================
-   CALENDAR
+   CALENDAR + INCIDENTS
    ========================= */
 #calendar-container {
   display: flex;
   justify-content: center;
   padding: 40px 20px;
+  gap: 40px;
 }
 
+/* Incident list */
+#incidents-list {
+  width: 250px;
+  font-size: 14px;
+}
+
+/* Calendar */
 #calendar {
   width: 600px;
 }
@@ -134,7 +142,7 @@ html, body {
 
 /* Incident colors */
 .day.single {
-  background: #f9d870; /* nicer yellow shade */
+  background: #fce570;
 }
 
 .day.single:hover {
@@ -142,19 +150,12 @@ html, body {
 }
 
 .day.multi {
-  background: #e03b3b;
+  background: #e74c3c;
   color: white;
 }
 
 .day.multi:hover {
   background: #c70000;
-}
-
-/* Incident list */
-#incidents-list {
-  margin-top: 20px;
-  font-size: 14px;
-  line-height: 1.4;
 }
 
 /* Unknown incidents note */
@@ -179,8 +180,9 @@ html, body {
 </div>
 <div id="sidebar-handle">&#9776;</div>
 
-<!-- Calendar -->
+<!-- Calendar + Incidents -->
 <div id="calendar-container">
+  <div id="incidents-list"></div>
   <div id="calendar">
     <div id="calendar-header">
       <button id="prevMonth">◀</button>
@@ -192,7 +194,6 @@ html, body {
     <div id="unknown-incidents-note">
       * The incident in the Czech Republic happened in September but can't be added to the calendar because no exact date was reported
     </div>
-    <div id="incidents-list"></div>
   </div>
 </div>
 
@@ -202,7 +203,6 @@ html, body {
    ========================= */
 const sidebar = document.getElementById('sidebar');
 const handle = document.getElementById('sidebar-handle');
-
 handle.addEventListener('click', () => {
   sidebar.classList.toggle('sidebar-open');
   handle.style.left = sidebar.classList.contains('sidebar-open') ? '250px' : '0';
@@ -212,12 +212,24 @@ handle.addEventListener('click', () => {
    INCIDENT DATA
    ========================= */
 const incidentsByDate = {
-  '2025-09-03': [{text:"Test incident 1"}],
-  '2025-09-09': [{text:"Test incident 2"}],
-  '2025-09-19': [{text:"Incident A"}, {text:"Incident B"}],
-  '2025-10-02': [{text:"October incident"}],
-  '2025-11-04': [{text:"November incident 1"}, {text:"November incident 2"}],
-  '2025-12-15': [{text:"December incident"}]
+  '2025-09-03': [{country:'Poland', details:'Drone sighting at location A'}],
+  '2025-09-09': [{country:'Germany', details:'Drone spotted near Berlin'}],
+  '2025-09-19': [
+    {country:'Poland', details:'Drone sighting 1'},
+    {country:'Poland', details:'Drone sighting 2'}
+  ],
+  '2025-09-22': [
+    {country:'Czech', details:'Drone reported near Prague'},
+    {country:'Czech', details:'Drone reported near Brno'}
+  ],
+  '2025-09-23': [{country:'France', details:'Drone sighting'}],
+  '2025-09-24': [
+    {country:'Belgium', details:'Multiple drones reported'}
+  ],
+  '2025-09-25': [
+    {country:'Denmark', details:'Drone sighting at Aalborg Airport'}
+  ],
+  // Add more dates as needed
 };
 
 /* =========================
@@ -229,9 +241,7 @@ const grid = document.getElementById('calendar-grid');
 const unknownNote = document.getElementById('unknown-incidents-note');
 const incidentsList = document.getElementById('incidents-list');
 
-const months = [
-  'January','February','March','April','May','June','July','August','September','October','November','December'
-];
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 let currentDate = new Date(2025, 8, 1); // September 2025
 
@@ -242,7 +252,6 @@ months.forEach((m, idx) => {
   opt.textContent = m;
   monthSelect.appendChild(opt);
 });
-
 [2025, 2026].forEach(y => {
   const opt = document.createElement('option');
   opt.value = y;
@@ -253,6 +262,7 @@ months.forEach((m, idx) => {
 function renderCalendar() {
   grid.innerHTML = '';
   incidentsList.innerHTML = '';
+
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth();
 
@@ -273,7 +283,7 @@ function renderCalendar() {
 
   const firstDay = new Date(currentYear, currentMonth, 1);
   const startOffset = (firstDay.getDay()+6)%7; // Monday=0
-  const daysInMonth = new Date(currentYear, currentMonth+1,0).getDate();
+  const daysInMonth = new Date(currentYear, currentMonth+1, 0).getDate();
 
   // Empty cells
   for(let i=0;i<startOffset;i++) grid.appendChild(document.createElement('div'));
@@ -285,24 +295,20 @@ function renderCalendar() {
     el.textContent=day;
 
     const key=`${currentYear}-${String(currentMonth+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-    const incidents = incidentsByDate[key];
+    const dayIncidents = incidentsByDate[key];
 
-    if(incidents){
-      if(incidents.length === 1) el.classList.add('single');
-      if(incidents.length > 1) el.classList.add('multi');
-    }
-
-    // Click to show incidents
-    el.addEventListener('click', () => {
-      incidentsList.innerHTML = '';
-      if(incidents){
-        incidents.forEach(inc => {
-          const div = document.createElement('div');
-          div.textContent = inc.text;
-          incidentsList.appendChild(div);
+    if(dayIncidents) {
+      el.classList.add(dayIncidents.length>1 ? 'multi' : 'single');
+      el.addEventListener('click', () => {
+        // populate incidents list
+        incidentsList.innerHTML = '';
+        dayIncidents.forEach(inc => {
+          const item = document.createElement('div');
+          item.innerHTML = `<b>${inc.country}</b>: ${inc.details}`;
+          incidentsList.appendChild(item);
         });
-      }
-    });
+      });
+    }
 
     grid.appendChild(el);
   }
@@ -311,10 +317,9 @@ function renderCalendar() {
 // Navigation buttons
 document.getElementById('prevMonth').onclick = () => {
   currentDate.setMonth(currentDate.getMonth() - 1);
-  if(currentDate.getFullYear()===2025 && currentDate.getMonth()<8) currentDate.setMonth(8); // no months before Sept 2025
+  if(currentDate.getFullYear()===2025 && currentDate.getMonth()<8) currentDate.setMonth(8);
   renderCalendar();
 };
-
 document.getElementById('nextMonth').onclick = () => {
   currentDate.setMonth(currentDate.getMonth() + 1);
   renderCalendar();
@@ -322,15 +327,12 @@ document.getElementById('nextMonth').onclick = () => {
 
 // Month/year select change
 monthSelect.onchange = () => {
-  const selectedMonth = parseInt(monthSelect.value);
-  currentDate.setMonth(selectedMonth);
+  currentDate.setMonth(parseInt(monthSelect.value));
   renderCalendar();
 };
-
 yearSelect.onchange = () => {
-  const selectedYear = parseInt(yearSelect.value);
-  currentDate.setFullYear(selectedYear);
-  if(selectedYear===2025 && currentDate.getMonth()<8) currentDate.setMonth(8);
+  currentDate.setFullYear(parseInt(yearSelect.value));
+  if(currentDate.getFullYear()===2025 && currentDate.getMonth()<8) currentDate.setMonth(8);
   renderCalendar();
 };
 
