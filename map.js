@@ -607,7 +607,7 @@ document.addEventListener('DOMContentLoaded', () => {
     risk: 'orange',
     place: 'militarybases',
     year: '2025',
-     month: '09',
+    month: '09',
     popupType: 'Drone sighting', // shown in popup
     date: '25 Sep 2025, sightings ~03:00',
     details: "The police confirmed that a drone was flying here after receiving reports about an unidentified drone",
@@ -643,9 +643,9 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
      month: '09',
     popupType: 'Unverified Drone sighting / airspace closure ', // shown in popup
-    date: '25 Sep 2025, Reported 02:21, airspace closed 04:40 - ~05:50',
+    date: '25 Sep 2025, Reported 04:21, airspace closed 04:40 - ~05:50',
     details: "The police was unable to verify the drone sighting",
-    link: "https://www.politico.eu/article/denmark-closes-airports-after-wave-drone-sightings-across-country/",
+    link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10235626",
     country: "Billund Airport, Denmark 🇩🇰",
     note: "The Danish intelligence service considers these drones to be Russian",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
@@ -1676,10 +1676,10 @@ document.addEventListener('DOMContentLoaded', () => {
     risk: 'blue',
     place: 'infrastructure',
     year: '2025',
-       month: '09',
+    month: '09',
     popupType: 'Safety-zone violation ', // shown in popup
     date: ' 19 Sep 2025, Twitter statement at 18:54; no time of the incident published',
-    details: "wo Russian jets performed a low pass over the Petrobaltic platform at ~150 m altitude, violating the platform’s safety zone in the Polish EEZ.",
+    details: "Two Russian jets performed a low pass over the Petrobaltic platform at ~150 m altitude, violating the platform’s safety zone in the Polish EEZ.",
     link: "https://www.polskieradio.pl/395/7784/artykul/3582003,russian-fighter-jets-make-low-pass-over-polish-offshore-platform?",
     country: "Petrobaltic platform, Poland 🇵🇱",
     note: "This was not a violation of Polish airspace but a violation of the safety zone of the platform",
