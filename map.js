@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "15 drones were spotted by chance due to the test of anti drone equipment was tested",
     link: "https://www.vrt.be/vrtnws/en/2025/10/03/drones-spotted-above-belgian-military-bases/",
     country: "Elsenborn Military Base, Belgium 🇧🇪",
-    note: "The Belgian security service considers the drones in Belgium to be Russian",
+    note: "The Belgian security service considers Russia to behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
 
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   month: '10',
   country: "Marche-en-Famenne Air Base, Belgium 🇧🇪",
 
-  note: "The Belgian security service considers the drones in Belgium to be Russian",
+  note: "The Belgian security service considers Russia to behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
 
   incidents: [
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
   month: ['10', '11'],
   country: "Florennes Air Base, Belgium 🇧🇪",
 
-  note: "Florennes air base is home to Belgium's F-35 jets <br><br> The Belgian security service considers the drones in Belgium to be Russian",
+  note: "Florennes air base is home to Belgium's F-35 jets <br><br> The Belgian security service considers Russia to behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
 
   incidents: [
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
   month: '11',
   country: "Kleine-Brogel Air Base, Belgium 🇧🇪",
 
-  note: "Kleine-Brogel is a NATO-used base and home to US nukes <br><br> The Belgian security service considers the drones in Belgium to be Russian",
+  note: "Kleine-Brogel is a NATO-used base and home to US nukes <br><br> The Belgian security service considers Russia to behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
 
   incidents: [
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "Drones were spotted over the airfield <br> Beverlo is a former military airfield ",
     link: "https://www.bbc.com/news/articles/c20e8qzllewo",
     country: "Beverlo Airfield, Belgium 🇧🇪",
-    note: "The Belgian security service considers the drones in Belgium to be Russian",
+    note: "The Belgian security service considers Russia to behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
 
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
   month: '11',
   country: "Ostend Airport, Belgium 🇧🇪",
 
-  note: "The Belgian security service considers the drones in Belgium to be Russian",
+  note: "The Belgian security service considers Russia to behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
 
   incidents: [
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
   month: '11',
   country: "Antwerp Airport, Belgium 🇧🇪",
 
-  note: "The Belgian security service considers the drones in Belgium to be Russian",
+  note: "The Belgian security service considers Russia to behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
 
   incidents: [
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "Police and military security services confirmed the sighting of four drones over the base ",
     link: "https://www.vrt.be/vrtnws/nl/2025/11/05/drones-boven-luchtmachtbasis-schaffen/",
     country: "Schaffen air base, Belgium 🇧🇪",
-    note: "The Belgian security service considers the drones in Belgium to be Russian",
+    note: "The Belgian security service considers Russia to behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
 
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "A single drone has been seen twice over the school by both the students and patrols ",
     link: "https://www.vrt.be/vrtnws/nl/2025/11/07/voorbije-2-nachten-ook-drone-gespot-boven-koninklijke-school-voo/",
     country: "Royal School for Non-Commissioned Officers, Sint-Truiden, Belgium 🇧🇪",
-    note: "The Belgian security service considers the drones in Belgium to be Russian",
+    note: "The Belgian security service considers Russia to behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
 
@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
   month: '11',
   country: "Liège Airport, Belgium 🇧🇪",
 
-  note: "Liège airport is a major cargo hub <br><br> The Belgian security service considers the drones in Belgium to be Russian",
+  note: "Liège airport is a major cargo hub <br><br> The Belgian security service considers Russia to behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
 
   incidents: [
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
   month: '11',
   country: "Brussels Airport, Belgium 🇧🇪",
 
-  note: "Liège airport is a major cargo hub <br><br> The Belgian security service considers the drones in Belgium to be Russian",
+  note: "Liège airport is a major cargo hub <br><br> The Belgian security service considers Russia to behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
 
   incidents: [
@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "The police confirms a drone flying over the SCK CEN nuclear research center. The drone later flew over the European School in Mol",
     link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDYxMDY0MzMw",
     country: "Mol, Belgium 🇧🇪",
-    note: "The Belgian security service considers the drones in Belgium to be Russian",
+    note: "The Belgian security service considers Russia to behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
 
@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "The port police confirms the sighting of drones but can't give further details",
     link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDk3MDQ3MDc3",
     country: "Port of Antwerp, Belgium 🇧🇪",
-    note: "The Belgian security service considers the drones in Belgium to be Russian",
+    note: "The Belgian security service considers Russia to behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
 
@@ -445,7 +445,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "Three drones have been reported shortly before 22:00, later the two more drones have been discovered",
     link: "https://www.politico.eu/article/drones-spotted-belgium-nuclear-plant-doel-airspace-incursions/",
     country: "Doel Nuclear Power Plant, Belgium 🇧🇪",
-    note: "The Belgian security service considers the drones in Belgium to be Russian",
+    note: "The Belgian security service considers Russia to behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
     
@@ -942,7 +942,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: " The 15 drones from the Elsenborn military base were last spotted over Düren by the police",
     link: "https://www.vrt.be/vrtnws/en/2025/10/03/drones-spotted-above-belgian-military-bases/",
     country: "Düren, Germany 🇩🇪",
-    note: "The Belgian security service considers the drones in Belgium to be Russian",
+    note: "The Belgian security service considers Russia to behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
 
