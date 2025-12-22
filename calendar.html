@@ -220,15 +220,256 @@ function getIncidentTypes(incidents) {
    INCIDENT DATA (UNCHANGED)
    ========================= */
 const incidentsData = {
+
+ /* =========================
+       S E P T E M B E R 
+    ========================= */
+  
   '2025-09-03': [
     {
       country: "🔴 Tulcea county, Romania 🇷🇴",
       popupType: "Drone incursion",
       date: "3 Sep 2025, spotted at 18:23",
-      details: "Russian drone flew up to ~10 km into Romanian airspace before returning.",
-      link: "https://www.reuters.com/"
+      details: "Russian drone flew up to ~10 km into Romanian airspace before returning to Ukrainian airspace. Spotted and tracked by Romanian F‑16 jets",
+      link: "https://www.reuters.com/world/drone-breaches-romanian-airspace-during-russian-attack-neighboring-ukraine-2025-09-13/"
     }
-  ]
+  ],
+  '2025-09-09': [
+    {
+      country: "🔴 Oleśno / Korsze / Rabiany / Wodynie / Biała Góra / Nowe Miasto nad Pilicą / Mniszków / Smyków / Czyżów / Sobótka / Cześniki / Sulmice / Bychawka Trzecia / Wielki Łan / Wyryki-Wola / Krzywowierzba-Kolonia / Wyhalew / Wohyń / Czosnówka / Zabłocie-Kolonia, Poland 🇵🇱",
+      popupType: "Drone incursion / crash site",
+      date: "09–10 Sep 2025, ~23:30–06:45",
+      details: "23 Drones crashed in Poland. Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border; came from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+      link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
+      note: "It is suspected that at least some of the drones were equipped with explosives",
+      noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
+    },
+  ],
+    '2025-09-19': [
+    {
+      country: "🔴 Vaindloo Island, Estonia 🇪🇪 ",
+      popupType: "Airspace incursion",
+      date: "19 Sep 2025, entered airspace between 09:58 and 10:10",
+      details: "Three Russian jets breached Estonian airspace up to 10 km deep for 12 minutes before being escorted by NATO jets <br><br> NATO Article 4 was invoked following this incident",
+      link: "https://www.osw.waw.pl/en/publikacje/analyses/2025-09-22/russian-fighter-jets-estonian-airspace-a-test-natos-unity",
+    },
+     {
+      country: "🔵 Petrobaltic platform, Poland 🇵🇱",
+      popupType: "Safety-zone violation",
+      date: "19 Sep 2025, Twitter statement at 18:54; no time of the incident published",
+      details: "Two Russian jets performed a low pass over the Petrobaltic platform at ~150 m altitude, violating the platform’s safety zone in the Polish EEZ.",
+      link: "https://www.polskieradio.pl/395/7784/artykul/3582003,russian-fighter-jets-make-low-pass-over-polish-offshore-platform?",
+    },
+  ],
+    '2025-09-22': [
+    {
+      country: "🟠 Copenhagen Airport, Denmark 🇩🇰 ",
+      popupType: "Drone sighting / airport closure",
+      date: "22 Sep 2025, flights halted ~20:26–00:30",
+      details: "Copenhagen Airport was temporarily closed after two–three drones were spotted. Danish authorities said that the drones were operated by a 'capable actor.' <br><br> Invoking NATO Article 4 was considered but ultimately Denmark decided against it",
+      link: "https://news.sky.com/story/flights-suspended-at-copenhagen-airport-after-drone-sightings-13436457",
+      note: "The Danish intelligence service considers these drones to be Russian",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+    },
+     {
+      country: "🟢 Malmö, Sweden 🇸🇪 ",
+      popupType: "Drone sighting",
+      date: "22 Sep 2025, ~21:00",
+      details: "A couple from Malmö reported seeing a large drone from their balcony. The drone headed eastwards <br> The police confirmed getting multiple calls about drone sighting but couldn't verify those reports themselves",
+      link: "https://www.aftonbladet.se/nyheter/a/AvjRoE/flera-dronarlarm-till-malmopolisen",
+    },
+  ],
+
+  '2025-09-23': [
+    {
+      country: "🟡 Oslo Gardermoen Airport, Norway 🇳🇴",
+      popupType: "Drone sighting / airport closure",
+      date: "23 Sep 2025, 00:30-04:00",
+      details: "The airspace was closed following a drone sighting; a few hours earlier two foreign nationals were arrested for operating a different drone <br> Authorities do not rule out a connection to the incident in Copenhagen",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+      },
+  ],
+
+  '2025-09-24': [
+     {
+      country: "🟠 Karup Air Base, Denmark 🇩🇰 ",
+      popupType: " Drone sighting / airport closure ",
+      date: " 24 Sep 2025, 20:15 ",
+      details: " One or two drones were seen over the air base. The drones weren't taken down ",
+      link: " https://www.france24.com/en/europe/20250927-new-drones-sighted-over-denmark-s-largest-military-base ",
+      note: " All Danish military helicopters, airspace surveillance, the flight school, support functions, and the defence command are stationed in Karup <br><br> Karup Air Base shares one runway with the Midtjylland civilian airport <br><br> The Danish intelligence service considers these drones to be Russian <br><br> The Danish intelligence service considers these drones to be Russian ",
+      noteLink: " https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war "
+    },
+    {
+      country: "🟠 Aalborg Airport, Denmark 🇩🇰 ",
+      popupType: " Drone sighting / airport closure ",
+      date: " 24 Sep 2025,, 21:45 -  ~3:00; airspace closed ~23:16- ~03:15 ",
+      details: " Multiple unidentified drones reported on the area of the Aalborg airport; authorities claim the pattern was similar to the accident in Copenhagen ",
+      link: " https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10234855 ",
+      note: " Aalborg airport is both a publicly and militarily used airport <br><br> The Danish intelligence service considers these drones to be Russian ",
+      noteLink: " https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war "
+    },
+    {
+      country: "🟠 Esbjerg Airport, Denmark 🇩🇰 ",
+      popupType: " Drone sighting / airport closure ",
+      date: " 24 Sep 2025, sightings ~22:00 - 02:08 ",
+      details: "  Drones were reported in the airspace of Esbjerg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights being scheduled until the morning",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+      note: "The Danish intelligence service considers these drones to be Russian",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+    },
+     {
+      country: "🟠 Skrydstrup Air Base, Denmark 🇩🇰",
+      popupType: " Drone sighting / airport closure ",
+      date: "24 Sep 2025, sightings ~22:00 - 02:08",
+      details: "Drones were reported in the airspace of Esbjerg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights scheduled until the morning",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+      note: "The Danish intelligence service considers these drones to be Russian",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+    },
+     {
+      country: "🟠 Sønderborg Airport, Denmark 🇩🇰 ",
+      popupType: " Drone sighting / airport closure ",
+      date: " 24 Sep 2025, sightings ~22:00 - 02:08 ",
+      details: "Drones were reported in the airspace near Sønderborg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights being scheduled until the morning",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+      note: "The Danish intelligence service considers these drones to be Russian",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+    },
+      {
+      country: "🟢 North Sea 🇪🇺/🇩🇰 ",
+      popupType: " Unverified Drone sighting ",
+      date: " 24 Sep 2025 ",
+      details: "Danish civil rescue company 'Esvagt' reports that it has possibly observed multiple drones flying over the North Sea, near oil fields",
+      link: "https://www.reuters.com/world/europe/denmark-reopens-airports-after-drone-disruption-2025-09-25/",
+    },
+  ],
+  
+  '2025-09-25': [
+ {
+      country: "🟠 Jutland Dragoon Regiment barracks, Holstebro, Denmark 🇩🇰 ",
+      popupType: " Drone sighting ",
+      date: " 25 Sep 2025, sightings ~03:00 ",
+      details: "The police confirmed that a drone was flying here after receiving reports about an unidentified drone",
+      link: "https://www.kristeligt-dagblad.dk/drone-spottet-ved-kaserne-i-holstebro",
+      note: "The Danish intelligence service considers these drones to be Russian",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+    },
+     {
+      country: "🟢 Billund Airport, Denmark 🇩🇰 ",
+      popupType: " Unverified Drone sighting / airspace closure ",
+      date: " 25 Sep 2025, Reported 04:21, airspace closed 04:40 - ~05:50 ",
+      details: "The police was unable to verify the drone sighting",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10235626",
+    },
+    {
+      country: "🟢 Rønne Airport, Denmark 🇩🇰 ",
+      popupType: " Unverified Drone sighting ",
+      date: " 25 Sep 2025, sightings ~05:49 ",
+      details: " Police confirmed that they have seen blinking lights over the airport but won't deny or confirm if those lights were a drone ",
+      link: " https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10235614 ",
+    },
+       {
+      country: "🟢 Port of Korsør, Denmark 🇩🇰 ",
+      popupType: " Unverified Drone sighting ",
+      date: " 25 Sep 2025 ",
+      details: " The police responded to reports of drones over the Port of Korsør; no further information published since then ",
+      link: " https://x.com/ssj_lfpoliti/status/1971177421018890658?s=61 ",
+    },
+     {
+      country: "🟡 Kiel / Kiel Canal / Heide, Germany 🇩🇪 ",
+      popupType: " Drone sighting ",
+      date: "25 Sept 2025, starting ~21:00 ",
+      details: " Drones flew over the refinery in Heide and over the Kiel canal from East to West.  Two drones were first spotted over a TKMS plant in Kiel. Shortly afterwards, a drone cluster with mother drone was reported at the University clinic of the University of Kiel. Later multiple drones were spotted at the Kiel fjord, where they were flying in parallel paths and measuring the fjord. <br> The state parliament and the coastal power station in Kiel also had drone sightings ",
+     link: "https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html",
+    },
+  ],
+  
+  '2025-09-26': [
+    {
+      country: "🟡 Karlskrona naval base, Sweden 🇸🇪 ",
+      popupType: "Drone sighting ",
+      date: "26 Sep 2025, at night ",
+      details: " An unidentified drone was seen about a mile from the naval base; the drone did not fly over any restricted objects ",
+      link: "https://www.sverigesradio.se/artikel/suspected-drones-spotted-near-karlskrona-naval-base ",
+    },
+  ],
+   '2025-09-28': [
+    {
+      country: "🟡 Bardufoss Airport, Norway 🇳🇴 ",
+      popupType: " Drone sighting / airport closure ",
+      date: "28 Sep 2025, 20:18 ",
+      details: " Two Chinese nationals have been arrested for flying a drone ",
+      link: "https://www.nrk.no/norge/fly-omdirigert-etter-droneobservasjon-1.17589626 ",
+      note: "The area is surrounded by fjords, a popular tourist attraction ",
+    },
+  ],
+   '2025-09-29': [
+    {
+      country: "🟡 Brønnøysund Airport, Norway 🇳🇴 ",
+      popupType: " Drone sighting / airport closure ",
+      date: " 29 Sep 2025, 20:18 ",
+      details: "The police confirms the drone sighting and say that it has seen five to six drone in the sky. The police lost sight of the drones. <br><br> The police considers the Ørland incident, which was reported at the same time, as a likely false alarm ",
+      link: "https://www.nrk.no/nordland/politiet-om-droner-ved-bronnoysund-lufthavn_-_-sa-fem-seks-stykker-1.17590655#:~:text=Nyhetssenter%20Nordland-,Politiet%20om%20droner%20ved%20Brønnøysund%20lufthavn%3A%20–%20Så%20fem%2Dseks,vei%20fra%20Bodø%20til%20Trondheim.",
+    },
+  ],
+
+ /* =========================
+       O C T O B E R
+    ========================= */
+
+  '2025-10-02': [
+    {
+      country: "🟡 Munich Airport, Germany 🇩🇪 ",
+      popupType: "Drone sighting / airport closure ",
+      date: "02 Oct 2025, sightings 20:30 - ~00:00, airspace closed 22:18 after the first drone sighting on airport territory at 22:10 ",
+      details: "An unknown amount of drones was reported near and at the airport; the police wasn't able to find any suspects. ",
+      link: "https://www.munich-airport.de/presse-drohnensichtung-am-flughafen-muenchen-35699498 ",
+      note: "The Oktoberfest was taking place during both incidents ",
+    },
+  ],
+  '2025-10-03': [
+    {
+      country: "🟡 Munich Airport, Germany 🇩🇪",
+      popupType: "Drone sighting / airport closure ",
+      date: "03 Oct 2025, airspace closed: 21:36 ",
+      details: "Two drones were spotted near the runways but disappeared before they were identified ",
+      link: "https://www.tagesschau.de/inland/muenchen-flughafen-drohnen-102.html ",
+      note: "The Oktoberfest was taking place during both incidents ",
+    },
+  ],
+  '2025-10-19': [
+    {
+      country: "🟡 Palma de Mallorca Airport, Spain 🇪🇸 ",
+      popupType: "Drone sighting / airport closure ",
+      date: "19 Oct 2025, 19:00 - ~19:30 ",
+      details: " Multiple pilots reported a drone which resulted in the airport being closed; police unsuccessfully used their own drone to localize the drone ",
+      link: "https://www.ondacero.es/emisoras/baleares/mallorca/noticias/aeropuerto-palma-opera-normalidad-cerrar-este-domingo-trafico-aereo-avistamiento-dron_2025102068f5e4db76c80d35b5f0b84e.html ",
+    },
+  ],
+  '2025-10-27': [
+    {
+      country: "🟡 Alicante Airport, Spain 🇪🇸 ",
+      popupType: "Drone sighting / airport closure ",
+      date: "27 Oct 2025, 20:53 - ~23:00 ",
+      details: "A drone has been seen sighted near the runway; the perpatrator hasn't been found ",
+      link: "https://elpais.com/espana/comunidad-valenciana/2025-10-28/un-dron-cerca-de-la-pista-de-despegue-obliga-a-cerrar-el-aeropuerto-de-alicante-durante-casi-dos-horas.html",
+    },
+  ],
+  // Add more dates and incidents as needed
+
+  '2025-xx-xx': [
+    {
+      country: " ",
+      popupType: " ",
+      date: " ",
+      details: " ",
+      link: " ",
+      note: " ",
+      noteLink: " "
+    },
+  ],
+  
 };
 
 /* =========================
