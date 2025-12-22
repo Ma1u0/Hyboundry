@@ -486,7 +486,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "Copenhagen Airport was temporarily closed after two–three drones were spotted. Danish authorities said that the drones were operated by a 'capable actor.' <br><br> Invoking NATO Article 4 was considered but ultimately Denmark decided against it",
     link: "https://news.sky.com/story/flights-suspended-at-copenhagen-airport-after-drone-sightings-13436457",
     country: "Copenhagen Airport, Denmark 🇩🇰",
-    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
 
@@ -502,7 +502,7 @@ document.addEventListener('DOMContentLoaded', () => {
   month: ['09', '11'],
   country: "Aalborg Airport, Denmark 🇩🇰",
 
-  note: "Aalborg airport is both a publicly and militarily used airport <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+  note: "Aalborg airport is both a publicly and militarily used airport <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war",
 
   incidents: [
@@ -541,7 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "One or two drones were seen over the air base. The drones weren't taken down",
     link: "https://www.france24.com/en/europe/20250927-new-drones-sighted-over-denmark-s-largest-military-base",
     country: "Karup Air Base, Denmark 🇩🇰",
-    note: "All Danish military helicopters, airspace surveillance, the flight school, support functions, and the defence command are stationed in Karup <br><br> Karup Air Base shares one runway with the Midtjylland civilian airport <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+    note: "All Danish military helicopters, airspace surveillance, the flight school, support functions, and the defence command are stationed in Karup <br><br> Karup Air Base shares one runway with the Midtjylland civilian airport <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
 
@@ -559,7 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: " Drones were reported in the airspace of Esbjerg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights being scheduled until the morning",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
     country: "Esbjerg Airport, Denmark 🇩🇰",
-    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
 
@@ -577,7 +577,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "Drones were reported in the airspace of Esbjerg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights scheduled until the morning",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
     country: "Skrydstrup Air Base, Denmark 🇩🇰",
-    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
 
@@ -595,7 +595,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "Drones were reported in the airspace near Sønderborg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights being scheduled until the morning",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
     country: "Sønderborg Airport, Denmark 🇩🇰",
-    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
 
@@ -613,7 +613,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "The police confirmed that a drone was flying here after receiving reports about an unidentified drone",
     link: "https://www.kristeligt-dagblad.dk/drone-spottet-ved-kaserne-i-holstebro",
     country: "Jutland Dragoon Regiment barracks in Holstebro, Denmark 🇩🇰",
-    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
 
@@ -647,7 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "The police was unable to verify the drone sighting",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10235626",
     country: "Billund Airport, Denmark 🇩🇰",
-    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
 
@@ -665,7 +665,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "Police confirmed that they have seen blinking lights over the airport but won't deny or confirm if those lights were a drone",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10235614",
     country: "Rønne Airport, Denmark 🇩🇰",
-    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+    note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
 
