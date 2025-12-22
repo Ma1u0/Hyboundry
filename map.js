@@ -749,7 +749,7 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '12',
     popupType: 'Border crossing ', // shown in popup
     date: '  17 Dec 2025, ~10:00 ',
-    details: "Three Russian border guards crossed the border on hovercrafts; they walked on the stone breakwater and returned to Russia again <br> It is unknown wether this was intentional or not",
+    details: "Three Russian border guards crossed the border on hovercrafts; they walked on the stone breakwater and returned to Russia again <br> It is unknown whether this was intentional or not",
     link: "https://news.err.ee/1609888417/russian-border-guards-crossed-into-estonia-with-unclear-motives-minister-says",
     country: "Narva River / Vasknarva breakwater, Estonia 🇪🇪",
     note: "Estonia says that the guards aren't reliable since the war because they are brought in from other regions and change and them often changing their place of deployment <br><br> Russian ships normally have to ask for permission to cross that area to get into the Russian part of Lake Peipsi",
@@ -790,7 +790,7 @@ document.addEventListener('DOMContentLoaded', () => {
    month: '11',
     popupType: 'Drone sightings ', // shown in popup
     date: ' 07 Nov 2025, 23:45 - 23:50 ',
-    details: "1: A Policeman reported a drone sighting at the Mulhouse Police station (he didn't see the drone but could hear it) at 23:45 <br> 2: At 23:50 a drone was reported at the Mulhouse Nord station, where a convoy of Leclerc tanks was stationed at 23:30; the drone flew without any lights on over the convoy and disappeared to an unknown location <br> <br> The police has no evidence to say wether it was a intentional or unintentional flight over these areas",
+    details: "1: A Policeman reported a drone sighting at the Mulhouse Police station (he didn't see the drone but could hear it) at 23:45 <br> 2: At 23:50 a drone was reported at the Mulhouse Nord station, where a convoy of Leclerc tanks was stationed at 23:30; the drone flew without any lights on over the convoy and disappeared to an unknown location <br> <br> The police has no evidence to say whether it was a intentional or unintentional flight over these areas",
     link: "https://www.lemonde.fr/societe/article/2025/11/12/mulhouse-enquete-ouverte-apres-le-survol-d-un-convoi-de-chars-leclerc_6653159_3224.html",
     country: "Mulhouse, France 🇫🇷"
   },
@@ -1026,6 +1026,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.haz.de/der-norden/luftalarm-bei-der-bundeswehr-zwei-dutzend-drohnen-kreisen-ueber-celler-kaserne-73NJM63WX5E45P4QOAUCX23OC4.html",
     country: "Immelmann barracks, Celle, Germany 🇩🇪",
     note: "The colonel suspects those drones to be Russian",
+    noteLink: "https://www.haz.de/der-norden/luftalarm-bei-der-bundeswehr-zwei-dutzend-drohnen-kreisen-ueber-celler-kaserne-73NJM63WX5E45P4QOAUCX23OC4.html",
   },
 
   {
@@ -1878,9 +1879,9 @@ document.addEventListener('DOMContentLoaded', () => {
    {
     lat: 40.86296,
     lng: 30.02798,
-    icon: icons.droneOrange,
+    icon: icons.droneYellow,
     type: 'drone',      // used for filtering
-    risk: 'orange',
+    risk: 'yellow',
     place: 'others',
     year: '2025',
      month: '12',
