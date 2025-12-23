@@ -1,86 +1,187 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Incident Calendar</title>
 <title>Info Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
-
-<style>
-html, body {
-  margin: 0;
-  height: 100%;
-  font-family: Oswald, sans-serif;
-  background: #f9f9f9;
-}
-
-/* =========================
-   SIDEBAR
-   ========================= */
-#sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
+@@ -27,10 +27,9 @@
   height: 100%;
   background: #fff;
   box-shadow: 2px 0 10px rgba(0,0,0,0.25);
+  transform: translateX(-250px);
+  transition: transform 0.3s ease;
   z-index: 1000;
   font-family: 'Fjalla One', sans-serif;
   transition: transform 0.3s ease;
-  transform: translateX(0); /* start open */
 }
 
 #sidebar-content {
-  padding: 20px 0 20px 30px; /* more left padding */
-}
-
-#sidebar a {
-  display: block;
-  margin-bottom: 12px;
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-#sidebar-handle {
-  position: fixed;
-  top: 20px;
-  left: 0;
-  width: 32px;
-  height: 42px;
-  background: white;
-  border-radius: 0 6px 6px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.3);
-  cursor: pointer;
-  font-size: 22px;
-  z-index: 1001;
-  transition: transform 0.3s ease;
+@@ -64,1303 +63,107 @@
 }
 
 /* =========================
-   INFO CONTENT
-   ========================= */
+   CALENDAR LAYOUT
+   MAIN CONTENT
+========================= */
+#calendar-container {
+  display: flex;
+  justify-content: center;
 #info-container {
-  margin-left: 270px; /* align with open sidebar */
+  margin-left: 270px; /* start with sidebar open */
   padding: 40px 20px;
+  gap: 40px;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
 }
 
-h1, h2, h3 {
+#calendar {
+  width: 600px;
+}
+
+#calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+h1 {
   font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
 }
 
-p, ul {
-  margin-bottom: 15px;
-  line-height: 1.5;
+#calendar-header select,
+#calendar-header button {
+  font-size: 20px;
+  padding: 4px 8px;
+  cursor: pointer;
 }
+
+#calendar-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: bold;
+}
+
+.day {
+  height: 60px;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+.day:hover { background: #e0e0e0; }
+
+.day.single { background: #f7e769; }
+.day.single:hover { background: #f2e166; }
+
+.day.multi { background: #e03b3b; color: white; }
+.day.multi:hover { background: #c70000; }
+
+/* ICONS */
+.day-icons {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  display: flex;
+  gap: 3px;
+}
+
+.day-icons img {
+  width: 14px;
+  height: 14px;
+  opacity: 0.85;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* INCIDENT DISPLAY */
+#incident-display {
+  width: 340px;
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.incident-item {
+p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.incident-item b {
+  display: block;
+}
+
+.incident-item a {
+  color: blue;
+  text-decoration: underline;
+}
+
+/* =========================
+   LEGEND
+========================= */
+#calendar-legend {
+  margin-top: 15px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+}
+
+.legend-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  display: inline-block;
+}
+
+.legend-color.single { background: #f7e769; }
+.legend-color.multi { background: #e03b3b; }
+
+.legend-circle-row {
+  display: flex;
+  gap: 10px;
+}
+
+.legend-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
 ul {
-  padding-left: 20px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.legend-circle.red { background: red; }
+.legend-circle.orange { background: orange; }
+.legend-circle.yellow { background: yellow; }
+.legend-circle.green { background: green; }
+
+#czech-note {
+  font-style: italic;
+  margin-top: 10px;
 }
 </style>
 </head>
@@ -96,55 +197,1176 @@ ul {
 </div>
 <div id="sidebar-handle">&#9776;</div>
 
-<div id="info-container">
-  <h1>Information</h1>
-  <p>This page explains how incidents are reported and tracked. Here you can learn more about the color coding, icons, and reporting process.</p>
+<div id="calendar-container">
+  <div id="calendar">
+    <div id="calendar-header">
+      <button id="prevMonth">◀</button>
+      <select id="monthSelect"></select>
+      <select id="yearSelect"></select>
+      <button id="nextMonth">▶</button>
+    </div>
+    <div id="calendar-grid"></div>
+    <div id="czech-note"></div>
+    <div id="calendar-legend">
+      <div class="legend-row">
+        <div class="legend-color single"></div> Single incident
+        <div class="legend-color multi"></div> Multiple incidents
+      </div>
+      <div class="legend-circle-row">
+        <div class="legend-circle red"></div> Actor confirmed to be Russian
+        <div class="legend-circle orange"></div> Actor suspected to be Russian
+        <div class="legend-circle yellow"></div> Actor unknown
+        <div class="legend-circle green"></div> Sighting unverified
+      </div>
+    </div>
+  </div>
 
-  <h2>Incident Reporting</h2>
-  <p>Incidents are categorized by type (drone, jet, balloon, border) and location. Each incident entry includes:</p>
+  <div id="incident-display">
+    <i>Click on a day to see incidents</i>
+  </div>
+</div>
+
+<script>
+/* =========================
+   ICON MAPPING
+========================= */
+const calendarIcons = {
+  drone: 'icons/uav.png',
+  jet: 'icons/fighter-plane.png',
+  balloon: 'icons/balloon.png',
+  border: 'icons/soldier.png'
+};
+
+function getIncidentTypes(incidents) {
+  const types = new Set();
+  incidents.forEach(i => {
+    const t = i.popupType.toLowerCase();
+    if(t.includes('drone')) types.add('drone');
+    if(t.includes('jet') || t.includes('airspace')) types.add('jet');
+    if(t.includes('balloon')) types.add('balloon');
+    if(t.includes('border')) types.add('border');
+  });
+  return [...types];
+}
+
+/* =========================
+   INCIDENT DATA
+========================= */
+const incidentsData = {
+
+ /* =========================
+       S E P T E M B E R 
+    ========================= */
+  
+  '2025-09-03': [
+    {
+      country: "🔴 Tulcea county, Romania 🇷🇴",
+      popupType: "Drone incursion",
+      date: "3 Sep 2025, spotted at 18:23",
+      details: "Russian drone flew up to ~10 km into Romanian airspace before returning to Ukrainian airspace. Spotted and tracked by Romanian F‑16 jets",
+      link: "https://www.reuters.com/world/drone-breaches-romanian-airspace-during-russian-attack-neighboring-ukraine-2025-09-13/"
+    }
+  ],
+  '2025-09-09': [
+    {
+      country: "🔴 Oleśno / Korsze / Rabiany / Wodynie / Biała Góra / Nowe Miasto nad Pilicą / Mniszków / Smyków / Czyżów / Sobótka / Cześniki / Sulmice / Bychawka Trzecia / Wielki Łan / Wyryki-Wola / Krzywowierzba-Kolonia / Wyhalew / Wohyń / Czosnówka / Zabłocie-Kolonia, Poland 🇵🇱",
+      popupType: "Drone incursion / crash site",
+      date: "09–10 Sep 2025, ~23:30–06:45",
+      details: "23 Drones crashed in Poland. Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border; came from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+      link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
+      note: "It is suspected that at least some of the drones were equipped with explosives",
+      noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
+    },
+  ],
+    '2025-09-19': [
+    {
+      country: "🔴 Vaindloo Island, Estonia 🇪🇪 ",
+      popupType: "Airspace incursion",
+      date: "19 Sep 2025, entered airspace between 09:58 and 10:10",
+      details: "Three Russian jets breached Estonian airspace up to 10 km deep for 12 minutes before being escorted by NATO jets <br><br> NATO Article 4 was invoked following this incident",
+      link: "https://www.osw.waw.pl/en/publikacje/analyses/2025-09-22/russian-fighter-jets-estonian-airspace-a-test-natos-unity",
+    },
+     {
+      country: "🔵 Petrobaltic platform, Poland 🇵🇱",
+      popupType: "Safety-zone violation",
+      date: "19 Sep 2025, Twitter statement at 18:54; no time of the incident published",
+      details: "Two Russian jets performed a low pass over the Petrobaltic platform at ~150 m altitude, violating the platform’s safety zone in the Polish EEZ.",
+      link: "https://www.polskieradio.pl/395/7784/artykul/3582003,russian-fighter-jets-make-low-pass-over-polish-offshore-platform?",
+    },
+  ],
+    '2025-09-20': [
+    {
+      country: "🟡 Valajaskoski Power Plant, Finland 🇫🇮 ",
+      popupType: "Drone sighting ",
+      date: "20/21 Sep 2025 ",
+      details: ": An unknown perpetrator flew a drone over the power plant ",
+      link: "https://yle.fi/a/74-20185326 ",
+    },
+  ],
+    '2025-09-22': [
+    {
+      country: "🟠 Copenhagen Airport, Denmark 🇩🇰 ",
+      popupType: "Drone sighting / airport closure",
+      date: "22 Sep 2025, flights halted ~20:26–00:30",
+      details: "Copenhagen Airport was temporarily closed after two–three drones were spotted. Danish authorities said that the drones were operated by a 'capable actor.' <br><br> Invoking NATO Article 4 was considered but ultimately Denmark decided against it",
+      link: "https://news.sky.com/story/flights-suspended-at-copenhagen-airport-after-drone-sightings-13436457",
+      note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+    },
+     {
+      country: "🟢 Malmö, Sweden 🇸🇪 ",
+      popupType: "Drone sighting",
+      date: "22 Sep 2025, ~21:00",
+      details: "A couple from Malmö reported seeing a large drone from their balcony. The drone headed eastwards <br> The police confirmed getting multiple calls about drone sighting but couldn't verify those reports themselves",
+      link: "https://www.aftonbladet.se/nyheter/a/AvjRoE/flera-dronarlarm-till-malmopolisen",
+    },
+  ],
+
+  '2025-09-23': [
+    {
+      country: "🟡 Oslo Gardermoen Airport, Norway 🇳🇴",
+      popupType: "Drone sighting / airport closure",
+      date: "23 Sep 2025, 00:30-04:00",
+      details: "The airspace was closed following a drone sighting; a few hours earlier two foreign nationals were arrested for operating a different drone <br> Authorities do not rule out a connection to the incident in Copenhagen",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+      },
+  ],
+
+  '2025-09-24': [
+     {
+      country: "🟠 Karup Air Base, Denmark 🇩🇰 ",
+      popupType: " Drone sighting / airport closure ",
+      date: " 24 Sep 2025, 20:15 ",
+      details: " One or two drones were seen over the air base. The drones weren't taken down ",
+      link: " https://www.france24.com/en/europe/20250927-new-drones-sighted-over-denmark-s-largest-military-base ",
+      note: " All Danish military helicopters, airspace surveillance, the flight school, support functions, and the defence command are stationed in Karup <br><br> Karup Air Base shares one runway with the Midtjylland civilian airport <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark ",
+      noteLink: " https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war "
+    },
+    {
+      country: "🟠 Aalborg Airport, Denmark 🇩🇰 ",
+      popupType: " Drone sighting / airport closure ",
+      date: " 24 Sep 2025,, 21:45 -  ~3:00; airspace closed ~23:16- ~03:15 ",
+      details: " Multiple unidentified drones reported on the area of the Aalborg airport; authorities claim the pattern was similar to the accident in Copenhagen ",
+      link: " https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10234855 ",
+      note: " Aalborg airport is both a publicly and militarily used airport <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark ",
+      noteLink: " https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war "
+    },
+    {
+      country: "🟠 Esbjerg Airport, Denmark 🇩🇰 ",
+      popupType: " Drone sighting / airport closure ",
+      date: " 24 Sep 2025, sightings ~22:00 - 02:08 ",
+      details: "  Drones were reported in the airspace of Esbjerg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights being scheduled until the morning",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+      note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+    },
+     {
+      country: "🟠 Skrydstrup Air Base, Denmark 🇩🇰",
+      popupType: " Drone sighting / airport closure ",
+      date: "24 Sep 2025, sightings ~22:00 - 02:08",
+      details: "Drones were reported in the airspace of Esbjerg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights scheduled until the morning",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+      note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+    },
+     {
+      country: "🟠 Sønderborg Airport, Denmark 🇩🇰 ",
+      popupType: " Drone sighting / airport closure ",
+      date: " 24 Sep 2025, sightings ~22:00 - 02:08 ",
+      details: "Drones were reported in the airspace near Sønderborg Airport. Number of drones remain unknown; airport wasn't closed due to no more flights being scheduled until the morning",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
+      note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+    },
+      {
+      country: "🟢 North Sea 🇪🇺/🇩🇰 ",
+      popupType: " Unverified Drone sighting ",
+      date: " 24 Sep 2025 ",
+      details: "Danish civil rescue company 'Esvagt' reports that it has possibly observed multiple drones flying over the North Sea, near oil fields",
+      link: "https://www.reuters.com/world/europe/denmark-reopens-airports-after-drone-disruption-2025-09-25/",
+    },
+  ],
+  
+  '2025-09-25': [
+ {
+      country: "🟠 Jutland Dragoon Regiment barracks, Holstebro, Denmark 🇩🇰 ",
+      popupType: " Drone sighting ",
+      date: " 25 Sep 2025, sightings ~03:00 ",
+      details: "The police confirmed that a drone was flying here after receiving reports about an unidentified drone",
+      link: "https://www.kristeligt-dagblad.dk/drone-spottet-ved-kaserne-i-holstebro",
+      note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
+    },
+     {
+      country: "🟢 Billund Airport, Denmark 🇩🇰 ",
+      popupType: " Unverified Drone sighting / airport closure ",
+      date: " 25 Sep 2025, Reported 04:21, airspace closed 04:40 - ~05:50 ",
+      details: "The police was unable to verify the drone sighting",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10235626",
+    },
+    {
+      country: "🟢 Rønne Airport, Denmark 🇩🇰 ",
+      popupType: " Unverified Drone sighting ",
+      date: " 25 Sep 2025, sightings ~05:49 ",
+      details: " Police confirmed that they have seen blinking lights over the airport but won't deny or confirm if those lights were a drone ",
+      link: " https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10235614 ",
+    },
+     {
+      country: "🟡 Kiel / Kiel Canal / Heide, Germany 🇩🇪 ",
+      popupType: " Drone sighting ",
+      date: "25 Sept 2025, starting ~21:00 ",
+      details: " Drones flew over the refinery in Heide and over the Kiel canal from East to West.  Two drones were first spotted over a TKMS plant in Kiel. Shortly afterwards, a drone cluster with mother drone was reported at the University clinic of the University of Kiel. Later multiple drones were spotted at the Kiel fjord, where they were flying in parallel paths and measuring the fjord. <br> The state parliament and the coastal power station in Kiel also had drone sightings ",
+     link: "https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html",
+    },
+          {
+      country: "🟢 Aalborg Airport, Denmark 🇩🇰 ",
+      popupType: " Suspected false alarm / airport closure ",
+      date: "25 Sept 2025, starting ~21:00 ",
+      details: " Air traffic was halted following a suspected drone observation by the police. Police wasn't able to confirm their sighting ",
+      link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10242688",
+      note: " Aalborg airport is both a publicly and militarily used airport <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service Russia is engagin in hybrid warfare against Denmark ",
+      noteLink: " https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war "
+    },
+    {
+      country: "Rostock, Germany 🇩🇪 ",
+      popupType: " Drone sighting ",
+      date: " 25? Sep 2025",
+      details: "Coordinated and connected drones were spotted over the overseas port and the marine command in Rostock",
+      link: " https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html ",
+      note: "Spiegel also reported a sighting over the Bundeswehr location in Sanitz, Mecklenburg-Vorpommern which was denied by the Bundeswehr",
+    },
+    {
+      country: "🟢 Port of Korsør, Denmark 🇩🇰 ",
+      popupType: " Unverified Drone sighting ",
+      date: " 25 Sep 2025 ",
+      details: " The police responded to reports of drones over the Port of Korsør; no further information published since then ",
+      link: " https://x.com/ssj_lfpoliti/status/1971177421018890658?s=61 ",
+    },
+  ],
+  
+  '2025-09-26': [
+    {
+      country: "🟡 Karlskrona naval base, Sweden 🇸🇪 ",
+      popupType: "Drone sighting ",
+      date: "26 Sep 2025, at night ",
+      details: " An unidentified drone was seen about a mile from the naval base; the drone did not fly over any restricted objects ",
+      link: "https://www.sverigesradio.se/artikel/suspected-drones-spotted-near-karlskrona-naval-base ",
+    },
+  ],
+   '2025-09-28': [
+    {
+      country: "🟡 Bardufoss Airport, Norway 🇳🇴 ",
+      popupType: " Drone sighting / airport closure ",
+      date: "28 Sep 2025, 20:18 ",
+      details: " Two Chinese nationals have been arrested for flying a drone ",
+      link: "https://www.nrk.no/norge/fly-omdirigert-etter-droneobservasjon-1.17589626 ",
+      note: "The area is surrounded by fjords, a popular tourist attraction ",
+    },
+  ],
+   '2025-09-29': [
+    {
+      country: "🟡 Brønnøysund Airport, Norway 🇳🇴 ",
+      popupType: " Drone sighting / airport closure ",
+      date: " 29 Sep 2025, 20:18 ",
+      details: "The police confirms the drone sighting and say that it has seen five to six drone in the sky. The police lost sight of the drones. <br><br> The police considers the Ørland incident, which was reported at the same time, as a likely false alarm ",
+      link: "https://www.nrk.no/nordland/politiet-om-droner-ved-bronnoysund-lufthavn_-_-sa-fem-seks-stykker-1.17590655#:~:text=Nyhetssenter%20Nordland-,Politiet%20om%20droner%20ved%20Brønnøysund%20lufthavn%3A%20–%20Så%20fem%2Dseks,vei%20fra%20Bodø%20til%20Trondheim.",
+    },
+  ],
+
+ /* =========================
+       O C T O B E R
+    ========================= */
+
+  '2025-10-02': [
+    {
+      country: "🟡 Munich Airport, Germany 🇩🇪 ",
+      popupType: "Drone sighting / airport closure ",
+      date: "02 Oct 2025, sightings 20:30 - ~00:00, airspace closed 22:18 after the first drone sighting on airport territory at 22:10 ",
+      details: "An unknown amount of drones was reported near and at the airport; the police wasn't able to find any suspects. ",
+      link: "https://www.munich-airport.de/presse-drohnensichtung-am-flughafen-muenchen-35699498 ",
+      note: "The Oktoberfest was taking place during both incidents ",
+    },
+  ],
+  '2025-10-03': [
+     {
+      country: "🟠 Elsenborn Military Base / Düren, Belgium 🇧🇪 / Germany 🇩🇪 ",
+      popupType: " Drone sighting ",
+      date: " 03 Oct 2025, ??? - 01:45 ",
+      details: "15 drones were spotted by chance due to the test of anti drone equipment was tested. Those drones were later, at 01:45, seen by the police in Düren, Germany. ",
+      link: "https://www.vrt.be/vrtnws/en/2025/10/03/drones-spotted-above-belgian-military-bases/ ",
+      note: "The Belgian security service considers Russia to be behind the drones ",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+    {
+      country: "🟡 Munich Airport, Germany 🇩🇪",
+      popupType: "Drone sighting / airport closure ",
+      date: "03 Oct 2025, airspace closed: 21:36 ",
+      details: "Two drones were spotted near the runways but disappeared before they were identified ",
+      link: "https://www.tagesschau.de/inland/muenchen-flughafen-drohnen-102.html ",
+      note: "The Oktoberfest was taking place during both incidents ",
+    },
+  ],
+    '2025-10-04': [
+    {
+      country: "🟢 Meine, Germany 🇩🇪 ",
+      popupType: "Drone sighting ",
+      date: " 04 Oct 2025, ~21:00 ",
+      details: "Police got a report of three drones flying in a formation flight up to 100km/h at a height of ~100m. The federal police has a flight squadron in Gifhorn (10km from Meine) ",
+      link: "https://www.zeit.de/news/2025-10/04/drohnensichtung-nahe-gifhorn-gemeldet ",
+    },
+      {
+      country: "🟡 Vilnius Airport, Lithuania 🇱🇹",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: " 04 Oct 2025, 22:16 - 04:50 ",
+      details: "Air traffic was halted due to balloons moving in the direction of Vilnius Airport ",
+     link: "https://www.vilnius-airport.lt/en/news/flights-and-operations-at-vilnius-airport-fully-resumed-on-sunday-morning-delays-possible-throughout-the-day"
+    },
+  ],
+
+  '2025-10-17': [
+    {
+      country: "🟡 Reedo military barracks, Estonia 🇪🇪 ",
+      popupType: "Drone sighting / drone downed ",
+      date: "17 Oct 2025 ",
+      details: " A drone flying near the US camp Reedo was downed by an anti-drone gun; authorities couldn't find the remains of the drone in the area it was presumably shot down ",
+      link: "https://www.stripes.com/theaters/europe/2025-10-29/estonia-drone-shotdown-19584290.html",
+    },
+  ],
+  
+  '2025-10-19': [
+    {
+      country: "🟡 Palma de Mallorca Airport, Spain 🇪🇸 ",
+      popupType: "Drone sighting / airport closure ",
+      date: "19 Oct 2025, 19:00 - ~19:30 ",
+      details: " Multiple pilots reported a drone which resulted in the airport being closed; police unsuccessfully used their own drone to localize the drone ",
+      link: "https://www.ondacero.es/emisoras/baleares/mallorca/noticias/aeropuerto-palma-opera-normalidad-cerrar-este-domingo-trafico-aereo-avistamiento-dron_2025102068f5e4db76c80d35b5f0b84e.html ",
+    },
+  ],
+
+  '2025-10-21': [
+    {
+      country: "🟡 Vilnius Airport, Lithuania 🇱🇹",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: "21 Oct 2025, 22:23 - 06:40 ",
+      details: "Air traffic was halted due to balloons moving in the direction of Vilnius Airport ",
+      link: "https://www.vilnius-airport.lt/en/news/flights-and-operations-at-vilnius-airport-fully-resumed-on-wednesday-morning-delays-possible-throughout-the-day"
+    },
+  ],
+
+   '2025-10-23': [
+    {
+      country: "🔴 Border region with Kaliningrad, Lithuania 🇱🇹 ",
+      popupType: "Airspace incursion ",
+      date: "23 Oct 2025, 17:00 ",
+      details: " Two Russian military aircraft (SU-30 fighter jet & Il-78 refueling tanker) entered Lithuanian airspace for ~18 seconds ",
+      link: "https://www.euronews.com/2025/10/23/two-russian-military-aircraft-enter-nato-member-lithuanias-airspace-military-says",
+    },
+  ],
+
+ '2025-10-24': [
+    {
+      country: "🟡 Vilnius Airport, Lithuania 🇱🇹",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: "24 Oct 2025, 20:31 - 02:35 ",
+      details: "Air traffic was halted due to balloons moving in the direction of Vilnius Airport ",
+      link: "https://www.vilnius-airport.lt/en/news/on-saturday-night-flight-operations-at-vilnius-and-kaunas-airports-were-fully-restored-although-flight-delays-may-occur-throughout-the-day"
+    },
+    {
+      country: "🟡 Kaunas Airport, Lithuania 🇱🇹",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: "24 Oct 2025, 20:31 - 02:35 ",
+      details: "Air traffic was halted due to balloons moving in the direction of Kaunas Airport ",
+      link: "https://www.vilnius-airport.lt/en/news/on-saturday-night-flight-operations-at-vilnius-and-kaunas-airports-were-fully-restored-although-flight-delays-may-occur-throughout-the-day"
+    },
+  ],
+  
+  '2025-10-25': [
+    {
+      country: "🟠 Marche-en-Famenne Air Base, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: "25 Oct 2025, evening ",
+      details: "Four to five drones, flying above critical areas of the base, were reported by soldiers ",
+      link: "https://www.vrt.be/vrtnws/en/2025/10/29/drones-spotted-above-belgian-military-base/",
+      note: "The Belgian security service considers Russia to be behind the drones ",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+     {
+      country: "🟡 Vilnius Airport, Lithuania 🇱🇹",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: "25 Oct 2025, 21:35 - 03:30 ",
+      details: "Air traffic was halted due to balloons moving in the direction of Vilnius Airport ",
+     link: "https://www.vilnius-airport.lt/en/news/on-sunday-night-flight-operations-at-vilnius-airport-were-fully-restored-some-flight-delays-may-still-occur-throughout-the-day"
+    },
+  ],
+
+ '2025-10-26': [
+    {
+      country: "🟡 Vilnius Airport, Lithuania 🇱🇹",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: " 26 Oct 2025, 21:42 - 04:30 ",
+      details: "Air traffic was halted due to balloons moving in the direction of Vilnius Airport ",
+     link: "https://www.vilnius-airport.lt/en/news/on-monday-night-flights-and-operations-at-vilnius-airport-were-fully-resumed-however-flight-delays-may-occur-throughout-the-day"
+    },
+  ],
+  
+  '2025-10-27': [
+    {
+      country: "🟡 Alicante Airport, Spain 🇪🇸 ",
+      popupType: "Drone sighting / airport closure ",
+      date: "27 Oct 2025, 20:53 - ~23:00 ",
+      details: "A drone has been seen sighted near the runway; the perpetrator hasn't been found ",
+      link: "https://elpais.com/espana/comunidad-valenciana/2025-10-28/un-dron-cerca-de-la-pista-de-despegue-obliga-a-cerrar-el-aeropuerto-de-alicante-durante-casi-dos-horas.html",
+    },
+  ],
+  
+   '2025-10-28': [
+    {
+      country: "🟠 Marche-en-Famenne Air Base, Belgium 🇧🇪 ",
+      popupType: " Drone sighting ",
+      date: "28 Oct 2025",
+      details: "Several drones have been spotted over the air base ",
+      link: "https://www.vrt.be/vrtnws/en/2025/10/29/drones-spotted-above-belgian-military-base/ ",
+      note: "The Belgian security service considers Russia to be behind the drones ",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+  ],
+  
+  '2025-10-30': [
+    {
+      country: "🟡 Vilnius Airport, Lithuania 🇱🇹",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: " 30 Oct 2025, 20:10 - 22:43 ",
+      details: "Air traffic was halted due to balloons moving in the direction of Vilnius Airport ",
+     link: "https://www.vilnius-airport.lt/en/news/flights-and-operations-fully-resumed-at-vilnius-airport-overnight-minor-delays-possible-during-the-day"
+    },
+      {
+      country: "🟠 Florennes Air Base, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: " 30 Oct 2025, 20:30 ",
+      details: "Employees at the base and local police report seeing drone-like lights ",
+      link: "https://www.rtbf.be/article/intrusions-de-drones-dans-l-espace-aerien-suspicion-de-vol-de-drones-a-proximite-de-la-base-aerienne-de-florennes-11627078 ",
+      note: "Florennes air base is home to Belgium's F-35 jets <br><br> The Belgian security service considers Russia to be behind the drones ",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i "
+    },
+  ],
+    '2025-10-31': [
+    {
+      country: "🟡 Berlin-Brandenburg Airport, Germany 🇩🇪 ",
+      popupType: "Drone sighting / airport closure ",
+      date: "31 Oct 2025, ~20:00 - ~22:00 ",
+      details: "Police confirmed a drone sighting at BER but the drone later disappeared despite using police helicopters ",
+      link: "https://www.rbb24.de/panorama/beitrag/2025/10/ber-flughafen-unterbrochen-drohne-polizei.html ",
+    },
+  ],
+
+ /* =========================
+       N O V E M B E R
+    ========================= */
+
+  '2025-11-01': [
+    {
+      country: "🟠 Ostend Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: "01 Nov 2025 ",
+      details: "Drones were spotted",
+      link: "https://www.bbc.com/news/articles/c20e8qzllewo",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+   {
+      country: "🟠 Antwerp Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: "01 Nov 2025 ",
+      details: " A drone endangered a landing plane",
+      link: "https://www.brusselstimes.com/1822518/another-drone-spotted-over-antwerp-airport-and-flemish-military-base",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+    {
+      country: "🟠 Kleine-Brogel Air Base, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: "01 Nov 2025, night",
+      details: "The police got three reports of a drone; Belgian Minister of Defence, Theo Francken, says that those drones had targeted Kleine-Brogel and didn't coincidentally end up there <br> A drone jammer was used but was unsuccessful",
+      link: "https://x.com/franckentheo/status/1984908846339391647?s=61",
+      note: "Kleine-Brogel is a NATO-used base and is believed to be home to US nuclear weapons <br><br> The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+   },
+    {
+      country: "🟠 Beverlo Airfield, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: 'Weekend of 01-02 Nov 2025',
+      details: "Drones were spotted over the airfield <br> Beverlo is a former military airfield",
+      link: "https://www.bbc.com/news/articles/c20e8qzllewo",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+   },
+  ],
+  
+  '2025-11-02': [
+    {
+      country: "🟡 Bremen Airport, Germany 🇩🇪 ",
+      popupType: ": Drone sighting / airport closure ",
+      date: "2 Nov 2025, airspace was closed in the evening for 40 minutes ",
+      details: " Drone sighting reported; police won't give information about the drone; espionage is unlikely but not ruled out according to the investigators ",
+      link: "https://www.butenunbinnen.de/nachrichten/drohne-flughafen-bremen-102.html",
+    },
+  ],
+
+
+  '2025-11-04': [
+    {
+      country: "🟠 Kleine-Brogel Air Base, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: "04 Nov 2025, ~18:30",
+      details: "Local citizens reported the sighting of six drones near the base; police also found two",
+      link: "https://www.vrt.be/vrtnws/en/2025/11/05/air-traffic-halted-last-night-due-to-drones-at-brussels-airport/",
+      note: "Kleine-Brogel is a NATO-used base and is believed to be home to US nuclear weapons <br><br> The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+   },
+      {
+      country: "🟠 Ostend Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: "04 Nov 2025, ~19:00 ",
+      details: "Drones were spotted",
+      link: "https://www.reuters.com/world/belgium-scrambles-address-airport-closures-caused-by-drones-2025-11-05/",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+     {
+      country: "🟠 Antwerp Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: "04 Nov 2025, ~19:00",
+      details: "Drones were spotted forcing the airport to close",
+      link: "https://www.reuters.com/world/belgium-scrambles-address-airport-closures-caused-by-drones-2025-11-05/",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+    {
+      country: "🟠 Brussels Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting / airspace closure ",
+      date: "04 Nov 2025, ~20:00 - ~21:20; ~21:50 - ~23:30 ",
+      details: "A drone has been reported shortly before 20:00 which caused the airspace to be closed; the airspace was later closed again due to another drone sighting",
+      link: "https://www.vrt.be/vrtnws/nl/liveblog/niet-alleen-boven-eindhoven-ook-boven-volkel-zijn-opnieuw-drone~1762286776579/",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+       {
+      country: "🟠 Florennes Air Base, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: "04 Nov 2025, 20:30 ",
+      details: "Local citizens reported drones over the air base",
+      link: "https://www.vrt.be/vrtnws/en/2025/11/05/air-traffic-halted-last-night-due-to-drones-at-brussels-airport/",
+      note: "Florennes air base is home to Belgium's F-35 jets <br><br> The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+           {
+      country: "🟠 Liège Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting / airspace closure ",
+      date: "4 Nov 2025, ~21:30 ",
+      details: "Liège airport has been closed after the sighting of a drone",
+      link: "https://www.vrt.be/vrtnws/nl/liveblog/niet-alleen-boven-eindhoven-ook-boven-volkel-zijn-opnieuw-drone~1762286776579/",
+      note: "Liège airport is a major cargo hub <br><br> The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+     {
+      country: "🟠 Schaffen air base, Belgium 🇧🇪",
+      popupType: " Drone sighting ",
+      date: "04 Nov 2025, ~21:30",
+      details: "Police and military security services confirmed the sighting of four drones over the base",
+      link: "https://www.vrt.be/vrtnws/nl/2025/11/05/drones-boven-luchtmachtbasis-schaffen/",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+    {
+      country: "🟡 Hannover Airport, Germany 🇩🇪",
+      popupType: ": Drone sighting / airport closure ",
+      date: "5 Nov 2025, 22:00 - 22:45 ",
+      details: "A pilot sighted a drone while landing at the airport which caused the airport to close it's airspace; the drone reportedly flew over an industrial area next to the airport",
+      link: "https://www.bild.de/news/flug-nach-muenchen-umgeleitet-drohnen-alarm-am-flughafen-hannover-690bce570580923d09988aec",
+    },
+     {
+      country: "🟠 Royal School for Non-Commissioned Officers, Sint-Truiden, Belgium 🇧🇪 ",
+      popupType: " Drone sighting ",
+      date: "04 Nov 2025, 23:00",
+      details: " A single drone has been seen twice over the school by both the students and patrols",
+      link: "https://www.vrt.be/vrtnws/nl/2025/11/07/voorbije-2-nachten-ook-drone-gespot-boven-koninklijke-school-voo/",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+  ],
+
+ '2025-11-05': [
+      {
+      country: "🟠 Royal School for Non-Commissioned Officers, Sint-Truiden, Belgium 🇧🇪 ",
+      popupType: " Drone sighting ",
+      date: "05 Nov 2025, 02:00 ",
+      details: ": A single drone has been seen twice over the school by both the students and patrols",
+      link: "https://www.vrt.be/vrtnws/nl/2025/11/07/voorbije-2-nachten-ook-drone-gespot-boven-koninklijke-school-voo/",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+    {
+      country: "🟢 Heverlee Barracks, Belgium 🇧🇪 ",
+      popupType: " Drone sighting ",
+      date: "05 Nov 2025, 18:15 ",
+      details: "The police got notified about drones near the Heverlee barracks but the police could't verify these sightings once they arrived ",
+      link: "https://today.rtl.lu/news/world/a/2352410.html",
+    },
+  ],
+  
+  '2025-11-06': [
+    {
+      country: "🟡 Gothenburg Landvetter Airport, Sweden 🇸🇪 ",
+      popupType: " Drone sighting / airport closure ",
+      date: "06 Nov 2025, 17:41 - 21:30 ",
+      details: "One or more drones have been observed at the coast, close to the airport; air traffic resumed at around 21:30 ",
+      link: "https://www.reuters.com/world/traffic-halted-swedish-city-gothenburgs-airport-after-drone-sighting-daily-2025-11-06/",
+    },
+    {
+      country: "🟠 Brussels Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting / airspace closure ",
+      date: "06 Nov 2025, 21:20 - 22:00 ",
+      details: "The airport was closed following a drone sighting over the airport",
+      link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDYyMDI5NDQw",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+    {
+      country: "🟠 Florennes Air Base, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: "06 Nov 2025, evening, before 21:30 ",
+      details: "Drone sighting close to the Air Base; Police can't confirm that sighting but considers it to be very likely true",
+      link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDYxMDA1NDQ4",
+      note: "Florennes air base is home to Belgium's F-35 jets <br><br> The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+        {
+      country: "🟠 Mol, Belgium 🇧🇪",
+      popupType: "Drone sighting ",
+      date: "06 Nov 2025, evening, before 21:30 ",
+      details: "The police confirms a drone flying over the SCK CEN nuclear research center. The drone later flew over the European School in Mol",
+      link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDYxMDY0MzMw",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+            {
+      country: "🟠 Liège Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting / airspace closure ",
+      date: " 06 Nov 2025, 22:00 - 23:20 ",
+      details: "Air traffic was halted following a drone sighting at the airport",
+      link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDk3OTEyNzM5",
+      note: "Liège airport is a major cargo hub <br><br> The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+        {
+      country: "🟠 Port of Antwerp, Belgium 🇧🇪",
+      popupType: "Drone sighting ",
+      date: " 06 Nov 2025, evening ",
+      details: "The port police confirms the sighting of drones but can't give further details",
+      link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDk3MDQ3MDc3",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+  ],
+
+    '2025-11-07': [
+ {
+      country: "🟠 Liège Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting / airspace closure ",
+      date: "07 Nov 2025, 06:56 - 08:00 ",
+      details: "Air traffic was halted following a drone sighting at the airport",
+      link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDk3OTEyNzM5",
+      note: "Liège airport is a major cargo hub <br><br> The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+    {
+      country: "🟡 Mulhouse, France 🇫🇷 ",
+      popupType: "Drone sightings ",
+      date: " 07 Nov 2025, 23:45 - 23:50 ",
+      details: "1: A Policeman reported a drone sighting at the Mulhouse Police station (he didn't see the drone but could hear it) at 23:45 <br> 2: At 23:50 a drone was reported at the Mulhouse Nord station, where a convoy of Leclerc tanks was stationed at 23:30; the drone flew without any lights on over the convoy and disappeared to an unknown location <br> <br> The police has no evidence to say whether it was a intentional or unintentional flight over these areas",
+      link: "https://www.lemonde.fr/societe/article/2025/11/12/mulhouse-enquete-ouverte-apres-le-survol-d-un-convoi-de-chars-leclerc_6653159_3224.html",
+    },
+  ],
+
+ '2025-11-08': [
+    {
+      country: "🟠 Liège Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting / airspace closure ",
+      date: "08 Nov 2025, 19:00 - 19:30 ",
+      details: "Air traffic was halted following a drone sighting at the airport",
+      link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNjI4MzgzMzU1",
+      note: "Liège airport is a major cargo hub <br><br> The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+    {
+      country: "🟡 Vilnius Airport, Lithuania 🇱🇹",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: " 08 Nov 2025, 20:45 - 21:50 ",
+      details: "Air traffic was halted due to balloons moving in the direction of Vilnius Airport",
+     link: "https://www.vilnius-airport.lt/en/news/vilnius-airport-operations-temporarily-disrupted-on-saturday-evening-have-been-restored"
+    },
+       {
+      country: "🟢 Pajottegem, Belgium 🇧🇪 ",
+      popupType: "Drone sighting ",
+      date: " 08 Nov 2025 ",
+      details: "Multiple drone sightings were reported but the police couldn't verify them yet <br> Reports came from Heikruis, Herfelingen, Herne, and Tollembeek",
+       link: "https://www.vrt.be/vrtnws/nl/2025/11/09/meldingen-van-drones-in-buurt-van-satcom-bollen-van-navo-in-kest/",
+      note: "Florennes air base is home to Belgium's F-35 jets <br><br> The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+  ],
+
+
+  '2025-11-09': [
+    {
+      country: "🟠 Liège Airport, Belgium 🇧🇪 ",
+      popupType: "Drone sighting / airspace closure ",
+      date: "09 Nov 2025, 19:30 - 20:25 ",
+      details: "Air traffic was halted following three drone sightings at the airport",
+      link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNzE1MzU4OTIw",
+      note: "Liège airport is a major cargo hub <br><br> The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+    {
+      country: "🟠 Doel Nuclear Power Plant, Belgium 🇧🇪",
+      popupType: "Drone sighting",
+      date: "09 Nov 2025, ~22:00 - ~23:00",
+      details: "Three drones have been reported shortly before 22:00, later two more drones have been discovered",
+      link: "https://www.politico.eu/article/drones-spotted-belgium-nuclear-plant-doel-airspace-incursions/",
+      note: "The Belgian security service considers Russia to be behind the drones",
+      noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
+    },
+  ],
+  
+  '2025-11-10': [
+    {
+      country: "🟡 Bergerac, France 🇫🇷 ",
+      popupType: "Drone sighting ",
+      date: "10 Nov 2025, 19:00 ",
+      details: " A drone flew twice over the Eurenco plant which produces gunpowder for the French Army; the drones couldn't be identified or downed ",
+     link: "https://www.lemonde.fr/pixels/article/2025/12/05/la-base-sous-marine-de-l-ile-longue-qui-abrite-les-sous-marins-nucleaires-lanceurs-d-engins-survolee-par-des-drones_6656098_4408996.html",
+    },
+  ],
+  
+  '2025-11-11': [
+    {
+      country: "🔴 Grindu, Romania 🇷🇴 ",
+      popupType: "Drone incursion / crash crash ",
+      date: "11 Nov 2025 ",
+      details: "Russian drone entered Romanian airspace but due to the weather NATO jets weren't able to be scrambled; the remains were found 5km deep in Romania's territory ",
+      link: "https://www.reuters.com/business/aerospace-defense/romania-finds-suspected-drone-fragments-after-russian-attack-ukraine-2025-11-11/",
+    },
+  ],
+  
+    '2025-11-14': [
+    {
+      country: "🟠 Aalborg Airport, Denmark 🇩🇰 ",
+      popupType: "Drone sighting / airport closure ",
+      date: " 14 Nov 2025, 21:30–23:10 ",
+      details: " Air traffic halted after possible drone sighting ",
+      link: "https://www.anews.com.tr/europe/2025/11/17/drone-alert-temporarily-shuts-danish-airport ",
+      note: "Aalborg airport is both a publicly and militarily used airport <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark ",
+      noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war",
+    },
+  ],
+
+  '2025-11-19': [
+    {
+      country: "🔴 Periprava / Chilia Veche / Foltești, Romania 🇷🇴 ",
+      popupType: "Drone incursion ",
+      date: "19 Nov 2025, 00:20 - 01:00 ",
+      details: "Russian drone flew up to ~8 km into Romanian airspace where it disappeared from the radars. The drone later reappeared in Moldovan airspace from where it reentered Romania and was spotted in Foltești, Galați county again. <br> Two German Eurofighters were scrambled",
+      link: "https://www.reuters.com/world/romania-scrambles-fighter-jets-after-drones-breach-its-airspace-2025-11-25/",
+     },
+  ],
+
+  '2025-11-20': [
+    {
+      country: "🟡 Volkel Air Base, Netherlands 🇳🇱 ",
+      popupType: "Drone sighting ",
+      date: "20 Nov 2025, sightings between 19:00 and 21:00 ",
+      details: " An unspecified number of drones was spotted over Volkel Air Base and were subsequently chased away. ",
+      link: "https://www.rtl.nl/nieuws/binnenland/artikel/5540368/drones-eindhoven-volkel-tuinman-brekelmans-verjaagd",
+      note: "Volkel is believed to be home to Dutch F-35 jets and US nuclear weapons",
+    },
+  ],
+  
+  '2025-11-22': [
+    {
+      country: "🟡 Eindhoven Airport, Netherlands 🇳🇱 ",
+      popupType: "Drone sighting / airport closure ",
+      date: "22 Nov 2025, ~19:00 - 23:00 ",
+      details: "Air traffic was halted following the sighting of multiple drones at the airport ",
+      link: "https://www.rtl.nl/nieuws/binnenland/artikel/5540318/vliegverkeer-eindhoven-airport-weer-hervat-na-eerdere-sluiting",
+      note: "Eindhoven airport is both a publicly and militarily used airport ",
+    },
+     {
+      country: "🟡 Volkel Air Base, Netherlands 🇳🇱 ",
+      popupType: "Drone sighting ",
+      date: "22 Nov 2025 ",
+      details: " Additional unidentified drones were observed near sensitive infrastructure in the area. ",
+      link: "https://www.rtl.nl/nieuws/binnenland/artikel/5540368/drones-eindhoven-volkel-tuinman-brekelmans-verjaagd",
+      note: "Volkel is believed to be home to Dutch F-35 jets and US nuclear weapons",
+    },
+  ],
+  
+   '2025-11-23': [
+       {
+      country: "🟡 Vilnius Airport, Lithuania 🇱🇹 ",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: "23 Nov 2025, 18:55 - 00:25 ",
+      details: " Air traffic was halted due to balloons moving in the direction of Vilnius Airport ",
+     link: "https://www.vilnius-airport.lt/en/news/vilnius-airport-operations-disrupted-on-november-23-24"
+    },
+  ],
+  
+  '2025-11-24': [
+         {
+     country: "🟡 Vilnius Airport, Lithuania 🇱🇹 ",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: "24 Nov 2025, 01:40 - 03:25 ",
+      details: " Air traffic was halted due to balloons moving in the direction of Vilnius Airport ",
+     link: "https://www.vilnius-airport.lt/en/news/vilnius-airport-operations-disrupted-on-november-23-24"
+    },
+    {
+      country: "🔴 Ämari, Estonia 🇪🇪 ",
+      popupType: "Airspace incursion ",
+      date: "24 Nov 2025 ",
+      details: "Two Italian Eurofighters escorted the 'Black Pearl', a Tupolev T-134 which trains strategic bomber pilots, two escort fighters, and one SU-24; it's assumed that this plane was en route to Kaliningrad, possibly transporting generals ",
+     link: "https://www.ilgiornale.it/news/difesa/scramble-efa-italiani-hanno-intercettato-raro-aereo-russo-2572772.html",
+    },
+  ],
+
+  '2025-11-25': [
+    {
+      country: "🔴 Puiești, Romania 🇷🇴 ",
+      popupType: "Drone incursion ",
+      date: "25 Nov 2025, ",
+      details: "Two Russian drones flew into Romanian airspace through Ukraine and Moldova; two German Eurofighters were scrambled and given permission to shot the drones down, but they didn't to avoid colateral damage; one flew back into Ukrainian airspace, the other crashed in Puiești, despite being spotted further inside the country earlier (Galati county) ",
+      link: "https://www.digi24.ro/stiri/actualitate/evenimente/drona-de-2-metri-cu-o-parasuta-atasata-gasita-agatata-in-copacii-de-pe-muntele-stramtu-in-leresti-arges-3556063",
+    },
+  ],
+  
+    '2025-11-28': [
+    {
+     country: "🟡 Vilnius Airport, Lithuania 🇱🇹 ",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: "28 Nov 2025, 23:15 - 07:03 ",
+      details: " Air traffic was halted due to balloons moving in the direction of Vilnius Airport ",
+    link: "https://www.vilnius-airport.lt/en/news/airspace-restrictions-at-vilnius-airport-on-november-28-29"
+    },
+  ],
+
+ 
+'2025-11-30': [
+    {
+     country: "🟡 Vilnius Airport, Lithuania 🇱🇹 ",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: " 30 Nov 2025, 18:09 - 05:00 ",
+      details: " Air traffic was halted due to balloons moving in the direction of Vilnius Airport ",
+   link: "https://www.vilnius-airport.lt/en/news/temporary-airspace-restrictions-above-vilnius-airport-lifted-operations-restored"
+    },
+  ],
+
+/* =========================
+      D E C E M B E R
+    ========================= */
+
+  '2025-12-01': [
+    {
+      country: "🟡 Dublin Airport, Ireland 🇮🇪 ",
+      popupType: "Drone sighting ",
+      date: "01 Dec 2025, shortly before 23:00 ",
+      details: "our military grade drones flew near the airport when Zelensky´s plane was supposed to land; the lights were on therefore authorities assume that it was only supposed to be a disruption of the landing <br> The drones were likely launched near Howth, from where they first flew above a naval vessel and then towards the location where Zelensky´s plane was supposed to be but his plane was slightly ahead of schedule <br><br> Authorities believe the drones were quadcopters ",
+      link: "https://www.thejournal.ie/drones-dublin-ireland-hybrid-warfare-russia-6893104-Dec2025/",
+    },
+  ],
+
+'2025-12-03': [
+    {
+      country: "🟠 Vilnius Airport, Lithuania 🇱🇹 ",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: "03 Dec 2025, 19:36 - 21:06; 22:24 - 00:56 ",
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport <br> The report by the airport called this attack a 'hybrid attack by Belarus' ",
+      link: "https://www.vilnius-airport.lt/en/news/temporary-disruptions-at-vilnius-airport-resolved ",
+    },
+  ],
+
+  '2025-12-04': [
+    {
+      country: "🟠 Vilnius Airport, Lithuania 🇱🇹 ",
+      popupType: "Weather balloons / Smuggle balloons / Airport closure ",
+      date: "04 Dec 2025, 01:15 - 02:30 ",
+      details: "Air traffic was halted due to balloons moving in he direction of Vilnius Airport <br> The report by the airport called this attack a 'hybrid attack by Belarus' ",
+      link: "https://www.vilnius-airport.lt/en/news/temporary-disruptions-at-vilnius-airport-resolved ",
+    },
+  ],
+  
+  '2025-12-04': [
+    {
+      country: "🟡 Île Longue, France 🇫🇷 ",
+      popupType: "Drone sighting ",
+      date: "04 Dec 2025, 19:30 ",
+      details: "Five drones were spotted over the base with the help of anti drone systems; the stationed battalion shot at the drones ",
+      link: "https://www.lemonde.fr/en/france/article/2025/12/05/france-takes-anti-drone-measures-after-flight-over-nuclear-sub-base_6748188_7.html ",
+      note: "Île Longue is home to four French nuclear ballistic missile submarines ",
+      noteLink: "https://www.lemonde.fr/en/france/article/2025/12/05/france-takes-anti-drone-measures-after-flight-over-nuclear-sub-base_6748188_7.html "
+    },
+  ],
+
+  '2025-12-07': [
+    {
+      country: "🟡 Netherlands 🇳🇱 ",
+      popupType: "Drone sighting ",
+      date: "07 Dec 2025, 10:20 ",
+      details: "A drone entered Dutch airspace on an level where identification is required; the lack of it triggered the Quick Reaction Alert and two F-35 jets were scrambled; the drone left Dutch airspace",
+      link: "https://www.defensie.nl/actueel/nieuws/2025/12/07/f-35-gevechtsvliegtuigen-ingezet-voor-onbekend-object",
+    },
+  ],
+
+    '2025-12-10': [
+    {
+      country: "🟡 Manyas, Türkiye 🇹🇷 ",
+      popupType: "Drone incursion / crash site ",
+      date: "10 Dec 2025, evening ",
+      details: "A crashed, unidentified UAV was found by citizens in the Balıkesir’s Manyas district in an uninhabited field. <br> The drone is an Russian Merlin VR drone, which is used for reconnaissance and has a range of ~600km ",
+      link: "https://www.hurriyet.com.tr/gundem/balikesirde-insansiz-hava-araci-dustu-inceleme-icin-ankaraya-gonderildi-43060797 ",
+    },
+  ],
+  
+  '2025-12-11': [
+    {
+      country: "🟠 Immelmann barracks, Celle, Germany 🇩🇪 ",
+      popupType: "Drone sighting ",
+      date: "11 Dec 2025, 19:00 - 23:00 ",
+      details: "Up to 25 drones flew over the barracks for multiple hours; the police says that it was a professional actor; the colonel says that they were supposed to be seen as they had all lights on <br> The drones were large and flew in formation <br><br> The Bundeswehr didn't shoot them down or chase them away because there was nothing to spy on and no danger to the public or air traffic ",
+      link: "https://www.haz.de/der-norden/luftalarm-bei-der-bundeswehr-zwei-dutzend-drohnen-kreisen-ueber-celler-kaserne-73NJM63WX5E45P4QOAUCX23OC4.html",
+      note: "The colonel suspects those drones to be Russian",
+      noteLink: "https://www.haz.de/der-norden/luftalarm-bei-der-bundeswehr-zwei-dutzend-drohnen-kreisen-ueber-celler-kaserne-73NJM63WX5E45P4QOAUCX23OC4.html",
+   },
+  ],
+
+  '2025-12-15': [
+    {
+      country: "🟡 Faßberg Air Base, Germany 🇩🇪 ",
+      popupType: "Drone sighting ",
+      date: "15 Dec 2025 ",
+      details: "Security personnel has spotted multiple drones over the northern part of the Air Base; the drone disappeared eastwards shortly afterwards; the drones flew in formation <br><br> Police and Bundeswehr didn't react to those drones because they didn't pose any immediate threat ",
+      link: "https://www.cz.de/lokales/celle-lk/celle/provokationen-gehen-weiter-unbekannte-drohnen-jetzt-auch-beim-bundeswehr-fliegerhorst-fassberg-QCF3BDQLM5DRJMUGOGQRZCJWEA.html",
+      note: "Faßberg is home to the Air Force Technical Training Center ",
+    },
+    {
+      country: "🟡 Ankara Region, Türkiye 🇹🇷 ",
+      popupType: " Drone incursion ",
+      date: "15 Dec 2025 ",
+      details: "Turkish F-16 fighters shot down an out-of-control unidentified UAV. The drone was shot down near Ankara ",
+      link: "https://www.trtworld.com/article/efc330793d51 ",
+    },
+  ],
+
+  '2025-12-17': [
+    {
+      country: "🔴 Narva River / Vasknarva breakwater, Estonia 🇪🇪 ",
+      popupType: "Border crossing ",
+      date: "17 Dec 2025, ~10:00 ",
+      details: "Three Russian border guards crossed the border on hovercrafts; they walked on the stone breakwater and returned to Russia again <br> It is unknown whether this was intentional or not ",
+      link: "https://news.err.ee/1609888417/russian-border-guards-crossed-into-estonia-with-unclear-motives-minister-says ",
+      note: "Estonia says that the guards aren't reliable since the war because they are brought in from other regions and change and them often changing their place of deployment <br><br> Russian ships normally have to ask for permission to cross that area to get into the Russian part of Lake Peipsi ",
+      noteLink: " "
+    },
+  ],
+
+  '2025-12-19': [
+    {
+      country: "🟡 Izmit, Türkiye 🇹🇷 ",
+      popupType: "Drone incursion / crash site ",
+      date: "19 Dec 2025 ",
+      details: "A crashed, unidentified UAV was found by citizens in the rural Çubuklubala neighborhood in Izmit. The camera is still working. <br> The drone is an Russian-made Orlan-10 drone, which is used for surveillance and reconnaissance ",
+      link: "https://www.trtworld.com/article/82a95c0936d0 ",
+    },
+  ],
+  
+  '2025-12-21': [
+    {
+      country: "🟡 Strâmtu Mountain, Argeș County, Romania 🇷🇴",
+      popupType: " Drone incursion / crash site",
+      date: "21 Dec 2025, 10:40, ",
+      details: "Police was notified about a crashed drone by a local citizen on a hunting trip. The drone is two meters wide, has a parachute attached, and is intact.",
+      link: "https://www.digi24.ro/stiri/actualitate/evenimente/drona-de-2-metri-cu-o-parasuta-atasata-gasita-agatata-in-copacii-de-pe-muntele-stramtu-in-leresti-arges-3556063 ",
+    },
+  ],
+  
+  // Add more dates and incidents as needed
+    '2025-xx-xx': [
+    {
+      country: " ",
+      popupType: " ",
+      date: " ",
+      details: " ",
+      link: " ",
+      note: " ",
+      noteLink: " "
+    },
+  ],
+  
+};
+
+/* =========================
+   CALENDAR LOGIC
+========================= */
+const grid = document.getElementById('calendar-grid');
+const incidentDisplay = document.getElementById('incident-display');
+const monthSelect = document.getElementById('monthSelect');
+const yearSelect = document.getElementById('yearSelect');
+const czechNote = document.getElementById('czech-note');
+
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+let currentDate = new Date(2025,8,1);
+
+months.forEach((m,i)=>{
+  const o=document.createElement('option');
+  o.value=i; o.textContent=m;
+  monthSelect.appendChild(o);
+});
+
+[2025,2026].forEach(y=>{
+  const o=document.createElement('option');
+  o.value=y; o.textContent=y;
+  yearSelect.appendChild(o);
+});
+
+function renderCalendar(){
+  grid.innerHTML='';
+  const y=currentDate.getFullYear();
+  const m=currentDate.getMonth();
+
+  monthSelect.value = m;
+  yearSelect.value = y;
+
+  ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(d=>{
+    const el=document.createElement('div');
+    el.className='weekday'; el.textContent=d;
+    grid.appendChild(el);
+  });
+
+  const first=new Date(y,m,1);
+  const offset=(first.getDay()+6)%7;
+  const days=new Date(y,m+1,0).getDate();
+
+  for(let i=0;i<offset;i++) grid.appendChild(document.createElement('div'));
+
+  for(let d=1;d<=days;d++){
+    const el=document.createElement('div');
+    el.className='day';
+    el.textContent=d;
+
+    const key=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const incidents = incidentsData[key];
+
+    if(incidents?.length===1) el.classList.add('single');
+    if(incidents?.length>1) el.classList.add('multi');
+<div id="sidebar-handle">&#9776;</div>
+
+    if(incidents){
+      const icons = getIncidentTypes(incidents);
+      if(icons.length){
+        const box=document.createElement('div');
+        box.className='day-icons';
+        icons.forEach(t=>{
+          const img=document.createElement('img');
+          img.src=calendarIcons[t];
+          box.appendChild(img);
+        });
+        el.appendChild(box);
+      }
+    }
+<div id="info-container">
+  <h1>Incident Info</h1>
+
+    el.onclick=()=>{
+      if(!incidents){
+        incidentDisplay.innerHTML='<i>No incidents</i>';
+        return;
+      }
+      incidentDisplay.innerHTML=incidents.map(i=>`
+        <div class="incident-item">
+          <b>${i.country} (<a href="${i.link}" target="_blank">source</a>)</b>
+          <b>Date:</b> ${i.date}
+          <b>Type:</b> ${i.popupType}
+          <b>Details:</b> ${i.details}
+        </div>
+      `).join('');
+    };
+  <h2>About This Page</h2>
+  <p>This page provides information on drone and airspace incidents. It explains how incidents are recorded, categorized, and what the symbols mean in the calendar and map views.</p>
+
+    grid.appendChild(el);
+  }
+  <h2>Incident Types</h2>
   <ul>
-    <li>Country and city/region</li>
-    <li>Date and time</li>
-    <li>Type of incident</li>
-    <li>Details and links to sources</li>
-    <li>Notes on confirmation or suspected actor</li>
+    <li>🟡 Unknown actor – incidents where the responsible party cannot be confirmed.</li>
+    <li>🟠 Suspected Russian – incidents suspected to involve Russian actors.</li>
+    <li>🔴 Confirmed Russian – incidents confirmed to involve Russian actors.</li>
+    <li>Drone, Jet, Balloon, or Border – categorized based on the type of object involved.</li>
   </ul>
 
-  <h2>Legend / Colors</h2>
-  <p>Colors indicate incident count and actor verification:</p>
-  <div style="display: flex; gap: 15px; margin-top: 10px;">
-    <span style="display:inline-block;width:20px;height:20px;background:#f7e769;border:1px solid #ccc;border-radius:4px;"></span> Single incident
-    <span style="display:inline-block;width:20px;height:20px;background:#e03b3b;border:1px solid #ccc;border-radius:4px;"></span> Multiple incidents
-  </div>
-  <div style="display: flex; gap: 15px; margin-top: 10px;">
-    <span style="display:inline-block;width:15px;height:15px;background:red;border-radius:50%;"></span> Actor confirmed Russian
-    <span style="display:inline-block;width:15px;height:15px;background:orange;border-radius:50%;"></span> Actor suspected Russian
-    <span style="display:inline-block;width:15px;height:15px;background:yellow;border-radius:50%;"></span> Actor unknown
-    <span style="display:inline-block;width:15px;height:15px;background:green;border-radius:50%;"></span> Sighting unverified
-  </div>
+  // Czech note only for September 2025
+  if(y===2025 && m===8) czechNote.textContent='* On September 10th, the Czech army confirmed a growing number of drone sightings but did not give an exact date';
+  else czechNote.textContent='';
+}
+  <h2>Reporting Times</h2>
+  <p>Each incident includes the date and time it was observed. If multiple sightings occurred in one day, all relevant times are noted in the incident details.</p>
 
-  <h2>Notes</h2>
-  <p>All incidents are verified as much as possible with publicly available sources. Times are local to the incident location.</p>
+document.getElementById('prevMonth').onclick=()=>{
+  currentDate.setMonth(currentDate.getMonth()-1);
+  renderCalendar();
+};
+document.getElementById('nextMonth').onclick=()=>{
+  currentDate.setMonth(currentDate.getMonth()+1);
+  renderCalendar();
+};
+monthSelect.onchange=()=>{ currentDate.setMonth(+monthSelect.value); renderCalendar(); };
+yearSelect.onchange=()=>{ currentDate.setFullYear(+yearSelect.value); renderCalendar(); };
+  <h2>Sources</h2>
+  <p>All incidents are sourced from verified news reports and security agencies. Source links are provided in each incident's detail popup.</p>
+
+renderCalendar();
+  <h2>How to Use</h2>
+  <ul>
+    <li>Click on a day in the calendar to see detailed incidents for that date.</li>
+    <li>Hover over the colored squares or round symbols in the legend to understand the actor and type.</li>
+    <li>Use the sidebar to navigate between the Map, Calendar, and Info pages.</li>
+  </ul>
 </div>
 
 <script>
 /* =========================
    SIDEBAR LOGIC
-   ========================= */
+   SIDEBAR TOGGLE
+========================= */
 const sidebar = document.getElementById('sidebar');
 const handle = document.getElementById('sidebar-handle');
+const container = document.getElementById('calendar-container');
+let sidebarOpen = false;
 const container = document.getElementById('info-container');
-let sidebarOpen = true; // starts open
+let sidebarOpen = true;
+
+// Initial positions
+sidebar.style.transform = 'translateX(0)';
+handle.style.transform = 'translateX(250px)';
+container.style.marginLeft = '270px';
 
 handle.addEventListener('click', () => {
   sidebarOpen = !sidebarOpen;
   if(sidebarOpen){
     sidebar.style.transform = 'translateX(0)';
     handle.style.transform = 'translateX(250px)';
+    container.style.marginLeft = '250px';
     container.style.marginLeft = '270px';
   } else {
     sidebar.style.transform = 'translateX(-250px)';
     handle.style.transform = 'translateX(0)';
+    container.style.marginLeft = '0';
     container.style.marginLeft = '20px';
   }
 });
