@@ -68,12 +68,18 @@ html, body {
    ========================= */
 #calendar-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   padding: 40px 20px;
-  gap: 20px;
+  gap: 40px;
   margin-left: 0;
   transition: margin-left 0.3s ease;
+}
+
+#calendar-with-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 #calendar {
@@ -147,8 +153,7 @@ html, body {
 
 /* INCIDENT DISPLAY */
 #incident-display {
-  width: 600px;
-  margin-top: 10px;
+  width: 340px;
 }
 
 .incident-item {
@@ -170,22 +175,15 @@ html, body {
 #calendar-legend {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 5px;
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
-  align-items: flex-start;
 }
 
-.legend-squares {
+.legend-row {
   display: flex;
-  gap: 20px;
-}
-
-.legend-circles {
-  display: flex;
-  gap: 12px;
-  margin-top: 5px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .legend-item {
@@ -201,24 +199,17 @@ html, body {
   border: 1px solid #ccc;
 }
 
-.legend-color.circle {
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-}
-
 .legend-color.single { background: #f7e769; }
 .legend-color.multi { background: #e03b3b; }
-.legend-color.russian { background: #ff0000; }
-.legend-color.suspected { background: #ffa500; }
-.legend-color.unknown { background: #ffff00; }
-.legend-color.unverified { background: #00ff00; }
 
-#czech-note {
-  font-size: 14px;
-  font-style: italic;
-  margin-top: 5px;
+.legend-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: inline-block;
 }
+
 </style>
 </head>
 
@@ -233,28 +224,32 @@ html, body {
 <div id="sidebar-handle">&#9776;</div>
 
 <div id="calendar-container">
-  <div id="calendar">
-    <div id="calendar-header">
-      <button id="prevMonth">◀</button>
-      <select id="monthSelect"></select>
-      <select id="yearSelect"></select>
-      <button id="nextMonth">▶</button>
-    </div>   
-    <div id="calendar-grid"></div>
-  </div>
-
-  <div id="czech-note"></div>
-
-  <div id="calendar-legend">
-    <div class="legend-squares">
-      <div class="legend-item"><span class="legend-color single"></span> Single incident</div>
-      <div class="legend-item"><span class="legend-color multi"></span> Multiple incidents</div>
+  <div id="calendar-with-legend">
+    <div id="calendar">
+      <div id="calendar-header">
+        <button id="prevMonth">◀</button>
+        <select id="monthSelect"></select>
+        <select id="yearSelect"></select>
+        <button id="nextMonth">▶</button>
+      </div>
+      <div id="calendar-grid"></div>
     </div>
-    <div class="legend-circles">
-      <div class="legend-item"><span class="legend-color circle russian"></span> Actor confirmed to be Russian</div>
-      <div class="legend-item"><span class="legend-color circle suspected"></span> Actor suspected to be Russian</div>
-      <div class="legend-item"><span class="legend-color circle unknown"></span> Actor unknown</div>
-      <div class="legend-item"><span class="legend-color circle unverified"></span> Sighting unverified</div>
+
+    <div id="czech-note">
+      <i>🇨🇿 Czech incident example goes here</i>
+    </div>
+
+    <div id="calendar-legend">
+      <div class="legend-row">
+        <div class="legend-item"><span class="legend-color single"></span> Single incident</div>
+        <div class="legend-item"><span class="legend-color multi"></span> Multiple incidents</div>
+      </div>
+      <div class="legend-row">
+        <div class="legend-item"><span class="legend-circle" style="background:red;"></span> Actor confirmed Russian</div>
+        <div class="legend-item"><span class="legend-circle" style="background:orange;"></span> Actor suspected Russian</div>
+        <div class="legend-item"><span class="legend-circle" style="background:yellow;"></span> Actor unknown</div>
+        <div class="legend-item"><span class="legend-circle" style="background:green;"></span> Sighting unverified</div>
+      </div>
     </div>
   </div>
 
@@ -264,7 +259,7 @@ html, body {
 </div>
 
 <script>
-/* ICON MAPPING */
+/* ICONS */
 const calendarIcons = {
   drone: 'icons/uav.png',
   jet: 'icons/fighter-plane.png',
@@ -295,6 +290,15 @@ const incidentsData = {
       link: "https://www.reuters.com/world/drone-breaches-romanian-airspace-during-russian-attack-neighboring-ukraine-2025-09-13/"
     }
   ],
+  '2025-09-15': [
+    {
+      country: "🇨🇿 Prague, Czechia",
+      popupType: "Balloon sighting",
+      date: "15 Sep 2025, 12:00",
+      details: "Suspicious balloon detected over Prague airspace",
+      link: "#"
+    }
+  ]
 };
 
 /* CALENDAR LOGIC */
@@ -302,74 +306,73 @@ const grid = document.getElementById('calendar-grid');
 const incidentDisplay = document.getElementById('incident-display');
 const monthSelect = document.getElementById('monthSelect');
 const yearSelect = document.getElementById('yearSelect');
-const czechNote = document.getElementById('czech-note');
 const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-let currentDate = new Date(2025,8,1); // September 2025
+let currentDate = new Date(2025,8,1);
 
+// Populate months
 months.forEach((m,i)=>{
   const o=document.createElement('option');
-  o.value=i;o.textContent=m;
+  o.value=i; o.textContent=m;
   monthSelect.appendChild(o);
 });
 
+// Populate years
 [2025,2026].forEach(y=>{
   const o=document.createElement('option');
-  o.value=y;o.textContent=y;
+  o.value=y; o.textContent=y;
   yearSelect.appendChild(o);
 });
 
 function renderCalendar(){
   grid.innerHTML='';
-
   const y=currentDate.getFullYear();
   const m=currentDate.getMonth();
-
-  monthSelect.value=m;
-  yearSelect.value=y;
+  monthSelect.value = m;
+  yearSelect.value = y;
 
   ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(d=>{
     const el=document.createElement('div');
-    el.className='weekday';el.textContent=d;
+    el.className='weekday'; el.textContent=d;
     grid.appendChild(el);
   });
 
-  const first=new Date(y,m,1);
-  const offset=(first.getDay()+6)%7;
-  const days=new Date(y,m+1,0).getDate();
+  const first = new Date(y,m,1);
+  const offset = (first.getDay()+6)%7; // Monday start
+  const days = new Date(y,m+1,0).getDate();
 
   for(let i=0;i<offset;i++) grid.appendChild(document.createElement('div'));
 
   for(let d=1; d<=days; d++){
     const el=document.createElement('div');
     el.className='day';
-    el.textContent=d;
+    el.textContent = d;
 
-    const key=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const incidents=incidentsData[key];
+    const key = `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const incidents = incidentsData[key];
 
     if(incidents?.length===1) el.classList.add('single');
     if(incidents?.length>1) el.classList.add('multi');
 
     if(incidents){
-      const icons=getIncidentTypes(incidents);
+      const icons = getIncidentTypes(incidents);
       if(icons.length){
-        const box=document.createElement('div');
+        const box = document.createElement('div');
         box.className='day-icons';
         icons.forEach(t=>{
-          const img=document.createElement('img');
-          img.src=calendarIcons[t];
+          const img = document.createElement('img');
+          img.src = calendarIcons[t];
           box.appendChild(img);
         });
         el.appendChild(box);
       }
     }
 
-    el.onclick=()=>{
+    el.onclick = () => {
       if(!incidents){
-        incidentDisplay.innerHTML='<i>No incidents</i>';
+        incidentDisplay.innerHTML = '<i>No incidents</i>';
         return;
       }
-      incidentDisplay.innerHTML=incidents.map(i=>`
+      incidentDisplay.innerHTML = incidents.map(i=>`
         <div class="incident-item">
           <b>${i.country} (<a href="${i.link}" target="_blank">source</a>)</b>
           <b>Date:</b> ${i.date}
@@ -381,15 +384,9 @@ function renderCalendar(){
 
     grid.appendChild(el);
   }
-
-  // Czech note only in September 2025
-  if(y===2025 && m===8) {
-    czechNote.textContent = '* Czech Republic incident occurred in September 2025 but has no confirmed date.';
-  } else {
-    czechNote.textContent = '';
-  }
 }
 
+// Navigation
 document.getElementById('prevMonth').onclick = () => { currentDate.setMonth(currentDate.getMonth()-1); renderCalendar(); };
 document.getElementById('nextMonth').onclick = () => { currentDate.setMonth(currentDate.getMonth()+1); renderCalendar(); };
 monthSelect.onchange = () => { currentDate.setMonth(+monthSelect.value); renderCalendar(); };
