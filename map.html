@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>World Incident Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Bebas+Neue&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+<style>
+html, body { margin:0; height:100%; }
+
+
+
+/* =========================
+   FONTS
+   ========================= */
+
+/* Sidebar */
+#sidebar {
+  font-family: 'Oswald', sans-serif; /* Clean, strong for sidebar */
+  font-size: 28px;
+}
+
+/* Sidebar links */
+#sidebar a {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  color: #111;
+}
+
+/* Panel headers (Filters / Legend titles) */
+.panel-header {
+  font-family: 'Bebas Neue', sans-serif; /* Impactful, clear headers */
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* Panel content */
+.panel-content {
+  font-family: 'Inter', sans-serif; /* Clean, readable for details */
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Filter dropdowns */
+#sentence-filters select {
+  font-family: 'Oswald', sans-serif; /* Strong, legible for dropdowns */
+  font-size: 14px;
+}
+
+/* Marker popups */
+.leaflet-popup-content {
+  font-family: 'JetBrains Mono', monospace; /* Precise, data-like */
+  font-size: 13px;
+}
+
+/* Burger menu */
+#sidebar-handle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Leaflet popups */
+.leaflet-popup-content {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.leaflet-popup-content b {
+  font-size: 16px;
+}
+
+
+
+/* Map fills viewport */
+#map { 
+  position:absolute; 
+  top:0; 
+  left:0; 
+  right:0; 
+  bottom:0; 
+  z-index:0;
+}
+
+/* Sidebar */
+#sidebar {
+  position: fixed;
+  top:0;
+  left:0;
+  height:100%;
+  width:250px;
+  background: rgba(255,255,255,0.97);
+  box-shadow: 2px 0 10px rgba(0,0,0,0.25);
+  z-index: 1001;
+  transform: translateX(-250px);
+  transition: transform 0.3s ease;
+}
+#sidebar.sidebar-open { transform: translateX(0); }
+#sidebar-content { padding:12px; }
+
+/* Sidebar handle (burger) inside sidebar */
+#sidebar-handle {
+  position: absolute;
+  right: -30px;
+  top: 20px;
+  width:30px; 
+  height:40px;
+  background:white;
+  border-radius:0 6px 6px 0;
+  display:flex; 
+  align-items:center; 
+  justify-content:center;
+  box-shadow:2px 0 6px rgba(0,0,0,0.3);
+  cursor:pointer;
+  font-size:20px;
+  z-index:1002;
+}
+
+/* Panels */
+.panel { position:absolute; background:white; border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,0.3); font-family:sans-serif; z-index:1000; }
+.panel-header { display:flex; justify-content:space-between; padding:8px; font-weight:bold; background:#f0f0f0; }
+.panel button { background:none; border:none; font-size:16px; cursor:pointer; }
+.panel-content { padding:8px; }
+.collapsed .panel-content { display:none; }
+
+/* Filters panel */
+#filters { bottom:10px; right:10px; width:780px; }
+#filters.collapsed { width:120px; height:40px; }
+
+/* Sentence filter layout */
+#sentence-filters { display:flex; flex-wrap:wrap; gap:6px; align-items:center; font-size:14px; }
+#sentence-filters select { padding:4px 6px; }
+
+/* Legend */
+#legend { top:10px; right:10px; width:300px; }
+#legend.collapsed { width:150px; height:40px; }
+#legend.collapsed .panel-content { display:none; }
+.legend-row { margin-bottom:6px; }
+.legend-row img { width:26px; vertical-align:middle; margin-right:6px; }
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div id="sidebar">
+  <div id="sidebar-content">
+    <p><a href="homepage.html">🏠 Home</a></p>
+    <p><a href="index.html">🗺️ Map</a></p>
+    <p><a href="calendar.html">📅 Calendar</a></p>
+  </div>
+  <div id="sidebar-handle">&#9776;</div> <!-- moved inside sidebar -->
+</div>
+
+<!-- Map -->
+<div id="map"></div>
+
+<!-- Filters Panel -->
+<div id="filters" class="panel collapsed">
+  <div class="panel-header">
+    <span>Filters</span>
+    <button onclick="togglePanel('filters')">▾</button>
+  </div>
+  <div class="panel-content">
+    <div id="sentence-filters">
+      <span>Show</span>
+      <select id="f-actor">
+        <option value="any">all actors</option>
+        <option value="red">confirmed Russian</option>
+        <option value="orange">suspected Russian</option>
+        <option value="yellow">unknown actor</option>
+        <option value="green">unverified</option>
+        <option value="blue">safety breaches</option>
+      </select>
+
+      <select id="f-type">
+        <option value="any">all incidents</option>
+        <option value="drone">drones</option>
+        <option value="jet">jets</option>
+        <option value="balloon">balloons</option>
+        <option value="border">ground crossings</option>
+      </select>
+
+      <span>at</span>
+      <select id="f-location">
+        <option value="any">any place</option>
+        <option value="airports">airports</option>
+        <option value="airport">airports</option>
+        <option value="militarybases">military bases</option>
+        <option value="infrastructure">infrastructure</option>
+        <option value="others">other locations</option>
+      </select>
+
+      <span>in</span>
+      <select id="f-month">
+        <option value="any">any month</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+
+      <select id="f-year">
+        <option value="any">any year</option>
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Legend -->
+<div id="legend" class="panel">
+  <div class="panel-header">
+    <span>Legend</span>
+    <button onclick="togglePanel('legend')">▾</button>
+  </div>
+  <div class="panel-content">
+    <div class="legend-row"><img src="icons/uav.png"> Drone</div>
+    <div class="legend-row"><img src="icons/fighter-plane.png"> Jet</div>
+    <div class="legend-row"><img src="icons/balloon.png"> Balloon</div>
+    <div class="legend-row"><img src="icons/soldier.png"> Ground Border Crossing</div>
+    <div class="legend-row">🔴 Actor confirmed to be Russian</div>
+    <div class="legend-row">🟠 Actor suspected to be Russian</div>
+    <div class="legend-row">🟡 Unknown actor</div>
+    <div class="legend-row">🟢 Unverified incident</div>
+    <div class="legend-row">🔵 Safety breaches</div>
+  </div>
+</div>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+<!-- Your map.js -->
+<script src="map.js"></script>
+
+<!-- Panel + sidebar JS -->
+<script>
+function togglePanel(id){
+  document.getElementById(id).classList.toggle('collapsed');
+}
+
+// Sidebar toggle
+const sidebar = document.getElementById('sidebar');
+const handle = document.getElementById('sidebar-handle');
+handle.addEventListener('click', e => {
+  sidebar.classList.toggle('sidebar-open');
+  e.stopPropagation();
+  if(window.map) window.map.invalidateSize();
+});
+</script>
+
+</body>
+</html>
