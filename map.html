@@ -16,9 +16,7 @@
 <style>
 html, body { margin:0; height:100%; }
 
-/* =========================
-   SIDEBAR
-========================= */
+/* Sidebar */
 #sidebar {
   position: fixed;
   top:0;
@@ -35,10 +33,7 @@ html, body { margin:0; height:100%; }
 
 #sidebar.sidebar-open { transform: translateX(0); }
 
-#sidebar-content {
-  padding: 20px;
-}
-
+#sidebar-content { padding: 20px; }
 #sidebar-content a {
   display: block;
   margin-bottom: 12px;
@@ -47,7 +42,6 @@ html, body { margin:0; height:100%; }
   text-decoration: none;
 }
 
-/* Sidebar handle */
 #sidebar-handle {
   position: absolute;
   right: -30px;
@@ -65,41 +59,12 @@ html, body { margin:0; height:100%; }
   z-index:1002;
 }
 
-/* =========================
-   MAP
-========================= */
-#map { 
-  position:absolute; 
-  top:0; 
-  left:0; 
-  right:0; 
-  bottom:0; 
-  z-index:0;
-}
+/* Map */
+#map { position:absolute; top:0; left:0; right:0; bottom:0; z-index:0; }
 
-/* =========================
-   PANELS (Filters / Legend)
-========================= */
-.panel {
-  position:absolute;
-  background:white;
-  border-radius:6px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.3);
-  z-index:1000;
-  font-family:sans-serif;
-}
-
-.panel-header {
-  display:flex;
-  justify-content:space-between;
-  padding:8px;
-  font-weight:bold;
-  background:#f0f0f0;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size:22px;
-  letter-spacing:1px;
-}
-
+/* Panels */
+.panel { position:absolute; background:white; border-radius:6px; box-shadow:0 2px 10px rgba(0,0,0,0.3); z-index:1000; }
+.panel-header { display:flex; justify-content:space-between; padding:8px; font-weight:bold; background:#f0f0f0; font-family: 'Bebas Neue', sans-serif; font-size:22px; letter-spacing:1px; }
 .panel button { background:none; border:none; font-size:16px; cursor:pointer; }
 .panel-content { padding:8px; font-family:'Inter', sans-serif; font-size:14px; line-height:1.4; }
 .collapsed .panel-content { display:none; }
@@ -107,8 +72,6 @@ html, body { margin:0; height:100%; }
 /* Filters Panel */
 #filters { bottom:10px; right:10px; width:780px; }
 #filters.collapsed { width:120px; height:40px; }
-
-/* Sentence filter layout */
 #sentence-filters { display:flex; flex-wrap:wrap; gap:6px; align-items:center; font-size:14px; }
 #sentence-filters select { padding:4px 6px; }
 
@@ -118,19 +81,7 @@ html, body { margin:0; height:100%; }
 .legend-row { margin-bottom:6px; }
 .legend-row img { width:26px; vertical-align:middle; margin-right:6px; }
 
-/* =========================
-   POPUPS (RESTORED ORIGINAL LEAFLET STYLE)
-========================= */
-.leaflet-popup-content {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  line-height: 1.4;
-}
-
-.leaflet-popup-content b {
-  font-size:16px;
-}
-
+/* POPUPS: REMOVE ALL CUSTOM WIDTH/SHADOW */
 </style>
 </head>
 <body>
@@ -221,7 +172,7 @@ html, body { margin:0; height:100%; }
     <div class="legend-row"><img src="icons/fighter-plane.png"> Jet</div>
     <div class="legend-row"><img src="icons/balloon.png"> Balloon</div>
     <div class="legend-row"><img src="icons/soldier.png"> Ground Border Crossing</div>
-    <div class="legend-row">🔴 Actor confirmed to be Russian</div>
+    <div class="legend-row">🔴 IAIA Actor confirmed to be Russian</div>
     <div class="legend-row">🟠 Actor suspected to be Russian</div>
     <div class="legend-row">🟡 Unknown actor</div>
     <div class="legend-row">🟢 Unverified incident</div>
@@ -236,13 +187,11 @@ html, body { margin:0; height:100%; }
 <!-- Map JS -->
 <script src="map.js"></script>
 
-<!-- Panel + Sidebar JS -->
 <script>
 function togglePanel(id){
   document.getElementById(id).classList.toggle('collapsed');
 }
 
-// Sidebar toggle
 const sidebar = document.getElementById('sidebar');
 const handle = document.getElementById('sidebar-handle');
 handle.addEventListener('click', e => {
