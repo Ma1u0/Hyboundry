@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"/>
 
 <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Bebas+Neue&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Bebas+Neue&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
 <style>
 html, body { margin:0; height:100%; }
@@ -19,10 +19,8 @@ html, body { margin:0; height:100%; }
 /* Sidebar */
 #sidebar {
   position: fixed;
-  top:0;
-  left:0;
-  height:100%;
-  width:250px;
+  top:0; left:0;
+  width:250px; height:100%;
   background: rgba(255,255,255,0.97);
   box-shadow: 2px 0 10px rgba(0,0,0,0.25);
   transform: translateX(-250px);
@@ -30,84 +28,38 @@ html, body { margin:0; height:100%; }
   z-index:1001;
   font-family: 'Oswald', sans-serif;
 }
-
 #sidebar.sidebar-open { transform: translateX(0); }
-
-#sidebar-content {
-  padding: 20px;
-}
-
-#sidebar-content a {
-  display: block;
-  margin-bottom: 12px;
-  font-size: 18px;
-  color: #111;
-  text-decoration: none;
-}
-
+#sidebar-content { padding:20px; }
+#sidebar-content a { display:block; margin-bottom:12px; font-size:18px; color:#111; text-decoration:none; }
 #sidebar-handle {
-  position: absolute;
-  right: -30px;
-  top: 20px;
-  width: 30px;
-  height: 40px;
-  background:white;
+  position:absolute; right:-30px; top:20px;
+  width:30px; height:40px; background:white;
   border-radius:0 6px 6px 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex; align-items:center; justify-content:center;
   box-shadow:2px 0 6px rgba(0,0,0,0.3);
-  cursor:pointer;
-  font-size:22px;
-  z-index:1002;
+  cursor:pointer; font-size:22px; z-index:1002;
 }
 
-/* Map fills viewport */
-#map { 
-  position:absolute; 
-  top:0; 
-  left:0; 
-  right:0; 
-  bottom:0; 
-  z-index:0;
-}
+/* Map */
+#map { position:absolute; top:0; left:0; right:0; bottom:0; z-index:0; }
 
 /* Panels */
 .panel {
-  position:absolute;
-  background:white;
-  border-radius:6px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.3);
-  z-index:1000;
+  position:absolute; background:white; border-radius:6px; 
+  box-shadow:0 2px 10px rgba(0,0,0,0.3); z-index:1000;
 }
-
 .panel-header {
-  display:flex;
-  justify-content:space-between;
-  padding:8px;
-  font-weight:bold;
-  background:#f0f0f0;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size:22px;
-  letter-spacing:1px;
+  display:flex; justify-content:space-between; padding:8px;
+  font-weight:bold; background:#f0f0f0;
+  font-family:'Bebas Neue'; font-size:22px; letter-spacing:1px;
 }
-
 .panel button { background:none; border:none; font-size:16px; cursor:pointer; }
-
-.panel-content { 
-  padding:8px;
-  font-family: 'Inter', sans-serif;
-  font-size:14px;
-  line-height:1.4;
-}
-
+.panel-content { padding:8px; font-family:'Inter'; font-size:14px; line-height:1.4; }
 .collapsed .panel-content { display:none; }
 
-/* Filters panel */
+/* Filters */
 #filters { bottom:10px; right:10px; width:780px; }
 #filters.collapsed { width:120px; height:40px; }
-
-/* Sentence filter layout */
 #sentence-filters { display:flex; flex-wrap:wrap; gap:6px; align-items:center; font-size:14px; }
 #sentence-filters select { padding:4px 6px; }
 
@@ -117,27 +69,9 @@ html, body { margin:0; height:100%; }
 .legend-row { margin-bottom:6px; }
 .legend-row img { width:26px; vertical-align:middle; margin-right:6px; }
 
-/* === Leaflet Popups: ORIGINAL STYLE === */
-.leaflet-popup-content-wrapper {
-  padding: 6px 8px; /* classic padding */
-  border-radius: 6px; /* rounded corners */
-  min-width: 180px;
-  max-width: 220px;
-}
-
-.leaflet-popup-content {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
-  line-height: 1.4;
-}
-
-.leaflet-popup-content b {
-  font-size: 16px;
-}
-
-.leaflet-popup-tip {
-  background: white;
-}
+/* POPUPS: KEEP DEFAULT LEAFLET SHAPE & WIDTH */
+.leaflet-popup-content { font-family:'Oswald', sans-serif; font-size:14px; line-height:1.4; }
+.leaflet-popup-content b { font-size:16px; }
 </style>
 </head>
 <body>
@@ -173,7 +107,6 @@ html, body { margin:0; height:100%; }
         <option value="green">unverified</option>
         <option value="blue">safety breaches</option>
       </select>
-
       <select id="f-type">
         <option value="any">all incidents</option>
         <option value="drone">drones</option>
@@ -181,7 +114,6 @@ html, body { margin:0; height:100%; }
         <option value="balloon">balloons</option>
         <option value="border">ground crossings</option>
       </select>
-
       <span>at</span>
       <select id="f-location">
         <option value="any">any place</option>
@@ -190,7 +122,6 @@ html, body { margin:0; height:100%; }
         <option value="infrastructure">infrastructure</option>
         <option value="others">other locations</option>
       </select>
-
       <span>in</span>
       <select id="f-month">
         <option value="any">any month</option>
@@ -207,7 +138,6 @@ html, body { margin:0; height:100%; }
         <option value="11">November</option>
         <option value="12">December</option>
       </select>
-
       <select id="f-year">
         <option value="any">any year</option>
         <option value="2025">2025</option>
@@ -217,7 +147,7 @@ html, body { margin:0; height:100%; }
   </div>
 </div>
 
-<!-- Legend Panel -->
+<!-- Legend -->
 <div id="legend" class="panel">
   <div class="panel-header">
     <span>Legend</span>
@@ -240,14 +170,11 @@ html, body { margin:0; height:100%; }
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
-<!-- Your map.js -->
+<!-- Map JS -->
 <script src="map.js"></script>
 
 <script>
-function togglePanel(id){
-  document.getElementById(id).classList.toggle('collapsed');
-}
-
+function togglePanel(id){ document.getElementById(id).classList.toggle('collapsed'); }
 const sidebar = document.getElementById('sidebar');
 const handle = document.getElementById('sidebar-handle');
 handle.addEventListener('click', e => {
