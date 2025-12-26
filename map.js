@@ -1896,9 +1896,9 @@ document.addEventListener('DOMContentLoaded', () => {
    {
     lat: 40.86296,
     lng: 30.02798,
-    icon: icons.droneYellow,
+    icon: icons.droneRed,
     type: 'drone',      // used for filtering
-    risk: 'yellow',
+    risk: 'red',
     place: 'others',
     year: '2025',
      month: '12',
@@ -1913,9 +1913,9 @@ document.addEventListener('DOMContentLoaded', () => {
    {
     lat: 40.04769,
     lng: 27.96799,
-    icon: icons.droneYellow,
+    icon: icons.droneRed,
     type: 'drone',      // used for filtering
-    risk: 'yellow',
+    risk: 'red',
     place: 'others',
     year: '2025',
      month: '12',
