@@ -31,6 +31,9 @@ html, body {
   transition: transform 0.3s ease;
   z-index: 1000;
   font-family: 'Fjalla One', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* This pushes content to top and bottom */
 }
 
 #sidebar-content {
@@ -43,6 +46,26 @@ html, body {
   color: #000;
   text-decoration: none;
   font-size: 18px;
+}
+
+#sidebar-social {
+  padding: 20px;
+  text-align: center;
+}
+
+#sidebar-social a {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+#sidebar-social a:hover {
+  transform: scale(1.1);
+}
+
+.twitter-logo {
+  width: 32px; /* Adjust size as needed */
+  height: 32px;
+  fill: #1DA1F2; /* Official Twitter blue */
 }
 
 #sidebar-handle {
@@ -215,15 +238,18 @@ html, body {
 <body>
 <div id="sidebar">
   <div id="sidebar-content">
-    <a href="index.html">🏠 Home</a>
+    <a href="index.html">🏠 House</a>
     <a href="map.html">🗺️ Map</a>
     <a href="calendar.html">📅 Calendar</a>
   </div>
 
-  <!-- Bottom social link -->
+  <!-- Bottom Twitter/X link -->
   <div id="sidebar-social">
-    <a href="https://twitter.com/mat1_u" target="_blank">🐦</a>
+    <a href="https://twitter.com/mat1_u" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="X Logo" class="twitter-logo">
+    </a>
   </div>
+</div>
 </div>
 </div>
 <div id="sidebar-handle">&#9776;</div>
