@@ -1817,7 +1817,7 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '10',
     popupType: 'Drone sighting / airport closure ', // shown in popup
     date: '27 Oct 2025, 20:53 - ~23:00',
-    details: " A drone has been seen sighted near the runway. The perpatrator hasn't been found",
+    details: " A drone has been seen near the runway. The perpatrator hasn't been found",
     link: "https://elpais.com/espana/comunidad-valenciana/2025-10-28/un-dron-cerca-de-la-pista-de-despegue-obliga-a-cerrar-el-aeropuerto-de-alicante-durante-casi-dos-horas.html",
     country: "Alicante Airport, Spain 🇪🇸"
   },
