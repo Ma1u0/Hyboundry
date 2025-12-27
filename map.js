@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       popupType: 'Drone sighting',
       date: '01 Nov 2025, night',
-      details: "The police got three reports of a  drone; Belgian Minister of Defence, Theo Francken, says that those drones had targeted Kleine-Brogel and didn't coincidentally end up there <br> A drone jammer was used but was unsuccessful ",
+      details: "The police got three reports of a drone. Belgian Minister of Defence, Theo Francken, says that those drones had targeted Kleine-Brogel and didn't coincidentally end up there <br> A drone jammer was used but was unsuccessful ",
       link: "https://x.com/franckentheo/status/1984908846339391647?s=61"
     },
     {
@@ -533,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
     icon: icons.droneOrange,
     type: 'drone',      // used for filtering
     risk: 'orange',
-    place: ['airport', 'militarybases'],
+    place: 'airport',
     year: '2025',
     month: '09',
     popupType: 'Drone sighting / airport closure ', // shown in popup
