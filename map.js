@@ -533,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
     icon: icons.droneOrange,
     type: 'drone',      // used for filtering
     risk: 'orange',
-    place: 'airport',
+    place: ['airport', 'militarybases'],
     year: '2025',
     month: '09',
     popupType: 'Drone sighting / airport closure ', // shown in popup
