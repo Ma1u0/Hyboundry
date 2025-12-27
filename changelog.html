@@ -16,11 +16,58 @@ html, body {
   color: #222;
 }
 
+/* =========================
+   SIDEBAR (same as other pages)
+========================= */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.25);
+  transform: translateX(-250px);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+#sidebar-content {
+  padding: 20px;
+}
+
+#sidebar a {
+  display: block;
+  margin-bottom: 12px;
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#sidebar-handle {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 32px;
+  height: 42px;
+  background: white;
+  border-radius: 0 6px 6px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  font-size: 22px;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
 /* ===== Layout ===== */
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px 20px 60px;
+  transition: margin-left 0.3s ease;
 }
 
 /* ===== Header ===== */
@@ -99,36 +146,58 @@ h1 {
 </head>
 
 <body>
+
+<!-- Sidebar -->
+<div id="sidebar">
+  <div id="sidebar-content">
+    <a href="index.html">🏠 Home</a>
+    <a href="map.html">🗺️ Map</a>
+    <a href="calendar.html">📅 Calendar</a>
+    <a href="info.html">ℹ️ Info</a>
+    <a href="changelog.html">📝 Changelog</a>
+  </div>
+</div>
+<div id="sidebar-handle">&#9776;</div>
+
+<!-- Content -->
 <div class="container">
 
   <h1>Changelog</h1>
   <p class="subtitle">Updates and new incidents.</p>
 
-  <!-- v0.5 -->
   <div class="release">
     <div class="release-header">
-      <div class="release-title">V1.0 - Changelog added</div>
-      <div class="release-date">27. Dec 2025</div>
+      <div class="release-title">v1.0 – Changelog added</div>
+      <div class="release-date">27 Dec 2025</div>
     </div>
     <ul>
+      <li>Initial changelog page added</li>
     </ul>
   </div>
 
-
- <!-- v0.5 -->
-<!--  <div class="release">
-    <div class="release-header">
-      <div class="release-title">v1.0 - Changelog added</div>
-      <div class="release-date">27. Dec 2025</div>
-    </div>
-    <ul>
-      <li>Interactive map with clustering</li>
-      <li>Incident calendar overview</li>
-      <li>Sidebar navigation and filters</li>
-    </ul>
-  </div> -->
-  
-  
 </div>
+
+<script>
+/* Sidebar toggle */
+const sidebar = document.getElementById('sidebar');
+const handle = document.getElementById('sidebar-handle');
+const container = document.querySelector('.container');
+
+let sidebarOpen = false;
+
+handle.addEventListener('click', () => {
+  sidebarOpen = !sidebarOpen;
+  if (sidebarOpen) {
+    sidebar.style.transform = 'translateX(0)';
+    handle.style.transform = 'translateX(250px)';
+    container.style.marginLeft = '250px';
+  } else {
+    sidebar.style.transform = 'translateX(-250px)';
+    handle.style.transform = 'translateX(0)';
+    container.style.marginLeft = '0';
+  }
+});
+</script>
+
 </body>
 </html>
