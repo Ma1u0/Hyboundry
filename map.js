@@ -995,22 +995,33 @@ document.addEventListener('DOMContentLoaded', () => {
     country: "Bremen Airport, Germany 🇩🇪",
   },
 
-   {
-    lat: 52.46144,
-    lng: 9.68633,
-    icon: icons.droneYellow,
-    type: 'drone',      // used for filtering
-    risk: 'yellow',
-    place: 'airports',
-    year: '2025',
-     month: '11',
+{
+  lat: 52.46144,
+  lng: 9.68633,
+  icon: icons.droneYellow,
+  type: 'drone',      // used for filtering
+  risk: 'yellow',
+  place: 'airports',
+  year: '2025',
+  month: '11',
+  country: "Hannover Airport, Germany 🇩🇪",
+
+  incidents: [
+    {
     popupType: 'Drone sighting / airport closure ', // shown in popup
     date: '5 Nov 2025, 22:00 - 22:45',
     details: "A pilot sighted a drone while landing at the airport which caused the airport to close it's airspace. The drone reportedly flew over an industrial area next to the airport",
     link: "https://www.bild.de/news/flug-nach-muenchen-umgeleitet-drohnen-alarm-am-flughafen-hannover-690bce570580923d09988aec",
-    country: "Hannover Airport, Germany 🇩🇪",
-  },
-
+    },
+    {
+      popupType: 'Drone sighting / airport closure',
+      date: '26 Dec 2025, 21:47 - 00:16',
+      details: "At least five drones were reported near the airport disrupting air traffic. One of the drones was seen at the aerodrome near the airport. The airport was aproached by at least two of them",
+      link: "https://www.dw.com/en/germany-drones-disrupt-air-traffic-in-hanover/a-75316744"
+    }
+  ]
+},
+    
   {
     lat: 52.59799,
     lng: 10.03044,
@@ -1044,6 +1055,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.cz.de/lokales/celle-lk/celle/provokationen-gehen-weiter-unbekannte-drohnen-jetzt-auch-beim-bundeswehr-fliegerhorst-fassberg-QCF3BDQLM5DRJMUGOGQRZCJWEA.html",
     country: "Faßberg Air Base, Germany 🇩🇪",
     note: "Faßberg is home to the Air Force Technical Training Center",
+  },
+
+  {
+    lat: 51.81460,
+    lng: 13.21903,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'militarybases',
+    year: '2025',
+     month: '12',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '01 Dec 2025, 16:40',
+    details: "Three drones of an unknown type were spotted above an Arrow 3, only two days before its commissioning. One of the drones was visually confirmed by a Bundeswehr drone and an attemt to shoot the drones down failed. <br><br> According to Bundeswehr it is already the second suspicious drone sighting over this weapon system and it is assumed that this incident was intended.",
+    link: "https://www.cz.de/lokales/celle-lk/celle/provokationen-gehen-weiter-unbekannte-drohnen-jetzt-auch-beim-bundeswehr-fliegerhorst-fassberg-QCF3BDQLM5DRJMUGOGQRZCJWEA.html",
+    country: " Schönewalde/Holzdorf, Germany 🇩🇪",
   },
     
    /* =========================
