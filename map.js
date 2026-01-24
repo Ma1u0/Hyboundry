@@ -1069,7 +1069,7 @@ document.addEventListener('DOMContentLoaded', () => {
     popupType: 'Drone sighting ', // shown in popup
     date: '01 Dec 2025, 16:40',
     details: "Three drones of an unknown type were spotted above an Arrow 3, only two days before its commissioning. One of the drones was visually confirmed by a Bundeswehr drone and an attemt to shoot the drones down failed. <br><br> According to Bundeswehr it is already the second suspicious drone sighting over this weapon system and it is assumed that this incident was intended.",
-    link: "https://www.cz.de/lokales/celle-lk/celle/provokationen-gehen-weiter-unbekannte-drohnen-jetzt-auch-beim-bundeswehr-fliegerhorst-fassberg-QCF3BDQLM5DRJMUGOGQRZCJWEA.html",
+    link: "https://www.tagesschau.de/investigativ/ndr-wdr/drohnenabwehr-120.html",
     country: " Schönewalde/Holzdorf, Germany 🇩🇪",
   },
     
