@@ -1072,6 +1072,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.tagesschau.de/investigativ/ndr-wdr/drohnenabwehr-120.html",
     country: " Schönewalde/Holzdorf, Germany 🇩🇪",
   },
+
+  {
+    lat: 50.979722,
+    lng: 10.958056,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'airports',
+    year: '2025',
+     month: '10',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '22 Oct 2025, 00:30 - 01:49',
+    details: "Five drones have been spotted in the area of the airport and an helicopter of the federal police was used. <br><br> According to MDR Thüringen, Investigators consider this case to be special since it was the first time this many drones were seen at a German airport.",
+    link: "https://www.mdr.de/nachrichten/thueringen/mitte-thueringen/erfurt/flughafen-drohne-flugzeug-reise-102.html",
+    country: "Erfurt-Weimar Airport, Germany 🇩🇪",
+  },
     
    /* =========================
        I R E L A N D
