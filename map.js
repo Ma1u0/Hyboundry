@@ -1088,6 +1088,23 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.mdr.de/nachrichten/thueringen/mitte-thueringen/erfurt/flughafen-drohne-flugzeug-reise-102.html",
     country: "Erfurt-Weimar Airport, Germany 🇩🇪",
   },
+
+
+  {
+    lat: 50.87845,
+    lng: 10.97222,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+     month: '10',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '22 Oct 2025, sometime between 00:30 and 01:49',
+    details: "Two drones were seen in the area of Amt Wachsenburg-Arnstadt, at the same time as the incident at Erfurt-Weimar Airport <br><br> It is unknown if the two incidents are connected",
+    link: "https://www.mdr.de/nachrichten/thueringen/mitte-thueringen/erfurt/flughafen-drohne-flugzeug-reise-102.html",
+    country: "Amt Wachsenburg-Arnstadt, Germany 🇩🇪",
+  },
     
    /* =========================
        I R E L A N D
