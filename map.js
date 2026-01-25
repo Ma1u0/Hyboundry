@@ -1101,7 +1101,7 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '10',
     popupType: 'Drone sighting ', // shown in popup
     date: '22 Oct 2025, sometime between 00:30 and 01:49',
-    details: "Two drones were seen in the area of Amt Wachsenburg-Arnstadt, at the same time as the incident at Erfurt-Weimar Airport <br><br> It is unknown if the two incidents are connected",
+    details: "Two drones were seen in the area of Amt Wachsenburg-Arnstadt, at the same time as the incident at Erfurt-Weimar Airport <br><br> It is unknown if this sighting is connected to the sighting at Erfurt-Weimar Airport",
     link: "https://www.mdr.de/nachrichten/thueringen/mitte-thueringen/erfurt/flughafen-drohne-flugzeug-reise-102.html",
     country: "Amt Wachsenburg-Arnstadt, Germany 🇩🇪",
   },
