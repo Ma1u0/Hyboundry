@@ -1311,8 +1311,8 @@ document.addEventListener('DOMContentLoaded', () => {
   },
 
      {
-    lat: 52.24350,
-    lng: 5.63432,
+    lat: 52.511389,
+    lng: 6.353056,
     icon: icons.droneYellow,
     type: 'drone',      // used for filtering
     risk: 'yellow',
@@ -1321,9 +1321,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '11',
     popupType: 'Drone sighting ', // shown in popup
     date: '21 Nov 2025',
-    details: "A drone entered Dutch airspace on an level where identification is required. The lack of it triggered the Quick Reaction Alert and two F-35 jets were scrambled. The drone left Dutch airspace ",
+    details: "Multiple drones have been spotted over the Gasunie site in Vilsteren, Ommen muncipality. The police could not identify their origin or say what the drones did. <br><br> The muncipality decided not to inform the public in November.",
     link: "https://nos.nl/regio/overijssel/artikel/719487-drone-mysterie-boven-gasunie-in-ommen-herkomst-onbekend-gemeente-zweeg-na-melding",
-    country: "Netherlands 🇳🇱",
+    country: "Vilsteren, Netherlands 🇳🇱",
   },
     
      /* =========================
