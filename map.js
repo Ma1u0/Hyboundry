@@ -1309,6 +1309,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.defensie.nl/actueel/nieuws/2025/12/07/f-35-gevechtsvliegtuigen-ingezet-voor-onbekend-object",
     country: "Netherlands 🇳🇱",
   },
+
+     {
+    lat: 52.24350,
+    lng: 5.63432,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+     month: '11',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '21 Nov 2025',
+    details: "A drone entered Dutch airspace on an level where identification is required. The lack of it triggered the Quick Reaction Alert and two F-35 jets were scrambled. The drone left Dutch airspace ",
+    link: "https://nos.nl/regio/overijssel/artikel/719487-drone-mysterie-boven-gasunie-in-ommen-herkomst-onbekend-gemeente-zweeg-na-melding",
+    country: "Netherlands 🇳🇱",
+  },
     
      /* =========================
        N O R W A Y
