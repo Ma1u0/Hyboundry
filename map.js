@@ -1777,6 +1777,23 @@ document.addEventListener('DOMContentLoaded', () => {
     note: "Source for the time:",
     noteLink: "https://x.com/PANSA_PL/status/2004141048017330265?s=20"
   },
+
+      {
+    lat: 53.016667,
+    lng: 20.883333,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'militarybases',
+    year: '2026',
+     month: '01',
+    popupType: 'Drone sighting / crash site', // shown in popup
+    date: '28 Jan 2026, ~18:00',
+    details: "The drone was flying above the base and later crashed 70 meters from the weapons depot. <br><br> It is suspected that it was an reconnaissance drone scanning antena field devices.",
+    link: "https://wiadomosci.radiozet.pl/polska/niezidentyfikowany-dron-spadl-na-jednostke-wojskowa-w-przasnyszu-ujawniamy-szczegoly",
+    country: "Przasnysz, Poland 🇵🇱",
+    note: "The Przasnysz military unit is specialised in reconnaissance and radioelectronic warfare and responsible for monitoring radio spectrum in North-Eastern Poland, including the well known Suwałki Gap"
+  },
     
      /* =========================
        R O M A N I A
