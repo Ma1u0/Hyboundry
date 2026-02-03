@@ -1325,6 +1325,39 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://nos.nl/regio/overijssel/artikel/719487-drone-mysterie-boven-gasunie-in-ommen-herkomst-onbekend-gemeente-zweeg-na-melding",
     country: "Vilsteren, Netherlands 🇳🇱",
   },
+
+    
+  {
+    lat: 51.338056,
+    lng: 3.8275,
+    icon: icons.droneGreen,
+    type: 'drone',      // used for filtering
+    risk: 'green',
+    place: 'others',
+    year: '2025',
+     month: '11',
+    popupType: 'Drone sighting', // shown in popup
+    date: '17 Nov 2025',
+    details: "According to the port authority NSP, 'an unprecedented amount of drones' was seen over the port. Drones were seen over the chemical company Dow. The police was unable to independently verify those sightings",
+    link: "https://nos.nl/artikel/2591151-drones-gezien-boven-havengebied-terneuzen-politie-vindt-niets",
+    country: "Port of Terneuzen, Netherlands 🇳🇱",
+  },
+
+  {
+    lat: 51.566433,
+    lng: 3.550519,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+     month: '11',
+    popupType: 'Drone sighting', // shown in popup
+    date: '12 Nov 2025, 19:00',
+    details: "The coast guard spotted an unknown amount of drone(s). Police and coast guard were unable to find the drones later again.",
+    link: "https://www.omroepzeeland.nl/nieuws/17958150/kustwacht-ziet-meerdere-drones-voor-zeeuwse-kust-vliegen",
+    country: "Oostkapelle, Netherlands 🇳🇱",
+  },
     
      /* =========================
        N O R W A Y
