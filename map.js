@@ -1358,6 +1358,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.omroepzeeland.nl/nieuws/17958150/kustwacht-ziet-meerdere-drones-voor-zeeuwse-kust-vliegen",
     country: "Oostkapelle, Netherlands 🇳🇱",
   },
+
+  {
+    lat: 51.567222,
+    lng: 4.931667,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'militarybases',
+    year: '2025',
+     month: '11',
+    popupType: 'Drone sighting', // shown in popup
+    date: '05 Nov 2025',
+    details: "An air traffic controller spotted a drone over the control tower and calls it 'potentially espionage'. The drone was already gone once the police arrived",
+    link: "https://www.volkskrant.nl/buitenland/de-spookdrone-die-angst-en-vertwijfeling-oproept-is-het-ultieme-russische-wapen~b89dcb62/",
+    country: "Gilze-Rijen, Netherlands 🇳🇱",
+  },
     
      /* =========================
        N O R W A Y
