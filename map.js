@@ -2065,8 +2065,12 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 10 Dec 2025,  evening',
     details: "A crashed, unidentified UAV was found by citizens in the Balıkesir’s Manyas district in an uninhabited field. <br> The drone is an Russian Merlin VR drone, which is used for reconnaissance and has a range of ~600km ",
     link: "https://www.hurriyet.com.tr/gundem/balikesirde-insansiz-hava-araci-dustu-inceleme-icin-ankaraya-gonderildi-43060797",
-    country: "Manyas, Türkiye 🇹🇷"
+    country: "Manyas, Türkiye 🇹🇷",
   },
+
+     /* =========================
+       U K
+    ========================= */
   ];
 
   // ------------------------
