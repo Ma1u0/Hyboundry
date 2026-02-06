@@ -1843,6 +1843,24 @@ document.addEventListener('DOMContentLoaded', () => {
     country: "Przasnysz, Poland 🇵🇱",
     note: "The Przasnysz military unit is specialised in reconnaissance and radioelectronic warfare and responsible for monitoring radio spectrum in North-Eastern Poland, including the well known Suwałki Gap"
   },
+
+  {
+    lat: 51.994444,
+    lng: 19.161667,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'militarybases',
+    year: '2026',
+    month: '02',
+    popupType: 'Drone sighting / crash site', // shown in popup
+    date: '06 Feb 2026, public informed at 12:07',
+    details: "A drone crashed into the 1st Air Cavalry Battalion in Leźnica Wielka",
+    link: "https://wiadomosci.onet.pl/kraj/dron-spadl-na-jednostke-wojskowa-jest-sledztwo/js7nfhw",
+    country: "Leźnica Wielka, Poland 🇵🇱",
+    note: "A 22 year old Pole was arrested for flying this drone",
+    noteLink: "https://x.com/zandarmeria/status/2019782967770366384?s=61"
+  },
     
      /* =========================
        R O M A N I A
