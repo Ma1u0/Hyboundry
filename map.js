@@ -1018,6 +1018,12 @@ document.addEventListener('DOMContentLoaded', () => {
       date: '26 Dec 2025, 21:47 - 00:16',
       details: "At least five drones were reported near the airport disrupting air traffic. One of the drones was seen at the aerodrome near the airport. The airport was aproached by at least two of them",
       link: "https://www.dw.com/en/germany-drones-disrupt-air-traffic-in-hanover/a-75316744"
+    },
+    {
+      popupType: 'Drone sighting / airport closure',
+      date: '08 - 12 Jan 2026',
+      details: "Five sightings were reported on multiple days in or near the borders of the drone flight restriction area. <br> The police identified two of those sightings as DJI-made drones, the other three sightings were not confirmed so far and are based on witness reports. ",
+      link: "https://www.dw.com/en/germany-drones-disrupt-air-traffic-in-hanover/a-75316744"
     }
   ]
 },
@@ -1104,6 +1110,22 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "Two drones were seen in the area of Amt Wachsenburg-Arnstadt, at the same time as the incident at Erfurt-Weimar Airport <br><br> It is unknown if this sighting is connected to the sighting at Erfurt-Weimar Airport",
     link: "https://www.mdr.de/nachrichten/thueringen/mitte-thueringen/erfurt/flughafen-drohne-flugzeug-reise-102.html",
     country: "Amt Wachsenburg-Arnstadt, Germany 🇩🇪",
+  },
+
+  {
+    lat: 54.43683,
+    lng: 11.19755,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '01',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '11 Jan 2026, around 01:00 a.m. - around 03:00 a.m.',
+    details: "A vessel of the federal police spotted multiple drone-like objects with blinking red-green lights. The naval coastal station on Fehrmarn confirmed the sighting of six objects and lost sight of them at around 03:00 a.m.. <br><br> The sanctioned Russian tanker 'KRITI VIGOR' was passing trough at the Fehrmarn Belt during this incident. ",
+    link: "https://www.welt.de/politik/deutschland/plus698ed22a616e1cbb1fcd4be2/sabotage-drohnen-brandanschlaege-geheimpapier-zeigt-das-ausmass-der-angriffe-in-deutschland.html",
+    country: "Fehmarn, Germany 🇩🇪",
   },
     
    /* =========================
