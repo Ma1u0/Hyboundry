@@ -2064,11 +2064,11 @@ document.addEventListener('DOMContentLoaded', () => {
     place: 'militarybases',
     year: '2026',
     month: '02',
-    popupType: ' Drone sighting', // shown in popup
-    date: '26 Feb 2026, ',
+    popupType: 'Drone sighting', // shown in popup
+    date: '26 Feb 2026',
     details: "A drone flew to the French nuclear-powered aircraft carrier 'Charles de Gaulle'. According to Defence Minister Pål Jonson, the drone very likely started on a Russian vessel nearby. <br> A Swedish Navy vessel observed a drone and countermeasures were taken to disrupt the drone. It is unknown what happened to the drone once it disappeared. ",
     link: "https://www.svt.se/nyheter/inrikes/rysk-dronare-narmade-sig-hangarfartyget-charles-de-gaulle",
-    country: "Malmö harbor, Sweden 🇸🇪"
+    country: "Malmö harbour, Sweden 🇸🇪"
   },
     
      /* =========================
