@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   // ------------------------
-  // 1️⃣ Initialize map
+  // 1ï¸âƒ£ Initialize map
   // ------------------------
   const map = L.map('map', { zoomControl: false }).setView([20, 0], 2);
 
@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
   // ------------------------
-  // 2️⃣ MarkerCluster group
+  // 2ï¸âƒ£ MarkerCluster group
   // ------------------------
   const markerCluster = L.markerClusterGroup();
   map.addLayer(markerCluster);
 
   // ------------------------
-  // 3️⃣ Icons
+  // 3ï¸âƒ£ Icons
   // ------------------------
   const icons = {
     droneRed: L.icon({ iconUrl: 'icons/red_drone.png', iconSize: [28,28] }),
@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // ------------------------
-  // 4️⃣ Markers array
+  // 4ï¸âƒ£ Markers array
   // ------------------------
   const markers = [];
 
   // ------------------------
-  // 5️⃣ Your incidents go here
+  // 5ï¸âƒ£ Your incidents go here
   // ------------------------
   const incidents = [
    
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '03 Oct 2025, before 01:45',
     details: "15 drones were spotted by chance due to the test of anti drone equipment was tested",
     link: "https://www.vrt.be/vrtnws/en/2025/10/03/drones-spotted-above-belgian-military-bases/",
-    country: "Elsenborn Military Base, Belgium 🇧🇪",
+    country: "Elsenborn Military Base, Belgium ðŸ‡§ðŸ‡ª",
     note: "The Belgian security service considers Russia to be behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'militarybases',
   year: '2025',
   month: '10',
-  country: "Marche-en-Famenne Air Base, Belgium 🇧🇪",
+  country: "Marche-en-Famenne Air Base, Belgium ðŸ‡§ðŸ‡ª",
 
   note: "The Belgian security service considers Russia to be behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'militarybases',
   year: '2025',
   month: ['10', '11'],
-  country: "Florennes Air Base, Belgium 🇧🇪",
+  country: "Florennes Air Base, Belgium ðŸ‡§ðŸ‡ª",
 
   note: "Florennes air base is home to Belgium's F-35 jets <br><br> The Belgian security service considers Russia to be behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'militarybases',
   year: '2025',
   month: '11',
-  country: "Kleine-Brogel Air Base, Belgium 🇧🇪",
+  country: "Kleine-Brogel Air Base, Belgium ðŸ‡§ðŸ‡ª",
 
   note: "Kleine-Brogel is a NATO-used base and is believed to be home to US nuclear weapons <br><br> The Belgian security service considers Russia to be behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: 'Weekend of 01-02 Nov 2025',
     details: "Drones were spotted over the airfield <br> Beverlo is a former military airfield ",
     link: "https://www.bbc.com/news/articles/c20e8qzllewo",
-    country: "Beverlo Airfield, Belgium 🇧🇪",
+    country: "Beverlo Airfield, Belgium ðŸ‡§ðŸ‡ª",
     note: "The Belgian security service considers Russia to be behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'airports',
   year: '2025',
   month: '11',
-  country: "Ostend Airport, Belgium 🇧🇪",
+  country: "Ostend Airport, Belgium ðŸ‡§ðŸ‡ª",
 
   note: "The Belgian security service considers Russia to be behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'airports',
   year: '2025',
   month: '11',
-  country: "Antwerp Airport, Belgium 🇧🇪",
+  country: "Antwerp Airport, Belgium ðŸ‡§ðŸ‡ª",
 
   note: "The Belgian security service considers Russia to be behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '04 Nov 2025, ~21:30 ',
     details: "Police and military security services confirmed the sighting of four drones over the base ",
     link: "https://www.vrt.be/vrtnws/nl/2025/11/05/drones-boven-luchtmachtbasis-schaffen/",
-    country: "Schaffen air base, Belgium 🇧🇪",
+    country: "Schaffen air base, Belgium ðŸ‡§ðŸ‡ª",
     note: "The Belgian security service considers Russia to be behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 04 / 05 Nov 2025, 23:00 / 02:00 ',
     details: "A single drone has been seen twice over the school by both the students and patrols ",
     link: "https://www.vrt.be/vrtnws/nl/2025/11/07/voorbije-2-nachten-ook-drone-gespot-boven-koninklijke-school-voo/",
-    country: "Royal School for Non-Commissioned Officers, Sint-Truiden, Belgium 🇧🇪",
+    country: "Royal School for Non-Commissioned Officers, Sint-Truiden, Belgium ðŸ‡§ðŸ‡ª",
     note: "The Belgian security service considers Russia to be behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
@@ -291,9 +291,9 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'airports',
   year: '2025',
   month: '11',
-  country: "Liège Airport, Belgium 🇧🇪",
+  country: "LiÃ¨ge Airport, Belgium ðŸ‡§ðŸ‡ª",
 
-  note: "Liège airport is a major cargo hub <br><br> The Belgian security service considers Russia to be behind the drones",
+  note: "LiÃ¨ge airport is a major cargo hub <br><br> The Belgian security service considers Russia to be behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
 
   incidents: [
@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'airports',
   year: '2025',
   month: '11',
-  country: "Brussels Airport, Belgium 🇧🇪",
+  country: "Brussels Airport, Belgium ðŸ‡§ðŸ‡ª",
 
   note: "The Belgian security service considers Russia to be behind the drones",
   noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/",
@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 05 Nov 2025, 18:15 ',
     details: "The police got notified about drones near the Heverlee barracks but the police could't verify these sightings once they arrived ",
     link: "https://today.rtl.lu/news/world/a/2352410.html",
-    country: "Heverlee Barracks, Belgium 🇧🇪",
+    country: "Heverlee Barracks, Belgium ðŸ‡§ðŸ‡ª",
   },
 
     
@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 06 Nov 2025, evening, before 21:30 ',
     details: "The police confirms a drone flying over the SCK CEN nuclear research center. The drone later flew over the European School in Mol",
     link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDYxMDY0MzMw",
-    country: "Mol, Belgium 🇧🇪",
+    country: "Mol, Belgium ðŸ‡§ðŸ‡ª",
     note: "The Belgian security service considers Russia to be behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 06 Nov 2025, evening ',
     details: "The port police confirms the sighting of drones but can't give further details",
     link: "https://vrtnws.be/p.Pqn1MwxDy#bGl2ZWJsb2dfaXRlbV8xNzYyNDk3MDQ3MDc3",
-    country: "Port of Antwerp, Belgium 🇧🇪",
+    country: "Port of Antwerp, Belgium ðŸ‡§ðŸ‡ª",
     note: "The Belgian security service considers Russia to be behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 08 Nov 2025 ',
     details: "Multiple drone sightings were reported but the police couldn't verify them yet <br> Reports came from Heikruis, Herfelingen, Herne, and Tollembeek",
     link: "https://www.vrt.be/vrtnws/nl/2025/11/09/meldingen-van-drones-in-buurt-van-satcom-bollen-van-navo-in-kest/",
-    country: "Pajottegem, Belgium 🇧🇪",
+    country: "Pajottegem, Belgium ðŸ‡§ðŸ‡ª",
     note: "The Kester NATO Setcom base is close to the locations of the reported drones",
   },
 
@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 09 Nov 2025, ~22:00 - ~23:00 ',
     details: "Three drones have been reported shortly before 22:00, later two more drones have been discovered",
     link: "https://www.politico.eu/article/drones-spotted-belgium-nuclear-plant-doel-airspace-incursions/",
-    country: "Doel Nuclear Power Plant, Belgium 🇧🇪",
+    country: "Doel Nuclear Power Plant, Belgium ðŸ‡§ðŸ‡ª",
     note: "The Belgian security service considers Russia to be behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
@@ -465,7 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '2025',
     details: "On September 10th, the Czech army reported an growing number of drone sightings over it's military bases. No further details were provided",
     link: "https://www.reuters.com/business/aerospace-defense/russias-suspected-hybrid-war-puts-european-air-defences-test-2025-11-05/",
-    country: "Czech Republic 🇨🇿"
+    country: "Czech Republic ðŸ‡¨ðŸ‡¿"
   },
     
  /* =========================
@@ -482,10 +482,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone sighting / airport closure ', // shown in popup
-    date: '22 Sep 2025, flights halted ~20:26–00:30',
-    details: "Copenhagen Airport was temporarily closed after two–three drones were spotted. Danish authorities said that the drones were operated by a 'capable actor.' <br><br> Invoking NATO Article 4 was considered but ultimately Denmark decided against it",
+    date: '22 Sep 2025, flights halted ~20:26â€“00:30',
+    details: "Copenhagen Airport was temporarily closed after twoâ€“three drones were spotted. Danish authorities said that the drones were operated by a 'capable actor.' <br><br> Invoking NATO Article 4 was considered but ultimately Denmark decided against it",
     link: "https://news.sky.com/story/flights-suspended-at-copenhagen-airport-after-drone-sightings-13436457",
-    country: "Copenhagen Airport, Denmark 🇩🇰",
+    country: "Copenhagen Airport, Denmark ðŸ‡©ðŸ‡°",
     note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'airports',
   year: '2025',
   month: ['09', '11'],
-  country: "Aalborg Airport, Denmark 🇩🇰",
+  country: "Aalborg Airport, Denmark ðŸ‡©ðŸ‡°",
 
   note: "Aalborg airport is both a publicly and militarily used airport <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
    noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war",
@@ -514,13 +514,13 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       popupType: 'Suspected false alarm  / airport closure',
-      date: '25 Sep 2025, ~23:40–00:35',
+      date: '25 Sep 2025, ~23:40â€“00:35',
       details: "Air traffic was halted following a suspected drone observation by the police. Police wasn't able to confirm their sighting",
       link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10242688"
     },
     {
       popupType: 'Drone sighting / airport closure',
-      date: '14 Nov 2025, 21:30–23:10',
+      date: '14 Nov 2025, 21:30â€“23:10',
       details: "Air traffic halted after possible drone sighting",
       link: "https://www.anews.com.tr/europe/2025/11/17/drone-alert-temporarily-shuts-danish-airport"
     }
@@ -540,7 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '24 Sep 2025, 20:15',
     details: "One or two drones were seen over the air base. The drones weren't taken down",
     link: "https://www.france24.com/en/europe/20250927-new-drones-sighted-over-denmark-s-largest-military-base",
-    country: "Karup Air Base, Denmark 🇩🇰",
+    country: "Karup Air Base, Denmark ðŸ‡©ðŸ‡°",
     note: "All Danish military helicopters, airspace surveillance, the flight school, support functions, and the defence command are stationed in Karup <br><br> Karup Air Base shares one runway with the Midtjylland civilian airport <br><br> The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
@@ -558,7 +558,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '24 Sep 2025, sightings ~22:00 - 02:08',
     details: " Drones were reported in the airspace of Esbjerg Airport. Number of drones remains unknown. The airport wasn't closed due to no more flights being scheduled until the morning",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
-    country: "Esbjerg Airport, Denmark 🇩🇰",
+    country: "Esbjerg Airport, Denmark ðŸ‡©ðŸ‡°",
     note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
@@ -576,7 +576,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '24 Sep 2025, sightings ~22:00 - 02:08',
     details: "Drones were reported in the airspace of Skrydstrup air abse. Number of drones remains unknown.",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
-    country: "Skrydstrup Air Base, Denmark 🇩🇰",
+    country: "Skrydstrup Air Base, Denmark ðŸ‡©ðŸ‡°",
     note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
@@ -592,9 +592,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '09',
     popupType: 'Drone sighting / airport closure ', // shown in popup
     date: '24 Sep 2025, sightings ~22:00 - 02:08',
-    details: "Drones were reported in the airspace near Sønderborg Airport. Number of drones remains unknown. The airport wasn't closed due to no more flights being scheduled until the morning.",
+    details: "Drones were reported in the airspace near SÃ¸nderborg Airport. Number of drones remains unknown. The airport wasn't closed due to no more flights being scheduled until the morning.",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
-    country: "Sønderborg Airport, Denmark 🇩🇰",
+    country: "SÃ¸nderborg Airport, Denmark ðŸ‡©ðŸ‡°",
     note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
@@ -612,7 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '25 Sep 2025, sightings ~03:00',
     details: "The police confirmed that a drone was flying at this location after receiving reports about an unidentified drone",
     link: "https://www.kristeligt-dagblad.dk/drone-spottet-ved-kaserne-i-holstebro",
-    country: "Jutland Dragoon Regiment barracks in Holstebro, Denmark 🇩🇰",
+    country: "Jutland Dragoon Regiment barracks in Holstebro, Denmark ðŸ‡©ðŸ‡°",
     note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
@@ -630,7 +630,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '24 Sep 2025',
     details: "Danish civil rescue company 'Esvagt' reports that it has possibly observed multiple drones flying over the North Sea, near oil fields",
     link: "https://www.reuters.com/world/europe/denmark-reopens-airports-after-drone-disruption-2025-09-25/",
-    country: "North Sea 🇪🇺 / 🇩🇰",
+    country: "North Sea ðŸ‡ªðŸ‡º / ðŸ‡©ðŸ‡°",
   },
     
   {
@@ -646,7 +646,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '25 Sep 2025, Reported 04:21, airport closed 04:40 - ~05:50',
     details: "The police was unable to verify the drone sighting",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10235626",
-    country: "Billund Airport, Denmark 🇩🇰",
+    country: "Billund Airport, Denmark ðŸ‡©ðŸ‡°",
     note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
@@ -664,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '25 Sep 2025, sightings ~05:49',
     details: "Police confirmed that they have seen blinking lights over the airport but won't deny or confirm if those lights were a drone",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn?focusId=10235614",
-    country: "Rønne Airport, Denmark 🇩🇰",
+    country: "RÃ¸nne Airport, Denmark ðŸ‡©ðŸ‡°",
     note: "The Danish PM says only one country could threaten Denmark and the Defence Intelligence Service says that Russia is engaging in hybrid warfare against Denmark",
     noteLink: "https://www.npr.org/2025/10/03/nx-s1-5561990/denmark-russia-drones-hybrid-war"
   },
@@ -681,9 +681,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '09',
     popupType: 'Unverified Drone sighting ', // shown in popup
     date: '25 Sep 2025',
-    details: "The police responded to reports of drones over the Port of Korsør. No further information published since then",
+    details: "The police responded to reports of drones over the Port of KorsÃ¸r. No further information published since then",
     link: "https://x.com/ssj_lfpoliti/status/1971177421018890658?s=61",
-    country: "Port of Korsør, Denmark 🇩🇰",
+    country: "Port of KorsÃ¸r, Denmark ðŸ‡©ðŸ‡°",
   },
     
  /* =========================
@@ -703,7 +703,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 19 Sep 2025, entered airspace between 09:58 and 10:10',
     details: "Three Russian jets breached Estonian airspace up to 10 km deep for 12 minutes before being escorted by NATO jets <br><br> NATO Article 4 was invoked following this incident",
     link: "https://www.osw.waw.pl/en/publikacje/analyses/2025-09-22/russian-fighter-jets-estonian-airspace-a-test-natos-unity",
-    country: "Vaindloo Island, Estonia 🇪🇪"
+    country: "Vaindloo Island, Estonia ðŸ‡ªðŸ‡ª"
   },
 
   {
@@ -719,7 +719,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '17 Oct 2025',
     details: "A drone flying near the US camp Reedo was downed by an anti-drone gun. Authorities couldn't find the remains of the drone in the area it was presumably shot down",
     link: "https://www.stripes.com/theaters/europe/2025-10-29/estonia-drone-shotdown-19584290.html",
-    country: "Reedo military barracks, Estonia 🇪🇪"
+    country: "Reedo military barracks, Estonia ðŸ‡ªðŸ‡ª"
   },
 
    {
@@ -735,7 +735,7 @@ document.addEventListener('DOMContentLoaded', () => {
     month: '11',
     details: "Two Italian Eurofighters escorted the 'Black Pearl', a Tupolev T-134 which trains strategic bomber pilots, two escort fighters, and one SU-24; it's assumed that this plane was en route to Kaliningrad, possibly transporting generals",
     link: "https://www.ilgiornale.it/news/difesa/scramble-efa-italiani-hanno-intercettato-raro-aereo-russo-2572772.html",
-    country: "Ämari, Estonia 🇪🇪"
+    country: "Ã„mari, Estonia ðŸ‡ªðŸ‡ª"
   },
 
   {
@@ -751,7 +751,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '  17 Dec 2025, ~10:00 ',
     details: "Three Russian border guards crossed the border on hovercrafts. They walked on the stone breakwater and returned to Russia again <br> It is unknown whether this was intentional or not",
     link: "https://news.err.ee/1609888417/russian-border-guards-crossed-into-estonia-with-unclear-motives-minister-says",
-    country: "Narva River / Vasknarva breakwater, Estonia 🇪🇪",
+    country: "Narva River / Vasknarva breakwater, Estonia ðŸ‡ªðŸ‡ª",
     note: "Estonia says that the guards aren't reliable since the war because they are brought in from other regions and change and them often changing their place of deployment <br><br> Russian ships normally have to ask for permission to cross that area to get into the Russian part of Lake Peipsi",
   },
     
@@ -772,7 +772,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 20/21 Sep 2025 ',
     details: "An unknown perpetrator flew a drone over the power plant",
     link: "https://yle.fi/a/74-20185326",
-    country: "Valajaskoski Power Plant, Finland 🇫🇮"
+    country: "Valajaskoski Power Plant, Finland ðŸ‡«ðŸ‡®"
   },
                           
      /* =========================
@@ -792,7 +792,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 07 Nov 2025, 23:45 - 23:50 ',
     details: "1: A Policeman reported a drone sighting at the Mulhouse Police station (he didn't see the drone but could hear it) at 23:45 <br> 2: At 23:50 a drone was reported at the Mulhouse Nord station, where a convoy of Leclerc tanks was stationed at 23:30. The drone flew without any lights on over the convoy and disappeared to an unknown location <br> <br> The police has no evidence to say whether it was a intentional or unintentional flight over these areas",
     link: "https://www.lemonde.fr/societe/article/2025/11/12/mulhouse-enquete-ouverte-apres-le-survol-d-un-convoi-de-chars-leclerc_6653159_3224.html",
-    country: "Mulhouse, France 🇫🇷"
+    country: "Mulhouse, France ðŸ‡«ðŸ‡·"
   },
 
     {
@@ -808,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 10 Nov 2025, 19:00 ',
     details: "A drone flew twice over the Eurenco plant which produces gunpowder for the French Army. The drones couldn't be identified or downed",
     link: "https://www.lemonde.fr/pixels/article/2025/12/05/la-base-sous-marine-de-l-ile-longue-qui-abrite-les-sous-marins-nucleaires-lanceurs-d-engins-survolee-par-des-drones_6656098_4408996.html",
-    country: "Bergerac, France 🇫🇷"
+    country: "Bergerac, France ðŸ‡«ðŸ‡·"
   },
 
     
@@ -825,8 +825,8 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 04 Dec 2025, 19:30 ',
     details: "Five drones were spotted over the base with the help of anti drone systems. The stationed battalion shot at the drones",
     link: "https://www.lemonde.fr/en/france/article/2025/12/05/france-takes-anti-drone-measures-after-flight-over-nuclear-sub-base_6748188_7.html",
-    country: "Île Longue, France 🇫🇷",
-    note: "Île Longue is home to four French nuclear ballistic missile submarines",
+    country: "ÃŽle Longue, France ðŸ‡«ðŸ‡·",
+    note: "ÃŽle Longue is home to four French nuclear ballistic missile submarines",
     note_Link: "https://www.lemonde.fr/en/france/article/2025/12/05/france-takes-anti-drone-measures-after-flight-over-nuclear-sub-base_6748188_7.html"
   },
     
@@ -847,7 +847,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 25 Sep 2025 ',
     details: " Drones have been spotted over the refinery in Heide",
     link: "https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html",
-    country: "Heide, Germany 🇩🇪",
+    country: "Heide, Germany ðŸ‡©ðŸ‡ª",
   },
 
 
@@ -864,7 +864,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 25 Sep 2025 ',
     details: "Drones have flew over the Kiel canal from East to West",
     link: "https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html",
-    country: "Kiel Canal, Germany 🇩🇪",
+    country: "Kiel Canal, Germany ðŸ‡©ðŸ‡ª",
   },
 
   {
@@ -880,7 +880,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '25 Sep 2025, starting at ~21:00',
     details: "Two drones were first spotted over a TKMS plant in Kiel. Shortly afterwards, a drone cluster with mother drone was reported at the University clinic of the University of Kiel. Later multiple drones were spotted at the Kiel fjord, where they were flying in parallel paths and measuring the fjord. <br> The state parliament and the coastal power station in Kiel also had drone sightings",
     link: "https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html",
-    country: "Kiel, Germany 🇩🇪",
+    country: "Kiel, Germany ðŸ‡©ðŸ‡ª",
   },
 
   {
@@ -896,7 +896,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '25? Sep 2025',
     details: "Coordinated and connected drones were spotted over the overseas port and the marine command in Rostock",
     link: "https://www.ndr.de/nachrichten/schleswig-holstein/spiegel-drohnen-ueber-schleswig-holstein-sollen-kritische-infrastruktur-ausgespaeht-haben,drohnen-182.html",
-    country: "Rostock, Germany 🇩🇪",
+    country: "Rostock, Germany ðŸ‡©ðŸ‡ª",
     note: "Spiegel also reported a sighting over the Bundeswehr location in Sanitz, Mecklenburg-Vorpommern, which was denied by the Bundeswehr",
   },
 
@@ -909,7 +909,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'airports',
   year: '2025',
    month: '10',
-  country: "Munich Airport, Germany 🇩🇪",
+  country: "Munich Airport, Germany ðŸ‡©ðŸ‡ª",
 
   note: "The Oktoberfest was taking place during both incidents",
 
@@ -940,9 +940,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '10',
     popupType: 'Drone sighting ', // shown in popup
     date: '03 Oct 2025, 01:45',
-    details: " The 15 drones from the Elsenborn military base were last spotted over Düren by the police",
+    details: " The 15 drones from the Elsenborn military base were last spotted over DÃ¼ren by the police",
     link: "https://www.vrt.be/vrtnws/en/2025/10/03/drones-spotted-above-belgian-military-bases/",
-    country: "Düren, Germany 🇩🇪",
+    country: "DÃ¼ren, Germany ðŸ‡©ðŸ‡ª",
     note: "The Belgian security service considers Russia to be behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
@@ -960,7 +960,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '04 Oct 2025, ~21:00',
     details: "Police got a report of three drones flying in a formation flight up to 100km/h at a height of ~100m. The federal police has a flight squadron in Gifhorn (10km from Meine)",
     link: "https://www.zeit.de/news/2025-10/04/drohnensichtung-nahe-gifhorn-gemeldet",
-    country: "Meine, Germany 🇩🇪",
+    country: "Meine, Germany ðŸ‡©ðŸ‡ª",
   },
 
    {
@@ -976,7 +976,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 31 Oct 2025, ~20:00 - ~22:00',
     details: "Police confirmed a drone sighting at BER but the drone later disappeared despite using police helicopters",
     link: "https://www.rbb24.de/panorama/beitrag/2025/10/ber-flughafen-unterbrochen-drohne-polizei.html",
-    country: "Ubibib Berlin-Brandenburg Airport, Germany 🇩🇪",
+    country: "Berlin-Brandenburg Airport, Germany ðŸ‡©ðŸ‡ª",
   },
 
 {
@@ -986,11 +986,9 @@ document.addEventListener('DOMContentLoaded', () => {
   type: 'drone',        // used for filtering
   risk: 'yellow',
   place: 'airports',
-  timePairs: [
-  { year: "2025", month: "11" },
-  { year: "2026", month: "02" }
-  ],
-  country: "AAAAAABremen Airport, Germany 🇩🇪",
+  year: ['2025', '2026'],
+  month: ['11', '02'],
+  country: "Bremen Airport, Germany ðŸ‡©ðŸ‡ª",
 
   incidents: [
     {
@@ -1017,7 +1015,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'airports',
   year: ['2025', '2026'],
   month: ['11', '12', '01'],
-  country: "Hannover Airport, Germany 🇩🇪",
+  country: "Hannover Airport, Germany ðŸ‡©ðŸ‡ª",
 
   incidents: [
     {
@@ -1054,7 +1052,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '11 Dec 2025, 19:00 - 23:00',
     details: "Up to 25 drones flew over the barracks for multiple hours. The police says that it was a professional actor. According to the colonel, the drones were supposed to be seen as they had all lights on <br> The drones were large and flew in formation <br><br> The Bundeswehr didn't shoot them down or chase them away because there was nothing to spy on and no danger to the public or air traffic ",
     link: "https://www.haz.de/der-norden/luftalarm-bei-der-bundeswehr-zwei-dutzend-drohnen-kreisen-ueber-celler-kaserne-73NJM63WX5E45P4QOAUCX23OC4.html",
-    country: "Immelmann barracks, Celle, Germany 🇩🇪",
+    country: "Immelmann barracks, Celle, Germany ðŸ‡©ðŸ‡ª",
     note: "The colonel suspects those drones to be Russian",
     noteLink: "https://www.haz.de/der-norden/luftalarm-bei-der-bundeswehr-zwei-dutzend-drohnen-kreisen-ueber-celler-kaserne-73NJM63WX5E45P4QOAUCX23OC4.html",
   },
@@ -1072,8 +1070,8 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '15 Dec 2025',
     details: "Security personnel has spotted multiple drones over the northern part of the Air Base. The drones flew in formation and disappeared eastwards shortly afterwards. <br><br> Police and Bundeswehr didn't react to those drones because they didn't pose any immediate threat",
     link: "https://www.cz.de/lokales/celle-lk/celle/provokationen-gehen-weiter-unbekannte-drohnen-jetzt-auch-beim-bundeswehr-fliegerhorst-fassberg-QCF3BDQLM5DRJMUGOGQRZCJWEA.html",
-    country: "Faßberg Air Base, Germany 🇩🇪",
-    note: "Faßberg is home to the Air Force Technical Training Center",
+    country: "FaÃŸberg Air Base, Germany ðŸ‡©ðŸ‡ª",
+    note: "FaÃŸberg is home to the Air Force Technical Training Center",
   },
 
   {
@@ -1089,7 +1087,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '01 Dec 2025, 16:40',
     details: "Three drones of an unknown type were spotted above an Arrow 3, only two days before its commissioning. One of the drones was visually confirmed by a Bundeswehr drone and an attemt to shoot the drones down failed. <br><br> According to Bundeswehr it is already the second suspicious drone sighting over this weapon system and it is assumed that this incident was intended.",
     link: "https://www.tagesschau.de/investigativ/ndr-wdr/drohnenabwehr-120.html",
-    country: " Schönewalde/Holzdorf, Germany 🇩🇪",
+    country: " SchÃ¶newalde/Holzdorf, Germany ðŸ‡©ðŸ‡ª",
   },
 
   {
@@ -1103,9 +1101,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '10',
     popupType: 'Drone sighting / airport closure', // shown in popup
     date: '22 Oct 2025, 00:30 - 01:49',
-    details: "Five drones have been spotted in the area of the airport and an helicopter of the federal police was used. <br><br> According to MDR Thüringen, Investigators consider this case to be special since it was the first time this many drones were seen at a German airport.",
+    details: "Five drones have been spotted in the area of the airport and an helicopter of the federal police was used. <br><br> According to MDR ThÃ¼ringen, Investigators consider this case to be special since it was the first time this many drones were seen at a German airport.",
     link: "https://www.mdr.de/nachrichten/thueringen/mitte-thueringen/erfurt/flughafen-drohne-flugzeug-reise-102.html",
-    country: "Erfurt-Weimar Airport, Germany 🇩🇪",
+    country: "Erfurt-Weimar Airport, Germany ðŸ‡©ðŸ‡ª",
   },
 
 
@@ -1122,7 +1120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '22 Oct 2025, sometime between 00:30 and 01:49',
     details: "Two drones were seen in the area of Amt Wachsenburg-Arnstadt, at the same time as the incident at Erfurt-Weimar Airport <br><br> It is unknown if this sighting is connected to the sighting at Erfurt-Weimar Airport",
     link: "https://www.mdr.de/nachrichten/thueringen/mitte-thueringen/erfurt/flughafen-drohne-flugzeug-reise-102.html",
-    country: "Amt Wachsenburg-Arnstadt, Germany 🇩🇪",
+    country: "Amt Wachsenburg-Arnstadt, Germany ðŸ‡©ðŸ‡ª",
   },
 
   {
@@ -1138,7 +1136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '11 Jan 2026, around 01:00 a.m. - around 03:00 a.m.',
     details: "A vessel of the federal police spotted multiple drone-like objects with blinking red-green lights. The naval coastal station on Fehrmarn confirmed the sighting of six objects and lost sight of them at around 03:00 a.m.. <br><br> The sanctioned Russian tanker 'KRITI VIGOR' was passing trough at the Fehrmarn Belt during this incident. ",
     link: "https://www.welt.de/politik/deutschland/plus698ed22a616e1cbb1fcd4be2/sabotage-drohnen-brandanschlaege-geheimpapier-zeigt-das-ausmass-der-angriffe-in-deutschland.html",
-    country: "Fehmarn, Germany 🇩🇪",
+    country: "Fehmarn, Germany ðŸ‡©ðŸ‡ª",
   },
     
    /* =========================
@@ -1155,9 +1153,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '12',
     popupType: 'Drone sighting ', // shown in popup
     date: '01 Dec 2025, shortly before 23:00',
-    details: "Four military grade drones flew near the airport when Zelensky´s plane was supposed to land. The lights were on therefore authorities assume that it was only supposed to be a disruption of the landing, not threaten the plane<br>The drones were likely launched near Howth, from where they first flew above a naval vessel and then towards the location where Zelensky´s plane was supposed to be but his plane was slightly ahead of schedule<br><br>Authorities believe the drones were quadcopters",
+    details: "Four military grade drones flew near the airport when ZelenskyÂ´s plane was supposed to land. The lights were on therefore authorities assume that it was only supposed to be a disruption of the landing, not threaten the plane<br>The drones were likely launched near Howth, from where they first flew above a naval vessel and then towards the location where ZelenskyÂ´s plane was supposed to be but his plane was slightly ahead of schedule<br><br>Authorities believe the drones were quadcopters",
     link: "https://www.thejournal.ie/drones-dublin-ireland-hybrid-warfare-russia-6893104-Dec2025/",
-    country: "Dublin Airport, Ireland 🇮🇪"
+    country: "Dublin Airport, Ireland ðŸ‡®ðŸ‡ª"
   },
 
      /* =========================
@@ -1173,7 +1171,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'airports',
   year: '2025',
   month: ['10', '11', '12'],  
-  country: "Vilnius Airport, Lithuania 🇱🇹",
+  country: "Vilnius Airport, Lithuania ðŸ‡±ðŸ‡¹",
 
   note: "List is scrollable due to too many incidents",
 
@@ -1260,7 +1258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '23 Oct 2025, 17:00',
     details: "Two Russian military aircraft (SU-30 fighter jet & Il-78 refueling tanker) entered Lithuanian airspace for ~18 seconds",
     link: "https://www.euronews.com/2025/10/23/two-russian-military-aircraft-enter-nato-member-lithuanias-airspace-military-says",
-    country: "Border region with Kaliningrad, Lithuania 🇱🇹"
+    country: "Border region with Kaliningrad, Lithuania ðŸ‡±ðŸ‡¹"
   },
 
 {
@@ -1276,7 +1274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '24 Oct 2025, 20:36 - 02:35',
     details: "Air traffic was halted due to balloons moving in he direction of Kaunas Airport",
     link: "https://www.vilnius-airport.lt/en/news/on-saturday-night-flight-operations-at-vilnius-and-kaunas-airports-were-fully-restored-although-flight-delays-may-occur-throughout-the-day",
-    country: "Kaunas Airport, Lithuania 🇱🇹"
+    country: "Kaunas Airport, Lithuania ðŸ‡±ðŸ‡¹"
   },
     
      /* =========================
@@ -1292,7 +1290,7 @@ document.addEventListener('DOMContentLoaded', () => {
   place: 'militarybases',
   year: '2025',
   month: '11',
-  country: "Volkel Air Base, Netherlands 🇳🇱",
+  country: "Volkel Air Base, Netherlands ðŸ‡³ðŸ‡±",
 
   note: "Volkel is believed to be home to Dutch F-35 jets and US nuclear weapons",
 
@@ -1325,7 +1323,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '22 Nov 2025,  ~19:00 - 23:00',
     details: "Air traffic was halted following the sighting of multiple drones at the airport ",
     link: "https://www.rtl.nl/nieuws/binnenland/artikel/5540318/vliegverkeer-eindhoven-airport-weer-hervat-na-eerdere-sluiting",
-    country: "Eindhoven Airport, Netherlands 🇳🇱",
+    country: "Eindhoven Airport, Netherlands ðŸ‡³ðŸ‡±",
     note: "Eindhoven airport is both a publicly and militarily used airport",
   },
 
@@ -1342,7 +1340,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '07 Dec 2025, 10:20',
     details: "A drone entered Dutch airspace on an level where identification is required. The lack of it triggered the Quick Reaction Alert and two F-35 jets were scrambled. The drone left Dutch airspace ",
     link: "https://www.defensie.nl/actueel/nieuws/2025/12/07/f-35-gevechtsvliegtuigen-ingezet-voor-onbekend-object",
-    country: "Netherlands 🇳🇱",
+    country: "Netherlands ðŸ‡³ðŸ‡±",
   },
 
      {
@@ -1358,7 +1356,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '21 Nov 2025',
     details: "Multiple drones have been spotted over the Gasunie site in Vilsteren, Ommen muncipality. The police could not identify their origin or say what the drones did. <br><br> The muncipality decided not to inform the public in November.",
     link: "https://nos.nl/regio/overijssel/artikel/719487-drone-mysterie-boven-gasunie-in-ommen-herkomst-onbekend-gemeente-zweeg-na-melding",
-    country: "Vilsteren, Netherlands 🇳🇱",
+    country: "Vilsteren, Netherlands ðŸ‡³ðŸ‡±",
   },
 
     
@@ -1375,7 +1373,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '17 Nov 2025',
     details: "According to the port authority NSP, 'an unprecedented amount of drones' was seen over the port. Drones were seen over the chemical company Dow. The police was unable to independently verify those sightings",
     link: "https://nos.nl/artikel/2591151-drones-gezien-boven-havengebied-terneuzen-politie-vindt-niets",
-    country: "Port of Terneuzen, Netherlands 🇳🇱",
+    country: "Port of Terneuzen, Netherlands ðŸ‡³ðŸ‡±",
   },
 
   {
@@ -1391,7 +1389,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '12 Nov 2025, 19:00',
     details: "The coast guard spotted an unknown amount of drone(s). Police and coast guard were unable to find the drones later again.",
     link: "https://www.omroepzeeland.nl/nieuws/17958150/kustwacht-ziet-meerdere-drones-voor-zeeuwse-kust-vliegen",
-    country: "Oostkapelle, Netherlands 🇳🇱",
+    country: "Oostkapelle, Netherlands ðŸ‡³ðŸ‡±",
   },
 
   {
@@ -1407,7 +1405,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '05 Nov 2025',
     details: "An air traffic controller spotted a drone over the control tower and calls it 'potentially espionage'. The drone was already gone once the police arrived",
     link: "https://www.volkskrant.nl/buitenland/de-spookdrone-die-angst-en-vertwijfeling-oproept-is-het-ultieme-russische-wapen~b89dcb62/",
-    country: "Gilze-Rijen, Netherlands 🇳🇱",
+    country: "Gilze-Rijen, Netherlands ðŸ‡³ðŸ‡±",
   },
     
      /* =========================
@@ -1427,7 +1425,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '23 Sep 2025, 00:30-04:00',
     details: "The airspace was closed following a drone sighting. A few hours earlier two foreign nationals were arrested for operating a different drone <br> Authorities do not rule out a connection to the incident in Copenhagen",
     link: "https://www.dr.dk/nyheder/indland/droner-set-over-koebenhavns-lufthavn",
-    country: "Oslo Gardermoen Airport, Norway 🇳🇴"
+    country: "Oslo Gardermoen Airport, Norway ðŸ‡³ðŸ‡´"
   },
 
   {
@@ -1443,7 +1441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '28 Sep 2025, 20:18',
     details: "Two Chinese nationals have been arrested for flying a drone",
     link: "https://www.nrk.no/norge/fly-omdirigert-etter-droneobservasjon-1.17589626",
-    country: "Bardufoss Airport, Norway 🇳🇴",
+    country: "Bardufoss Airport, Norway ðŸ‡³ðŸ‡´",
     note: "The area is surrounded by fjords, a popular tourist attraction",
   },
 
@@ -1458,9 +1456,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '09',
     popupType: 'Drone sighting / airport closure ', // shown in popup
     date: '29 Sep 2025, 20:18',
-    details: "The police confirms the drone sighting and say that it has seen five to six drone in the sky. The police lost sight of the drones. <br><br>The police considers the Ørland incident, which was reported at the same time, as a likely false alarm",
-    link: "https://www.nrk.no/nordland/politiet-om-droner-ved-bronnoysund-lufthavn_-_-sa-fem-seks-stykker-1.17590655#:~:text=Nyhetssenter%20Nordland-,Politiet%20om%20droner%20ved%20Brønnøysund%20lufthavn%3A%20–%20Så%20fem%2Dseks,vei%20fra%20Bodø%20til%20Trondheim.",
-    country: "Brønnøysund Airport, Norway 🇳🇴"
+    details: "The police confirms the drone sighting and say that it has seen five to six drone in the sky. The police lost sight of the drones. <br><br>The police considers the Ã˜rland incident, which was reported at the same time, as a likely false alarm",
+    link: "https://www.nrk.no/nordland/politiet-om-droner-ved-bronnoysund-lufthavn_-_-sa-fem-seks-stykker-1.17590655#:~:text=Nyhetssenter%20Nordland-,Politiet%20om%20droner%20ved%20BrÃ¸nnÃ¸ysund%20lufthavn%3A%20â€“%20SÃ¥%20fem%2Dseks,vei%20fra%20BodÃ¸%20til%20Trondheim.",
+    country: "BrÃ¸nnÃ¸ysund Airport, Norway ðŸ‡³ðŸ‡´"
   },
     
      /* =========================
@@ -1477,10 +1475,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Oleśno, Poland 🇵🇱",
+    country: "OleÅ›no, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1495,10 +1493,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Korsze, Poland 🇵🇱",
+    country: "Korsze, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1513,10 +1511,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Rabiany, Poland 🇵🇱",
+    country: "Rabiany, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1531,10 +1529,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Wodynie, Poland 🇵🇱 ",
+    country: "Wodynie, Poland ðŸ‡µðŸ‡± ",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1549,10 +1547,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Biała Góra, Poland 🇵🇱",
+    country: "BiaÅ‚a GÃ³ra, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1567,10 +1565,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Nowe Miasto nad Pilicą, Poland 🇵🇱",
+    country: "Nowe Miasto nad PilicÄ…, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1585,10 +1583,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Mniszków, Poland 🇵🇱",
+    country: "MniszkÃ³w, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1603,10 +1601,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Smyków, Poland 🇵🇱",
+    country: "SmykÃ³w, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1621,10 +1619,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Czyżów, Poland 🇵🇱",
+    country: "CzyÅ¼Ã³w, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1639,10 +1637,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian borderand entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian borderand entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Sobótka, Poland 🇵🇱",
+    country: "SobÃ³tka, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1657,10 +1655,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
      month: '09',   
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Cześniki, Poland 🇵🇱",
+    country: "CzeÅ›niki, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1675,10 +1673,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Sulmice, Poland 🇵🇱",
+    country: "Sulmice, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1693,10 +1691,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
      month: '09',   
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Bychawka Trzecia, Poland 🇵🇱",
+    country: "Bychawka Trzecia, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1711,10 +1709,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
     month: '09',    
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Wielki Łan, Poland 🇵🇱",
+    country: "Wielki Åan, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1729,10 +1727,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
      month: '09',   
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Wyryki-Wola, Poland 🇵🇱",
+    country: "Wyryki-Wola, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1747,10 +1745,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
      month: '09',       
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Krzywowierzba-Kolonia, Poland 🇵🇱",
+    country: "Krzywowierzba-Kolonia, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1765,10 +1763,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
      month: '09',       
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Wyhalew, Poland 🇵🇱",
+    country: "Wyhalew, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1783,10 +1781,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
      month: '09',       
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Wohyń, Poland 🇵🇱",
+    country: "WohyÅ„, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1801,10 +1799,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
      month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Czosnówka, Poland 🇵🇱",
+    country: "CzosnÃ³wka, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1819,10 +1817,10 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2025',
  month: '09',
     popupType: 'Drone incursion / crash site ', // shown in popup
-    date: ' 09–10 Sep 2025, ~23:30–06:45',
-    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and Rzeszów‑Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
+    date: ' 09â€“10 Sep 2025, ~23:30â€“06:45',
+    details: "Russian drone crashed here (23 overall). Airspace closures affected Warsaw Chopin, Warsaw Modlin, Lublin, and RzeszÃ³wâ€‘Jasionka airports. <br> Multiple drones were shot down by Polish and Dutch jets. <br> Drones crashed up to 450 km from the Ukrainian border and 300 km from the Belarusian border and entered Polish airspace from both Ukrainian and Belarusian airspace. <br><br> NATO Article 4 was invoked following this incident",
     link: "https://tvpworld.com/88854104/russian-drone-incursion-into-poland-factbox",
-    country: "Zabłocie-Kolonia, Poland 🇵🇱",
+    country: "ZabÅ‚ocie-Kolonia, Poland ðŸ‡µðŸ‡±",
     note: "It is suspected that at least some of the drones were equipped with explosives",
     noteLink: "https://www.rp.pl/wojsko/art43326881-gen-maciej-klisz-w-wyrykach-po-zniszczeniu-domu-zapadla-decyzja-ze-bierzemy-to-na-klate"
   },
@@ -1839,9 +1837,9 @@ document.addEventListener('DOMContentLoaded', () => {
     month: '09',
     popupType: 'Safety-zone violation ', // shown in popup
     date: ' 19 Sep 2025, Twitter statement at 18:54; no time of the incident published',
-    details: "Two Russian jets performed a low pass over the Petrobaltic platform at ~150 m altitude, violating the platform’s safety zone in the Polish EEZ.",
+    details: "Two Russian jets performed a low pass over the Petrobaltic platform at ~150â€¯m altitude, violating the platformâ€™s safety zone in the Polish EEZ.",
     link: "https://www.polskieradio.pl/395/7784/artykul/3582003,russian-fighter-jets-make-low-pass-over-polish-offshore-platform?",
-    country: "Petrobaltic platform, Poland 🇵🇱",
+    country: "Petrobaltic platform, Poland ðŸ‡µðŸ‡±",
     note: "This was not a violation of Polish airspace but a violation of the safety zone of the platform",
   },
   {
@@ -1857,7 +1855,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 24 Dec 2025, 20:08 - 04:30',
     details: "Balloons, most likely smuggler balloons, entered Polish airspace from Belarus <br><br> On the morning of Dec 25, Polish Airforce escorted an Russian reconnaissance plane flying close to Polish borders. The plane did not enter Polish airspace and such flights are an regular occurrence",
     link: "https://www.polsatnews.pl/wiadomosc/2025-12-25/dowodztwo-operacyjne-informuje-o-incydentach-rosyjski-samolot-przechwycony/",
-    country: "Eastern Poland, Poland 🇵🇱",
+    country: "Eastern Poland, Poland ðŸ‡µðŸ‡±",
     note: "Source for the time:",
     noteLink: "https://x.com/PANSA_PL/status/2004141048017330265?s=20"
   },
@@ -1875,8 +1873,8 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '28 Jan 2026, ~18:00',
     details: "The drone was flying above the base and later crashed 70 meters from the weapons depot. <br><br> It is suspected that it was an reconnaissance drone scanning antena field devices.",
     link: "https://wiadomosci.radiozet.pl/polska/niezidentyfikowany-dron-spadl-na-jednostke-wojskowa-w-przasnyszu-ujawniamy-szczegoly",
-    country: "Przasnysz, Poland 🇵🇱",
-    note: "The Przasnysz military unit is specialised in reconnaissance and radioelectronic warfare and responsible for monitoring radio spectrum in North-Eastern Poland, including the well known Suwałki Gap"
+    country: "Przasnysz, Poland ðŸ‡µðŸ‡±",
+    note: "The Przasnysz military unit is specialised in reconnaissance and radioelectronic warfare and responsible for monitoring radio spectrum in North-Eastern Poland, including the well known SuwaÅ‚ki Gap"
   },
 
   {
@@ -1890,9 +1888,9 @@ document.addEventListener('DOMContentLoaded', () => {
     month: '02',
     popupType: 'Drone sighting / crash site', // shown in popup
     date: '06 Feb 2026, public informed at 12:07',
-    details: "A drone crashed into the 1st Air Cavalry Battalion in Leźnica Wielka",
+    details: "A drone crashed into the 1st Air Cavalry Battalion in LeÅºnica Wielka",
     link: "https://wiadomosci.onet.pl/kraj/dron-spadl-na-jednostke-wojskowa-jest-sledztwo/js7nfhw",
-    country: "Leźnica Wielka, Poland 🇵🇱",
+    country: "LeÅºnica Wielka, Poland ðŸ‡µðŸ‡±",
     note: "A 22 year old Pole was arrested for flying this drone",
     noteLink: "https://x.com/zandarmeria/status/2019782967770366384?s=61"
   },
@@ -1912,9 +1910,9 @@ document.addEventListener('DOMContentLoaded', () => {
     month: '09',
     popupType: 'Drone incursion ', // shown in popup
     date: '3 Sep 2025, spotted at 18:23',
-    details: "Russian drone flew up to ~10 km into Romanian airspace before returning to Ukrainian airspace. Spotted and tracked by Romanian F‑16 jets",
+    details: "Russian drone flew up to ~10â€¯km into Romanian airspace before returning to Ukrainian airspace. Spotted and tracked by Romanian Fâ€‘16 jets",
     link: "https://www.reuters.com/world/drone-breaches-romanian-airspace-during-russian-attack-neighboring-ukraine-2025-09-13/",
-    country: "Tulcea county, Romania 🇷🇴",
+    country: "Tulcea county, Romania ðŸ‡·ðŸ‡´",
   },
 
   {
@@ -1930,7 +1928,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '11 Nov 2025',
     details: "Russian drone entered Romanian airspace but due to the weather NATO jets weren't able to be scrambled. The remains were found 5km deep in Romania's territory",
     link: "https://www.reuters.com/business/aerospace-defense/romania-finds-suspected-drone-fragments-after-russian-attack-ukraine-2025-11-11/",
-    country: "Grindu, Romania 🇷🇴",
+    country: "Grindu, Romania ðŸ‡·ðŸ‡´",
   },
 
   {
@@ -1944,9 +1942,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '11',
     popupType: 'Drone incursion ', // shown in popup
     date: '19 Nov 2025, 00:20 - 01:00 ',
-    details: "Russian drone flew up to ~8 km into Romanian airspace where it disappeared from the radars. The drone later reappeared in Moldovan airspace from where it reentered Romania and was spotted in Foltești, Galați county again. Two German Eurofighters were scrambled <br> It is unknown what eventually happened to it",
+    details: "Russian drone flew up to ~8â€¯km into Romanian airspace where it disappeared from the radars. The drone later reappeared in Moldovan airspace from where it reentered Romania and was spotted in FolteÈ™ti, GalaÈ›i county again. Two German Eurofighters were scrambled <br> It is unknown what eventually happened to it",
     link: "https://www.digi24.ro/stiri/actualitate/mapn-a-ridicat-doua-avioane-de-lupta-in-timpul-noptii-dupa-ce-o-drona-a-intrat-in-spatiul-aerian-national-a-fost-emis-mesaj-ro-alert-3509181",
-    country: "Periprava / Chilia Veche / Foltești, Romania 🇷🇴",
+    country: "Periprava / Chilia Veche / FolteÈ™ti, Romania ðŸ‡·ðŸ‡´",
   },
 
    {
@@ -1960,9 +1958,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '11',
     popupType: 'Drone incursion ', // shown in popup
     date: '25 Nov 2025, ',
-    details: "Two Russian drones flew into Romanian airspace through Ukraine and Moldova. Two German Eurofighters were scrambled and given permission to shot the drones down, but they didn't to avoid colateral damage. One of them flew back into Ukrainian airspace, the other crashed in Puiești, despite being spotted further inside the country earlier (Galati county)",
+    details: "Two Russian drones flew into Romanian airspace through Ukraine and Moldova. Two German Eurofighters were scrambled and given permission to shot the drones down, but they didn't to avoid colateral damage. One of them flew back into Ukrainian airspace, the other crashed in PuieÈ™ti, despite being spotted further inside the country earlier (Galati county)",
     link: "https://www.reuters.com/world/romania-scrambles-fighter-jets-after-drones-breach-its-airspace-2025-11-25/",
-    country: "Puiești, Romania 🇷🇴",
+    country: "PuieÈ™ti, Romania ðŸ‡·ðŸ‡´",
   },
 
    {
@@ -1978,7 +1976,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 21 Dec 2025, 10:40, ',
     details: "Police was notified about a crashed drone by a local citizen on a hunting trip. The drone is two meters wide, has a parachute attached, and is intact.",
     link: "https://www.digi24.ro/stiri/actualitate/evenimente/drona-de-2-metri-cu-o-parasuta-atasata-gasita-agatata-in-copacii-de-pe-muntele-stramtu-in-leresti-arges-3556063",
-    country: "Strâmtu Mountain, Argeș County, Romania 🇷🇴",
+    country: "StrÃ¢mtu Mountain, ArgeÈ™ County, Romania ðŸ‡·ðŸ‡´",
   },
     
  /* =========================
@@ -1998,7 +1996,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '19 Oct 2025, 19:00 - ~19:30',
     details: "Multiple pilots reported a drone which resulted in the airport being closed. Police unsuccessfully used their own drone to localize the drone",
     link: "https://www.ondacero.es/emisoras/baleares/mallorca/noticias/aeropuerto-palma-opera-normalidad-cerrar-este-domingo-trafico-aereo-avistamiento-dron_2025102068f5e4db76c80d35b5f0b84e.html",
-    country: "Palma de Mallorca Airport, Spain 🇪🇸"
+    country: "Palma de Mallorca Airport, Spain ðŸ‡ªðŸ‡¸"
   },
 
    {
@@ -2014,7 +2012,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '27 Oct 2025, 20:53 - ~23:00',
     details: " A drone has been seen near the runway. The perpatrator hasn't been found",
     link: "https://elpais.com/espana/comunidad-valenciana/2025-10-28/un-dron-cerca-de-la-pista-de-despegue-obliga-a-cerrar-el-aeropuerto-de-alicante-durante-casi-dos-horas.html",
-    country: "Alicante Airport, Spain 🇪🇸"
+    country: "Alicante Airport, Spain ðŸ‡ªðŸ‡¸"
   },
      /* =========================
        S W E D E N  
@@ -2031,9 +2029,9 @@ document.addEventListener('DOMContentLoaded', () => {
    month: '09',
     popupType: 'Drone sighting ', // shown in popup
     date: '22 Sep 2025, ~21:00',
-    details: "A couple from Malmö reported seeing a large drone from their balcony. The drone headed eastwards <br> The police confirmed getting multiple calls about drone sighting but couldn't verify those reports themselves",
+    details: "A couple from MalmÃ¶ reported seeing a large drone from their balcony. The drone headed eastwards <br> The police confirmed getting multiple calls about drone sighting but couldn't verify those reports themselves",
     link: "https://www.aftonbladet.se/nyheter/a/AvjRoE/flera-dronarlarm-till-malmopolisen",
-    country: "Malmö, Sweden 🇸🇪"
+    country: "MalmÃ¶, Sweden ðŸ‡¸ðŸ‡ª"
   },
 
   {
@@ -2049,7 +2047,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '26 Sep 2025, at night',
     details: "An unidentified drone was seen about a mile from the naval base. The drone did not fly over any restricted objects",
     link: "https://www.sverigesradio.se/artikel/suspected-drones-spotted-near-karlskrona-naval-base",
-    country: "Karlskrona naval base, Sweden 🇸🇪"
+    country: "Karlskrona naval base, Sweden ðŸ‡¸ðŸ‡ª"
   },
 
   {
@@ -2065,7 +2063,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '06 Nov 2025, 17:41 - 21:30',
     details: "One or more drones have been observed at the coast, close to the airport. Air traffic resumed at around 21:30",
     link: "https://www.reuters.com/world/traffic-halted-swedish-city-gothenburgs-airport-after-drone-sighting-daily-2025-11-06/",
-    country: "Gothenburg Landvetter Airport, Sweden 🇸🇪"
+    country: "Gothenburg Landvetter Airport, Sweden ðŸ‡¸ðŸ‡ª"
   },
 
   {
@@ -2079,9 +2077,9 @@ document.addEventListener('DOMContentLoaded', () => {
     month: '02',
     popupType: 'Drone sighting', // shown in popup
     date: '26 Feb 2026',
-    details: "A drone flew to the French nuclear-powered aircraft carrier 'Charles de Gaulle'. According to Defence Minister Pål Jonson, the drone very likely started on a Russian vessel nearby. <br> A Swedish Navy vessel observed a drone and countermeasures were taken to disrupt the drone. It is unknown what happened to the drone once it disappeared. ",
+    details: "A drone flew to the French nuclear-powered aircraft carrier 'Charles de Gaulle'. According to Defence Minister PÃ¥l Jonson, the drone very likely started on a Russian vessel nearby. <br> A Swedish Navy vessel observed a drone and countermeasures were taken to disrupt the drone. It is unknown what happened to the drone once it disappeared. ",
     link: "https://www.svt.se/nyheter/inrikes/rysk-dronare-narmade-sig-hangarfartyget-charles-de-gaulle",
-    country: "Malmö harbour, Sweden 🇸🇪"
+    country: "MalmÃ¶ harbour, Sweden ðŸ‡¸ðŸ‡ª"
   },
     
      /* =========================
@@ -2101,7 +2099,7 @@ document.addEventListener('DOMContentLoaded', () => {
     month: '12',
     details: " Turkish F-16 fighters shot down an out-of-control unidentified UAV. The drone was shot down near Ankara",
     link: "https://www.trtworld.com/article/efc330793d51",
-    country: "Ankara Region, Türkiye 🇹🇷"
+    country: "Ankara Region, TÃ¼rkiye ðŸ‡¹ðŸ‡·"
   },
 
    {
@@ -2115,9 +2113,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '12',
     popupType: 'Drone incursion / crash site ', // shown in popup
     date: '19 Dec 2025',
-    details: "A crashed, unidentified UAV was found by citizens in the rural Çubuklubala neighborhood in Izmit. The camera is still working. <br> The drone is an Russian-made Orlan-10 drone, which is used for surveillance and reconnaissance ",
+    details: "A crashed, unidentified UAV was found by citizens in the rural Ã‡ubuklubala neighborhood in Izmit. The camera is still working. <br> The drone is an Russian-made Orlan-10 drone, which is used for surveillance and reconnaissance ",
     link: "https://www.trtworld.com/article/82a95c0936d0",
-    country: "Izmit, Türkiye 🇹🇷"
+    country: "Izmit, TÃ¼rkiye ðŸ‡¹ðŸ‡·"
   },
 
 
@@ -2132,9 +2130,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '12',
     popupType: 'Drone incursion / crash site ', // shown in popup
     date: ' 10 Dec 2025,  evening',
-    details: "A crashed, unidentified UAV was found by citizens in the Balıkesir’s Manyas district in an uninhabited field. <br> The drone is an Russian Merlin VR drone, which is used for reconnaissance and has a range of ~600km ",
+    details: "A crashed, unidentified UAV was found by citizens in the BalÄ±kesirâ€™s Manyas district in an uninhabited field. <br> The drone is an Russian Merlin VR drone, which is used for reconnaissance and has a range of ~600km ",
     link: "https://www.hurriyet.com.tr/gundem/balikesirde-insansiz-hava-araci-dustu-inceleme-icin-ankaraya-gonderildi-43060797",
-    country: "Manyas, Türkiye 🇹🇷",
+    country: "Manyas, TÃ¼rkiye ðŸ‡¹ðŸ‡·",
   },
 
      /* =========================
@@ -2143,7 +2141,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   // ------------------------
-  // 6️⃣ Add markers to cluster (handles multi-incidents)
+  // 6ï¸âƒ£ Add markers to cluster (handles multi-incidents)
   // ------------------------
   incidents.forEach(i => {
     let popupHtml = `<b>${i.link ? `<a href="${i.link}" target="_blank">${i.country}</a>` : i.country}</b><br>`;
@@ -2180,9 +2178,9 @@ document.addEventListener('DOMContentLoaded', () => {
     markerCluster.addLayer(marker);
   });
 
-// ------------------------
-// 7️⃣ Filter logic
-// ------------------------
+  // ------------------------
+  // 7ï¸âƒ£ Filter logic
+  // ------------------------
 function applyFilters() {
   markerCluster.clearLayers();
 
@@ -2193,62 +2191,34 @@ function applyFilters() {
   const fYear = document.getElementById('f-year').value;
 
   const visible = markers.filter(m => {
-
-    const { risk, type, place, month, year, timePairs } = m.meta;
+    const { risk, type, place, month, year } = m.meta;
 
     const matchActor = fActor === 'any' || risk === fActor;
     const matchType = fType === 'any' || type === fType;
     const matchPlace = fLocation === 'any' || place === fLocation;
 
-    // -------------------------
-    // Time matching (SAFE VERSION)
-    // -------------------------
-    let matchTime = false;
-
-    const months = Array.isArray(month) ? month : (month ? [month] : []);
-    const years = Array.isArray(year) ? year : (year ? [year] : []);
-
-    // Legacy format (month + year fields)
-    for (let m1 of months) {
-      for (let y1 of years) {
-
-        if (
-          (fMonth === 'any' || m1 === fMonth.padStart(2,'0')) &&
-          (fYear === 'any' || y1 === fYear)
-        ) {
-          matchTime = true;
-        }
-
-      }
+    // handle month as string or array
+    let matchMonth = false;
+    if (fMonth === 'any') {
+      matchMonth = true;
+    } else if (Array.isArray(month)) {
+      matchMonth = month.includes(fMonth.padStart(2,'0'));
+    } else {
+      matchMonth = month === fMonth.padStart(2,'0');
     }
 
-    // New format (timePairs)
-    if (Array.isArray(timePairs)) {
-      timePairs.forEach(tp => {
+    const matchYear = fYear === 'any' || year === fYear;
 
-        if (
-          (fYear === 'any' || tp.year === fYear) &&
-          (fMonth === 'any' || tp.month === fMonth.padStart(2,'0'))
-        ) {
-          matchTime = true;
-        }
-
-      });
-    }
-
-    // If no time filters selected → show everything
-    if (fMonth === 'any' && fYear === 'any') matchTime = true;
-
-    return matchActor && matchType && matchPlace && matchTime;
+    return matchActor && matchType && matchPlace && matchMonth && matchYear;
   });
 
   markerCluster.addLayers(visible);
 }
 
-
-// ------------------------
-// 8️⃣ Attach event listeners
-// ------------------------
-document.querySelectorAll('#filters select').forEach(sel => {
-  sel.addEventListener('change', applyFilters);
+  // ------------------------
+  // 8ï¸âƒ£ Attach event listeners to filters
+  // ------------------------
+  document.querySelectorAll('#filters select').forEach(sel => {
+    sel.addEventListener('change', applyFilters);
+  });
 });
