@@ -2201,35 +2201,28 @@ function applyFilters() {
     const matchPlace = fLocation === 'any' || place === fLocation;
 
     // -------------------------
-    // Time matching (old + new)
+    // Time matching (SAFE VERSION)
     // -------------------------
     let matchTime = false;
 
-    // If no time filter selected → show all
-    if (fMonth === 'any' && fYear === 'any') {
-      matchTime = true;
-    }
+    const months = Array.isArray(month) ? month : (month ? [month] : []);
+    const years = Array.isArray(year) ? year : (year ? [year] : []);
 
-    // 1️⃣ Check legacy format (month + year fields)
-    if (month || year) {
-      const months = Array.isArray(month) ? month : [month];
-      const years = Array.isArray(year) ? year : [year];
+    // Legacy format (month + year fields)
+    for (let m1 of months) {
+      for (let y1 of years) {
 
-      for (let m1 of months) {
-        for (let y1 of years) {
-
-          if (
-            (fMonth === 'any' || m1 === fMonth.padStart(2,'0')) &&
-            (fYear === 'any' || y1 === fYear)
-          ) {
-            matchTime = true;
-          }
-
+        if (
+          (fMonth === 'any' || m1 === fMonth.padStart(2,'0')) &&
+          (fYear === 'any' || y1 === fYear)
+        ) {
+          matchTime = true;
         }
+
       }
     }
 
-    // 2️⃣ Check new format (timePairs)
+    // New format (timePairs)
     if (Array.isArray(timePairs)) {
       timePairs.forEach(tp => {
 
@@ -2242,6 +2235,9 @@ function applyFilters() {
 
       });
     }
+
+    // If no time filters selected → show everything
+    if (fMonth === 'any' && fYear === 'any') matchTime = true;
 
     return matchActor && matchType && matchPlace && matchTime;
   });
