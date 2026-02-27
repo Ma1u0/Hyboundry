@@ -979,21 +979,32 @@ document.addEventListener('DOMContentLoaded', () => {
     country: "Berlin-Brandenburg Airport, Germany 🇩🇪",
   },
 
-   {
-    lat: 53.04534,
-    lng: 8.78964,
-    icon: icons.droneYellow,
-    type: 'drone',      // used for filtering
-    risk: 'yellow',
-    place: 'airports',
-    year: '2025',
-     month: '11',
-    popupType: 'Drone sighting / airport closure ', // shown in popup
-    date: '2 Nov 2025, airspace  was closed in the evening for 40 minutes',
-    details: "Drone sighting reported. The police won't give information about the drone. Espionage is unlikely but not ruled out according to the investigators",
-    link: "https://www.butenunbinnen.de/nachrichten/drohne-flughafen-bremen-102.html",
-    country: "Bremen Airport, Germany 🇩🇪",
-  },
+{
+  lat: 53.04534,
+  lng: 8.78964,
+  icon: icons.droneOrange,
+  type: 'drone',        // used for filtering
+  risk: 'orange',
+  place: 'airports',
+  year: ['2025', '2026'],
+  month: ['11', '02'],
+  country: "Bremen Airport, Germany 🇩🇪",
+
+  incidents: [
+    {
+      popupType: 'Drone sighting / airport closure ', // shown in popup
+      date: '2 Nov 2025, airspace  was closed in the evening for 40 minutes',
+      details: "Drone sighting reported. The police won't give information about the drone. Espionage is unlikely but not ruled out according to the investigators",
+      link: "https://www.butenunbinnen.de/nachrichten/drohne-flughafen-bremen-102.html",
+    },
+    {
+      popupType: 'Drone sighting / airport closure',
+      date: '26 Feb 2026, 18:45',
+      details: "A drone was reported on the approach path of the airport. According to first investigations, the drone flew multiple times around the 'Huchting' district which neighbors the airport. <br> It is unknown who flew the drone. ",
+      link: "https://www.presseportal.de/blaulicht/pm/35235/6225547"
+    },
+  ]
+},
 
 {
   lat: 52.46144,
@@ -1002,8 +1013,8 @@ document.addEventListener('DOMContentLoaded', () => {
   type: 'drone',      // used for filtering
   risk: 'yellow',
   place: 'airports',
-  year: '2025',
-  month: '11',
+  year: ['2025', '2026'],
+  month: ['11', '12', '01'],
   country: "Hannover Airport, Germany 🇩🇪",
 
   incidents: [
