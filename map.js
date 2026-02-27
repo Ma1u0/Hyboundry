@@ -982,9 +982,9 @@ document.addEventListener('DOMContentLoaded', () => {
 {
   lat: 53.04534,
   lng: 8.78964,
-  icon: icons.droneOrange,
+  icon: icons.droneYellow,
   type: 'drone',        // used for filtering
-  risk: 'orange',
+  risk: 'yellow',
   place: 'airports',
   year: ['2025', '2026'],
   month: ['11', '02'],
