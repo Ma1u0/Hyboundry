@@ -2081,7 +2081,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.svt.se/nyheter/inrikes/rysk-dronare-narmade-sig-hangarfartyget-charles-de-gaulle",
     country: "Malmö harbour, Sweden 🇸🇪",
     note: "Swedish Armed Forces can now confirm that the drone started from the Russian vessel",
-    note_link: "https://www.svt.se/nyheter/inrikes/forsvaret-dronaren-var-rysk"
+    noteLink: "https://www.svt.se/nyheter/inrikes/forsvaret-dronaren-var-rysk"
   },
     
      /* =========================
