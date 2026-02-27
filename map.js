@@ -976,7 +976,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 31 Oct 2025, ~20:00 - ~22:00',
     details: "Police confirmed a drone sighting at BER but the drone later disappeared despite using police helicopters",
     link: "https://www.rbb24.de/panorama/beitrag/2025/10/ber-flughafen-unterbrochen-drohne-polizei.html",
-    country: "Berlin-Brandenburg Airport, Germany 🇩🇪",
+    country: "Ubibib Berlin-Brandenburg Airport, Germany 🇩🇪",
   },
 
 {
