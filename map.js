@@ -2193,29 +2193,54 @@ function applyFilters() {
   const fYear = document.getElementById('f-year').value;
 
   const visible = markers.filter(m => {
-    const { risk, type, place, month, year } = m.meta;
+
+    const { risk, type, place, month, year, timePairs } = m.meta;
 
     const matchActor = fActor === 'any' || risk === fActor;
     const matchType = fType === 'any' || type === fType;
     const matchPlace = fLocation === 'any' || place === fLocation;
 
-    // ✅ Proper month + year pairing check
+    // -------------------------
+    // Time matching (old + new)
+    // -------------------------
     let matchTime = false;
 
-    const months = Array.isArray(month) ? month : [month];
-    const years = Array.isArray(year) ? year : [year];
+    // If no time filter selected → show all
+    if (fMonth === 'any' && fYear === 'any') {
+      matchTime = true;
+    }
 
-    for (let i = 0; i < months.length; i++) {
-      for (let j = 0; j < years.length; j++) {
+    // 1️⃣ Check legacy format (month + year fields)
+    if (month || year) {
+      const months = Array.isArray(month) ? month : [month];
+      const years = Array.isArray(year) ? year : [year];
+
+      for (let m1 of months) {
+        for (let y1 of years) {
+
+          if (
+            (fMonth === 'any' || m1 === fMonth.padStart(2,'0')) &&
+            (fYear === 'any' || y1 === fYear)
+          ) {
+            matchTime = true;
+          }
+
+        }
+      }
+    }
+
+    // 2️⃣ Check new format (timePairs)
+    if (Array.isArray(timePairs)) {
+      timePairs.forEach(tp => {
 
         if (
-          (fMonth === 'any' || months[i] === fMonth.padStart(2,'0')) &&
-          (fYear === 'any' || years[j] === fYear)
+          (fYear === 'any' || tp.year === fYear) &&
+          (fMonth === 'any' || tp.month === fMonth.padStart(2,'0'))
         ) {
           matchTime = true;
         }
 
-      }
+      });
     }
 
     return matchActor && matchType && matchPlace && matchTime;
@@ -2226,7 +2251,7 @@ function applyFilters() {
 
 
 // ------------------------
-// 8️⃣ Attach event listeners to filters
+// 8️⃣ Attach event listeners
 // ------------------------
 document.querySelectorAll('#filters select').forEach(sel => {
   sel.addEventListener('change', applyFilters);
