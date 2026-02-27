@@ -1153,7 +1153,7 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '12',
     popupType: 'Drone sighting ', // shown in popup
     date: '01 Dec 2025, shortly before 23:00',
-    details: "Four military grade drones flew near the airport when ZelenskyÂ´s plane was supposed to land. The lights were on therefore authorities assume that it was only supposed to be a disruption of the landing, not threaten the plane<br>The drones were likely launched near Howth, from where they first flew above a naval vessel and then towards the location where ZelenskyÂ´s plane was supposed to be but his plane was slightly ahead of schedule<br><br>Authorities believe the drones were quadcopters",
+    details: "Four military grade drones flew near the airport when Zelensky´s plane was supposed to land. The lights were on therefore authorities assume that it was only supposed to be a disruption of the landing, not threaten the plane<br>The drones were likely launched near Howth, from where they first flew above a naval vessel and then towards the location where ZelenskyÂ´s plane was supposed to be but his plane was slightly ahead of schedule<br><br>Authorities believe the drones were quadcopters",
     link: "https://www.thejournal.ie/drones-dublin-ireland-hybrid-warfare-russia-6893104-Dec2025/",
     country: "Dublin Airport, Ireland 🇮🇪"
   },
