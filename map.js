@@ -2063,15 +2063,15 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '06 Nov 2025, 17:41 - 21:30',
     details: "One or more drones have been observed at the coast, close to the airport. Air traffic resumed at around 21:30",
     link: "https://www.reuters.com/world/traffic-halted-swedish-city-gothenburgs-airport-after-drone-sighting-daily-2025-11-06/",
-    country: "Gothenburg Landvetter Airport, Sweden 🇸🇪"
+    country: "Gothenburg Landvetter Airport, Sweden 🇸🇪",
   },
 
   {
     lat: 55.62063,
     lng: 13.00378,
-    icon: icons.droneOrange,
+    icon: icons.droneRed,
     type: 'drone',      // used for filtering
-    risk: 'orange',
+    risk: 'red',
     place: 'militarybases',
     year: '2026',
     month: '02',
@@ -2079,7 +2079,9 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '26 Feb 2026',
     details: "A drone flew to the French nuclear-powered aircraft carrier 'Charles de Gaulle'. According to Defence Minister Pål Jonson, the drone very likely started on a Russian vessel nearby. <br> A Swedish Navy vessel observed a drone and countermeasures were taken to disrupt the drone. It is unknown what happened to the drone once it disappeared. ",
     link: "https://www.svt.se/nyheter/inrikes/rysk-dronare-narmade-sig-hangarfartyget-charles-de-gaulle",
-    country: "Malmö harbour, Sweden 🇸🇪"
+    country: "Malmö harbour, Sweden 🇸🇪",
+    note: "Swedish Armed Forces can now confirm that the drone started from the Russian vessel",
+    note_link: "https://www.svt.se/nyheter/inrikes/forsvaret-dronaren-var-rysk"
   },
     
      /* =========================
