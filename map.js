@@ -986,8 +986,10 @@ document.addEventListener('DOMContentLoaded', () => {
   type: 'drone',        // used for filtering
   risk: 'yellow',
   place: 'airports',
-  year: ['2025', '2026'],
-  month: ['11', '02'],
+  timePairs: [
+  { year: "2025", month: "11" },
+  { year: "2026", month: "02" }
+  ],
   country: "Bremen Airport, Germany 🇩🇪",
 
   incidents: [
@@ -2178,9 +2180,9 @@ document.addEventListener('DOMContentLoaded', () => {
     markerCluster.addLayer(marker);
   });
 
-  // ------------------------
-  // 7️⃣ Filter logic
-  // ------------------------
+// ------------------------
+// 7️⃣ Filter logic
+// ------------------------
 function applyFilters() {
   markerCluster.clearLayers();
 
@@ -2197,38 +2199,35 @@ function applyFilters() {
     const matchType = fType === 'any' || type === fType;
     const matchPlace = fLocation === 'any' || place === fLocation;
 
-    // handle month as string or array
-    let matchMonth = false;
-    if (fMonth === 'any') {
-      matchMonth = true;
-    } else if (Array.isArray(month)) {
-      matchMonth = month.includes(fMonth.padStart(2,'0'));
-    } else {
-      matchMonth = month === fMonth.padStart(2,'0');
+    // ✅ Proper month + year pairing check
+    let matchTime = false;
+
+    const months = Array.isArray(month) ? month : [month];
+    const years = Array.isArray(year) ? year : [year];
+
+    for (let i = 0; i < months.length; i++) {
+      for (let j = 0; j < years.length; j++) {
+
+        if (
+          (fMonth === 'any' || months[i] === fMonth.padStart(2,'0')) &&
+          (fYear === 'any' || years[j] === fYear)
+        ) {
+          matchTime = true;
+        }
+
+      }
     }
 
-    let matchYear = false;
-
-if (fYear === 'any') {
-  matchYear = true;
-}
-else if (Array.isArray(year)) {
-  matchYear = year.includes(fYear);
-}
-else {
-  matchYear = year === fYear;
-};
-
-    return matchActor && matchType && matchPlace && matchMonth && matchYear;
+    return matchActor && matchType && matchPlace && matchTime;
   });
 
   markerCluster.addLayers(visible);
 }
 
-  // ------------------------
-  // 8️⃣ Attach event listeners to filters
-  // ------------------------
-  document.querySelectorAll('#filters select').forEach(sel => {
-    sel.addEventListener('change', applyFilters);
-  });
+
+// ------------------------
+// 8️⃣ Attach event listeners to filters
+// ------------------------
+document.querySelectorAll('#filters select').forEach(sel => {
+  sel.addEventListener('change', applyFilters);
 });
