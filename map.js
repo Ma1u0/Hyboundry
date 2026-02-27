@@ -1456,9 +1456,9 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '09',
     popupType: 'Drone sighting / airport closure ', // shown in popup
     date: '29 Sep 2025, 20:18',
-    details: "The police confirms the drone sighting and say that it has seen five to six drone in the sky. The police lost sight of the drones. <br><br>The police considers the Ã˜rland incident, which was reported at the same time, as a likely false alarm",
+    details: "The police confirms the drone sighting and say that it has seen five to six drone in the sky. The police lost sight of the drones. <br><br>The police considers the Ørland incident, which was reported at the same time, as a likely false alarm",
     link: "https://www.nrk.no/nordland/politiet-om-droner-ved-bronnoysund-lufthavn_-_-sa-fem-seks-stykker-1.17590655#:~:text=Nyhetssenter%20Nordland-,Politiet%20om%20droner%20ved%20BrÃ¸nnÃ¸ysund%20lufthavn%3A%20â€“%20SÃ¥%20fem%2Dseks,vei%20fra%20BodÃ¸%20til%20Trondheim.",
-    country: "BrÃ¸nnÃ¸ysund Airport, Norway 🇳🇴"
+    country: "Brønnøysund Airport, Norway 🇳🇴"
   },
     
      /* =========================
