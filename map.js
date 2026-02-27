@@ -2207,7 +2207,17 @@ function applyFilters() {
       matchMonth = month === fMonth.padStart(2,'0');
     }
 
-    const matchYear = fYear === 'any' || year === fYear;
+    let matchYear = false;
+
+if (fYear === 'any') {
+  matchYear = true;
+}
+else if (Array.isArray(year)) {
+  matchYear = year.includes(fYear);
+}
+else {
+  matchYear = year === fYear;
+};
 
     return matchActor && matchType && matchPlace && matchMonth && matchYear;
   });
