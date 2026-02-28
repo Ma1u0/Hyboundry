@@ -1978,6 +1978,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.digi24.ro/stiri/actualitate/evenimente/drona-de-2-metri-cu-o-parasuta-atasata-gasita-agatata-in-copacii-de-pe-muntele-stramtu-in-leresti-arges-3556063",
     country: "Strâmtu Mountain, Argeș County, Romania 🇷🇴",
   },
+
+  {
+    lat: 44.89644,
+    lng: 29,59387,
+    icon: icons.droneRed,
+    type: 'drone',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2026',
+     month: '02',
+    popupType: 'Drone incursion', // shown in popup
+    date: ' 25 Feb 2026, 17:50, ',
+    details: "A drone briefly entered Romanian territory during an attack on Ukrainian drones. Two F-16 aircraft were scrambled from the Feteşti Air Base. The drone returned into Ukrainian airspace.",
+    link: "https://english.mapn.ro/cpresa/6713_press-information",
+    country: "​​Sfântu Gheorghe, Romania 🇷🇴",
+  },
     
  /* =========================
        S P A I N
