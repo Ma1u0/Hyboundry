@@ -1992,7 +1992,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 25 Feb 2026, 17:50',
     details: "A drone briefly entered Romanian territory during an attack on Ukrainian drones. Two F-16 aircraft were scrambled from the Feteşti Air Base. The drone returned into Ukrainian airspace.",
     link: "https://english.mapn.ro/cpresa/6713_press-information",
-    country: "​​Sfântu Gheorghe, Romania 🇷🇴",
+    country: "​​Sfântu Gheorghe, Tulcea County, Romania 🇷🇴",
   },
     
  /* =========================
