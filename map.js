@@ -1894,6 +1894,22 @@ document.addEventListener('DOMContentLoaded', () => {
     note: "A 22 year old Pole was arrested for flying this drone",
     noteLink: "https://x.com/zandarmeria/status/2019782967770366384?s=61"
   },
+
+  {
+    lat: 52.470833,
+    lng: 18.546667,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+    month: '03',
+    popupType: 'Crash site', // shown in popup
+    date: '12 Mar 2026, around 11:00',
+    details: "A miner found a drone in a mine. The drone was unarmed and it is possible that this drone already crashed back in September 2025",
+    link: "https://www.tvp.info/92067845/galczyce-dron-prokurator-pracujacy-na-miejscu-potwierdza-ze-nie-byl-uzbrojony",
+    country: "Galczyce, Poland 🇵🇱",
+  },
     
      /* =========================
        R O M A N I A
