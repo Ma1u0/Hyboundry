@@ -17,21 +17,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3ï¸âƒ£ Icons
   // ------------------------
   const icons = {
+    droneBrown: L.icon({ iconUrl: 'icons/brown_drone.png', iconSize: [28,28] }),
     droneRed: L.icon({ iconUrl: 'icons/red_drone.png', iconSize: [28,28] }),
     droneOrange: L.icon({ iconUrl: 'icons/orange_drone.png', iconSize: [28,28] }),
     droneYellow: L.icon({ iconUrl: 'icons/yellow_drone.png', iconSize: [28,28] }),
     droneGreen: L.icon({ iconUrl: 'icons/green_drone.png', iconSize: [28,28] }),
     droneBlue: L.icon({ iconUrl: 'icons/blue_drone.png', iconSize: [28,28] }),
+
+    jetBrown: L.icon({ iconUrl: 'icons/brown_jet.png', iconSize: [28,28] }),
     jetRed: L.icon({ iconUrl: 'icons/red_jet.png', iconSize: [28,28] }),
     jetOrange: L.icon({ iconUrl: 'icons/orange_jet.png', iconSize: [28,28] }),
     jetYellow: L.icon({ iconUrl: 'icons/yellow_jet.png', iconSize: [28,28] }),
     jetGreen: L.icon({ iconUrl: 'icons/green_jet.png', iconSize: [28,28] }),
     jetBlue: L.icon({ iconUrl: 'icons/blue_jet.png', iconSize: [28,28] }),
+
+    balloonBrown: L.icon({ iconUrl: 'icons/brown_balloon.png', iconSize: [28,28] }),
     balloonRed: L.icon({ iconUrl: 'icons/red_balloon.png', iconSize: [28,28] }),
     balloonOrange: L.icon({ iconUrl: 'icons/orange_balloon.png', iconSize: [28,28] }),
     balloonYellow: L.icon({ iconUrl: 'icons/yellow_balloon.png', iconSize: [28,28] }),
     balloonGreen: L.icon({ iconUrl: 'icons/green_balloon.png', iconSize: [28,28] }),
     balloonBlue: L.icon({ iconUrl: 'icons/blue_balloon.png', iconSize: [28,28] }),
+
+    borderBrown: L.icon({ iconUrl: 'icons/brown_soldier.png', iconSize: [28,28] }),
     borderRed: L.icon({ iconUrl: 'icons/red_soldier.png', iconSize: [28,28] }),
     borderOrange: L.icon({ iconUrl: 'icons/orange_soldier.png', iconSize: [28,28] }),
     borderYellow: L.icon({ iconUrl: 'icons/yellow_soldier.png', iconSize: [28,28] }),
@@ -754,6 +761,22 @@ document.addEventListener('DOMContentLoaded', () => {
     country: "Narva River / Vasknarva breakwater, Estonia 🇪🇪",
     note: "Estonia says that the guards aren't reliable since the war because they are brought in from other regions and change and them often changing their place of deployment <br><br> Russian ships normally have to ask for permission to cross that area to get into the Russian part of Lake Peipsi",
   },
+
+  {
+    lat: 59.269722,
+    lng: 27.894642,
+    icon: icons.droneBrown,
+    type: 'drone',      // used for filtering
+    risk: 'brown',
+    place: 'infrastructure',
+    year: '2026',
+     month: '03',
+    popupType: 'Crash site ', // shown in popup
+    date: '25 Mar 2026, 03:43',
+    details: "Multiple Ukrainian drones entered Estonian airspace and one of them hit a chimney of the Auvere power plant but no one was hurt. The drone likely targeted the Russian Port of Ust-Luga.",
+    link: "https://news.err.ee/1609976919/drone-entering-estonian-airspace-from-russia-hits-auvere-power-station-chimney",
+    country: "Ida-Viru county, Estonia 🇪🇪",
+  },
     
      /* =========================
        F I N L A N D
@@ -773,6 +796,22 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "An unknown perpetrator flew a drone over the power plant",
     link: "https://yle.fi/a/74-20185326",
     country: "Valajaskoski Power Plant, Finland 🇫🇮"
+  },
+
+  {
+    lat: 60.866667,
+    lng: 26.699722,
+    icon: icons.droneBrown,
+    type: 'drone',      // used for filtering
+    risk: 'brown',
+    place: 'others',
+    year: '2026',
+     month: '03',
+    popupType: 'Crash site ', // shown in popup
+    date: '29 Mar 2026',
+    details: "A Ukrainian AN196 drone crashed in Eastern Finland, close to the town of Kouvola. Finnish fighter jets were scrambled to identify the objects and they decided not to shoot them down to avoid colateral damage. <br><br> These drones likely targeted Russian infrastructure but electronic jamming redirected these to Finnish territory.",
+    link: "https://www.reuters.com/world/finland-reports-suspected-territorial-violation-by-drones-2026-03-29/",
+    country: "Kouvola, Finland 🇫🇮"
   },
                           
      /* =========================
@@ -1275,6 +1314,22 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "Air traffic was halted due to balloons moving in he direction of Kaunas Airport",
     link: "https://www.vilnius-airport.lt/en/news/on-saturday-night-flight-operations-at-vilnius-and-kaunas-airports-were-fully-restored-although-flight-delays-may-occur-throughout-the-day",
     country: "Kaunas Airport, Lithuania 🇱🇹"
+  },
+
+  {
+    lat: 54.211111,
+    lng: 24.572222,
+    icon: icons.droneBrown,
+    type: 'drone',      // used for filtering
+    risk: 'Brown',
+    place: 'others',
+    year: '2026',
+    month: '03',
+    popupType: 'Crash site', // shown in popup
+    date: '23 Mar 2026',
+    details: "A Ukrainian drone crashed in Lithuania after entering it through Belarusian airspace which likely targeted Russia's oil loading terminal in Primorsk.",
+    link: "https://www.reuters.com/world/drone-that-crashed-lithuania-came-ukraine-lithuanian-pm-says-2026-03-24/",
+    country: "Varėna district, Lithuania 🇱🇹"
   },
     
      /* =========================
