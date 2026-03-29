@@ -1192,11 +1192,31 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '12',
     popupType: 'Drone sighting ', // shown in popup
     date: '01 Dec 2025, shortly before 23:00',
-    details: "Four military grade drones flew near the airport when Zelensky´s plane was supposed to land. The lights were on therefore authorities assume that it was only supposed to be a disruption of the landing, not threaten the plane<br>The drones were likely launched near Howth, from where they first flew above a naval vessel and then towards the location where ZelenskyÂ´s plane was supposed to be but his plane was slightly ahead of schedule<br><br>Authorities believe the drones were quadcopters",
+    details: "Four military grade drones flew near the airport when Zelensky´s plane was supposed to land. The lights were on therefore authorities assume that it was only supposed to be a disruption of the landing, not threaten the plane<br>The drones were likely launched near Howth, from where they first flew above a naval vessel and then towards the location where Zelensky´s plane was supposed to be but his plane was slightly ahead of schedule<br><br>Authorities believe the drones were quadcopters",
     link: "https://www.thejournal.ie/drones-dublin-ireland-hybrid-warfare-russia-6893104-Dec2025/",
     country: "Dublin Airport, Ireland 🇮🇪"
   },
 
+ /* =========================
+       L A T V I A
+    ========================= */
+
+  {
+    lat: 55.895833,
+    lng: 27.1625,
+    icon: icons.droneBrown,
+    type: 'drone',      // used for filtering
+    risk: 'brown',
+    place: 'others',
+    year: '2026',
+     month: '03',
+    popupType: 'Crash site ', // shown in popup
+    date: '25 Mar 2026',
+    details: "A drone entered Latvian airspace from Russian airspace. It has been confirmed to be of Ukrainian origin.",
+    link: "https://eng.lsm.lv/article/society/defence/25.03.2026-drone-that-crashed-in-latvia-confirmed-as-ukrainian.a640380/",
+    country: "Krāslava, Latvia 🇱🇻"
+  },
+    
      /* =========================
        L I T H U A N I A
     ========================= */
@@ -1321,7 +1341,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lng: 24.572222,
     icon: icons.droneBrown,
     type: 'drone',      // used for filtering
-    risk: 'Brown',
+    risk: 'brown',
     place: 'others',
     year: '2026',
     month: '03',
