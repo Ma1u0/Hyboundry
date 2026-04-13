@@ -777,6 +777,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://news.err.ee/1609976919/drone-entering-estonian-airspace-from-russia-hits-auvere-power-station-chimney",
     country: "Ida-Viru county, Estonia 🇪🇪",
   },
+
+  {
+    lat: 59.480278,
+    lng: 26.788056,
+    icon: icons.droneBrown,
+    type: 'drone',      // used for filtering
+    risk: 'brown',
+    place: 'others',
+    year: '2026',
+     month: '04',
+    popupType: 'Crash site ', // shown in popup
+    date: '12 Apr 2026',
+    details: "A drone was washed up to the shore near Kalvi. It is believed that the drone is Ukrainian and that it did not crash here. Ukraine has attacked nearby Russian ports of Ust-Luga and Primorsk",
+    link: "https://news.err.ee/1609993798/debris-from-suspected-ukrainian-drone-found-on-estonian-beach",
+    country: "Kalvi, Estonia 🇪🇪",
+  },
     
      /* =========================
        F I N L A N D
@@ -864,7 +880,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 04 Dec 2025, 19:30 ',
     details: "Five drones were spotted over the base with the help of anti drone systems. The stationed battalion shot at the drones",
     link: "https://www.lemonde.fr/en/france/article/2025/12/05/france-takes-anti-drone-measures-after-flight-over-nuclear-sub-base_6748188_7.html",
-    country: "ÃŽle Longue, France 🇫🇷",
+    country: "Ile Longue, France 🇫🇷",
     note: "ÃŽle Longue is home to four French nuclear ballistic missile submarines",
     note_Link: "https://www.lemonde.fr/en/france/article/2025/12/05/france-takes-anti-drone-measures-after-flight-over-nuclear-sub-base_6748188_7.html"
   },
