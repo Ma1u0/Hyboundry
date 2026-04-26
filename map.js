@@ -829,7 +829,23 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.reuters.com/world/finland-reports-suspected-territorial-violation-by-drones-2026-03-29/",
     country: "Kouvola, Finland 🇫🇮"
   },
-                          
+
+  {
+    lat: 60.966667,
+    lng: 25.666667,
+    icon: icons.droneBrown,
+    type: 'drone',      // used for filtering
+    risk: 'brown',
+    place: 'others',
+    year: '2026',
+     month: '04',
+    popupType: 'Crash site ', // shown in popup
+    date: '11 Apr 2026, afternoon',
+    details: "A drone was found in Iitti forest, close to the city of Lahti. The drone was similar to an earlier incident in nearby Kouvola in March 2026, which is suspected to be of Ukrainian origin. <br><br> The explosive was safely detonated the next morning",
+    link: "https://yle.fi/a/74-20220091",
+    country: "Iitti forest, Finland 🇫🇮"
+  },
+    
      /* =========================
        F R A N C E
     ========================= */
