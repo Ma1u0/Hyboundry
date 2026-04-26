@@ -1514,6 +1514,38 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.volkskrant.nl/buitenland/de-spookdrone-die-angst-en-vertwijfeling-oproept-is-het-ultieme-russische-wapen~b89dcb62/",
     country: "Gilze-Rijen, Netherlands 🇳🇱",
   },
+
+  {
+    lat: 52.134167,
+    lng: 5.283056,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+     month: '11',
+    popupType: 'Drone sighting', // shown in popup
+    date: '22 Nov 2025',
+    details: "A drone has been spotted at Camp New Amsterdam, where the Dutch Central Bank stores more than 14,000 tonnes of gold.",
+    link: "https://www.brusselstimes.com/2071336/secret-drone-sightings-near-dutch-palace-raise-security-questions",
+    country: "Camp New Amsterdam, Netherlands 🇳🇱",
+  },
+
+  {
+    lat: 52.179722,
+    lng: 5.227222,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+     month: '11',
+    popupType: 'Drone sighting', // shown in popup
+    date: '22 Nov 2025',
+    details: "A drone has been spotted over Drakensteyn Castle which is home to former Queen Beatrix. ",
+    link: "https://www.brusselstimes.com/2071336/secret-drone-sightings-near-dutch-palace-raise-security-questions",
+    country: "Drakensteyn Castle, Netherlands 🇳🇱",
+  },
     
      /* =========================
        N O R W A Y
