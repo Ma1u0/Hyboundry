@@ -2149,6 +2149,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://english.mapn.ro/cpresa/6713_press-information",
     country: "​​Sfântu Gheorghe, Tulcea County, Romania 🇷🇴",
   },
+
+  {
+    lat: 45.433611,
+    lng: 28.055278,
+    icon: icons.droneRed,
+    type: 'drone',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2026',
+     month: '05',
+    popupType: 'Drone incursion / crash site', // shown in popup
+    date: ' 29 May 2026, early morning',
+    details: "An presumably Russian drone entered Romanian airspace during an attack on Ukrainian. The drone hit an apartment building an hurt two people. <br><br> This is the first attack on NATO/EU territory by Russia which injured people.",
+    link: "https://english.mapn.ro/cpresa/6713_press-information",
+    country: "​​Galați, Romania 🇷🇴",
+  },
     
  /* =========================
        S P A I N
