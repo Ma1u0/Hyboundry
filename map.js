@@ -2162,7 +2162,7 @@ document.addEventListener('DOMContentLoaded', () => {
     popupType: 'Drone incursion / crash site', // shown in popup
     date: ' 29 May 2026, early morning',
     details: "An presumably Russian drone entered Romanian airspace during an attack on Ukrainian. The drone hit an apartment building an hurt two people. <br><br> This is the first attack on NATO/EU territory by Russia which injured people.",
-    link: "https://english.mapn.ro/cpresa/6713_press-information",
+    link: "https://www.digi24.ro/stiri/o-drona-s-a-prabusit-pe-un-bloc-din-galati-doua-persoane-au-fost-ranite-usor-precizarile-mapn-3790645",
     country: "​​Galați, Romania 🇷🇴",
   },
     
