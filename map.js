@@ -976,13 +976,13 @@ document.addEventListener('DOMContentLoaded', () => {
   lng: 11.77859,
   icon: icons.droneYellow,
   type: 'drone',        // used for filtering
-  risk: 'yellow',
+  risk: ['yellow', 'green'],
   place: 'airports',
-  year: '2025',
-   month: '10',
+   year: ['2025', '2026'],
+  month: ['10', '05'],
   country: "Munich Airport, Germany 🇩🇪",
 
-  note: "The Oktoberfest was taking place during both incidents",
+  note: "The Oktoberfest was taking place during both October incidents",
 
   incidents: [
     {
@@ -996,6 +996,12 @@ document.addEventListener('DOMContentLoaded', () => {
       date: '03 Oct 2025, airspace closed: 21:36',
       details: "Two drones were spotted near the runways but disappeared before they were identified",
       link: "https://www.tagesschau.de/inland/muenchen-flughafen-drohnen-102.html'"
+    }
+    {
+      popupType: 'Unverified drone sighting / airport closure',
+      date: '30 May 2026, 09:00am - 10:05am',
+      details: "Pilots reported an suspicious sighting. Police wasn't able to verify this sighting.",
+      link: "https://www.tagesschau.de/inland/flughafen-muenchen-drohnen-100.html'"
     }
   ]
 },
