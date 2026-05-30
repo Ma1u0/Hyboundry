@@ -976,7 +976,7 @@ document.addEventListener('DOMContentLoaded', () => {
   lng: 11.77859,
   icon: icons.droneYellow,
   type: 'drone',        // used for filtering
-  risk: ['yellow', 'green'],
+  risk: 'yellow',
   place: 'airports',
    year: ['2025', '2026'],
   month: ['10', '05'],
