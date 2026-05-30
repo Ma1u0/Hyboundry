@@ -996,13 +996,13 @@ document.addEventListener('DOMContentLoaded', () => {
       date: '03 Oct 2025, airspace closed: 21:36',
       details: "Two drones were spotted near the runways but disappeared before they were identified",
       link: "https://www.tagesschau.de/inland/muenchen-flughafen-drohnen-102.html'"
-    }
+    },
     {
       popupType: 'Unverified drone sighting / airport closure',
       date: '30 May 2026, 09:00am - 10:05am',
       details: "Pilots reported an suspicious sighting. Police wasn't able to verify this sighting.",
       link: "https://www.tagesschau.de/inland/flughafen-muenchen-drohnen-100.html'"
-    }
+    },
   ]
 },
 
