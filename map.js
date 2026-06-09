@@ -1254,6 +1254,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://eng.lsm.lv/article/society/defence/25.03.2026-drone-that-crashed-in-latvia-confirmed-as-ukrainian.a640380/",
     country: "Krāslava, Latvia 🇱🇻"
   },
+
+  {
+    lat: 57.132911,
+    lng: 27.265411,
+    icon: icons.droneRed,
+    type: 'drone',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2026',
+     month: '06',
+    popupType: 'Drone incursion ', // shown in popup
+    date: '08 Jun 2026, airspace warning lifted at 10:30 am',
+    details: "A drone entered Latvian airspace from Russia causing an airspace alert to be declared in the eastern regions Ludza, Balvi and Alūksne. French fighter jets then shot down the drone, marking the first time a drone was shot down in Latvia.",
+    link: "https://www.euronews.com/my-europe/2026/06/08/drone-from-russia-shot-down-in-eastern-latvia-military-spokesperson-says",
+    country: "Eastern Latvia, Latvia 🇱🇻"
+  },
     
      /* =========================
        L I T H U A N I A
