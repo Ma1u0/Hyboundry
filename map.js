@@ -2156,22 +2156,33 @@ document.addEventListener('DOMContentLoaded', () => {
     country: "​​Sfântu Gheorghe, Tulcea County, Romania 🇷🇴",
   },
 
-  {
-    lat: 45.433611,
-    lng: 28.055278,
-    icon: icons.droneRed,
-    type: 'drone',      // used for filtering
-    risk: 'red',
-    place: 'others',
-    year: '2026',
-     month: '05',
-    popupType: 'Drone incursion / crash site', // shown in popup
-    date: ' 29 May 2026, early morning',
-    details: "An presumably Russian drone entered Romanian airspace during an attack on Ukrainian. The drone hit an apartment building an hurt two people. <br><br> This is the first attack on NATO/EU territory by Russia which injured people.",
-    link: "https://www.digi24.ro/stiri/o-drona-s-a-prabusit-pe-un-bloc-din-galati-doua-persoane-au-fost-ranite-usor-precizarile-mapn-3790645",
-    country: "​​Galați, Romania 🇷🇴",
-  },
+{
+  lat: 45.433611,
+  lng: 28.055278,
+  icon: icons.droneRed,
+  type: 'drone',      // used for filtering
+  risk: 'red',
+  place: 'others',
+  year: '2026',
+  month: ['04', '05'],  
+  country: "​​Galați, Romania 🇷🇴",
 
+  incidents: [
+    {
+      popupType: 'Drone sighting / crash site ', // shown in popup
+      date: 'A drone damaged an electricity pole and one household annex, marking the first time a Russian drone has damaged NATO/EU territory.',
+      details: "Drone sighting reported. The police won't give information about the drone. Espionage is unlikely but not ruled out according to the investigators",
+      link: "https://tvpworld.com/92906241/drone-fragments-damage-property-in-romania-during-russian-strikes-on-ukraine",
+    },
+    {
+      popupType: 'Drone incursion / crash site',
+      date: ' 29 May 2026, early morning',
+      details: "An presumably Russian drone entered Romanian airspace during an attack on Ukrainian. The drone hit an apartment building an hurt two people. <br><br> This is the first attack on NATO/EU territory by Russia which injured people.",
+      link: "https://www.digi24.ro/stiri/o-drona-s-a-prabusit-pe-un-bloc-din-galati-doua-persoane-au-fost-ranite-usor-precizarile-mapn-3790645",
+     },
+  ]
+},
+    
   {
     lat: 44.173333,
     lng: 28.638333,
