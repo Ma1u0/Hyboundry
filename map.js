@@ -809,6 +809,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://news.err.ee/1610027866/intruding-drone-shot-down-by-romanian-fighter-jet-in-estonia",
     country: "Kablaküla, Estonia 🇪🇪",
   },
+
+      {
+    lat: 58.174167,
+    lng: 24.509167,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+     month: '05',
+    popupType: 'Crash site ', // shown in popup
+    date: '27 Sep 2025',
+    details: "A small part of a foreign drone debris has been found on the coast near the Luitemaa Nature Reserve. According to Estonian authorities, there is no reason to believe that the drone crashed in Estonia. ",
+    link: "https://news.err.ee/1609814025/foreign-drone-fragment-found-in-southwestern-estonia",
+    country: "Luitemaa Nature Reserve, Estonia 🇪🇪",
+  },
     
      /* =========================
        F I N L A N D
@@ -1301,6 +1317,38 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "A drone entered Latvian airspace from Russia causing an airspace alert to be declared in the eastern regions Ludza, Balvi and Alūksne. French fighter jets then shot down the drone, marking the first time a drone was shot down in Latvia.",
     link: "https://www.euronews.com/my-europe/2026/06/08/drone-from-russia-shot-down-in-eastern-latvia-military-spokesperson-says",
     country: "Eastern Latvia, Latvia 🇱🇻"
+  },
+
+  {
+    lat: 57.2855,
+    lng: 21.5405,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'others',
+    year: '2025',
+     month: '09',
+    popupType: 'Drone incursion ', // shown in popup
+    date: '18 Sep 2025',
+    details: "The debris of a Russian Gerbera drone was found on the shore on a beach. The drone was not armed with explosives.",
+    link: "https://eng.lsm.lv/article/society/defence/19.09.2025-decoy-drone-tail-washed-up-on-beach-near-ventspils-latvia.a614975/",
+    country: "Vārve parish", Latvia 🇱🇻"
+  },
+
+      {
+    lat: 57.75,
+    lng: 24.358333,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2025',
+     month: '10',
+    popupType: 'Drone incursion ', // shown in popup
+    date: '05 Oct 2025',
+    details: "A drone debris was washed up to the beach. Latvian authorities believe that this debris could be part of the same drone which was found on Sep 18 in Vārve parish, while the Armed Forces say it is an Geran drone, opposed to the Gerbera drone found on Sep 18.",
+    link: "https://eng.lsm.lv/article/society/defence/06.10.2025-drone-wing-washed-up-on-salacgriva-beach-latvia.a617240/",
+    country: "Salacgrīva beach", Latvia 🇱🇻"
   },
     
      /* =========================
@@ -2218,8 +2266,8 @@ document.addEventListener('DOMContentLoaded', () => {
   incidents: [
     {
       popupType: 'Drone sighting / crash site ', // shown in popup
-      date: 'A drone damaged an electricity pole and one household annex, marking the first time a Russian drone has damaged NATO/EU territory.',
-      details: "Drone sighting reported. The police won't give information about the drone. Espionage is unlikely but not ruled out according to the investigators",
+      date: '24 Apr 2026, ',
+      details: "A drone damaged an electricity pole and one household annex, marking the first time a Russian drone has damaged NATO/EU territory.",
       link: "https://tvpworld.com/92906241/drone-fragments-damage-property-in-romania-during-russian-strikes-on-ukraine",
     },
     {
