@@ -2187,6 +2187,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://apnews.com/article/drone-romania-black-sea-explosion-ukraine-defc53b2383a67475230c8349a47d7c6",
     country: "​​Port of Constanta, Romania 🇷🇴",
   },
+
+  {
+    lat: 47.480556,
+    lng: 23.146111,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'Yellow',
+    place: 'others',
+    year: '2026',
+     month: '05',
+    popupType: 'Crash site', // shown in popup
+    date: ' 28 May 2026',
+    details: "The drone was not armed with explosives and has a wingspan of 3 meters.",
+    link: "https://tvrinfo.ro/o-drona-de-mari-dimensiuni-a-cazut-in-maramures-pe-raza-localitatii-basesti/",
+    country: "​​Băsești, Maramureș County, Romania 🇷🇴",
+  },
     
  /* =========================
        S P A I N
