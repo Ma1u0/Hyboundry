@@ -1332,7 +1332,7 @@ document.addEventListener('DOMContentLoaded', () => {
     date: '18 Sep 2025',
     details: "The debris of a Russian Gerbera drone was found on the shore on a beach. The drone was not armed with explosives.",
     link: "https://eng.lsm.lv/article/society/defence/19.09.2025-decoy-drone-tail-washed-up-on-beach-near-ventspils-latvia.a614975/",
-    country: "Vārve parish", Latvia 🇱🇻"
+    country: "Vārve parish, Latvia 🇱🇻"
   },
 
   {
