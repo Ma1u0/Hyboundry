@@ -818,7 +818,7 @@ document.addEventListener('DOMContentLoaded', () => {
     risk: 'yellow',
     place: 'others',
     year: '2025',
-     month: '05',
+    month: '05',
     popupType: 'Crash site ', // shown in popup
     date: '27 Sep 2025',
     details: "A small part of a foreign drone debris has been found on the coast near the Luitemaa Nature Reserve. According to Estonian authorities, there is no reason to believe that the drone crashed in Estonia. ",
@@ -1327,7 +1327,7 @@ document.addEventListener('DOMContentLoaded', () => {
     risk: 'orange',
     place: 'others',
     year: '2025',
-     month: '09',
+    month: '09',
     popupType: 'Drone incursion ', // shown in popup
     date: '18 Sep 2025',
     details: "The debris of a Russian Gerbera drone was found on the shore on a beach. The drone was not armed with explosives.",
@@ -1335,7 +1335,7 @@ document.addEventListener('DOMContentLoaded', () => {
     country: "Vārve parish", Latvia 🇱🇻"
   },
 
-      {
+  {
     lat: 57.75,
     lng: 24.358333,
     icon: icons.droneYellow,
@@ -1343,12 +1343,12 @@ document.addEventListener('DOMContentLoaded', () => {
     risk: 'yellow',
     place: 'others',
     year: '2025',
-     month: '10',
+    month: '10',
     popupType: 'Drone incursion ', // shown in popup
     date: '05 Oct 2025',
     details: "A drone debris was washed up to the beach. Latvian authorities believe that this debris could be part of the same drone which was found on Sep 18 in Vārve parish, while the Armed Forces say it is an Geran drone, opposed to the Gerbera drone found on Sep 18.",
     link: "https://eng.lsm.lv/article/society/defence/06.10.2025-drone-wing-washed-up-on-salacgriva-beach-latvia.a617240/",
-    country: "Salacgrīva beach", Latvia 🇱🇻"
+    country: "Salacgrīva beach, Latvia 🇱🇻"
   },
     
      /* =========================
