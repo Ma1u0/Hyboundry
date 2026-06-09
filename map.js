@@ -793,6 +793,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://news.err.ee/1609993798/debris-from-suspected-ukrainian-drone-found-on-estonian-beach",
     country: "Kalvi, Estonia 🇪🇪",
   },
+
+  {
+    lat: 58.616667,
+    lng: 26.066667,
+    icon: icons.droneBrown,
+    type: 'drone',      // used for filtering
+    risk: 'brown',
+    place: 'others',
+    year: '2026',
+     month: '05',
+    popupType: 'Crash site ', // shown in popup
+    date: '19 May 2026, 12:14 am',
+    details: "A Ukrainian drone entered Estonian airspace after being jammed by Russia. Romanian F-16 fighters, who were policing the Baltic region, shot down the drone.",
+    link: "https://news.err.ee/1610027866/intruding-drone-shot-down-by-romanian-fighter-jet-in-estonia",
+    country: "Kablaküla, Estonia 🇪🇪",
+  },
     
      /* =========================
        F I N L A N D
