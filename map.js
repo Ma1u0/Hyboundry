@@ -2171,6 +2171,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.digi24.ro/stiri/o-drona-s-a-prabusit-pe-un-bloc-din-galati-doua-persoane-au-fost-ranite-usor-precizarile-mapn-3790645",
     country: "​​Galați, Romania 🇷🇴",
   },
+
+  {
+    lat: 44.173333,
+    lng: 28.638333,
+    icon: icons.droneBrown,
+    type: 'drone',      // used for filtering
+    risk: 'brown',
+    place: 'infrastructure',
+    year: '2026',
+     month: '06',
+    popupType: 'Crash site', // shown in popup
+    date: ' 05 Jun 2026, 10:30 am',
+    details: "A Ukrainian naval drone, which was jammed by Russia, lost control, entered Romanian airspace and exploded at the port, injuring no one. Three other drones detonated themselves outside the port. <br><br> Ukrainian armed forces confirmed that it was one of their drones. ",
+    link: "https://apnews.com/article/drone-romania-black-sea-explosion-ukraine-defc53b2383a67475230c8349a47d7c6",
+    country: "​​Port of Constanta, Romania 🇷🇴",
+  },
     
  /* =========================
        S P A I N
