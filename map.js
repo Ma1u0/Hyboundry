@@ -861,6 +861,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://yle.fi/a/74-20220091",
     country: "Iitti forest, Finland 🇫🇮"
   },
+
+  {
+    lat: 60.317222,
+    lng: 24.963333,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '05',
+    popupType: 'Drone sighting', // shown in popup
+    date: '15 May 2026, 4:00 - 7:00 am',
+    details: "A possible drone sighting was reported in the Uusimaa region causing Helsinki airport to be temporarily closed.",
+    link: "https://www.euronews.com/my-europe/2026/05/15/helsinki-airport-resumes-flights-after-drone-alert-forces-suspension-officials-say",
+    country: "Helsinki airport, Finland 🇫🇮"
+  },
     
      /* =========================
        F R A N C E
