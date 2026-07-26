@@ -2252,6 +2252,33 @@ document.addEventListener('DOMContentLoaded', () => {
     country: "​​Sfântu Gheorghe, Tulcea County, Romania 🇷🇴",
   },
 
+    {
+  lat: 44.89644,
+  lng: 29.59387,
+  icon: icons.droneRed,
+  type: 'drone',      // used for filtering
+  risk: 'red',
+  place: 'others',
+  year: '2026',
+  month: ['02', '07'],  
+  country: "​​Sfântu Gheorghe, Tulcea County, Romania 🇷🇴",
+
+  incidents: [
+    {
+      popupType: 'Drone incursion', // shown in popup
+      date: ' 25 Feb 2026, 17:50',
+      details: "A drone briefly entered Romanian territory during an attack on Ukrainian drones. Two F-16 aircraft were scrambled from the Feteşti Air Base. The drone returned into Ukrainian airspace.",
+      link: "https://english.mapn.ro/cpresa/6713_press-information",
+    },
+    {
+      popupType: 'Drone incursion',
+      date: ' 25 July 2026, 08:22-08:30',
+      details: "A drone was reported at the Ukrainian border and shortly afterwards shot down by the same pilot who shot down the drone one day earlier. The incident happened about 10km west of Sfântu Gheorghe",
+      link: "https://www.kyivpost.com/post/81050",
+     },
+  ]
+},
+
 {
   lat: 45.433611,
   lng: 28.055278,
@@ -2309,6 +2336,38 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "The drone was not armed with explosives and has a wingspan of 3 meters.",
     link: "https://tvrinfo.ro/o-drona-de-mari-dimensiuni-a-cazut-in-maramures-pe-raza-localitatii-basesti/",
     country: "​​Băsești, Maramureș County, Romania 🇷🇴",
+  },
+
+      {
+    lat: 44.833333,
+    lng: 27.116667,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'Yellow',
+    place: 'others',
+    year: '2026',
+     month: '07',
+    popupType: 'Crash site', // shown in popup
+    date: ' 24 July 2026',
+    details: "A Shahed drone entered Romanian airspace and caused F-16 jets to destroy the drone near Padina.",
+    link: "https://www.digi24.ro/stiri/actualitate/social/nicusor-dan-un-avion-f-16-a-doborat-o-drona-in-spatiul-aerian-romanesc-3876755",
+    country: "​​Padina, Buzău County, Romania 🇷🇴",
+  },
+
+        {
+    lat: 45.416667,
+    lng: 29.283333,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'Yellow',
+    place: 'others',
+    year: '2026',
+     month: '07',
+    popupType: 'Crash site', // shown in popup
+    date: ' 26 July 2026, 10:13',
+    details: "Romanian airforce intercepted at 10:13 in the morning. <br><br> This marks the third day in a row that Romanian forces had to shoot down a drone ",
+    link:  "https://www.euronews.com/my-europe/2026/07/26/romanian-forces-shoot-down-third-drone-in-three-days",
+    country: "​​Sulina–Chilia area, Romania 🇷🇴",
   },
     
  /* =========================
