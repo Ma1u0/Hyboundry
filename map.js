@@ -2338,22 +2338,6 @@ document.addEventListener('DOMContentLoaded', () => {
     country: "​​Padina, Buzău County, Romania 🇷🇴",
   },
 
-        {
-    lat: 45.154167,
-    lng: 29.663889,
-    icon: icons.droneOrange,
-    type: 'drone',      // used for filtering
-    risk: 'Orange',
-    place: 'others',
-    year: '2026',
-     month: '07',
-    popupType: 'Crash site', // shown in popup
-    date: ' 26 July 2026, 10:13',
-    details: "Romanian airforce intercepted the drone at 10:13 in the morning. <br><br> This marks the third day in a row that Romanian forces had to shoot down a drone ",
-    link:  "https://www.euronews.com/my-europe/2026/07/26/romanian-forces-shoot-down-third-drone-in-three-days",
-    country: "​​Sulina / Sulina–Chilia area, Romania 🇷🇴",
-  },
-
     {
     lat: 45.154167,
     lng: 29.663889,
