@@ -2351,8 +2351,34 @@ document.addEventListener('DOMContentLoaded', () => {
     date: ' 26 July 2026, 10:13',
     details: "Romanian airforce intercepted the drone at 10:13 in the morning. <br><br> This marks the third day in a row that Romanian forces had to shoot down a drone ",
     link:  "https://www.euronews.com/my-europe/2026/07/26/romanian-forces-shoot-down-third-drone-in-three-days",
-    country: "​​Sulina–Chilia area, Romania 🇷🇴",
+    country: "​​Sulina / Sulina–Chilia area, Romania 🇷🇴",
   },
+
+    {
+    lat: 45.154167,
+    lng: 29.663889,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'Orange',
+    place: 'others',
+    year: '2026',
+     month: '07',
+  country: "​​Sulina / Sulina–Chilia area, Romania 🇷🇴",
+
+  incidents: [
+    {
+      popupType: 'Crash site', // shown in popup
+    date: ' 26 July 2026, 10:13',
+    details: "Romanian airforce intercepted the drone at 10:13 in the morning. <br><br> This marks the third day in a row that Romanian forces had to shoot down a drone ",
+    link:  "https://www.euronews.com/my-europe/2026/07/26/romanian-forces-shoot-down-third-drone-in-three-days", },
+    {
+      popupType: 'Drone incursion',
+      date: ' 27 Jul 2026, 08:53',
+      details: "A drone entered Romanian territoriy through Ukraine forcing Romania to scramble jets. The drone returned into Ukrainian airspace shortly after entering Romania. <br><br> Romania expelled a Russian diplomat following the drone incidents on four consecutive days. ",
+      link: "https://www.romaniajournal.ro/society-people/new-drone-enters-romanian-airspace-returns-to-ukraine/",
+     },
+  ]
+},
     
  /* =========================
        S P A I N
