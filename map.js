@@ -2151,27 +2151,54 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.tvp.info/92067845/galczyce-dron-prokurator-pracujacy-na-miejscu-potwierdza-ze-nie-byl-uzbrojony",
     country: "Galczyce, Poland 🇵🇱",
   },
+
+      {
+    lat: 50.853611,
+    lng: 22.6525,
+    icon: icons.jetRed,
+    type: 'jet',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2026',
+    month: '07',
+    popupType: 'Crash site', // shown in popup
+    date: '30 July 2026, 03:46',
+    details: "Sirens sounded arounded Lublin at around 03:50, as a Russian Ch-101 rocket, armed with significant explosives, entered Polish airspace. One F-16 jet was scrambled which, according to Prime Minister Donald Tusk, was ready to shoot the rocket down but decided against because of it not being a danger to anyone. <br><br> Tarnawa-Kolonia is around 100km from the Ukrainian border.",
+    link: "https://wiadomosci.wp.pl/mon-ujawnil-nowe-informacje-w-kierunku-polski-lecialo-wiecej-rakiet-7313133095090176a",
+    country: "Tarnawa-Kolonia, Poland 🇵🇱",
+  },
     
      /* =========================
        R O M A N I A
     ========================= */
 
- {
-    lat: 45.16667,
-    lng: 28.80000,
-    icon: icons.droneRed,
-    type: 'drone',      // used for filtering
-    risk: 'red',
-    place: 'others',
-    year: '2025',
-    month: '09',
-    popupType: 'Drone incursion ', // shown in popup
-    date: '3 Sep 2025, spotted at 18:23',
-    details: "Russian drone flew up to ~10â€¯km into Romanian airspace before returning to Ukrainian airspace. Spotted and tracked by Romanian Fâ€‘16 jets",
-    link: "https://www.reuters.com/world/drone-breaches-romanian-airspace-during-russian-attack-neighboring-ukraine-2025-09-13/",
-    country: "Tulcea county, Romania 🇷🇴",
-  },
+    {
+  lat: 45.16667,
+  lng: 28.80000,
+  icon: icons.droneRed,
+  type: 'drone',      // used for filtering
+  risk: 'red',
+  place: 'others',
+ year: ['2025', '2026'],  
+  month: ['09', '07'],  
+ country: "Tulcea county, Romania 🇷🇴",
 
+  incidents: [
+    {
+      popupType: 'Drone incursion', // shown in popup
+      date: '3 Sep 2025, spotted at 18:23',
+      details: "Russian drone flew up to ~10â€¯km into Romanian airspace before returning to Ukrainian airspace. Spotted and tracked by Romanian Fâ€‘16 jets",
+      link: "https://www.reuters.com/world/drone-breaches-romanian-airspace-during-russian-attack-neighboring-ukraine-2025-09-13/",
+  },
+    {
+      popupType: 'Drone incursion',
+      date: ' 30 July 2026, 21:14',
+      details: "An unidentified flying object was spotted by radars close to the Romanian border. Two F-16 jets were scrabmled at 21:12. The object crossed into Romanian airspace for 20 seconds before returning to Ukraine and detonating there. ",
+      link: "https://x.com/MApNRomania/status/2082896900320264703?s=20",
+     },
+  ]
+},
+    
   {
     lat: 45.40710,
     lng: 28.20130,
