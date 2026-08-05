@@ -1196,7 +1196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "Security personnel has spotted multiple drones over the northern part of the Air Base. The drones flew in formation and disappeared eastwards shortly afterwards. <br><br> Police and Bundeswehr didn't react to those drones because they didn't pose any immediate threat",
     link: "https://www.cz.de/lokales/celle-lk/celle/provokationen-gehen-weiter-unbekannte-drohnen-jetzt-auch-beim-bundeswehr-fliegerhorst-fassberg-QCF3BDQLM5DRJMUGOGQRZCJWEA.html",
     country: "Faßberg Air Base, Germany 🇩🇪",
-    note: "FaÃŸberg is home to the Air Force Technical Training Center",
+    note: "Faßberg is home to the Air Force Technical Training Center",
   },
 
   {
@@ -1262,6 +1262,23 @@ document.addEventListener('DOMContentLoaded', () => {
     details: "A vessel of the federal police spotted multiple drone-like objects with blinking red-green lights. The naval coastal station on Fehrmarn confirmed the sighting of six objects and lost sight of them at around 03:00 a.m.. <br><br> The sanctioned Russian tanker 'KRITI VIGOR' was passing trough at the Fehrmarn Belt during this incident. ",
     link: "https://www.welt.de/politik/deutschland/plus698ed22a616e1cbb1fcd4be2/sabotage-drohnen-brandanschlaege-geheimpapier-zeigt-das-ausmass-der-angriffe-in-deutschland.html",
     country: "Fehmarn, Germany 🇩🇪",
+  },
+
+      {
+    lat: 51.423992,
+    lng: 12.236383,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'others',
+    year: '2026',
+     month: '07',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '05 Aug 2026, around midnight',
+    details: "A drone equipped with explosives was found near a Ukrainian Antonov cargo plane at Leipzig/Halle Airport resulting in the airport closing its airspace. <br><br> A DHL plane collided with an unknown object shortly before finding the drone on the groud. Slight damage was reportedly found on the plane after it landed in Hannover ",
+    link: "https://www.spiegel.de/panorama/leipzig-halle-drohne-mit-moeglichem-sprengstoff-nahe-ukrainischem-frachtflugzeug-a-76c79e66-2629-4168-9e90-30223f62db19?sara_ref=re-so-x-rss#ref=rss",
+    country: "Leipzig/Halle Airport, Germany 🇩🇪",
+        note: "Leipzig/Halle airport is DHLs logistic center",
   },
     
    /* =========================
