@@ -1274,9 +1274,9 @@ document.addEventListener('DOMContentLoaded', () => {
     year: '2026',
      month: '07',
     popupType: 'Drone sighting ', // shown in popup
-    date: '05 Aug 2026, around midnight',
-    details: "A drone equipped with explosives was found near a Ukrainian Antonov cargo plane at Leipzig/Halle Airport resulting in the airport closing its airspace. <br><br> A DHL plane collided with an unknown object shortly before finding the drone on the groud. Slight damage was reportedly found on the plane after it landed in Hannover ",
-    link: "https://www.spiegel.de/panorama/leipzig-halle-drohne-mit-moeglichem-sprengstoff-nahe-ukrainischem-frachtflugzeug-a-76c79e66-2629-4168-9e90-30223f62db19?sara_ref=re-so-x-rss#ref=rss",
+    date: '04 Aug 2026, 23:40',
+    details: "A drone equipped with explosives was found near a Ukrainian Antonov plane, belonging to the Ukrainian Airforce, at Leipzig/Halle Airport resulting in the airport closing its airspace. The bus driver of a tourist bus spotted the drone and downed it. <br><br> A DHL plane collided with an unknown object shortly before finding the drone on the groud. Slight damage was reportedly found on the plane after it landed in Hannover ",
+    link: "https://www.zeit.de/politik/deutschland/2026-08/flughafen-leipzig-halle-drohne-ermittlungen-ukraine-russland",
     country: "Leipzig/Halle Airport, Germany 🇩🇪",
         note: "Leipzig/Halle airport is DHLs logistic center",
   },
