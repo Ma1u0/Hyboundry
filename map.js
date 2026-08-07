@@ -1280,6 +1280,23 @@ document.addEventListener('DOMContentLoaded', () => {
     country: "Leipzig/Halle Airport, Germany 🇩🇪",
         note: "Leipzig/Halle airport is a major logistic center and major hub for military aid to Ukraine",
   },
+
+  {
+    lat: 50.591389,
+    lng: 6.653056,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '07',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '06 Aug 2026, 22:00 - 05:00',
+    details: "Security spotted at least six drones flying over the „Patriot-Werft“ in Mechernich. <br> Police from Euskirchen was able to confirm one of the sightings. Military police observed the drone from approximately 40 metres away and assessed that it was likely a Fly-380 VTOL drone. ",
+    link: "https://www.tagesschau.de/investigativ/drohnenueberfluge-100.html",
+    country: "Patriot-Werft, Mechernich, Germany 🇩🇪",
+    note: "The Patriot-Werft is a major logistics center for the Bundeswehr and the facility where Patriot rockets are being maintained",
+  },
     
    /* =========================
        I R E L A N D
