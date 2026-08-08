@@ -455,6 +455,27 @@ document.addEventListener('DOMContentLoaded', () => {
     note: "The Belgian security service considers Russia to be behind the drones",
     noteLink: "https://www.vrt.be/vrtnws/en/2025/11/05/belgian-security-services-convinced-russia-is-behind-the-drone-i/"
   },
+
+  /* =========================
+       B U L G A R I A
+    ========================= */
+
+  {
+    lat: 43.75,
+    lng: 28.1,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'infrastructure',
+    year: '2026',
+    month: '08',
+    popupType: 'Crash site ', // shown in popup
+    date: ' 08 Aug 2026, 08:10',
+    details: "Romanian police heard a drone, which entered Bulgaria through Romanian airspace and exploded around 100m from the Romanian border. <br> The crash site was just 200m from the Romanian and 1000m from the Bulgarian compressor station of the Trans-Balkan gas pipeline. The drone wasn‘t identified in Romanian or Bulgarian airspace. <br> No damage or casualties were caused by the explosion according to Prime Minister Radev",
+    link: "https://bntnews.bg/news/pm-rumen-radev-a-drone-has-entered-bulgarian-airspace-exploded-near-compressor-station-1407083news.html",
+    country: "Kardam, Bulgaria 🇧🇬",
+    },
+
     
    /* =========================
        C Z E C H I A
@@ -1272,7 +1293,7 @@ document.addEventListener('DOMContentLoaded', () => {
     risk: 'orange',
     place: 'others',
     year: '2026',
-     month: '07',
+     month: '08',
     popupType: 'Drone sighting ', // shown in popup
     date: '04 Aug 2026, 23:40',
     details: "A drone equipped with explosives was found near a Ukrainian Antonov plane, belonging to the Ukrainian Airforce, at Leipzig/Halle Airport resulting in the airport closing its airspace. The bus driver of a tourist bus spotted the drone and downed it. <br><br> A DHL plane collided with an unknown object shortly before finding the drone on the groud. Slight damage was reportedly found on the plane after it landed in Hannover ",
@@ -1289,7 +1310,7 @@ document.addEventListener('DOMContentLoaded', () => {
     risk: 'yellow',
     place: 'others',
     year: '2026',
-     month: '07',
+     month: '08',
     popupType: 'Drone sighting ', // shown in popup
     date: '06 Aug 2026, 22:00 - 05:00',
     details: "Security spotted at least six drones flying over the „Patriot-Werft“ in Mechernich. <br> Police from Euskirchen was able to confirm one of the sightings. Military police observed the drone from approximately 40 metres away and assessed that it was likely a Fly-380 VTOL drone. ",
