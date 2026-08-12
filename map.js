@@ -1181,7 +1181,7 @@ document.addEventListener('DOMContentLoaded', () => {
       date: '08 - 12 Jan 2026',
       details: "Five sightings were reported on multiple days in or near the borders of the drone flight restriction area. <br> The police identified two of those sightings as DJI-made drones, the other three sightings were not confirmed so far and are based on witness reports. ",
       link: "https://www.welt.de/politik/deutschland/plus698ed22a616e1cbb1fcd4be2/sabotage-drohnen-brandanschlaege-geheimpapier-zeigt-das-ausmass-der-angriffe-in-deutschland.html"
-    }
+    },
     {
       popupType: 'Drone sighting / airport closure',
       date: '11 Aug 2026, shortly before 4:00 - 5:20',
