@@ -2451,6 +2451,23 @@ document.addEventListener('DOMContentLoaded', () => {
      },
   ]
 },
+
+    
+   {
+    lat: 43.881,
+    lng: 30.717,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'infrastructure',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 11 Aug 2026, around 08:00 ',
+    details: "Two Gerbera drones were found drifting in the sea near the Neptun Deep offshore gas Project by a civillian vessel. <br> Romania`s coastal guard and army destroyed the drones in a controlled manner. <br> According to Romania`s armed forces, Ukrainian forces confirmed that the drones did not belong to them. ",
+    link: "https://www.mapn.ro/cpresa/19344_informație-de-presa",
+    country: "​​Neptun Deep Project, Black Sea, Romania 🇷🇴",
+  },
     
  /* =========================
        S P A I N
