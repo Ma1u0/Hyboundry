@@ -1160,7 +1160,7 @@ document.addEventListener('DOMContentLoaded', () => {
   risk: 'yellow',
   place: 'airports',
   year: ['2025', '2026'],
-  month: ['11', '12', '01'],
+  month: ['11', '12', '01', '08'],
   country: "Hannover Airport, Germany 🇩🇪",
 
   incidents: [
