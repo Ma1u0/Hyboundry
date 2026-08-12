@@ -1182,6 +1182,12 @@ document.addEventListener('DOMContentLoaded', () => {
       details: "Five sightings were reported on multiple days in or near the borders of the drone flight restriction area. <br> The police identified two of those sightings as DJI-made drones, the other three sightings were not confirmed so far and are based on witness reports. ",
       link: "https://www.welt.de/politik/deutschland/plus698ed22a616e1cbb1fcd4be2/sabotage-drohnen-brandanschlaege-geheimpapier-zeigt-das-ausmass-der-angriffe-in-deutschland.html"
     }
+    {
+      popupType: 'Drone sighting / airport closure',
+      date: '11 Aug 2026, shortly before 4:00 - 5:20',
+      details: "Shortly before 4:00 an employee of DB Schenker spotted a drone flying above the site at Hannover airport resulting in closing the southern runaway and later the entire airport. <br> The northern runway was opened shortly before the drone was seen again above the TUI FLY building right at the runways. <br> The airport opened again 05:20 after the last reported sighting at 04:40. <br><br> A „hybrid attack“ can‘t be ruled out at the moment ",
+      link: "https://www.spiegel.de/panorama/hannover-sperrte-flughafen-wegen-drohnensichtung-a-4f6de16e-5b2e-470d-a0c0-173614b7933e"
+    }
   ]
 },
     
