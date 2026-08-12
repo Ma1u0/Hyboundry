@@ -2454,8 +2454,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
    {
-    lat: 43.881,
-    lng: 30.717,
+    lat: 43.73,
+    lng: 30.9048,
     icon: icons.droneOrange,
     type: 'drone',      // used for filtering
     risk: 'orange',
