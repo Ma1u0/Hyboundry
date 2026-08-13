@@ -2304,9 +2304,8 @@ place: 'others',
     {
       popupType: 'Drone incursion',
       date: ' 13 Aug 2026, 15:17',
-      details: "A drone entered Romania through Ukrainian airspace about 3,5 kilometers from Chilia Veche and remained in Romanian airspace before returning to Ukraine. Two Spanish F-16s were scrambled and a RO-alert was sent out.",
+      details: "A drone entered Romania through Ukrainian airspace about 3,5 kilometers from Chilia Veche and remained in Romanian airspace before returning to Ukraine. Two Spanish F-16s were scrambled and a RO-alert was sent out. <br><br> This marks the third drone incursion / fourth incient on August 13th",
       link: "https://www.digi24.ro/stiri/actualitate/a-treia-alerta-de-drona-in-tulcea-intr-o-singura-zi-avioane-f-18-ale-fortelor-aeriene-si-spatiale-spaniole-au-fost-ridicate-in-aer-3905283",
-     note: "This was the third drone incursion / fourth incient on August 13th", 
     },
   ]
 },
