@@ -2257,6 +2257,12 @@ document.addEventListener('DOMContentLoaded', () => {
       details: "An unidentified flying object was spotted by radars close to the Romanian border. Two F-16 jets were scrabmled at 21:12. The object crossed into Romanian airspace for 20 seconds before returning to Ukraine and detonating there. ",
       link: "https://x.com/MApNRomania/status/2082896900320264703?s=20",
      },
+    {
+      popupType: 'Drone incursion',
+      date: ' 13 Aug 2026, 09:02',
+      details: "At 09:02 a drone was detected near the border to Romania with two F-16s being scrambled at 09:20. The drone entered Romanian airspace for two minutes before reentering Ukrainian airspace, where explosions were reported shortly afterwards.",
+      link: "https://x.com/MApNRomania/status/2087788637597426113?s=20",
+     },
   ]
 },
     
@@ -2275,22 +2281,35 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.reuters.com/business/aerospace-defense/romania-finds-suspected-drone-fragments-after-russian-attack-ukraine-2025-11-11/",
     country: "Grindu, Romania 🇷🇴",
   },
+    
+{
+lat: 45.41417,
+lng: 29.28919,
+icon: icons.droneRed,
+type: 'drone',      // used for filtering
+risk: 'red',
+place: 'others',
+  year: ['2025', '2026'],  
+  month: ['11', '08'],  
+  country: "Chilia Veche, Romania 🇷🇴´",
 
-  {
-    lat: 45.41417,
-    lng: 29.28919,
-    icon: icons.droneRed,
-    type: 'drone',      // used for filtering
-    risk: 'red',
-    place: 'others',
-    year: '2025',
-     month: '11',
+  incidents: [
+    {
     popupType: 'Drone incursion ', // shown in popup
     date: '19 Nov 2025, 00:20 - 01:00 ',
     details: "Russian drone flew up to ~8km into Romanian airspace where it disappeared from the radars. The drone later reappeared in Moldovan airspace from where it reentered Romania and was spotted in Foltești, Galați county again. Two German Eurofighters were scrambled <br> It is unknown what eventually happened to it",
-    link: "https://www.digi24.ro/stiri/actualitate/mapn-a-ridicat-doua-avioane-de-lupta-in-timpul-noptii-dupa-ce-o-drona-a-intrat-in-spatiul-aerian-national-a-fost-emis-mesaj-ro-alert-3509181",
-    country: "Periprava / Chilia Veche / Foltești, Romania 🇷🇴´",
-  },
+    link: "https://www.digi24.ro/stiri/actualitate/mapn-a-ridicat-doua-avioane-de-lupta-in-timpul-noptii-dupa-ce-o-drona-a-intrat-in-spatiul-aerian-national-a-fost-emis-mesaj-ro-alert-3509181",  
+    },
+    
+    {
+      popupType: 'Drone incursion',
+      date: ' 13 Aug 2026, 15:17',
+      details: "A drone entered Romania through Ukrainian airspace about 3,5 kilometers from Chilia Veche and remained in Romanian airspace before returning to Ukraine. Two Spanish F-16s were scrambled and a RO-alert was sent out.",
+      link: "https://www.digi24.ro/stiri/actualitate/a-treia-alerta-de-drona-in-tulcea-intr-o-singura-zi-avioane-f-18-ale-fortelor-aeriene-si-spatiale-spaniole-au-fost-ridicate-in-aer-3905283",
+     note: "This was the third drone incursion / fourth incient on August 13th", 
+    },
+  ]
+},
 
    {
     lat: 46.42270,
@@ -2468,7 +2487,39 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.mapn.ro/cpresa/19344_informație-de-presa",
     country: "​​Neptun Deep Project, Black Sea, Romania 🇷🇴",
   },
-    
+
+
+     {
+    lat: 45.3,
+    lng: 28.966667,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Drone incursion', // shown in popup
+    date: ' 13 Aug 2026, 01:27 ',
+    details: "At 01:27 five objects were detected on the Ukrainian side, near the border river to Romania. One of these later entered Romanian airspace 2 kilometers south of Pardina, where it stayed for 10 minutes before reentering Ukrainian airspace. The drone exploded in Ukraine ",
+    link: "https://english.mapn.ro/cpresa/6835_press-release",
+    country: "​​Pardina, Romania 🇷🇴",
+  },
+
+  {
+    lat: 43.95575,
+    lng: 28.639861,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 13 Aug 2026, 08:30 ',
+    details: "At 8:30, the Romanian Ministry of National Defense was informed about the fragment of a drone in the Terasa Tineretului area, only 15 meters from breakwater blocks. The fragment did not contain explosive material. ",
+    link: "https://english.mapn.ro/cpresa/6836_Press-Information",
+    country: "Costinești, Romania 🇷🇴",
+  },
  /* =========================
        S P A I N
     ========================= */
