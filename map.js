@@ -2537,8 +2537,8 @@ place: 'others',
   },
 
    {
-    lat: 45.283333,
-    lng: 28.266667,
+    lat: 45.183333,
+    lng: 28.233333,
     icon: icons.droneOrange,
     type: 'drone',      // used for filtering
     risk: 'orange',
@@ -2547,10 +2547,10 @@ place: 'others',
      month: '08',
     popupType: 'Crash site', // shown in popup
     date: ' 14 Aug 2026, around 11:45 ',
-    details: "A drone entered Romania through Ukrainian airspace and crashed in a forest near Luncavița, around 5 kilometers from the Ukrainian border. The drone was flying at a low altitude and was not detected by Romanian radars. A RO-Alert was issued in Tulcea County around 11:45.",
+    details: "A drone entered Romania through Ukrainian airspace and crashed in a forest near Luncavița, around 5 kilometers from the Ukrainian border. The drone was flying at a low altitude and was not detected by Romanian radars. A RO-Alert was issued in Tulcea County around 11:45. <br><br> The wreckage was found in the Măcin mountains, near the village of Greci",
     note: "This marks the fourth drone incursion into Romania within 48 hours",
     link: "https://english.mapn.ro/cpresa/6838_press-information",
-    country: "Luncavița, Romania 🇷🇴",
+    country: "Greci, Romania 🇷🇴",
   },
 
   {
