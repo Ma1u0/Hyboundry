@@ -2535,6 +2535,23 @@ place: 'others',
     link: "https://english.mapn.ro/cpresa/6836_Press-Information",
     country: "Costinești, Romania 🇷🇴",
   },
+
+   {
+    lat: 45.283333,
+    lng: 28.266667,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 14 Aug 2026, around 11:45 ',
+    details: "A drone entered Romania through Ukrainian airspace and crashed in a forest near Luncavița, around 5 kilometers from the Ukrainian border. The drone was flying at a low altitude and was not detected by Romanian radars. A RO-Alert was issued in Tulcea County around 11:45.",
+    note: "This marks the fourth drone incursion into Romania within 48 hours",
+    link: "https://english.mapn.ro/cpresa/6838_press-information",
+    country: "Luncavița, Romania 🇷🇴",
+  },
  /* =========================
        S P A I N
     ========================= */
