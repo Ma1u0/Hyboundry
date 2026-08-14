@@ -1424,7 +1424,7 @@ document.addEventListener('DOMContentLoaded', () => {
     popupType: 'Drone incursion / Crash site ', // shown in popup
     date: '14 Aug 2026, around 04:00',
     details: "An air threat alert was called in Eastern Latvia following an unidentified drone entering Latvian airspace at around 04:00. Italian jets stationed in Lithuania and Turkish jets stationed in Estonia were scrambled and one of the Italian jets shot the drone down. <br><br> So far it is unknown wether it was a Russian drone or a jammed Ukrainian drone. Latvian forces are currently searching for the reamains around Rugāji, around 35 kilometers from the border.",
-    link: "https://eng.lsm.lv/article/society/defence/06.10.2025-drone-wing-washed-up-on-salacgriva-beach-latvia.a617240/",
+    link: "https://www.reuters.com/business/aerospace-defense/latvia-shoots-down-drone-its-airspace-finland-restricts-parts-baltic-sea-2026-08-14/",
     country: "Rugāji, Latvia 🇱🇻"
   },
     
