@@ -2552,6 +2552,40 @@ place: 'others',
     link: "https://english.mapn.ro/cpresa/6838_press-information",
     country: "Luncavița, Romania 🇷🇴",
   },
+
+  {
+    lat: 43.826667,
+    lng: 28.588889,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 14 Aug 2026, around 18:15 ',
+    details: "Drone debris has been found on the beach in Saturn. Visitors and tourists have been evacuated from the area and entrance restricted. The type of drone is currently unknown.",
+    note: "This marks the second drone related incident on August 14th in Romania",
+    link: "https://www.digi24.ro/amphtml/stiri/actualitate/video-fragment-de-drona-gasit-pe-plaja-din-saturn-turistii-au-fost-evacuati-3906961",
+    country: "Saturn, Romania 🇷🇴",
+  },
+
+      {
+    lat: 45.32358,
+    lng: 28.82937,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 14 Aug 2026, around 18:20 ',
+    details: "A drone was discovered near Plauru in Tulcea County. Specialists were already sent to the area to determine the type of drone and who it belongs to. <br> Plauru is located 2 kilometers from the Ukrainian border.",
+    note: "This marks the third drone related incident on August 14th in Romania",
+    link: "https://www.euronews.ro/articole/inca-o-drona-gasita-de-ministerul-apararii-in-aceeasi-zi-aparatul-de-zbor-a-fost",
+    country: "Plauru, Romania 🇷🇴",
+  }, 
  /* =========================
        S P A I N
     ========================= */
