@@ -2566,21 +2566,32 @@ place: 'others',
     country: "​​Pardina, Romania 🇷🇴",
   },
 
-  {
-    lat: 43.95575,
-    lng: 28.639861,
+    {
+    lat: 43.950954,
+    lng: 28.601225,
     icon: icons.droneYellow,
     type: 'drone',      // used for filtering
     risk: 'yellow',
     place: 'others',
-    year: '2026',
-     month: '08',
-    popupType: 'Crash site', // shown in popup
+  year: '2026',
+  month: '08' ,
+  country: "Costinești, Romania 🇷🇴",
+
+  incidents: [
+    {
+      popupType: 'Crash site', // shown in popup
     date: ' 13 Aug 2026, 08:30 ',
     details: "At 8:30, the Romanian Ministry of National Defense was informed about the fragment of a drone in the Terasa Tineretului area, only 15 meters from breakwater blocks. The fragment did not contain explosive material. ",
     link: "https://english.mapn.ro/cpresa/6836_Press-Information",
-    country: "Costinești, Romania 🇷🇴",
-  },
+    },
+    {
+     popupType: 'Crash site', // shown in popup
+    date: ' 22 Aug 2026',
+    details: "A Gerbera drone was found on the coast of Costineşti. The drone did not contain explosives",
+    link: "https://www.digi24.ro/stiri/actualitate/alerta-la-costinesti-o-drona-de-tip-gerbera-a-fost-gasita-in-mare-anuntul-mapn-3917857",
+     },
+  ]
+},
 
    {
     lat: 45.183333,
@@ -2680,22 +2691,6 @@ place: 'others',
     details: "A drone was found at Tuzla Beach which was equipped with explosives. The charge was neutralised by controlled detonation under safe conditions.",
     link: "https://agerpres.ro/english/2026/08/22/mapn-explosive-charge-found-in-drone-fragments-reported-at-tuzla-beach-neutralised-in-safe-condition--1586992",
     country: "Tuzla Beach, Romania 🇷🇴",
-  },
-
-    {
-    lat: 43.950954,
-    lng: 28.601225,
-    icon: icons.droneYellow,
-    type: 'drone',      // used for filtering
-    risk: 'yellow',
-    place: 'others',
-    year: '2026',
-     month: '08',
-    popupType: 'Crash site', // shown in popup
-    date: ' 22 Aug 2026',
-    details: "A Gerbera drone was found on the coast of Costineşti. The drone did not contain explosives",
-    link: "https://www.digi24.ro/stiri/actualitate/alerta-la-costinesti-o-drona-de-tip-gerbera-a-fost-gasita-in-mare-anuntul-mapn-3917857",
-    country: "Costineşti, Romania 🇷🇴",
   },
 
         {
