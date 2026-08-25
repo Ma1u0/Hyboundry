@@ -914,6 +914,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.euronews.com/my-europe/2026/05/15/helsinki-airport-resumes-flights-after-drone-alert-forces-suspension-officials-say",
     country: "Helsinki airport, Finland 🇫🇮"
   },
+
+      {
+    lat: 59.781,
+    lng: 21.369,
+    icon: icons.droneRed,
+    type: 'drone',      // used for filtering
+    risk: 'red',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Airspace incursion', // shown in popup
+    date: '20 Aug 2026, evening',
+    details: "Finish border guard reported an airspace incursion by a Russian IL-20 reconnaissance aircraft, lasting aproximately three minutes. The incursion was as deep as 4.7 nautical miles into Finish airspace",
+    link: "https://yle.fi/a/74-20242226",
+    country: "Utö, Finland 🇫🇮"
+  },
     
      /* =========================
        F R A N C E
@@ -1302,7 +1318,7 @@ document.addEventListener('DOMContentLoaded', () => {
      month: '08',
     popupType: 'Drone sighting ', // shown in popup
     date: '04 Aug 2026, 23:40',
-    details: "A drone equipped with explosives was found near a Ukrainian Antonov plane, belonging to the Ukrainian Airforce, at Leipzig/Halle Airport resulting in the airport closing its airspace. The bus driver of a tourist bus spotted the drone and downed it. <br><br> A DHL plane collided with an unknown object shortly before finding the drone on the groud. Slight damage was reportedly found on the plane after it landed in Hannover ",
+    details: "A drone equipped with explosives was found near a Ukrainian Antonov plane, belonging to the Ukrainian Airforce, at Leipzig/Halle Airport resulting in the airport closing its airspace. The bus driver of a tourist bus spotted the drone and downed it. <br><br> A DHL plane collided with an unknown object shortly before finding the drone on the groud. Slight damage was reportedly found on the plane after it landed in Hannover  <br><br> UPDATE 25/08/2026 <br> It was made public that a third drone carrying explosives was found at the airport by investigators",
     link: "https://www.zeit.de/politik/deutschland/2026-08/flughafen-leipzig-halle-drohne-ermittlungen-ukraine-russland",
     country: "Leipzig/Halle Airport, Germany 🇩🇪",
         note: "Leipzig/Halle airport is a major logistic center and major hub for military aid to Ukraine",
@@ -2281,22 +2297,34 @@ document.addEventListener('DOMContentLoaded', () => {
      },
   ]
 },
-    
+
   {
     lat: 45.40710,
     lng: 28.20130,
     icon: icons.droneRed,
     type: 'drone',      // used for filtering
     risk: 'red',
-    place: 'others',
-    year: '2025',
-     month: '11',
-    popupType: 'Drone incursion / crash site', // shown in popup
+place: 'others',
+  year: ['2025', '2026'],  
+  month: ['11', '08'],  
+  country: "Grindu, Romania 🇷🇴",
+
+  incidents: [
+    {
+     popupType: 'Drone incursion / crash site', // shown in popup
     date: '11 Nov 2025',
     details: "Russian drone entered Romanian airspace but due to the weather NATO jets weren't able to be scrambled. The remains were found 5km deep in Romania's territory",
     link: "https://www.reuters.com/business/aerospace-defense/romania-finds-suspected-drone-fragments-after-russian-attack-ukraine-2025-11-11/",
-    country: "Grindu, Romania 🇷🇴",
-  },
+   },
+    
+    {
+      popupType: 'Drone incursion',
+      date: ' 20 Aug 2026, 03:20 - 03:24',
+      details: "A drone entered Romanian airspace at 03:21 which caused two Spanish F-18 jets to be scrambled. The drone crashed at 03:24 4 kilometers north east of Grindu. An air alert was active between 03:20 and 03:52",
+      link: "https://english.mapn.ro/cpresa/6843_press-information",
+    },
+  ]
+},
     
 {
 lat: 45.41417,
@@ -2476,7 +2504,8 @@ place: 'others',
       popupType: 'Crash site', // shown in popup
     date: ' 26 July 2026, 10:13',
     details: "Romanian airforce intercepted the drone at 10:13 in the morning. <br><br> This marks the third day in a row that Romanian forces had to shoot down a drone ",
-    link:  "https://www.euronews.com/my-europe/2026/07/26/romanian-forces-shoot-down-third-drone-in-three-days", },
+    link:  "https://www.euronews.com/my-europe/2026/07/26/romanian-forces-shoot-down-third-drone-in-three-days", 
+    },
     {
       popupType: 'Drone incursion',
       date: ' 27 Jul 2026, 08:53',
@@ -2486,7 +2515,7 @@ place: 'others',
   ]
 },
 
-    
+
    {
     lat: 43.73,
     lng: 30.9048,
@@ -2496,12 +2525,29 @@ place: 'others',
     place: 'infrastructure',
     year: '2026',
      month: '08',
-    popupType: 'Crash site', // shown in popup
+ country: "​​Neptun Deep Project, Black Sea, Romania 🇷🇴",
+
+  incidents: [
+    {
+      popupType: 'Crash site', // shown in popup
     date: ' 11 Aug 2026, around 08:00 ',
     details: "Two Gerbera drones were found drifting in the sea near the Neptun Deep offshore gas Project by a civillian vessel. <br> Romania`s coastal guard and army destroyed the drones in a controlled manner. <br> According to Romania`s armed forces, Ukrainian forces confirmed that the drones did not belong to them. ",
     link: "https://www.mapn.ro/cpresa/19344_informație-de-presa",
-    country: "​​Neptun Deep Project, Black Sea, Romania 🇷🇴",
-  },
+      },
+      { 
+      popupType: 'Crash site',
+      date: ' 16 Aug 2026',
+      details: "Drone debris was found near the site ",
+      link: "https://www.antena3.ro/actualitate/obiecte-suspecte-in-portul-tomis-din-constanta-si-la-eforie-nord-la-1-5-km-de-tarm-ar-fi-o-drona-navala-autoritatile-intervin-799621.html",
+     },
+  {
+      popupType: 'Crash site',
+      date: ' 20 Aug 2026',
+      details: "A drone, equipped with explosives, was spotted near the Neptun site. Two F-16 jets were scrambled and had the order to shoot the drone. <br><br> President Nicușor Dan blames Russia for this incident ",
+      link: "https://www.digi24.ro/stiri/actualitate/evenimente/drona-maritima-de-langa-neptun-deep-concluziile-unui-expert-international-care-a-analizat-componentele-aparatului-pas-cu-pas-3915955",
+     },
+  ]
+},
 
 
      {
@@ -2586,6 +2632,88 @@ place: 'others',
     link: "https://www.euronews.ro/articole/inca-o-drona-gasita-de-ministerul-apararii-in-aceeasi-zi-aparatul-de-zbor-a-fost",
     country: "Plauru, Romania 🇷🇴",
   }, 
+
+          {
+    lat: 45.783333,
+    lng: 27.7,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 16 Aug 2026, 04:44 - 05:01',
+    details: "A Spanish F-18 jet was scrambled and shot down the drone which entered Romanian airspace via Moldovan airspace. The debris was found between Cudalbi and Băleni",
+    link: "https://x.com/mapnromania/status/2088849498432774591?s=46",
+    country: "Cudalbi, Romania 🇷🇴",
+  },
+
+  {
+    lat: 44.1764,
+    lng: 28.6617,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 16 Aug 2026',
+    details: "Debris of a drone were found around 1.5 kilometers off the coast of Port Tomis. More debris were found near Eforie Sud, Năvodari, and Zoom Beach in Constanta",
+    link: "https://www.antena3.ro/actualitate/obiecte-suspecte-in-portul-tomis-din-constanta-si-la-eforie-nord-la-1-5-km-de-tarm-ar-fi-o-drona-navala-autoritatile-intervin-799621.html",
+    country: "Port Tomis, Romania 🇷🇴",
+  },
+
+
+      {
+    lat: 44.00039,
+    lng: 28.66224,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 22 Aug 2026',
+    details: "A drone was found at Tuzla Beach which was equipped with explosives. The charge was neutralised by controlled detonation under safe conditions.",
+    link: "https://agerpres.ro/english/2026/08/22/mapn-explosive-charge-found-in-drone-fragments-reported-at-tuzla-beach-neutralised-in-safe-condition--1586992",
+    country: "Tuzla Beach, Romania 🇷🇴",
+  },
+
+    {
+    lat: 43.950954,
+    lng: 28.601225,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 22 Aug 2026',
+    details: "A Gerbera drone was found on the coast of Costineşti. The drone did not contain explosives",
+    link: "https://www.digi24.ro/stiri/actualitate/alerta-la-costinesti-o-drona-de-tip-gerbera-a-fost-gasita-in-mare-anuntul-mapn-3917857",
+    country: "Costineşti, Romania 🇷🇴",
+  },
+
+        {
+    lat: 45.78637,
+    lng: 27.30922,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 24 Aug 2026, around 06:00',
+    details: "At around 06:00 a drone entered Romania in Cahul area through Moldova. After four hours the drone was believed to have crashed. At 15:00 an inhabitant of Ciușlea called the police because of a drone being stuck in a tree in his yard. The drone did not carry any explosives ",
+    link: "https://www.antena3.ro/actualitate/o-drona-a-intrat-in-spatiul-aerian-radarele-mapn-au-detectat-semnale-aeriene-intermitente-in-zona-cahul-unul-a-aparut-apoi-in-galati-800488.html",
+    country: "Ciușlea, Romania 🇷🇴",
+  },
+  
  /* =========================
        S P A I N
     ========================= */
