@@ -2992,6 +2992,22 @@ place: 'others',
   },
 
        {
+    lat: 41.01,
+    lng: 28.960278,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'others',
+    year: '2026',
+     month: '07',
+    popupType: 'Crash site ', // shown in popup
+    date: ' 20 Jul 2026',
+    details: "Debris of a kamikaze drone was found on the shore of Istanbul's Arnavutkoy district. The drone was armed with explosives",
+    link: "https://www.turkiyetoday.com/nation/suspected-kamikaze-drone-washes-up-on-istanbul-coast-3224257?s=1",
+    country: "Istanbul, Türkiye 🇹🇷",
+  },
+
+       {
     lat: 40.84,
     lng: 31.16,
     icon: icons.droneYellow,
