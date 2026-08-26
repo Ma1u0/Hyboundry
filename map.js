@@ -2948,6 +2948,81 @@ place: 'others',
     country: "Manyas, Türkiye 🇹🇷",
   },
 
+  {
+    lat: 36.129,
+    lng: 35.940,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'others',
+   year: '2026',
+   month: ['06', '08'],  
+  country: "Kapisuyu, Türkiye 🇹🇷",
+
+  incidents: [
+    {
+    popupType: 'Crash site ', // shown in popup
+    date: ' 14 Jun 2026',
+    details: "A Russian made drone was found off the coast of Kapisuyu. It did not contain any ammunition or explosives",
+    link: "https://www.iha.com.tr/bartin-haberleri/bartinda-5-gun-icinde-ikinci-insansiz-hava-araci-bulundu-441043181",
+    },
+      {
+    popupType: 'Crash site ', // shown in popup
+    date: ' 25 Aug 2026, around 19:00',
+    details: "Locals swimming on the beach spotted the Gerbera drone on the coast of Kapisuyu. The fuselage and wings of the drone were made of styrofoam, the propellers of wood, and the fastening screws of plastic. The drone did not carry explosives or ammunition",
+    link: "https://www.turkiyetoday.com/nation/stray-drone-crashes-into-police-station-in-turkiyes-black-sea-city-of-trabzon-3226365?s=1",
+    },
+  ]
+},
+
+   {
+    lat: 41.7795,
+    lng: 32.4835,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'others',
+    year: '2026',
+     month: '06',
+    popupType: 'Crash site ', // shown in popup
+    date: ' 19 Jun 2026, around 16:00',
+    details: "A Russian made drone was found off the coast of Kapisuyu. It did not contain any ammunition or explosives",
+    link: "https://www.iha.com.tr/bartin-haberleri/bartinda-5-gun-icinde-ikinci-insansiz-hava-araci-bulundu-441043181",
+    country: "Çakraz, Türkiye 🇹🇷",
+  },
+
+       {
+    lat: 40.84,
+    lng: 31.16,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site ', // shown in popup
+    date: ' 10 Aug 2026, around 16:00',
+    details: "Vacationers spotted at drone near Cinar Beach in Düzce",
+    link: "https://www.iha.com.tr/bartin-haberleri/bartinda-5-gun-icinde-ikinci-insansiz-hava-araci-bulundu-441043181",
+    country: "Düzce, Türkiye 🇹🇷",
+  },
+    
+  {
+    lat: 41.006389,
+    lng: 39.730556,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'infrastructure',
+    year: '2026',
+     month: '08',
+    popupType: 'Drone incursion / crash site ', // shown in popup
+    date: ' 19 Aug 2026, around 19:00',
+    details: "A drone crashed into a police station in Trabzon injuring no one but damaging four vehicles and shattering surrounding windows",
+    link: "https://www.turkiyetoday.com/nation/stray-drone-crashes-into-police-station-in-turkiyes-black-sea-city-of-trabzon-3226365?s=1",
+    country: "Trabzon, Türkiye 🇹🇷",
+  },
+
      /* =========================
        U K
     ========================= */
