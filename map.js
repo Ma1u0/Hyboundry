@@ -476,6 +476,70 @@ document.addEventListener('DOMContentLoaded', () => {
     country: "Kardam, Bulgaria 🇧🇬",
     },
 
+      {
+    lat: 43.25854,
+    lng: 28.03221,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+    month: '08',
+    popupType: 'Crash site ', // shown in popup
+    date: ' 26 Aug 2026, around 01:30',
+    details: "Border Police were dispatched to Kabakum Beach following reports of a drone crash. The drone contained no explosive material",
+    link: "https://www.bta.bg/en/news/bulgaria/1192191-bulgarian-navy-destroys-unmanned-aerial-vehicles-in-the-black-sea-region",
+    country: "Kabakum Beach, Bulgaria 🇧🇬",
+    },
+
+    
+      {
+    lat: 42.15051,
+    lng: 27.91389,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+    month: '08',
+    popupType: 'Crash site ', // shown in popup
+    date: ' 25 Aug 2026',
+    details: "An electric reconnaissance drone was found in the waters between Tsarevo and Varvara. The drone posed to no danger ",
+    link: "https://www.bta.bg/en/news/bulgaria/1192191-bulgarian-navy-destroys-unmanned-aerial-vehicles-in-the-black-sea-region",
+    country: "Southeastern Black Sea coast, Bulgaria 🇧🇬",
+    },
+
+      {
+    lat: 42.56,
+    lng: 27.636667,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+    month: '08',
+    popupType: 'Crash site ', // shown in popup
+    date: ' 26 Aug 2026',
+    details: "A navy team was called to Pomorie after an unknown object was reported in the waters, which was later confirmed to be a drone. The drone was destroyed at sea",
+    link: "https://www.bta.bg/en/news/bulgaria/1192191-bulgarian-navy-destroys-unmanned-aerial-vehicles-in-the-black-sea-region",
+    country: "Pomorie, Bulgaria 🇧🇬",
+    },
+
+  {
+    lat: 43.10694,
+    lng: 27.92444,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+    month: '08',
+    popupType: 'Crash site ', // shown in popup
+    date: ' 26 Aug 2026',
+    details: "The military located a drone in the Black Sea in the Pasha Dere area and destroyed it at sea",
+    link: "https://www.bta.bg/en/news/bulgaria/1192191-bulgarian-navy-destroys-unmanned-aerial-vehicles-in-the-black-sea-region",
+    country: "Pasha Dere, Bulgaria 🇧🇬",
+    },
     
    /* =========================
        C Z E C H I A
@@ -2707,6 +2771,23 @@ place: 'others',
     details: "At around 06:00 a drone entered Romania in Cahul area through Moldova. After four hours the drone was believed to have crashed. At 15:00 an inhabitant of Ciușlea called the police because of a drone being stuck in a tree in his yard. The drone did not carry any explosives ",
     link: "https://www.antena3.ro/actualitate/o-drona-a-intrat-in-spatiul-aerian-radarele-mapn-au-detectat-semnale-aeriene-intermitente-in-zona-cahul-unul-a-aparut-apoi-in-galati-800488.html",
     country: "Ciușlea, Romania 🇷🇴",
+  },
+
+    
+  {
+    lat: 43.87521,
+    lng: 28.60291,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Crash site', // shown in popup
+    date: ' 26 Aug 2026, around 09:00',
+    details: "Pieces of a drone were washed up on Olimp beach. The drone contained explosives and was safely detonated",
+    link: "https://www.antena3.ro/actualitate/alerta-la-malul-marii-toata-plaja-din-olimp-a-fost-inchisa-dupa-ce-a-fost-descoperita-o-bucata-de-drona-800817.html",
+    country: "Olimp, Romania 🇷🇴",
   },
   
  /* =========================
