@@ -2949,8 +2949,8 @@ place: 'others',
   },
 
   {
-    lat: 36.129,
-    lng: 35.940,
+    lat: 41.84444,
+    lng: 32.75028,
     icon: icons.droneOrange,
     type: 'drone',      // used for filtering
     risk: 'orange',
