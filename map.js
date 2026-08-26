@@ -3003,7 +3003,7 @@ place: 'others',
     popupType: 'Crash site ', // shown in popup
     date: ' 10 Aug 2026, around 16:00',
     details: "Vacationers spotted at drone near Cinar Beach in Düzce",
-    link: "https://www.iha.com.tr/bartin-haberleri/bartinda-5-gun-icinde-ikinci-insansiz-hava-araci-bulundu-441043181",
+    link: "https://english.almayadeen.net/news/politics/suspected-drone-found-off-turkey-s-black-sea-coast",
     country: "Düzce, Türkiye 🇹🇷",
   },
     
