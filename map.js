@@ -994,7 +994,22 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://yle.fi/a/74-20242226",
     country: "Utö, Finland 🇫🇮"
   },
-    
+
+  {
+    lat: 60.21667,
+    lng: 25.86667,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'others',
+    year: '2026',
+     month: '09',
+    popupType: 'Airspace incursion / crash site', // shown in popup
+    date: '01 Sep 2026',
+    details: "A citizen discovered the drone on the shoreline of the island of Pellinki in the South of Finland. The drone did not contain explosives and designed for surveillance, mapping, and photography. <br><br> It is believed that it is a Russian drone.",
+    link: "https://yle.fi/a/74-20244491",
+    country: "Pellinki, Finland 🇫🇮"
+  },
      /* =========================
        F R A N C E
     ========================= */
@@ -1403,6 +1418,38 @@ document.addEventListener('DOMContentLoaded', () => {
     link: "https://www.tagesschau.de/investigativ/drohnenueberfluge-100.html",
     country: "Patriot-Werft, Mechernich, Germany 🇩🇪",
     note: "The Patriot-Werft is a major logistics center for the Bundeswehr and the facility where Patriot rockets are being maintained",
+  },
+
+      {
+    lat: 52.95,
+    lng: 8.266667,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Drone sighting ', // shown in popup
+    date: '09 Aug 2026',
+    details: "A security guard spotted drones at the natural gas processing plant in Großkneten, Landkreis Oldenburg. He then drove around the facility to search for pilots. After talking to two masked persons, the head of the guard was hit on the hood of the car. <br><br> The manhunt was unsuccessful",
+    link: "https://www.tagesschau.de/investigativ/ndr-wdr/bka-lagebericht-sabotage-100.html",
+    country: "Großkneten, Germany 🇩🇪",
+  },
+
+  {
+    lat: 48.1994,
+    lng: 11.4801,
+    icon: icons.droneOrange,
+    type: 'drone',      // used for filtering
+    risk: 'orange',
+    place: 'others',
+    year: '2026',
+     month: '08',
+    popupType: 'Drone sighting / espionage', // shown in popup
+    date: '15 July 2026',
+    details: "A Moldovan citizen was arrested for flying a drone over the KNDS plant in Munich. The footage was most likely intended for Russia.",
+    link: "https://www.bild.de/politik/inland/muenchen-moldauer-soll-ruestungsunternehmen-knds-ausspioniert-haben-6a5a10ab29b150f031b162f2",
+    country: "KNDS plant, Munich, Germany 🇩🇪",
   },
     
    /* =========================
@@ -2788,6 +2835,22 @@ place: 'others',
     details: "Pieces of a drone were washed up on Olimp beach. The drone contained explosives and was safely detonated",
     link: "https://www.antena3.ro/actualitate/alerta-la-malul-marii-toata-plaja-din-olimp-a-fost-inchisa-dupa-ce-a-fost-descoperita-o-bucata-de-drona-800817.html",
     country: "Olimp, Romania 🇷🇴",
+  },
+
+    {
+    lat: 46.38,
+    lng: 27.88,
+    icon: icons.droneYellow,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '09',
+    popupType: 'Crash site', // shown in popup
+    date: ' 01 Sep 2026',
+    details: "A drone debris has been found in a field in Viișoara, Vaslui County",
+    link: "https://www.digi24.ro/stiri/actualitate/o-drona-prabusita-a-fost-gasita-pe-un-camp-din-vaslui-autoritatile-fac-cercetari-3930135",
+    country: "Viișoara, Romania 🇷🇴",
   },
   
  /* =========================
