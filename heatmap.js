@@ -146,8 +146,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6) Color scale
   // ------------------------
   function colorFor(count, max) {
-    if (!count) return '#eeeeee';
-    const t = max > 0 ? count / max : 0;
+    // Make zero incidents visually distinct from the very light colors used for low counts.
+    // Return a clean white for zero so it contrasts clearly with "1 incident" on the palette.
+    if (count === 0) return '#ffffff';
+    // If count is absent/undefined/null, fall back to the previous neutral gray.
+    if (!count && count !== 0) return '#eeeeee';
+
+    // Use a non-linear scale (sqrt) so small positive counts (e.g. 1) appear darker than
+    // with a purely linear interpolation and therefore stand out more from zero.
+    const t = max > 0 ? Math.sqrt(count / max) : 0;
     const c1 = [255, 237, 214], c2 = [163, 0, 0];
     const rgb = c1.map((v, i) => Math.round(v + (c2[i] - v) * t));
     return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
