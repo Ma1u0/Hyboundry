@@ -15,14 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ------------------------
   // 2) Country name <-> ISO3 mapping
-  //    (matches the countries used in incidents-data.js)
+  //    Covers all of Europe (bundled in boundaries-data.js), even though
+  //    incidents-data.js currently only uses a subset of these.
   // ------------------------
   const COUNTRY_ISO3 = {
-    'Belgium': 'BEL', 'Bulgaria': 'BGR', 'Czech Republic': 'CZE', 'Denmark': 'DNK',
-    'Estonia': 'EST', 'Finland': 'FIN', 'France': 'FRA', 'Germany': 'DEU',
-    'Ireland': 'IRL', 'Latvia': 'LVA', 'Lithuania': 'LTU', 'Netherlands': 'NLD',
-    'Norway': 'NOR', 'Poland': 'POL', 'Romania': 'ROU', 'Spain': 'ESP',
-    'Sweden': 'SWE', 'Türkiye': 'TUR'
+    'Albania': 'ALB', 'Andorra': 'AND', 'Austria': 'AUT', 'Belgium': 'BEL',
+    'Bulgaria': 'BGR', 'Bosnia and Herzegovina': 'BIH', 'Switzerland': 'CHE',
+    'Cyprus': 'CYP', 'Czech Republic': 'CZE', 'Germany': 'DEU', 'Denmark': 'DNK',
+    'Spain': 'ESP', 'Estonia': 'EST', 'Finland': 'FIN', 'France': 'FRA',
+    'United Kingdom': 'GBR', 'Gibraltar': 'GIB', 'Greece': 'GRC', 'Croatia': 'HRV',
+    'Hungary': 'HUN', 'Ireland': 'IRL', 'Iceland': 'ISL', 'Italy': 'ITA',
+    'Liechtenstein': 'LIE', 'Lithuania': 'LTU', 'Luxembourg': 'LUX', 'Latvia': 'LVA',
+    'Monaco': 'MCO', 'North Macedonia': 'MKD', 'Malta': 'MLT', 'Montenegro': 'MNE',
+    'Netherlands': 'NLD', 'Norway': 'NOR', 'Poland': 'POL', 'Portugal': 'PRT',
+    'Romania': 'ROU', 'San Marino': 'SMR', 'Serbia': 'SRB', 'Slovakia': 'SVK',
+    'Slovenia': 'SVN', 'Sweden': 'SWE', 'Türkiye': 'TUR', 'Vatican City': 'VAT',
+    'Kosovo': 'XKX'
   };
   const KNOWN_COUNTRIES = Object.keys(COUNTRY_ISO3).sort((a, b) => b.length - a.length);
 
@@ -81,35 +89,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------
-  // 4) Load boundaries from geoBoundaries (CC-BY 4.0, geoboundaries.org)
-  //    and tag each incident with its country (ISO3) + matched ADM1 region
+  // 4) Boundaries now come bundled from boundaries-data.js - no network
+  //    fetches, so the map is fast from the very first visit.
   // ------------------------
-  const BASE = 'https://raw.githubusercontent.com/wmgeolab/geoBoundaries/main/releaseData/gbOpen';
-
-  async function fetchJson(url) {
-    try {
-      const res = await fetch(url);
-      if (!res.ok) return null;
-      return await res.json();
-    } catch (e) {
-      return null;
-    }
-  }
-
-  const adm0Features = []; // country outlines, one per ISO3
-  const adm1FeaturesByIso = {}; // iso3 -> array of ADM1 features
-
-  async function loadBoundaries() {
-    const isoList = Object.values(COUNTRY_ISO3);
-    await Promise.all(isoList.map(async iso => {
-      const [adm0, adm1] = await Promise.all([
-        fetchJson(`${BASE}/${iso}/ADM0/geoBoundaries-${iso}-ADM0.geojson`),
-        fetchJson(`${BASE}/${iso}/ADM1/geoBoundaries-${iso}-ADM1.geojson`)
-      ]);
-      if (adm0 && adm0.features) adm0Features.push(...adm0.features);
-      if (adm1 && adm1.features) adm1FeaturesByIso[iso] = adm1.features;
-    }));
-  }
+  const adm0Features = boundariesData.adm0;
+  const adm1FeaturesByIso = {};
+  boundariesData.subdivisions.forEach(f => {
+    const iso = f.properties.shapeGroup;
+    if (!adm1FeaturesByIso[iso]) adm1FeaturesByIso[iso] = [];
+    adm1FeaturesByIso[iso].push(f);
+  });
 
   // Tag each incident entry with { iso3, admin1Name }
   function tagIncidents() {
@@ -288,11 +277,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------
-  // 9) Boot
+  // 9) Boot - instant, no fetching needed
   // ------------------------
-  timeLabel.textContent = 'Loading boundaries…';
-  loadBoundaries().then(() => {
-    tagIncidents();
-    render();
-  });
+  tagIncidents();
+  render();
 });
