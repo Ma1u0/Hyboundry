@@ -180,6 +180,7 @@ html, body { margin:0; height:100%; }
   <div id="sidebar-content">
     <a href="index.html">🏠 Home</a>
     <a href="map.html">🗺️ Map</a>
+    <a href="heatmap.html">🔥 Heatmap</a>
     <a href="calendar.html">📅 Calendar</a>
      <a href="changelog.html">📝 Changelog</a>
     <a href="info.html">ℹ️ Info</a>
@@ -276,6 +277,8 @@ html, body { margin:0; height:100%; }
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
+<!-- Shared incident data (also used by heatmap.js) -->
+<script src="incidents-data.js"></script>
 <script src="map.js"></script>
 
 <script>
