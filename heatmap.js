@@ -34,16 +34,41 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   const KNOWN_COUNTRIES = Object.keys(COUNTRY_ISO3).sort((a, b) => b.length - a.length);
 
+  function formatPeriod(year, month) {
+    if (year === undefined || year === null) return null;
+    const y = String(year).trim();
+    // If month is missing or invalid, default to January (01) so the entry still appears in the timeline.
+    let mnum;
+    if (month === undefined || month === null) mnum = 1;
+    else {
+      // Allow strings like '09', numbers, or strings with surrounding whitespace. Strip non-digits.
+      const digits = String(month).replace(/\D/g, '');
+      mnum = digits === '' ? 1 : parseInt(digits, 10);
+      if (Number.isNaN(mnum) || mnum < 1 || mnum > 12) mnum = 1;
+    }
+    return `${y}-${String(mnum).padStart(2, '0')}`;
+  }
+
   function periodsOf(entry) {
-    const years = Array.isArray(entry.year) ? entry.year : [entry.year];
-    const months = Array.isArray(entry.month) ? entry.month : [entry.month];
+    // Return an array of well-formed YYYY-MM period strings for this entry.
+    // Be tolerant of missing/invalid month/year values.
+    const years = Array.isArray(entry.year) ? entry.year : (entry.year !== undefined ? [entry.year] : []);
+    const months = Array.isArray(entry.month) ? entry.month : (entry.month !== undefined ? [entry.month] : []);
+
+    // If neither year nor month provided, try to infer nothing (skip this entry for timeline).
+    if (years.length === 0 && months.length === 0) return [];
+
     if (years.length === 1 && months.length > 1) {
-      return months.map(m => `${years[0]}-${String(m).padStart(2, '0')}`);
+      return months.map(m => formatPeriod(years[0], m));
     }
     if (months.length === 1 && years.length > 1) {
-      return years.map(y => `${y}-${String(months[0]).padStart(2, '0')}`);
+      return years.map(y => formatPeriod(y, months[0]));
     }
-    return months.map((m, i) => `${years[i] !== undefined ? years[i] : years[0]}-${String(m).padStart(2, '0')}`);
+
+    // Default: map month entries to the corresponding year, or default month to January.
+    return months.length > 0
+      ? months.map((m, i) => formatPeriod(years[i] !== undefined ? years[i] : years[0], m)).filter(Boolean)
+      : years.map(y => formatPeriod(y, 1)).filter(Boolean);
   }
 
   function weightOf(entry) {
@@ -119,7 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5) Time period slider
   // ------------------------
   const periodSet = new Set();
-  incidentsData.forEach(entry => periodsOf(entry).forEach(p => periodSet.add(p)));
+  incidentsData.forEach(entry => periodsOf(entry).forEach(p => {
+    if (p) periodSet.add(p);
+  }));
   const periods = Array.from(periodSet).sort();
   const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   function periodLabel(p) {
