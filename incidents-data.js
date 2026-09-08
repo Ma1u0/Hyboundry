@@ -905,7 +905,7 @@ const incidentsData = [
      month: '09',
     popupType: 'Airspace incursion / crash site', // shown in popup
     date: '01 Sep 2026',
-    details: "A citizen discovered the drone on the shoreline of the island of Pellinki in the South of Finland. The drone did not contain explosives and designed for surveillance, mapping, and photography. <br><br> It is believed that it is a Russian drone.",
+    details: "A citizen discovered the drone on the shoreline of the island of Pellinki in the South of Finland. The drone did not contain explosives and designed for surveillance, mapping, and photography. <br><br> It is believed that it is a Russian drone. <br><br> According Minister of Defence Antti Häkkänen, Finland was warned by Russia about a stray drone, before this drone was discovered. ",
     link: "https://yle.fi/a/74-20244491",
     country: "Pellinki, Finland 🇫🇮"
   },
