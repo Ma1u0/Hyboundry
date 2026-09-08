@@ -5,114 +5,45 @@
 <title>Changelog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 <style>
-html, body {
-  margin: 0;
-  background: #f9f9f9;
-  font-family: 'Oswald', sans-serif;
-  color: #222;
-}
-
-/* =========================
-   SIDEBAR
-========================= */
-#sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background: #fff;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.25);
-  transform: translateX(-250px);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-}
-
-#sidebar-content {
-  padding: 20px;
-}
-
-#sidebar a {
-  display: block;
-  margin-bottom: 12px;
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-#sidebar-handle {
-  position: fixed;
-  top: 20px;
-  left: 0;
-  width: 32px;
-  height: 42px;
-  background: white;
-  border-radius: 0 6px 6px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.3);
-  cursor: pointer;
-  font-size: 22px;
-  z-index: 1001;
-  transition: transform 0.3s ease;
-}
-
-/* =========================
-   PAGE LAYOUT
-========================= */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px 60px;
-}
-
-/* =========================
-   HEADER
-========================= */
-h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 48px;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #555;
-  margin-bottom: 40px;
-}
+.container { transition: margin-left 0.25s ease; }
 
 /* =========================
    RELEASE BLOCKS
 ========================= */
 .release {
-  background: white;
-  border-radius: 14px;
-  padding: 25px 30px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin-bottom: 18px;
 }
 
 .release-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .release-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 .release-date {
-  font-size: 14px;
-  color: #777;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  white-space: nowrap;
 }
 
 /* =========================
@@ -125,7 +56,9 @@ h1 {
 
 .release li {
   margin-bottom: 8px;
-  line-height: 1.4;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  font-size: 15px;
 }
 
 /* =========================
@@ -133,25 +66,25 @@ h1 {
 ========================= */
 .tag {
   display: inline-block;
-  padding: 2px 8px;
-  border-radius: 6px;
-  font-size: 12px;
+  padding: 2px 9px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-family: var(--font-mono);
   margin-right: 6px;
   color: white;
 }
 
-.tag.ui { background: #e03b3b; }
-.tag.data { background: #f7a400; }
-.tag.mobile { background: #3b82f6; }
-.tag.meta { background: #22c55e; }
+.tag.ui { background: var(--red); }
+.tag.data { background: var(--amber); }
+.tag.mobile { background: #3B6EA5; }
+.tag.meta { background: #3F8F63; }
 
 /* =========================
    MOBILE
 ========================= */
 @media (max-width: 600px) {
-  h1 { font-size: 40px; }
-  .release { padding: 20px; }
-  .release-title { font-size: 24px; }
+  .release { padding: 18px; }
+  .release-title { font-size: 17px; }
 }
 </style>
 </head>
@@ -161,20 +94,26 @@ h1 {
 <!-- Sidebar -->
 <div id="sidebar">
   <div id="sidebar-content">
-    <a href="index.html">🏠 Home</a>
-    <a href="map.html">🗺️ Map</a>
-    <a href="heatmap.html">🔥 Heatmap</a>
-    <a href="calendar.html">📅 Calendar</a>
-    <a href="changelog.html">📝 Changelog</a>
-    <a href="info.html">ℹ️ Info</a>
+    <div class="sidebar-mark">Hyboundry</div>
+    <div class="sidebar-tag">INCIDENT TRACKER</div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">⌂</span> Home</a>
+      <a href="map.html"><span class="nav-icon">◈</span> Map</a>
+      <a href="heatmap.html"><span class="nav-icon">▦</span> Heatmap</a>
+      <a href="calendar.html"><span class="nav-icon">▤</span> Calendar</a>
+      <a href="changelog.html" class="current"><span class="nav-icon">◷</span> Changelog</a>
+      <a href="blog.html"><span class="nav-icon">✎</span> Commentary</a>
+      <a href="info.html"><span class="nav-icon">ⓘ</span> Info</a>
+    </nav>
   </div>
 </div>
 <div id="sidebar-handle">&#9776;</div>
 
 <!-- Page Content -->
-<div class="container">
+<div class="container page">
+  <div class="page-eyebrow">RELEASE HISTORY</div>
   <h1>Changelog</h1>
-  <p class="subtitle">Updates and new incidents.</p>
+  <p class="lede">Updates and new incidents.</p>
 
   <div class="release">
     <div class="release-header">
@@ -252,17 +191,8 @@ h1 {
 const sidebar = document.getElementById('sidebar');
 const handle = document.getElementById('sidebar-handle');
 
-let sidebarOpen = false;
-
 handle.addEventListener('click', () => {
-  sidebarOpen = !sidebarOpen;
-  if (sidebarOpen) {
-    sidebar.style.transform = 'translateX(0)';
-    handle.style.transform = 'translateX(250px)';
-  } else {
-    sidebar.style.transform = 'translateX(-250px)';
-    handle.style.transform = 'translateX(0)';
-  }
+  sidebar.classList.toggle('sidebar-open');
 });
 </script>
 

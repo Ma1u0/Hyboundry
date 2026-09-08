@@ -8,48 +8,12 @@
 <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Bebas+Neue&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 <style>
-html, body { margin:0; height:100%; font-family: 'Oswald', sans-serif; }
-
-/* Sidebar (same as map.html) */
-#sidebar {
-  position: fixed;
-  top:0; left:0;
-  width:250px; height:100%;
-  background: rgba(255,255,255,0.97);
-  box-shadow: 2px 0 10px rgba(0,0,0,0.25);
-  transform: translateX(-250px);
-  transition: transform 0.3s ease;
-  z-index:1001;
-}
-#sidebar.sidebar-open { transform: translateX(0); }
-#sidebar-content { padding:20px; }
-#sidebar-content a {
-  display:block;
-  margin-bottom:12px;
-  font-size:18px;
-  color:#111;
-  text-decoration:none;
-}
-#sidebar-handle {
-  position:absolute;
-  right:-30px;
-  top:20px;
-  width:30px;
-  height:40px;
-  background:white;
-  border-radius:0 6px 6px 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:2px 0 6px rgba(0,0,0,0.3);
-  cursor:pointer;
-  font-size:22px;
-  z-index:1002;
-}
+html, body { margin:0; height:100%; }
 
 /* Map */
 #map {
@@ -58,91 +22,61 @@ html, body { margin:0; height:100%; font-family: 'Oswald', sans-serif; }
   z-index:0;
 }
 
-/* Panels */
-.panel {
-  position:absolute;
-  background:white;
-  border-radius:6px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.3);
-  z-index:1000;
-}
-.panel-header {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:8px 10px;
-  font-weight:bold;
-  background:#f0f0f0;
-  font-family:'Bebas Neue';
-  font-size:22px;
-  letter-spacing:1px;
-}
-.panel button.collapse-btn {
-  background:none;
-  border:none;
-  font-size:16px;
-  cursor:pointer;
-}
-.panel-content { padding:10px; font-family:'Inter'; font-size:14px; }
-.collapsed .panel-content { display:none; }
-
 /* Time slider panel */
-#time-panel { bottom:10px; left:50%; transform:translateX(-50%); width:520px; }
+#time-panel { bottom:14px; left:50%; transform:translateX(-50%); width:500px; }
 #time-panel.collapsed { width:150px; }
-#time-label { text-align:center; font-family:'Bebas Neue'; font-size:20px; color:#e03b3b; margin-bottom:6px; }
-#time-slider { width:100%; }
-#time-controls { display:flex; align-items:center; gap:10px; justify-content:center; margin-top:6px; flex-wrap:wrap; }
+#time-label { text-align:center; font-family: var(--font-mono); font-size:14px; color: var(--red-deep); margin-bottom:8px; }
+#time-slider { width:100%; accent-color: var(--red); }
+#time-controls { display:flex; align-items:center; gap:10px; justify-content:center; margin-top:8px; flex-wrap:wrap; }
 #time-controls button {
-  background:#e03b3b; color:white; border:none; border-radius:6px;
-  padding:6px 12px; cursor:pointer; font-family:'Bebas Neue'; font-size:16px;
+  background: var(--navy); color:white; border:none; border-radius:4px;
+  padding:6px 14px; cursor:pointer; font-family: var(--font-body); font-size:13.5px;
 }
-#time-controls button:hover { background:#c70000; }
-#time-controls label { font-size:13px; display:flex; align-items:center; gap:4px; }
+#time-controls button:hover { background: var(--navy-deep); }
+#time-controls label { font-size:13px; color: var(--ink-soft); display:flex; align-items:center; gap:4px; }
 
 /* Breakdown panel (also hosts the mode toggle + legend as a fixed header) */
-#breakdown-panel { top:10px; right:10px; width:300px; max-height:80vh; display:flex; flex-direction:column; }
+#breakdown-panel { top:14px; right:14px; width:290px; max-height:80vh; display:flex; flex-direction:column; }
 #breakdown-panel.collapsed { width:150px; }
 #breakdown-panel .panel-content { display:flex; flex-direction:column; min-height:0; }
 
-.mode-toggle-row { display:flex; gap:6px; margin-bottom:10px; }
+.mode-toggle-row { display:flex; gap:6px; margin-bottom:12px; }
 .mode-btn {
-  flex:1; background:#f0f0f0; border:none; border-radius:4px; padding:8px 10px;
-  cursor:pointer; font-family:'Bebas Neue'; font-size:15px; color:#333;
+  flex:1; background: var(--surface-2); border:1px solid var(--line); border-radius:4px; padding:7px 10px;
+  cursor:pointer; font-family: var(--font-body); font-size:13px; color: var(--ink-soft);
 }
-.mode-btn.active { background:#e03b3b; color:white; }
+.mode-btn.active { background: var(--navy); border-color: var(--navy); color:white; }
 
-#legend-block { margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #ddd; }
+#legend-block { margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid var(--line-soft); }
 #legend-gradient {
-  height:12px; border-radius:3px;
+  height:10px; border-radius:3px;
   background: linear-gradient(to right, #ffedd6, #a30000);
 }
-#legend-labels { display:flex; justify-content:space-between; font-size:11px; color:#666; margin-top:4px; }
+#legend-labels { display:flex; justify-content:space-between; font-size:11px; color: var(--ink-faint); margin-top:5px; }
 
 #breakdown-content { overflow-y:auto; max-height:50vh; }
 .country-row {
   display:flex; justify-content:space-between; align-items:center;
-  padding:6px 4px; cursor:pointer; border-bottom:1px solid #eee;
-  font-weight:500;
+  padding:7px 4px; cursor:pointer; border-bottom:1px solid var(--line-soft);
+  font-weight:500; color: var(--ink);
 }
-.country-row:hover { background:#f7f7f7; }
+.country-row:hover { background: var(--surface-2); }
 .country-count {
-  background:#e03b3b; color:white; border-radius:10px;
-  padding:1px 8px; font-size:12px; font-family:'Inter';
+  background: var(--red); color:white; border-radius:10px;
+  padding:1px 8px; font-size:12px; font-family: var(--font-mono);
 }
 .location-row {
   display:flex; justify-content:space-between;
-  padding:4px 4px 4px 16px; font-size:12.5px; color:#555;
-  border-bottom:1px dashed #eee;
+  padding:4px 4px 4px 16px; font-size:12.5px; color: var(--ink-soft);
+  border-bottom:1px dashed var(--line-soft);
 }
 .location-list { display:none; }
 .location-list.open { display:block; }
 #breakdown-total {
-  font-size:13px; color:#555; margin-bottom:8px; padding-bottom:6px; border-bottom:1px solid #ddd;
+  font-size:13px; color: var(--ink-soft); margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid var(--line-soft);
 }
 
 @media (max-width: 768px) {
-  #sidebar { width:220px; transform: translateX(-220px); }
-  #sidebar.sidebar-open { transform: translateX(0); }
   #time-panel { width: calc(100% - 20px); left:10px; right:10px; transform:none; }
   #breakdown-panel { width: calc(100% - 20px); left:10px; right:10px; top:10px; max-height:60vh; }
   #breakdown-content { max-height:30vh; }
@@ -155,15 +89,20 @@ html, body { margin:0; height:100%; font-family: 'Oswald', sans-serif; }
 <!-- Sidebar -->
 <div id="sidebar">
   <div id="sidebar-content">
-    <a href="index.html">🏠 Home</a>
-    <a href="map.html">🗺️ Map</a>
-    <a href="heatmap.html">🔥 Heatmap</a>
-    <a href="calendar.html">📅 Calendar</a>
-    <a href="changelog.html">📝 Changelog</a>
-    <a href="info.html">ℹ️ Info</a>
+    <div class="sidebar-mark">Hyboundry</div>
+    <div class="sidebar-tag">INCIDENT TRACKER</div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">⌂</span> Home</a>
+      <a href="map.html"><span class="nav-icon">◈</span> Map</a>
+      <a href="heatmap.html" class="current"><span class="nav-icon">▦</span> Heatmap</a>
+      <a href="calendar.html"><span class="nav-icon">▤</span> Calendar</a>
+      <a href="changelog.html"><span class="nav-icon">◷</span> Changelog</a>
+      <a href="blog.html"><span class="nav-icon">✎</span> Commentary</a>
+      <a href="info.html"><span class="nav-icon">ⓘ</span> Info</a>
+    </nav>
   </div>
-  <div id="sidebar-handle">&#9776;</div>
 </div>
+<div id="sidebar-handle">&#9776;</div>
 
 <!-- Map -->
 <div id="map"></div>

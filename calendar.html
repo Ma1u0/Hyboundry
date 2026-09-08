@@ -5,88 +5,41 @@
 <title>Incident Calendar</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Bebas+Neue&family=Oswald&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
 <style>
-html, body {
-  margin: 0;
-  height: 100%;
-  font-family: Oswald, sans-serif;
-  background: #f9f9f9;
-}
-
-/* =========================
-   SIDEBAR
-========================= */
-#sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100%;
-  background: #fff;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.25);
-  transform: translateX(-250px);
-  transition: transform 0.3s ease;
-  z-index: 1000;
-  font-family: 'Fjalla One', sans-serif;
-}
-
-#sidebar-content {
-  padding: 20px;
-}
-
-#sidebar a {
-  display: block;
-  margin-bottom: 12px;
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-#sidebar-handle {
-  position: fixed;
-  top: 20px;
-  left: 0;
-  width: 32px;
-  height: 42px;
-  background: white;
-  border-radius: 0 6px 6px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.3);
-  cursor: pointer;
-  font-size: 22px;
-  z-index: 1001;
-  transition: transform 0.3s ease;
-}
-
 /* =========================
    CALENDAR LAYOUT
 ========================= */
 #calendar-container {
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
-  gap: 40px;
+  padding: 48px 24px 80px;
+  gap: 36px;
   margin-left: 0;
   flex-wrap: wrap;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.25s ease;
 }
 
 #calendar {
   width: 600px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
 }
 
 #calendar-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
 }
 
 #calendar-header .month-year-group {
@@ -97,9 +50,14 @@ html, body {
 
 #calendar-header select,
 #calendar-header button {
-  font-size: 20px;
-  padding: 4px 8px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  padding: 5px 8px;
   cursor: pointer;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--ink);
 }
 
 #calendar-grid {
@@ -111,28 +69,33 @@ html, body {
 
 .weekday {
   text-align: center;
-  font-weight: bold;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  padding-bottom: 4px;
 }
 
 .day {
-  height: 60px;
-  border: 1px solid #ccc;
+  height: 56px;
+  border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
-  border-radius: 6px;
+  background: var(--surface);
+  border-radius: 4px;
   cursor: pointer;
   position: relative;
+  font-size: 14px;
+  color: var(--ink-soft);
 }
 
-.day:hover { background: #e0e0e0; }
+.day:hover { background: var(--surface-2); }
 
-.day.single { background: #f7e769; }
-.day.single:hover { background: #f2e166; }
+.day.single { background: #F3E4C4; color: var(--ink); border-color: #E4CE97; }
+.day.single:hover { background: #EFDBAC; }
 
-.day.multi { background: #e03b3b; color: white; }
-.day.multi:hover { background: #c70000; }
+.day.multi { background: var(--red); color: white; border-color: var(--red); }
+.day.multi:hover { background: var(--red-deep); }
 
 /* ICONS */
 .day-icons {
@@ -144,29 +107,35 @@ html, body {
 }
 
 .day-icons img {
-  width: 14px;
-  height: 14px;
-  opacity: 0.85;
+  width: 13px;
+  height: 13px;
+  opacity: 0.9;
 }
 
 /* INCIDENT DISPLAY */
 #incident-display {
-  width: 340px;
-  margin-top: 20px;
+  width: 320px;
+  margin-top: 0;
+  font-size: 14.5px;
+  color: var(--ink-soft);
 }
 
 .incident-item {
   margin-bottom: 15px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 10px;
+  line-height: 1.5;
 }
 
 .incident-item b {
   display: block;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
 }
 
 .incident-item a {
-  color: blue;
+  color: var(--navy);
   text-decoration: underline;
 }
 
@@ -174,27 +143,28 @@ html, body {
    LEGEND
 ========================= */
 #calendar-legend {
-  margin-top: 15px;
-  font-family: 'Oswald', sans-serif;
-  font-size: 16px;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--ink-soft);
 }
 
 .legend-row {
   display: flex;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .legend-color {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--line);
   display: inline-block;
 }
 
-.legend-color.single { background: #f7e769; }
-.legend-color.multi { background: #e03b3b; }
+.legend-color.single { background: #F3E4C4; }
+.legend-color.multi { background: var(--red); }
 
 .legend-circle-row {
   display: flex;
@@ -202,21 +172,23 @@ html, body {
 }
 
 .legend-circle {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   display: inline-block;
 }
 
-.legend-circle.red { background: red; }
-.legend-circle.brown { background: brown; }
-.legend-circle.orange { background: orange; }
-.legend-circle.yellow { background: yellow; }
-.legend-circle.green { background: green; }
+.legend-circle.red { background: var(--red); }
+.legend-circle.brown { background: #8A5A3C; }
+.legend-circle.orange { background: var(--amber); }
+.legend-circle.yellow { background: #D9B94A; }
+.legend-circle.green { background: #4C8A5E; }
 
 #czech-note {
   font-style: italic;
-  margin-top: 10px;
+  margin-top: 12px;
+  color: var(--ink-faint);
+  font-size: 13px;
 }
 
 /* =========================
@@ -232,12 +204,12 @@ html, body {
   }
   #calendar-header {
     flex-wrap: wrap;
-    font-size: 22px;
+    font-size: 19px;
   }
   #calendar-header select,
   #calendar-header button {
-    font-size: 16px;
-    padding: 3px 6px;
+    font-size: 13px;
+    padding: 4px 7px;
   }
   #incident-display {
     width: 100%;
@@ -252,12 +224,17 @@ html, body {
 <body>
 <div id="sidebar">
   <div id="sidebar-content">
-    <a href="index.html">🏠 Home</a>
-    <a href="map.html">🗺️ Map</a>
-    <a href="heatmap.html">🔥 Heatmap</a>
-    <a href="calendar.html">📅 Calendar</a>
-     <a href="changelog.html">📝 Changelog</a>
-    <a href="info.html">ℹ️ Info</a>
+    <div class="sidebar-mark">Hyboundry</div>
+    <div class="sidebar-tag">INCIDENT TRACKER</div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">⌂</span> Home</a>
+      <a href="map.html"><span class="nav-icon">◈</span> Map</a>
+      <a href="heatmap.html"><span class="nav-icon">▦</span> Heatmap</a>
+      <a href="calendar.html" class="current"><span class="nav-icon">▤</span> Calendar</a>
+      <a href="changelog.html"><span class="nav-icon">◷</span> Changelog</a>
+      <a href="blog.html"><span class="nav-icon">✎</span> Commentary</a>
+      <a href="info.html"><span class="nav-icon">ⓘ</span> Info</a>
+    </nav>
   </div>
 </div>
 <div id="sidebar-handle">&#9776;</div>
@@ -2161,15 +2138,8 @@ let sidebarOpen = false;
 
 handle.addEventListener('click', () => {
   sidebarOpen = !sidebarOpen;
-  if(sidebarOpen){
-    sidebar.style.transform = 'translateX(0)';
-    handle.style.transform = 'translateX(250px)';
-    container.style.marginLeft = '250px';
-  } else {
-    sidebar.style.transform = 'translateX(-250px)';
-    handle.style.transform = 'translateX(0)';
-    container.style.marginLeft = '0';
-  }
+  sidebar.classList.toggle('sidebar-open', sidebarOpen);
+  container.style.marginLeft = sidebarOpen ? '240px' : '0';
 });
 </script>
 </body>

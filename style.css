@@ -1,0 +1,191 @@
+/* =====================================================================
+   HYBOUNDRY — SHARED STYLESHEET
+   Design language: editorial / situation-report. A deep-slate rail,
+   a serif used only for identity and numbers, a plain sans for
+   reading, and a single restrained accent for severity.
+   ===================================================================== */
+
+:root {
+  /* Color */
+  --bg:         #EEF0F2;   /* page background — cool, quiet slate-white */
+  --surface:    #FFFFFF;
+  --surface-2:  #F5F6F7;
+  --ink:        #1A2233;   /* primary text — near-black navy */
+  --ink-soft:   #545B68;   /* secondary text */
+  --ink-faint:  #8A909B;
+  --navy:       #1F3352;   /* brand rail */
+  --navy-deep:  #16233B;   /* hero / hover-deep */
+  --red:        #A13D33;   /* severity accent — used sparingly */
+  --red-deep:   #7E2F27;
+  --amber:      #B8862E;
+  --line:       #DBDFE3;
+  --line-soft:  #E7EAED;
+
+  /* Type */
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius: 6px;
+  --shadow: 0 1px 2px rgba(22,35,59,0.06), 0 4px 16px rgba(22,35,59,0.06);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--ink); }
+a { color: var(--navy); }
+a:hover { color: var(--red); }
+
+/* =====================================================================
+   SIDEBAR — shared across every page
+   ===================================================================== */
+#sidebar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 240px;
+  height: 100%;
+  background: var(--navy);
+  color: #E9ECF1;
+  transform: translateX(-240px);
+  transition: transform 0.25s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+#sidebar.sidebar-open { transform: translateX(0); }
+
+#sidebar-content {
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sidebar-mark {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.2px;
+  margin-bottom: 4px;
+}
+.sidebar-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #8FA0BE;
+  margin-bottom: 30px;
+  letter-spacing: 0.3px;
+}
+
+#sidebar-content nav { display: flex; flex-direction: column; gap: 2px; }
+#sidebar-content nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px;
+  margin: 0 -10px;
+  border-radius: 4px;
+  color: #C7CEDA;
+  text-decoration: none;
+  font-size: 15px;
+  border-left: 2px solid transparent;
+}
+#sidebar-content nav a:hover { background: rgba(255,255,255,0.06); color: #fff; }
+#sidebar-content nav a.current {
+  color: #fff;
+  border-left: 2px solid var(--red);
+  background: rgba(255,255,255,0.05);
+}
+.nav-icon { width: 18px; text-align: center; font-size: 15px; opacity: 0.9; }
+
+#sidebar-handle {
+  position: fixed;
+  top: 18px; left: 0;
+  width: 34px; height: 40px;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 0 6px 6px 0;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 2px 0 8px rgba(22,35,59,0.3);
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 1001;
+  transition: transform 0.25s ease, background 0.15s ease;
+}
+#sidebar-handle:hover { background: var(--navy-deep); }
+
+/* =====================================================================
+   GENERIC PANEL (used on map/heatmap pages, floating over the map canvas)
+   ===================================================================== */
+.panel {
+  position: absolute;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line-soft);
+  z-index: 1000;
+}
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--line-soft);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.panel button.collapse-btn, .panel button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+.panel-content { padding: 12px 14px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
+.collapsed .panel-content { display: none; }
+
+/* =====================================================================
+   PAGE SHELL (non-map pages)
+   ===================================================================== */
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+.page-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-bottom: 8px;
+}
+.page h1 { font-size: 36px; margin: 0 0 10px; }
+.page .lede { color: var(--ink-soft); font-size: 16px; max-width: 60ch; margin-bottom: 40px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--navy);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid var(--navy);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.btn:hover { background: var(--navy-deep); color: #fff; }
