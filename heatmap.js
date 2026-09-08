@@ -55,10 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // far more reliable than the separate year/month fields.
   function extractPeriodsFromDateString(str) {
     if (!str) return [];
-    const re = /(\d{1,2})(?:\s*-\s*\d{1,2})?\s+([A-Za-z]{3})[a-z]*\.?\s+(\d{4})/g;
+    // Strip uncertainty markers like "25? Sep 2025" so the stated day still counts.
+    const cleaned = str.replace(/\?/g, '');
+    const re = /(\d{1,2})(?:\s*[-/]\s*\d{1,2})?\s+([A-Za-z]{3})[a-z]*\.?\s+(\d{4})/g;
     const out = [];
     let m;
-    while ((m = re.exec(str)) !== null) {
+    while ((m = re.exec(cleaned)) !== null) {
       const day = parseInt(m[1], 10);
       const mon = MONTH_ABBR[m[2].toLowerCase()];
       const year = parseInt(m[3], 10);
@@ -86,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       : years.map(y => toWeek(y, 1));
   }
 
-  function periodsOf(entry) {
+  function subPeriodsOf(entry) {
     let periods = [];
     if (Array.isArray(entry.incidents)) {
       entry.incidents.forEach(sub => periods.push(...extractPeriodsFromDateString(sub.date)));
@@ -97,11 +99,23 @@ document.addEventListener('DOMContentLoaded', () => {
       // No usable date text (rare) - fall back to the year/month fields.
       periods = periodsFromYearMonthFields(entry);
     }
-    return [...new Set(periods)];
+    return periods; // NOT deduplicated - each element is one real incident occurrence
   }
 
-  function weightOf(entry) {
-    return Array.isArray(entry.incidents) ? entry.incidents.length : 1;
+  // Distinct weeks this entry has any data in (used to build the timeline).
+  function periodsOf(entry) {
+    return [...new Set(subPeriodsOf(entry))];
+  }
+
+  // How many of this entry's individual incidents actually fall within the
+  // period currently selected on the slider - NOT the entry's total incident
+  // count. A location with incidents spread across several weeks/months must
+  // only contribute the ones that happened in the period being viewed.
+  function weightForPeriod(entry, periodIndex, cumulative) {
+    const sub = subPeriodsOf(entry);
+    if (sub.length === 0 || periods.length === 0) return 0;
+    const cutoff = periods[periodIndex];
+    return cumulative ? sub.filter(p => p <= cutoff).length : sub.filter(p => p === cutoff).length;
   }
 
   function parseCountryLocation(str) {
@@ -196,15 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
   slider.max = Math.max(periods.length - 1, 0);
   slider.value = slider.max;
 
-  function entryMatchesPeriod(entry, periodIndex, cumulative) {
-    const targetPeriods = periodsOf(entry);
-    if (cumulative) {
-      const cutoff = periods[periodIndex];
-      return targetPeriods.some(p => p <= cutoff);
-    }
-    return targetPeriods.includes(periods[periodIndex]);
-  }
-
   // ------------------------
   // 6) Color scale
   // ------------------------
@@ -236,13 +241,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ? `Through ${periodLabel(periods[periodIndex])}`
       : periodLabel(periods[periodIndex]);
 
-    const filtered = incidentsData.filter(e => entryMatchesPeriod(e, periodIndex, cumulative));
-
     const countByIso = {};
     const countByRegion = {};
     const byCountryBreakdown = {};
-    filtered.forEach(e => {
-      const w = weightOf(e);
+    incidentsData.forEach(e => {
+      const w = weightForPeriod(e, periodIndex, cumulative);
+      if (w === 0) return;
       const { country, location } = parseCountryLocation(e.country);
       if (!byCountryBreakdown[country]) byCountryBreakdown[country] = { count: 0, locations: {} };
       byCountryBreakdown[country].count += w;

@@ -99,10 +99,26 @@ html, body { margin:0; height:100%; font-family: 'Oswald', sans-serif; }
 #time-controls button:hover { background:#c70000; }
 #time-controls label { font-size:13px; display:flex; align-items:center; gap:4px; }
 
-/* Breakdown panel */
-#breakdown-panel { top:10px; right:10px; width:300px; max-height:80vh; }
+/* Breakdown panel (also hosts the mode toggle + legend as a fixed header) */
+#breakdown-panel { top:10px; right:10px; width:300px; max-height:80vh; display:flex; flex-direction:column; }
 #breakdown-panel.collapsed { width:150px; }
-#breakdown-content { overflow-y:auto; max-height:65vh; }
+#breakdown-panel .panel-content { display:flex; flex-direction:column; min-height:0; }
+
+.mode-toggle-row { display:flex; gap:6px; margin-bottom:10px; }
+.mode-btn {
+  flex:1; background:#f0f0f0; border:none; border-radius:4px; padding:8px 10px;
+  cursor:pointer; font-family:'Bebas Neue'; font-size:15px; color:#333;
+}
+.mode-btn.active { background:#e03b3b; color:white; }
+
+#legend-block { margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #ddd; }
+#legend-gradient {
+  height:12px; border-radius:3px;
+  background: linear-gradient(to right, #ffedd6, #a30000);
+}
+#legend-labels { display:flex; justify-content:space-between; font-size:11px; color:#666; margin-top:4px; }
+
+#breakdown-content { overflow-y:auto; max-height:50vh; }
 .country-row {
   display:flex; justify-content:space-between; align-items:center;
   padding:6px 4px; cursor:pointer; border-bottom:1px solid #eee;
@@ -124,30 +140,12 @@ html, body { margin:0; height:100%; font-family: 'Oswald', sans-serif; }
   font-size:13px; color:#555; margin-bottom:8px; padding-bottom:6px; border-bottom:1px solid #ddd;
 }
 
-/* Mode toggle */
-#mode-panel { top:10px; left:280px; }
-#mode-panel .panel-content { padding:6px; }
-.mode-btn {
-  background:#f0f0f0; border:none; border-radius:4px; padding:8px 14px;
-  cursor:pointer; font-family:'Bebas Neue'; font-size:15px; color:#333;
-}
-.mode-btn.active { background:#e03b3b; color:white; }
-
-/* Legend */
-#legend-panel { top:70px; left:280px; width:170px; }
-#legend-gradient {
-  height:14px; border-radius:3px;
-  background: linear-gradient(to right, #ffedd6, #a30000);
-}
-#legend-labels { display:flex; justify-content:space-between; font-size:11px; color:#666; margin-top:4px; }
-
 @media (max-width: 768px) {
   #sidebar { width:220px; transform: translateX(-220px); }
   #sidebar.sidebar-open { transform: translateX(0); }
   #time-panel { width: calc(100% - 20px); left:10px; right:10px; transform:none; }
-  #breakdown-panel { width: calc(100% - 20px); left:10px; right:10px; top:auto; bottom:90px; max-height:35vh; }
-  #mode-panel { left:10px; top:10px; }
-  #legend-panel { left:10px; top:60px; width:140px; }
+  #breakdown-panel { width: calc(100% - 20px); left:10px; right:10px; top:10px; max-height:60vh; }
+  #breakdown-content { max-height:30vh; }
 }
 </style>
 </head>
@@ -188,29 +186,21 @@ html, body { margin:0; height:100%; font-family: 'Oswald', sans-serif; }
   </div>
 </div>
 
-<!-- Mode toggle: country vs subdivision -->
-<div id="mode-panel" class="panel">
-  <div class="panel-content" style="display:flex; gap:6px;">
-    <button id="modeCountry" class="mode-btn active">By Country</button>
-    <button id="modeSubdivision" class="mode-btn">By Subdivision</button>
-  </div>
-</div>
-
-<!-- Color legend -->
-<div id="legend-panel" class="panel">
-  <div class="panel-content">
-    <div id="legend-gradient"></div>
-    <div id="legend-labels"><span>0</span><span>most</span></div>
-  </div>
-</div>
-
-<!-- Country / location breakdown -->
+<!-- Controls, legend, and country / location breakdown - one panel -->
 <div id="breakdown-panel" class="panel">
   <div class="panel-header">
-    <span>By Country</span>
+    <span>Incidents by Region</span>
     <button class="collapse-btn" onclick="togglePanel('breakdown-panel')">▾</button>
   </div>
   <div class="panel-content">
+    <div class="mode-toggle-row">
+      <button id="modeCountry" class="mode-btn active">By Country</button>
+      <button id="modeSubdivision" class="mode-btn">By Subdivision</button>
+    </div>
+    <div id="legend-block">
+      <div id="legend-gradient"></div>
+      <div id="legend-labels"><span>0</span><span>most</span></div>
+    </div>
     <div id="breakdown-total"></div>
     <div id="breakdown-content"></div>
   </div>
