@@ -7,7 +7,7 @@
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Shared stylesheet -->
 <link rel="stylesheet" href="style.css">
@@ -19,26 +19,17 @@
 <script src="incidents-data.js"></script>
 
 <style>
-/* ===== Hero (blends into the page — no boxed hero band) ===== */
+/* ===== Hero ===== */
 .hero {
-  position: relative;
+  background: var(--navy-deep);
+  color: #EDEFF3;
+  padding: 88px 24px 70px;
   text-align: center;
-  padding: 100px 24px 70px;
-  overflow: hidden;
 }
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -120px; left: 50%;
-  width: 640px; height: 420px;
-  transform: translateX(-50%);
-  background: radial-gradient(closest-side, rgba(226,112,61,0.16), rgba(226,112,61,0));
-  pointer-events: none;
-}
-.hero .mark { position: relative; font-family: var(--font-mono); font-size: 12px; letter-spacing: 1.5px; color: var(--red); opacity: 0.9; margin-bottom: 18px; }
-.hero h1 { position: relative; font-size: 46px; line-height: 1.15; color: #fff; margin: 0 0 18px; max-width: 16ch; margin-left: auto; margin-right: auto; }
-.hero p { position: relative; font-size: 17px; color: var(--ink-soft); max-width: 52ch; margin: 0 auto; }
-.hero-rule { position: relative; width: 48px; height: 2px; background: var(--red); margin: 26px auto 0; box-shadow: var(--glow); }
+.hero .mark { font-family: var(--font-mono); font-size: 12px; letter-spacing: 1.5px; color: #7E93B8; margin-bottom: 18px; }
+.hero h1 { font-size: 46px; line-height: 1.15; color: #fff; margin: 0 0 18px; max-width: 16ch; margin-left: auto; margin-right: auto; }
+.hero p { font-size: 17px; color: #B7C0D1; max-width: 52ch; margin: 0 auto; }
+.hero-rule { width: 48px; height: 2px; background: var(--red); margin: 26px auto 0; }
 
 /* ===== Nav buttons row ===== */
 .homepage-buttons {
@@ -47,13 +38,13 @@
   flex-wrap: wrap;
   gap: 14px;
   max-width: 900px;
-  margin: 0 auto 56px;
+  margin: -30px auto 56px;
   padding: 0 24px;
   position: relative;
   z-index: 2;
 }
-.homepage-buttons .btn { background: var(--surface); color: var(--ink); border-color: var(--line); box-shadow: var(--shadow); font-family: var(--font-body); font-weight: 500; }
-.homepage-buttons .btn:hover { background: var(--surface-2); color: #fff; border-color: var(--red); }
+.homepage-buttons .btn { background: var(--surface); color: var(--navy); border-color: var(--line); box-shadow: var(--shadow); font-family: var(--font-body); }
+.homepage-buttons .btn:hover { background: var(--navy); color: #fff; }
 
 /* ===== Section shell ===== */
 .section { max-width: 900px; margin: 0 auto; padding: 0 24px; }
@@ -77,7 +68,7 @@
   border-left: 1px solid var(--line);
 }
 .stat-card:first-child { border-left: none; }
-.stat-card h2 { font-size: 34px; margin: 0 0 6px; color: var(--red); text-shadow: 0 0 18px rgba(226,112,61,0.25); }
+.stat-card h2 { font-size: 34px; margin: 0 0 6px; color: var(--red-deep); }
 .stat-card p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
 
 /* ===== Chart ===== */
@@ -94,7 +85,7 @@
   font-family: var(--font-body);
   font-size: 13.5px;
 }
-.chart-toggle button:hover { border-color: var(--red); color: var(--ink); }
+.chart-toggle button:hover { border-color: var(--navy); color: var(--navy); }
 .chart-container {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -331,21 +322,18 @@ document.addEventListener('DOMContentLoaded', () => {
       labels: chartData.month.labels,
       datasets: [{
         data: chartData.month.data,
-        borderColor: '#E2703D',
-        backgroundColor: 'rgba(226,112,61,0.14)',
+        borderColor: '#A13D33',
+        backgroundColor: 'rgba(161,61,51,0.12)',
         fill: true,
         tension: 0.3,
         pointRadius: 3,
-        pointBackgroundColor: '#E2703D'
+        pointBackgroundColor: '#A13D33'
       }]
     },
     options: {
       responsive: true,
       plugins: { legend: { display: false } },
-      scales: {
-        x: { ticks: { color: '#9CA6AD' }, grid: { color: '#262D33' } },
-        y: { beginAtZero: true, ticks: { color: '#9CA6AD', precision: 0 }, grid: { color: '#262D33' } }
-      }
+      scales: { y: { beginAtZero: true, ticks: { precision: 0 } } }
     }
   });
 
