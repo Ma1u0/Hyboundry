@@ -1555,6 +1555,25 @@ const incidentsData = [
     link: "https://www.reuters.com/world/drone-that-crashed-lithuania-came-ukraine-lithuanian-pm-says-2026-03-24/",
     country: "Varėna district, Lithuania 🇱🇹"
   },
+
+    /* =========================
+        M O L D O V A
+    ========================= */
+
+     {
+    lat: 46.9277,
+    lng: 28.9317,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+    month: '08',
+    popupType: 'Airspace incursion', // shown in popup
+    date: '08 Sep 2026',
+    details: "A drone almost hit President Zelenskyy‘s plane departing from Chișinău to Oslo. <br> According to Norwegian Prime Minister Jonas Gahr Støre the incident almost ended in a tragedy",
+    link: "https://www.reuters.com/world/europe/zelenskiys-plane-almost-hit-by-drone-tuesday-norway-pm-says-2026-09-09/",
+    country: "Chișinău Airport, Moldova 🇲🇩"
+  },
     
      /* =========================
         N E T H E R L A N D S
