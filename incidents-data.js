@@ -905,7 +905,7 @@ const incidentsData = [
      month: '09',
     popupType: 'Airspace incursion / crash site', // shown in popup
     date: '01 Sep 2026',
-    details: "A citizen discovered the drone on the shoreline of the island of Pellinki in the South of Finland. The drone did not contain explosives and designed for surveillance, mapping, and photography. <br><br> It is believed that it is a Russian drone. <br><br> According Minister of Defence Antti Häkkänen, Finland was warned by Russia about a stray drone, before this drone was discovered. ",
+    details: "A citizen discovered the drone on the shoreline of the island of Pellinki in the South of Finland. The drone did not contain explosives and designed for surveillance, mapping, and photography. <br><br> It is believed that it is a Russian drone.",
     link: "https://yle.fi/a/74-20244491",
     country: "Pellinki, Finland 🇫🇮"
   },
@@ -1050,7 +1050,7 @@ const incidentsData = [
       popupType: 'Drone sighting / airport closure',
       date: '03 Oct 2025, airspace closed: 21:36',
       details: "Two drones were spotted near the runways but disappeared before they were identified",
-      link: "https://www.tagesschau.de/inland/muenchen-flughafen-drohnen-102.html'"
+      link: "https://www.tagesschau.de/inland/muenchen-flughafen-drohnen-102.html"
     },
     {
       popupType: 'Unverified drone sighting / airport closure',
@@ -1554,25 +1554,6 @@ const incidentsData = [
     details: "A Ukrainian drone crashed in Lithuania after entering it through Belarusian airspace which likely targeted Russia's oil loading terminal in Primorsk.",
     link: "https://www.reuters.com/world/drone-that-crashed-lithuania-came-ukraine-lithuanian-pm-says-2026-03-24/",
     country: "Varėna district, Lithuania 🇱🇹"
-  },
-
-    /* =========================
-        M O L D O V A
-    ========================= */
-
-     {
-    lat: 46.9277,
-    lng: 28.9317,
-    type: 'drone',      // used for filtering
-    risk: 'yellow',
-    place: 'others',
-    year: '2026',
-    month: '08',
-    popupType: 'Airspace incursion', // shown in popup
-    date: '08 Sep 2026',
-    details: "A drone almost hit President Zelenskyy‘s plane departing from Chișinău to Oslo. <br> According to Norwegian Prime Minister Jonas Gahr Støre the incident almost ended in a tragedy",
-    link: "https://www.reuters.com/world/europe/zelenskiys-plane-almost-hit-by-drone-tuesday-norway-pm-says-2026-09-09/",
-    country: "Chișinău Airport, Moldova 🇲🇩"
   },
     
      /* =========================
@@ -2915,4 +2896,23 @@ place: 'others',
      /* =========================
        U K
     ========================= */
+
+   /* =========================
+        M O L D O V A
+    ========================= */
+
+     {
+    lat: 46.9277,
+    lng: 28.9317,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+    month: '09',
+    popupType: 'Airspace incursion', // shown in popup
+    date: '08 Sep 2026',
+    details: "A drone almost hit President Zelenskyy‘s plane departing from Chișinău to Oslo. <br> According to Norwegian Prime Minister Jonas Gahr Støre the incident almost ended in a tragedy",
+    link: "https://www.reuters.com/world/europe/zelenskiys-plane-almost-hit-by-drone-tuesday-norway-pm-says-2026-09-09/",
+    country: "Chișinău Airport, Moldova 🇲🇩"
+  },
 ];

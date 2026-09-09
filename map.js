@@ -165,11 +165,19 @@ document.addEventListener('DOMContentLoaded', () => {
     let decoded;
     try { decoded = decodeURIComponent(target); } catch (e) { decoded = target; }
 
+    // Normalize away the differences that shouldn't matter for matching:
+    // surrounding whitespace/quote typos, a trailing URL fragment (which can
+    // get garbled by copy-paste encoding issues), and letter case.
+    function normalizeLink(l) {
+      if (!l) return '';
+      return l.trim().replace(/^['"\s]+|['"\s]+$/g, '').split('#')[0].toLowerCase();
+    }
+    const normalizedTarget = normalizeLink(decoded);
     const match = markers.find(m => {
       const meta = m.meta;
-      if (meta.link === decoded) return true;
+      if (normalizeLink(meta.link) === normalizedTarget) return true;
       if (Array.isArray(meta.incidents)) {
-        return meta.incidents.some(sub => sub.link === decoded);
+        return meta.incidents.some(sub => normalizeLink(sub.link) === normalizedTarget);
       }
       return false;
     });

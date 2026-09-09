@@ -2020,6 +2020,15 @@ const incidentsData = {
    },
   ],
   
+  '2026-09-08': [
+    {
+      country: "🟡 Chișinău Airport, Moldova 🇲🇩",
+      popupType: "Airspace incursion",
+      date: "8 Sep 2026",
+      details: "A drone almost hit President Zelenskyy‘s plane departing from Chișinău to Oslo. <br> According to Norwegian Prime Minister Jonas Gahr Støre the incident almost ended in a tragedy",
+      link: "https://www.reuters.com/world/europe/zelenskiys-plane-almost-hit-by-drone-tuesday-norway-pm-says-2026-09-09/",
+    }
+  ],
   
   // Add more dates and incidents as needed
     '2026-xx-xx': [
@@ -2116,7 +2125,7 @@ function renderCalendar(){
           <b>Date:</b> ${i.date}
           <b>Type:</b> ${i.popupType}
           <b>Details:</b> ${i.details}
-          ${i.link ? `<a class="view-on-map-btn" href="map.html?link=${encodeURIComponent(i.link)}">View on map →</a>` : ''}
+          ${i.link ? `<a class="view-on-map-btn" href="map.html?link=${encodeURIComponent(i.link.trim())}">View on map →</a>` : ''}
         </div>
       `).join('');
     };
