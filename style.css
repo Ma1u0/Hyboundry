@@ -1,34 +1,34 @@
 /* =====================================================================
-   HYBOUNDRY — SHARED STYLESHEET (dark / atmospheric)
-   A near-black situation-room canvas, an ember accent that reads like
-   a signal on radar, an elegant serif for identity, plain sans for
-   reading. The map and data are the light source; the chrome stays quiet.
+   HYBOUNDRY — SHARED STYLESHEET (light / editorial)
+   Cool paper-white canvas, a deep navy for identity and structure,
+   a muted brick red as the one accent, serif for headings, plain
+   sans for reading.
    ===================================================================== */
 
 :root {
   /* Color */
-  --bg:         #0E1216;   /* page background — deep blue-charcoal, not pure black */
-  --surface:    #181D22;   /* cards / panels */
-  --surface-2:  #1F262C;   /* hover / nested surface */
-  --ink:        #ECEEF0;   /* primary text — warm-white */
-  --ink-soft:   #9CA6AD;   /* secondary text */
-  --ink-faint:  #666F77;
-  --navy:       #171C21;   /* sidebar rail */
-  --navy-deep:  #0B0E11;   /* deepest — hover/active */
-  --red:        #E2703D;   /* ember accent — the one warm signal in the room */
-  --red-deep:   #B8552B;
-  --amber:      #D9A544;
-  --line:       #262D33;
-  --line-soft:  #1D2329;
+  --bg:         #EEF0F2;   /* page background — cool, quiet slate-white */
+  --surface:    #FFFFFF;
+  --surface-2:  #F5F6F7;
+  --ink:        #1A2233;   /* primary text — near-black navy */
+  --ink-soft:   #545B68;   /* secondary text */
+  --ink-faint:  #8A909B;
+  --navy:       #1F3352;   /* brand rail / buttons */
+  --navy-deep:  #16233B;   /* hero / hover-deep */
+  --red:        #A13D33;   /* accent — used sparingly */
+  --red-deep:   #7E2F27;
+  --amber:      #B8862E;
+  --line:       #DBDFE3;
+  --line-soft:  #E7EAED;
 
   /* Type */
   --font-display: 'Source Serif 4', Georgia, serif;
   --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
-  --radius: 8px;
-  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px rgba(0,0,0,0.35);
-  --glow: 0 0 24px rgba(226,112,61,0.18);
+  --radius: 6px;
+  --shadow: 0 1px 2px rgba(22,35,59,0.06), 0 6px 20px rgba(22,35,59,0.07);
+  --glow: 0 0 20px rgba(161,61,51,0.16);
 }
 
 * { box-sizing: border-box; }
@@ -42,8 +42,8 @@ html, body {
 }
 
 h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--ink); }
-a { color: var(--red); }
-a:hover { color: #F0925F; }
+a { color: var(--navy); }
+a:hover { color: var(--red); }
 
 /* =====================================================================
    SIDEBAR — shared across every page
@@ -54,8 +54,7 @@ a:hover { color: #F0925F; }
   width: 240px;
   height: 100%;
   background: var(--navy);
-  border-right: 1px solid var(--line-soft);
-  color: #C7CEDA;
+  color: #E9ECF1;
   transform: translateX(-240px);
   transition: transform 0.25s ease;
   z-index: 1000;
@@ -82,10 +81,9 @@ a:hover { color: #F0925F; }
 .sidebar-tag {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--red);
-  opacity: 0.85;
+  color: #8FA0BE;
   margin-bottom: 30px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
 }
 
 #sidebar-content nav { display: flex; flex-direction: column; gap: 2px; }
@@ -96,16 +94,16 @@ a:hover { color: #F0925F; }
   padding: 10px 10px;
   margin: 0 -10px;
   border-radius: 4px;
-  color: #9AA3AC;
+  color: #C7CEDA;
   text-decoration: none;
   font-size: 15px;
   border-left: 2px solid transparent;
 }
-#sidebar-content nav a:hover { background: rgba(255,255,255,0.04); color: #fff; }
+#sidebar-content nav a:hover { background: rgba(255,255,255,0.06); color: #fff; }
 #sidebar-content nav a.current {
   color: #fff;
   border-left: 2px solid var(--red);
-  background: rgba(226,112,61,0.08);
+  background: rgba(255,255,255,0.05);
 }
 .nav-icon { width: 18px; text-align: center; font-size: 15px; opacity: 0.9; }
 
@@ -114,9 +112,7 @@ a:hover { color: #F0925F; }
   top: 18px; left: 0;
   width: 34px; height: 40px;
   background: var(--navy);
-  border: 1px solid var(--line-soft);
-  border-left: none;
-  color: #E9EDF0;
+  color: #fff;
   border-radius: 0 6px 6px 0;
   display: flex; align-items: center; justify-content: center;
   box-shadow: var(--shadow);
@@ -135,7 +131,7 @@ a:hover { color: #F0925F; }
   background: var(--surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   z-index: 1000;
 }
 .panel-header {
@@ -148,7 +144,7 @@ a:hover { color: #F0925F; }
   font-weight: 600;
   color: var(--ink);
   background: var(--surface-2);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-soft);
   border-radius: var(--radius) var(--radius) 0 0;
 }
 .panel button.collapse-btn, .panel button {
@@ -161,29 +157,19 @@ a:hover { color: #F0925F; }
 .panel-content { padding: 12px 14px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
 .collapsed .panel-content { display: none; }
 
-/* Leaflet chrome, restyled to sit inside the dark theme */
+/* Leaflet chrome, kept close to default but tied to the theme's tokens */
 .leaflet-popup-content-wrapper {
   background: var(--surface);
   color: var(--ink);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   box-shadow: var(--shadow);
 }
-.leaflet-popup-tip { background: var(--surface); box-shadow: none; }
-.leaflet-container a.leaflet-popup-close-button { color: var(--ink-soft); }
-.leaflet-control-zoom a {
-  background: var(--surface) !important;
-  color: var(--ink) !important;
-  border-color: var(--line) !important;
-}
-.leaflet-control-zoom a:hover { background: var(--surface-2) !important; }
+.leaflet-popup-tip { background: var(--surface); }
 .leaflet-control-attribution {
-  background: rgba(24,29,34,0.85) !important;
+  background: rgba(255,255,255,0.85) !important;
   color: var(--ink-faint) !important;
 }
 .leaflet-control-attribution a { color: var(--ink-soft) !important; }
-
-/* Dim the tile layer so it recedes into the dark canvas; markers/panels stay bright */
-.leaflet-tile-pane { filter: brightness(0.55) saturate(0.55) contrast(1.05); }
 
 /* =====================================================================
    PAGE SHELL (non-map pages)
@@ -196,11 +182,10 @@ a:hover { color: #F0925F; }
 .page-eyebrow {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--red);
-  opacity: 0.85;
+  color: var(--ink-faint);
   margin-bottom: 8px;
 }
-.page h1 { font-size: 36px; margin: 0 0 10px; color: #fff; }
+.page h1 { font-size: 36px; margin: 0 0 10px; }
 .page .lede { color: var(--ink-soft); font-size: 16px; max-width: 60ch; margin-bottom: 40px; }
 
 /* Buttons */
@@ -209,13 +194,13 @@ a:hover { color: #F0925F; }
   align-items: center;
   gap: 8px;
   padding: 12px 20px;
-  background: var(--red);
-  color: #17110B;
+  background: var(--navy);
+  color: #fff;
   text-decoration: none;
   border-radius: 4px;
   font-size: 15px;
-  font-weight: 600;
-  border: 1px solid var(--red);
+  font-weight: 500;
+  border: 1px solid var(--navy);
   transition: background 0.15s ease, border-color 0.15s ease;
 }
-.btn:hover { background: #F0925F; border-color: #F0925F; color: #17110B; }
+.btn:hover { background: var(--navy-deep); color: #fff; }
