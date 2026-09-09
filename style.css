@@ -123,7 +123,7 @@ a:hover { color: #F0925F; }
   cursor: pointer;
   font-size: 18px;
   z-index: 1001;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, transform 0.25s ease;
 }
 #sidebar-handle:hover { background: var(--navy-deep); }
 

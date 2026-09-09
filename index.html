@@ -19,20 +19,23 @@
 <script src="incidents-data.js"></script>
 
 <style>
-/* ===== Hero (blends into the page — no boxed hero band) ===== */
+/* ===== Hero (card with a soft ember glow, sitting on the dark page) ===== */
 .hero {
   position: relative;
-  text-align: center;
-  padding: 100px 24px 70px;
   overflow: hidden;
+  text-align: center;
+  padding: 96px 24px 74px;
+  margin: 0 0 -26px;
+  background: linear-gradient(180deg, #191F25 0%, #12161B 100%);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0 0 28px 28px;
+  box-shadow: var(--shadow);
 }
 .hero::before {
   content: '';
   position: absolute;
-  top: -120px; left: 50%;
-  width: 640px; height: 420px;
-  transform: translateX(-50%);
-  background: radial-gradient(closest-side, rgba(226,112,61,0.16), rgba(226,112,61,0));
+  inset: 0;
+  background: radial-gradient(ellipse 640px 360px at 50% -8%, rgba(226,112,61,0.20), transparent 70%);
   pointer-events: none;
 }
 .hero .mark { position: relative; font-family: var(--font-mono); font-size: 12px; letter-spacing: 1.5px; color: var(--red); opacity: 0.9; margin-bottom: 18px; }
@@ -40,7 +43,7 @@
 .hero p { position: relative; font-size: 17px; color: var(--ink-soft); max-width: 52ch; margin: 0 auto; }
 .hero-rule { position: relative; width: 48px; height: 2px; background: var(--red); margin: 26px auto 0; box-shadow: var(--glow); }
 
-/* ===== Nav buttons row ===== */
+/* ===== Nav buttons row (floats over the hero's rounded bottom edge) ===== */
 .homepage-buttons {
   display: flex;
   justify-content: center;
@@ -357,8 +360,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Sidebar toggle (shared pattern)
-document.getElementById('sidebar-handle').addEventListener('click', () => {
-  document.getElementById('sidebar').classList.toggle('sidebar-open');
+const sidebar = document.getElementById('sidebar');
+const handle = document.getElementById('sidebar-handle');
+handle.addEventListener('click', () => {
+  const open = sidebar.classList.toggle('sidebar-open');
+  handle.style.transform = open ? 'translateX(240px)' : 'translateX(0)';
+  handle.innerHTML = open ? '&times;' : '&#9776;';
 });
 </script>
 

@@ -2139,6 +2139,8 @@ let sidebarOpen = false;
 handle.addEventListener('click', () => {
   sidebarOpen = !sidebarOpen;
   sidebar.classList.toggle('sidebar-open', sidebarOpen);
+  handle.style.transform = sidebarOpen ? 'translateX(240px)' : 'translateX(0)';
+  handle.innerHTML = sidebarOpen ? '&times;' : '&#9776;';
   container.style.marginLeft = sidebarOpen ? '240px' : '0';
 });
 </script>

@@ -192,7 +192,9 @@ const sidebar = document.getElementById('sidebar');
 const handle = document.getElementById('sidebar-handle');
 
 handle.addEventListener('click', () => {
-  sidebar.classList.toggle('sidebar-open');
+  const open = sidebar.classList.toggle('sidebar-open');
+  handle.style.transform = open ? 'translateX(240px)' : 'translateX(0)';
+  handle.innerHTML = open ? '&times;' : '&#9776;';
 });
 </script>
 
