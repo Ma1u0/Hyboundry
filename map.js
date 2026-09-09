@@ -154,6 +154,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------
+  // 6.5: Deep link support - if we arrived from the calendar's "View on
+  // map" button (map.html?link=<source url>), find the matching incident,
+  // zoom the cluster open to reveal it, and pop its popup.
+  // ------------------------
+  (function openLinkedIncident() {
+    const params = new URLSearchParams(window.location.search);
+    const target = params.get('link');
+    if (!target) return;
+    let decoded;
+    try { decoded = decodeURIComponent(target); } catch (e) { decoded = target; }
+
+    const match = markers.find(m => {
+      const meta = m.meta;
+      if (meta.link === decoded) return true;
+      if (Array.isArray(meta.incidents)) {
+        return meta.incidents.some(sub => sub.link === decoded);
+      }
+      return false;
+    });
+
+    if (match) {
+      markerCluster.zoomToShowLayer(match, () => {
+        match.openPopup();
+      });
+    }
+  })();
+
+  // ------------------------
   // 7ï¸âƒ£ Filter logic
   // ------------------------
 function applyFilters() {

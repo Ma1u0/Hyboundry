@@ -139,6 +139,19 @@
   text-decoration: underline;
 }
 
+.view-on-map-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 12px;
+  background: var(--navy);
+  color: #fff !important;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+.view-on-map-btn:hover { background: var(--navy-deep); }
+
 /* =========================
    LEGEND
 ========================= */
@@ -2103,6 +2116,7 @@ function renderCalendar(){
           <b>Date:</b> ${i.date}
           <b>Type:</b> ${i.popupType}
           <b>Details:</b> ${i.details}
+          ${i.link ? `<a class="view-on-map-btn" href="map.html?link=${encodeURIComponent(i.link)}">View on map →</a>` : ''}
         </div>
       `).join('');
     };
