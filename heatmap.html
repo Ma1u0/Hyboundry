@@ -25,14 +25,14 @@ html, body { margin:0; height:100%; }
 /* Time slider panel */
 #time-panel { bottom:14px; left:50%; transform:translateX(-50%); width:500px; }
 #time-panel.collapsed { width:150px; }
-#time-label { text-align:center; font-family: var(--font-mono); font-size:14px; color: var(--red-deep); margin-bottom:8px; }
+#time-label { text-align:center; font-family: var(--font-mono); font-size:14px; color: var(--red); margin-bottom:8px; }
 #time-slider { width:100%; accent-color: var(--red); }
 #time-controls { display:flex; align-items:center; gap:10px; justify-content:center; margin-top:8px; flex-wrap:wrap; }
 #time-controls button {
-  background: var(--navy); color:white; border:none; border-radius:4px;
-  padding:6px 14px; cursor:pointer; font-family: var(--font-body); font-size:13.5px;
+  background: var(--red); color: #17110B; border:none; border-radius:4px;
+  padding:6px 14px; cursor:pointer; font-family: var(--font-body); font-size:13.5px; font-weight:600;
 }
-#time-controls button:hover { background: var(--navy-deep); }
+#time-controls button:hover { background: #F0925F; }
 #time-controls label { font-size:13px; color: var(--ink-soft); display:flex; align-items:center; gap:4px; }
 
 /* Breakdown panel (also hosts the mode toggle + legend as a fixed header) */
@@ -45,7 +45,7 @@ html, body { margin:0; height:100%; }
   flex:1; background: var(--surface-2); border:1px solid var(--line); border-radius:4px; padding:7px 10px;
   cursor:pointer; font-family: var(--font-body); font-size:13px; color: var(--ink-soft);
 }
-.mode-btn.active { background: var(--navy); border-color: var(--navy); color:white; }
+.mode-btn.active { background: var(--red); border-color: var(--red); color:#17110B; font-weight:600; }
 
 #legend-block { margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid var(--line-soft); }
 #legend-gradient {
