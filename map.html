@@ -108,13 +108,17 @@ html, body { margin:0; height:100%; }
 
 /* Marker icons — mute the saturated badge colors to match the site's
    palette, and give each a white ring + soft shadow so they read as
-   deliberate pins rather than flat stickers sitting on the tiles. */
+   deliberate pins rather than flat stickers sitting on the tiles.
+   Using drop-shadow (not border/box-shadow) here because drop-shadow
+   traces the icon's actual visible silhouette, not its rectangular
+   bounding box — so the ring hugs the real circle even if the source
+   PNG has any transparent padding around it. */
 .leaflet-marker-icon {
-  filter: saturate(0.72) brightness(0.94) contrast(1.04);
-  border-radius: 50%;
-  box-sizing: border-box;
-  border: 2px solid #fff;
-  box-shadow: 0 1px 5px rgba(26,34,51,0.4);
+  filter:
+    saturate(0.72) brightness(0.94) contrast(1.04)
+    drop-shadow(1.4px 0 0 #fff) drop-shadow(-1.4px 0 0 #fff)
+    drop-shadow(0 1.4px 0 #fff) drop-shadow(0 -1.4px 0 #fff)
+    drop-shadow(1px 2px 3px rgba(26,34,51,0.4));
 }
 
 /* Cluster bubbles — restyled from Leaflet's default blue/yellow/orange
