@@ -15,7 +15,7 @@
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<!-- Shared incident data (same file map.js / intensity.js use) -->
+<!-- Shared incident data (same file map.js / heatmap.js use) -->
 <script src="incidents-data.js"></script>
 
 <style>
@@ -121,9 +121,10 @@
     <nav>
       <a href="index.html" class="current"><span class="nav-icon">⌂</span> Home</a>
       <a href="map.html"><span class="nav-icon">◈</span> Map</a>
-      <a href="intensity.html"><span class="nav-icon">▦</span> Intensity</a>
+      <a href="heatmap.html"><span class="nav-icon">▦</span> Footprint</a>
       <a href="calendar.html"><span class="nav-icon">▤</span> Calendar</a>
       <a href="changelog.html"><span class="nav-icon">◷</span> Changelog</a>
+      <a href="blog.html"><span class="nav-icon">✎</span> Commentary</a>
       <a href="info.html"><span class="nav-icon">ⓘ</span> Info</a>
     </nav>
   </div>
@@ -139,7 +140,7 @@
 
 <div class="homepage-buttons">
   <a href="map.html" class="btn">Map</a>
-  <a href="intensity.html" class="btn">Intensity</a>
+  <a href="heatmap.html" class="btn">Footprint</a>
   <a href="calendar.html" class="btn">Calendar</a>
   <a href="changelog.html" class="btn">Changelog</a>
   <a href="info.html" class="btn">Info</a>
@@ -187,14 +188,14 @@
 // ------------------------
 // Homepage stats + chart - all computed live from incidents-data.js, using
 // the real date text on each incident (not the separate year/month fields,
-// which can drift out of sync - see intensity.js/map.js for the same approach).
+// which can drift out of sync - see heatmap.js/map.js for the same approach).
 // ------------------------
 document.addEventListener('DOMContentLoaded', () => {
   const MONTH_ABBR = { jan:1, feb:2, mar:3, apr:4, may:5, jun:6, jul:7, aug:8, sep:9, oct:10, nov:11, dec:12 };
   const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   const MONTH_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const MS_PER_WEEK = 7 * 24 * 60 * 60 * 1000;
-  const REF_MONDAY = Date.UTC(2020, 0, 6); // a known Monday, used as a fixed alignment point (same as intensity.js)
+  const REF_MONDAY = Date.UTC(2020, 0, 6); // a known Monday, used as a fixed alignment point (same as heatmap.js)
 
   function weekStartMs(ms) {
     const weeksSinceRef = Math.floor((ms - REF_MONDAY) / MS_PER_WEEK);

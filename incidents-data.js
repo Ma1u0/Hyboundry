@@ -2657,23 +2657,7 @@ place: 'others',
     link: "https://www.digi24.ro/stiri/actualitate/o-drona-prabusita-a-fost-gasita-pe-un-camp-din-vaslui-autoritatile-fac-cercetari-3930135",
     country: "Viișoara, Romania 🇷🇴",
   },
-
-   {
-    lat: 47.25,
-    lng: 27.7,
-    type: 'drone',      // used for filtering
-    risk: 'yellow',
-    place: 'others',
-    year: '2026',
-     month: '09',
-    popupType: 'Crash site', // shown in popup
-    date: ' 08 Sep 2026, 16:37',
-    details: "A drone entered Romanian airspace via Moldova before returning into Moldovan airspace. Moldova had to close its airspace ",
-    link: "https://www.facebook.com/MDAarmy/posts/1380127504296695?ref=embed_post",
-    country: "Golăiești, Romania 🇷🇴",
-  },
   
-   
  /* =========================
        S P A I N
     ========================= */

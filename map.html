@@ -30,38 +30,148 @@ html, body { margin:0; height:100%; }
 #sentence-filters {
   display:flex;
   flex-wrap:wrap;
-  gap:8px;
+  gap:9px;
   align-items:center;
   font-size:14px;
   color: var(--ink-soft);
 }
+#sentence-filters > span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--ink-faint);
+}
 #sentence-filters select {
-  padding:5px 8px;
-  border:1px solid var(--line);
-  border-radius:4px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 6px 26px 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
   font-family: var(--font-body);
+  font-size: 13.5px;
   color: var(--ink);
-  background: var(--surface);
+  background-color: var(--surface);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%23545B68' d='M1 1l5 5 5-5' stroke='%23545B68' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  background-size: 10px 7px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+#sentence-filters select:hover,
+#sentence-filters select:focus {
+  border-color: var(--navy);
+  outline: none;
 }
 
 /* Legend */
 #legend { top:14px; right:14px; width:290px; }
 #legend.collapsed { width:150px; }
-.legend-row { margin-bottom:8px; display:flex; align-items:center; }
+.legend-group-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ink-faint);
+  margin: 16px 0 9px;
+}
+.legend-group-title:first-child { margin-top: 0; }
+.legend-row {
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
 .legend-row img {
-  width:22px;
-  vertical-align:middle;
-  margin-right:8px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  padding: 4px;
+  box-sizing: border-box;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  flex-shrink: 0;
 }
 
-/* POPUPS — KEEP DEFAULT LEAFLET LOOK, restyle typography only */
+/* Marker icons — mute the saturated badge colors to match the site's
+   palette, and give each a white ring + soft shadow so they read as
+   deliberate pins rather than flat stickers sitting on the tiles. */
+.leaflet-marker-icon {
+  filter: saturate(0.72) brightness(0.94) contrast(1.04);
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 5px rgba(26,34,51,0.4);
+}
+
+/* Cluster bubbles — restyled from Leaflet's default blue/yellow/orange
+   to the site's navy → brick-red scale (bigger cluster = more incidents
+   = shifts toward the accent color). */
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 50%;
+}
+.marker-cluster-small { background: rgba(31,51,82,0.22); }
+.marker-cluster-small div { background: var(--navy); }
+.marker-cluster-medium { background: rgba(161,61,51,0.18); }
+.marker-cluster-medium div { background: var(--red); }
+.marker-cluster-large { background: rgba(126,47,39,0.22); }
+.marker-cluster-large div { background: var(--red-deep); }
+.marker-cluster div {
+  width: 34px;
+  height: 34px;
+  margin-left: 3px;
+  margin-top: 3px;
+  border-radius: 50%;
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+.marker-cluster span { line-height: normal; }
+
+/* POPUPS */
 .leaflet-popup-content {
   font-family: var(--font-body);
   font-size:14px;
   line-height:1.5;
   color: var(--ink);
+  margin: 13px 16px;
 }
 .leaflet-popup-content b { font-family: var(--font-display); font-size:16px; }
+.popup-meta-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--ink-faint);
+}
+.popup-meta-label::after { content: ":"; }
+.popup-risk-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
 
 /* =========================
    MOBILE ONLY (ADD-ON)
@@ -91,9 +201,10 @@ html, body { margin:0; height:100%; }
     <nav>
       <a href="index.html"><span class="nav-icon">⌂</span> Home</a>
       <a href="map.html" class="current"><span class="nav-icon">◈</span> Map</a>
-      <a href="intensity.html"><span class="nav-icon">▦</span> Intensity</a>
+      <a href="heatmap.html"><span class="nav-icon">▦</span> Footprint</a>
       <a href="calendar.html"><span class="nav-icon">▤</span> Calendar</a>
       <a href="changelog.html"><span class="nav-icon">◷</span> Changelog</a>
+      <a href="blog.html"><span class="nav-icon">✎</span> Commentary</a>
       <a href="info.html"><span class="nav-icon">ⓘ</span> Info</a>
     </nav>
   </div>
@@ -172,16 +283,19 @@ html, body { margin:0; height:100%; }
     <button onclick="togglePanel('legend')">▾</button>
   </div>
   <div class="panel-content">
+    <div class="legend-group-title">Incident type</div>
     <div class="legend-row"><img src="icons/uav.png"> Drone</div>
     <div class="legend-row"><img src="icons/fighter-plane.png"> Jet</div>
     <div class="legend-row"><img src="icons/balloon.png"> Balloon</div>
     <div class="legend-row"><img src="icons/soldier.png"> Ground Border Crossing</div>
-    <div class="legend-row">🟤&nbsp; Actor confirmed to be Ukrainian</div>
-    <div class="legend-row">🔴&nbsp; Actor confirmed to be Russian</div>
-    <div class="legend-row">🟠&nbsp; Actor suspected to be Russian</div>
-    <div class="legend-row">🟡&nbsp; Unknown actor</div>
-    <div class="legend-row">🟢&nbsp; Unverified incident</div>
-    <div class="legend-row">🔵&nbsp; Safety breaches</div>
+
+    <div class="legend-group-title">Verification status</div>
+    <div class="legend-row"><span class="legend-dot" style="background:#8A5A3C"></span> Actor confirmed to be Ukrainian</div>
+    <div class="legend-row"><span class="legend-dot" style="background:var(--red)"></span> Actor confirmed to be Russian</div>
+    <div class="legend-row"><span class="legend-dot" style="background:var(--amber)"></span> Actor suspected to be Russian</div>
+    <div class="legend-row"><span class="legend-dot" style="background:#D9B94A"></span> Unknown actor</div>
+    <div class="legend-row"><span class="legend-dot" style="background:#4C8A5E"></span> Unverified incident</div>
+    <div class="legend-row"><span class="legend-dot" style="background:#3B6EA5"></span> Safety breaches</div>
   </div>
 </div>
 
@@ -189,7 +303,7 @@ html, body { margin:0; height:100%; }
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
-<!-- Shared incident data (also used by intensity.js) -->
+<!-- Shared incident data (also used by heatmap.js) -->
 <script src="incidents-data.js"></script>
 <script src="map.js"></script>
 

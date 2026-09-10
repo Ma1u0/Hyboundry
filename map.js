@@ -117,7 +117,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // ------------------------
   // 6ï¸âƒ£ Add markers to cluster (handles multi-incidents)
   // ------------------------
+  function riskDotColor(risk) {
+    const colors = {
+      brown: '#8A5A3C', red: 'var(--red, #A13D33)', orange: 'var(--amber, #B8862E)',
+      yellow: '#D9B94A', green: '#4C8A5E', blue: '#3B6EA5'
+    };
+    return colors[risk] || '#8A909B';
+  }
+
   incidents.forEach(i => {
+    const riskDot = `<span class="popup-risk-dot" style="background:${riskDotColor(i.risk)}"></span>`;
     let popupHtml = `<b>${i.link ? `<a href="${i.link}" target="_blank">${i.country}</a>` : i.country}</b><br>`;
     
     if(i.note) {
@@ -129,16 +138,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if(Array.isArray(i.incidents)) {
       i.incidents.forEach((inc, idx) => {
         popupHtml += `<b>Incident ${idx + 1}</b><br>
-                      <b>Type:</b> ${inc.popupType}<br>
-                      <b>Date:</b> ${inc.date}<br>
-                      <b>Details:</b> ${inc.details}<br>
+                      ${riskDot}<span class="popup-meta-label">Type</span> ${inc.popupType}<br>
+                      <span class="popup-meta-label">Date</span> ${inc.date}<br>
+                      <span class="popup-meta-label">Details</span> ${inc.details}<br>
                       ${inc.link ? `<a href="${inc.link}" target="_blank">Source</a>` : ''}
                       <hr>`;
       });
     } else {
-      popupHtml += `<b>Type:</b> ${i.popupType}<br>
-                    <b>Date:</b> ${i.date}<br>
-                    <b>Details:</b> ${i.details}<br>
+      popupHtml += `${riskDot}<span class="popup-meta-label">Type</span> ${i.popupType}<br>
+                    <span class="popup-meta-label">Date</span> ${i.date}<br>
+                    <span class="popup-meta-label">Details</span> ${i.details}<br>
                     ${i.link ? `<a href="${i.link}" target="_blank">Source</a>` : ''}`;
     }
 

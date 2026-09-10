@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Incident Density Map</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+html, body { margin:0; height:100%; }
+
+/* Map */
+#map {
+  position:absolute;
+  top:0; left:0; right:0; bottom:0;
+  z-index:0;
+}
+
+/* Time slider panel */
+#time-panel { bottom:14px; left:50%; transform:translateX(-50%); width:500px; }
+#time-panel.collapsed { width:150px; }
+#time-label { text-align:center; font-family: var(--font-mono); font-size:14px; color: var(--red-deep); margin-bottom:8px; }
+#time-slider { width:100%; accent-color: var(--red); }
+#time-controls { display:flex; align-items:center; gap:10px; justify-content:center; margin-top:8px; flex-wrap:wrap; }
+#time-controls button {
+  background: var(--navy); color:white; border:none; border-radius:4px;
+  padding:6px 14px; cursor:pointer; font-family: var(--font-body); font-size:13.5px;
+}
+#time-controls button:hover { background: var(--navy-deep); }
+#time-controls label { font-size:13px; color: var(--ink-soft); display:flex; align-items:center; gap:4px; }
+
+/* Breakdown panel (also hosts the mode toggle + legend as a fixed header) */
+#breakdown-panel { top:14px; right:14px; width:290px; max-height:80vh; display:flex; flex-direction:column; }
+#breakdown-panel.collapsed { width:150px; }
+#breakdown-panel .panel-content { display:flex; flex-direction:column; min-height:0; }
+
+.mode-toggle-row { display:flex; gap:6px; margin-bottom:12px; }
+.mode-btn {
+  flex:1; background: var(--surface-2); border:1px solid var(--line); border-radius:4px; padding:7px 10px;
+  cursor:pointer; font-family: var(--font-body); font-size:13px; color: var(--ink-soft);
+}
+.mode-btn.active { background: var(--navy); border-color: var(--navy); color:white; }
+
+#legend-block { margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid var(--line-soft); }
+#legend-gradient {
+  height:10px; border-radius:3px;
+  background: linear-gradient(to right, #ffedd6, #a30000);
+}
+#legend-labels { display:flex; justify-content:space-between; font-size:11px; color: var(--ink-faint); margin-top:5px; }
+
+#breakdown-content { overflow-y:auto; max-height:50vh; }
+.country-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:7px 4px; cursor:pointer; border-bottom:1px solid var(--line-soft);
+  font-weight:500; color: var(--ink);
+}
+.country-row:hover { background: var(--surface-2); }
+.country-count {
+  background: var(--red); color:white; border-radius:10px;
+  padding:1px 8px; font-size:12px; font-family: var(--font-mono);
+}
+.location-row {
+  display:flex; justify-content:space-between;
+  padding:4px 4px 4px 16px; font-size:12.5px; color: var(--ink-soft);
+  border-bottom:1px dashed var(--line-soft);
+}
+.location-list { display:none; }
+.location-list.open { display:block; }
+#breakdown-total {
+  font-size:13px; color: var(--ink-soft); margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid var(--line-soft);
+}
+
+@media (max-width: 768px) {
+  #time-panel { width: calc(100% - 20px); left:10px; right:10px; transform:none; }
+  #breakdown-panel { width: calc(100% - 20px); left:10px; right:10px; top:10px; max-height:60vh; }
+  #breakdown-content { max-height:30vh; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div id="sidebar">
+  <div id="sidebar-content">
+    <div class="sidebar-mark">Hyboundry</div>
+    <div class="sidebar-tag">INCIDENT TRACKER</div>
+    <nav>
+      <a href="index.html"><span class="nav-icon">⌂</span> Home</a>
+      <a href="map.html"><span class="nav-icon">◈</span> Map</a>
+      <a href="heatmap.html" class="current"><span class="nav-icon">▦</span> Footprint</a>
+      <a href="calendar.html"><span class="nav-icon">▤</span> Calendar</a>
+      <a href="changelog.html"><span class="nav-icon">◷</span> Changelog</a>
+      <a href="blog.html"><span class="nav-icon">✎</span> Commentary</a>
+      <a href="info.html"><span class="nav-icon">ⓘ</span> Info</a>
+    </nav>
+  </div>
+</div>
+<div id="sidebar-handle">&#9776;</div>
+
+<!-- Map -->
+<div id="map"></div>
+
+<!-- Time slider -->
+<div id="time-panel" class="panel">
+  <div class="panel-header">
+    <span>Timeline</span>
+    <button class="collapse-btn" onclick="togglePanel('time-panel')">▾</button>
+  </div>
+  <div class="panel-content">
+    <div id="time-label">Loading…</div>
+    <input type="range" id="time-slider" min="0" max="0" value="0" step="1">
+    <div id="time-controls">
+      <button id="prevPeriod">◀</button>
+      <button id="playPause">▶ Play</button>
+      <button id="nextPeriod">▶</button>
+      <label><input type="checkbox" id="cumulative" checked> Cumulative</label>
+    </div>
+  </div>
+</div>
+
+<!-- Controls, legend, and country / location breakdown - one panel -->
+<div id="breakdown-panel" class="panel">
+  <div class="panel-header">
+    <span>Incidents by Region</span>
+    <button class="collapse-btn" onclick="togglePanel('breakdown-panel')">▾</button>
+  </div>
+  <div class="panel-content">
+    <div class="mode-toggle-row">
+      <button id="modeCountry" class="mode-btn active">By Country</button>
+      <button id="modeSubdivision" class="mode-btn">By Subdivision</button>
+    </div>
+    <div id="legend-block">
+      <div id="legend-gradient"></div>
+      <div id="legend-labels"><span>0</span><span>most</span></div>
+    </div>
+    <div id="breakdown-total"></div>
+    <div id="breakdown-content"></div>
+  </div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Shared incident data (same file map.js uses) -->
+<script src="incidents-data.js"></script>
+<script src="boundaries-data.js"></script>
+<script src="heatmap.js"></script>
+
+<script>
+function togglePanel(id){
+  document.getElementById(id).classList.toggle('collapsed');
+}
+const sidebar = document.getElementById('sidebar');
+const handle = document.getElementById('sidebar-handle');
+handle.addEventListener('click', e => {
+  const open = sidebar.classList.toggle('sidebar-open');
+  handle.style.transform = open ? 'translateX(240px)' : 'translateX(0)';
+  handle.innerHTML = open ? '&times;' : '&#9776;';
+  e.stopPropagation();
+  if(window.map) window.map.invalidateSize();
+});
+</script>
+
+</body>
+</html>
