@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Use a non-linear scale (sqrt) so small positive counts (e.g. 1) appear darker than
     // with a purely linear interpolation and therefore stand out more from zero.
     const t = max > 0 ? Math.sqrt(count / max) : 0;
-    const c1 = [237, 239, 241], c2 = [126, 47, 39];
+    const c1 = [237, 239, 241], c2 = [178, 42, 33];
     const rgb = c1.map((v, i) => Math.round(v + (c2[i] - v) * t));
     return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
   }
