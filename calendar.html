@@ -60,6 +60,15 @@
   color: var(--ink);
 }
 
+.today-btn {
+  font-size: 13px !important;
+  padding: 5px 12px !important;
+  border-color: var(--navy) !important;
+  color: var(--navy) !important;
+  font-weight: 500;
+}
+.today-btn:hover { background: var(--navy) !important; color: #fff !important; }
+
 #calendar-grid {
   margin-top: 20px;
   display: grid;
@@ -287,6 +296,7 @@
         <select id="yearSelect"></select>
       </div>
       <button id="nextMonth">▶</button>
+      <button id="goToday" class="today-btn">This month</button>
     </div>
     <div id="calendar-grid"></div>
     <div id="czech-note"></div>
@@ -2178,6 +2188,10 @@ document.getElementById('nextMonth').onclick=()=>{
 };
 monthSelect.onchange=()=>{ currentDate.setMonth(+monthSelect.value); renderCalendar(); };
 yearSelect.onchange=()=>{ currentDate.setFullYear(+yearSelect.value); renderCalendar(); };
+document.getElementById('goToday').onclick=()=>{
+  currentDate = new Date();
+  renderCalendar();
+};
 
 renderCalendar();
 
