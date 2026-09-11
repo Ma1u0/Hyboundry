@@ -2684,7 +2684,7 @@ place: 'others',
     popupType: 'Crash site', // shown in popup
     date: '09 Sep 2026, around 20:00',
     details:  "Tourists reported drone debris at the beach of Corbu at around 20:00 but due to darkness further operations were postponed until the next day.. The drone measured around 1 meter and was found next to an object which looked like the wing. The drone did not contain explosives",
-    link: "https://english.mapn.ro/cpresa/6861_Updated-Press-Information",
+    link: "https://www.digi24.ro/stiri/drona-gasita-pe-plaja-din-corbu-3942105",
     country: "Corbu, Romania 🇷🇴",
   },
    
