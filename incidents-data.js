@@ -1338,11 +1338,27 @@ const incidentsData = [
     year: '2026',
      month: '09',
     popupType: 'Drone sighting', // shown in popup
-    date: '07 Sep 2026',
+    date: '07 Sep 2026, 21:30 - 22:30',
     details: "Police was able to confirm the sighting of multiple drones between Füssen and Halblech but they were not able to locate a pilot.",
-    link: "https://www.facebook.com/blaulichtreportsuedschwaben/posts/drohnensichtungen-sorgen-für-polizeieinsatzlkr-ostallgäu-am-07092026-wurden-der-/1886296489366925/",
+    link: "https://www.allgaeuer-zeitung.de/fuessen/ueber-halblech-im-allgaeu-wurde-ein-drohnenschwarm-gesichtet-und-die-polizei-in-fuessen-und-kempten-tappt-im-dunkeln-115198255",
     country: "Füssen, Germany 🇩🇪",
    note: "Füssen is home to Bundeswehr barracks which host the Aufklärungsbataillon 10, which is a reconnaissance unit"
+  },
+   
+     {
+    lat: 47.576667,
+    lng: 10.735278,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '09',
+    popupType: 'Drone sighting', // shown in popup
+    date: '08 Sep 2026, evening',
+    details: "The police in Füssen confirmed getting a report about a sighting of up to 15 drones north of Schwangau",
+    link: "https://www.allgaeuer-zeitung.de/fuessen/drohnensichtungen-im-allgaeu-weitere-drohnen-am-dienstag-bei-schwangau-gemeldet-a-115209915",
+    country: "Schwangau, Germany 🇩🇪",
+   note: "Füssen is home to Bundeswehr barracks which host the Aufklärungsbataillon 10, which is a reconnaissance unit <br><br> The distance between Schwangau and Füssen is about 3.5 kilometers"
   },
     
    /* =========================
