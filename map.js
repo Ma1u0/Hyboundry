@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // the plain gray base — same muted look, just enough detail to orient by.
   L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
     maxZoom: 16,
+    opacity: 0.65,
     pane: 'overlayPane'
   }).addTo(map);
   L.control.zoom({ position: 'bottomleft' }).addTo(map);

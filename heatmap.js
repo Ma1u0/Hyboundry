@@ -223,8 +223,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Use a non-linear scale (sqrt) so small positive counts (e.g. 1) appear darker than
     // with a purely linear interpolation and therefore stand out more from zero.
     const t = max > 0 ? Math.sqrt(count / max) : 0;
-    const c1 = [243, 239, 234], c2 = [230, 83, 61];
-    const rgb = c1.map((v, i) => Math.round(v + (c2[i] - v) * t));
+
+    // Three-stop gradient instead of a single light->dark blend: a straight
+    // two-color RGB interpolation passes through a dull, desaturated midtone
+    // no matter which colors sit at the ends. Routing through a genuine
+    // warm orange keeps the middle of the scale looking intentional, and
+    // landing on the site's own accent red ties the map back to the rest
+    // of the site instead of using an invented one-off hue.
+    const stops = [
+      [246, 239, 227],  // t=0   - warm parchment
+      [227, 143, 74],   // t=0.5 - warm orange
+      [161, 61, 51]      // t=1   - the site's actual accent red (--red)
+    ];
+    const seg = t < 0.5 ? 0 : 1;
+    const localT = t < 0.5 ? t / 0.5 : (t - 0.5) / 0.5;
+    const c1 = stops[seg], c2 = stops[seg + 1];
+    const rgb = c1.map((v, i) => Math.round(v + (c2[i] - v) * localT));
     return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
   }
 
