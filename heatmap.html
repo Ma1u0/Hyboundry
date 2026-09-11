@@ -25,7 +25,7 @@ html, body { margin:0; height:100%; }
 /* Mute the OSM tiles toward gray so the choropleth colors read cleanly
    without a colorful base bleeding through the semi-transparent fills. */
 .leaflet-tile-pane {
-  filter: saturate(0.18) brightness(1.08) contrast(0.95);
+  filter: grayscale(0.88) brightness(1.1) contrast(0.95);
 }
 
 /* Time slider panel */
