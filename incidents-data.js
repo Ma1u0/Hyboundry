@@ -2657,6 +2657,21 @@ place: 'others',
     link: "https://www.digi24.ro/stiri/actualitate/o-drona-prabusita-a-fost-gasita-pe-un-camp-din-vaslui-autoritatile-fac-cercetari-3930135",
     country: "Viișoara, Romania 🇷🇴",
   },
+
+   {
+    lat: 46.93,
+    lng: 26.93,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '09',
+    popupType: 'Crash sighting', // shown in popup
+    date: ' 09 Sep 2026, 16:37 - 17:02',
+    details: "At 16:33 a RO-alert was activated following a drone in Moldovan airspace flying westwards. The drone entered Romanian airspace at 16:37 30km from Iași causing two Spanish F-18 fighters to be scrambled at 16:39. The drone was later reported 18 kilometers north of the town of Roman and contact was lost at 17:02 on the border between Iași county and Botoșani county. The drone later crashed in Moldova, 25 kilometers east of the Romanian border.",
+    link: "https://english.mapn.ro/cpresa/6861_Updated-Press-Information",
+    country: "Roman, Romania 🇷🇴",
+  },
   
  /* =========================
        S P A I N
