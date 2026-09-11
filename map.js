@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     maxZoom: 16,
     attribution: 'Esri, HERE, Garmin, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
+
+  // Reference layer adds place-name labels, roads, and borders on top of
+  // the plain gray base — same muted look, just enough detail to orient by.
+  L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 16,
+    pane: 'overlayPane'
+  }).addTo(map);
   L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
   // ------------------------
