@@ -1327,6 +1327,23 @@ const incidentsData = [
     link: "https://www.bild.de/politik/inland/muenchen-moldauer-soll-ruestungsunternehmen-knds-ausspioniert-haben-6a5a10ab29b150f031b162f2",
     country: "KNDS plant, Munich, Germany 🇩🇪",
   },
+
+   
+  {
+    lat: 47.566667,
+    lng: 10.7,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '09',
+    popupType: 'Drone sighting', // shown in popup
+    date: '07 Sep 2026',
+    details: "Police was able to confirm the sighting of multiple drones between Füssen and Halblech but they were not able to locate a pilot.",
+    link: "https://www.facebook.com/blaulichtreportsuedschwaben/posts/drohnensichtungen-sorgen-für-polizeieinsatzlkr-ostallgäu-am-07092026-wurden-der-/1886296489366925/",
+    country: "Füssen, Germany 🇩🇪",
+   note: "Füssen is home to Bundeswehr barracks which host the Aufklärungsbataillon 10, which is a reconnaissance unit"
+  },
     
    /* =========================
        I R E L A N D
