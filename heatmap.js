@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.map = map;
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; OpenStreetMap contributors | Boundaries: geoBoundaries.org (CC-BY 4.0)'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Boundaries: geoBoundaries.org (CC-BY 4.0)'
   }).addTo(map);
   L.control.zoom({ position: 'bottomleft' }).addTo(map);
 

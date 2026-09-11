@@ -24,6 +24,13 @@ html, body { margin:0; height:100%; }
   z-index:0;
 }
 
+/* Mute the OSM tiles toward gray so the base map recedes and the markers/
+   panels stay the visual focus, while keeping OSM's own label rendering
+   (rather than switching to a different labels source entirely). */
+.leaflet-tile-pane {
+  filter: saturate(0.18) brightness(1.08) contrast(0.95);
+}
+
 /* Filters */
 #filters { bottom:14px; right:14px; width:760px; }
 #filters.collapsed { width:130px; height:auto; }

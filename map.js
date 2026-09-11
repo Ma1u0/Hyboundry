@@ -4,17 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ------------------------
   const map = L.map('map', { zoomControl: false }).setView([20, 0], 2);
 
-  L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 16,
-    attribution: 'Esri, HERE, Garmin, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  }).addTo(map);
-
-  // Reference layer adds place-name labels, roads, and borders on top of
-  // the plain gray base — same muted look, just enough detail to orient by.
-  L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
-    maxZoom: 16,
-    opacity: 0.65,
-    pane: 'overlayPane'
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
   L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
