@@ -87,15 +87,21 @@
   position: relative;
   font-size: 14px;
   color: var(--ink-soft);
+  transition: box-shadow 0.12s ease;
 }
 
-.day:hover { background: var(--surface-2); }
+.day:hover { background: var(--surface-2); box-shadow: var(--shadow); }
 
 .day.single { background: #F3E4C4; color: var(--ink); border-color: #E4CE97; }
 .day.single:hover { background: #EFDBAC; }
 
 .day.multi { background: var(--red); color: white; border-color: var(--red); }
 .day.multi:hover { background: var(--red-deep); }
+
+/* Today's date — an outline ring that layers on top of whichever
+   background the cell already has (plain, single, or multi). */
+.day.today { box-shadow: inset 0 0 0 2px var(--navy); font-weight: 600; }
+.day.today:hover { box-shadow: inset 0 0 0 2px var(--navy), var(--shadow); }
 
 /* ICONS */
 .day-icons {
@@ -109,7 +115,10 @@
 .day-icons img {
   width: 13px;
   height: 13px;
-  opacity: 0.9;
+  filter:
+    saturate(0.72) brightness(0.94) contrast(1.04)
+    drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff)
+    drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff);
 }
 
 /* INCIDENT DISPLAY */
@@ -132,12 +141,22 @@
   color: var(--ink);
   font-family: var(--font-display);
   font-weight: 600;
+  margin-bottom: 6px;
 }
 
 .incident-item a {
   color: var(--navy);
   text-decoration: underline;
 }
+
+.incident-meta-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--ink-faint);
+}
+.incident-meta-label::after { content: ":"; }
 
 .view-on-map-btn {
   display: inline-block;
@@ -172,23 +191,31 @@
   width: 18px;
   height: 18px;
   border-radius: 4px;
-  border: 1px solid var(--line);
   display: inline-block;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.5) inset,
+    0 -1px 1px rgba(0,0,0,0.1) inset,
+    0 1px 2px rgba(26,34,51,0.18);
 }
 
-.legend-color.single { background: #F3E4C4; border-color: #E4CE97; }
+.legend-color.single { background: #F3E4C4; }
 .legend-color.multi { background: var(--red); }
 
 .legend-circle-row {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 10px 14px;
 }
 
 .legend-circle {
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
   display: inline-block;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.65) inset,
+    0 -1px 1px rgba(0,0,0,0.12) inset,
+    0 1px 2px rgba(26,34,51,0.22);
 }
 
 .legend-circle.red { background: var(--red); }
@@ -2076,6 +2103,9 @@ function renderCalendar(){
   monthSelect.value = m;
   yearSelect.value = y;
 
+  const today = new Date();
+  const todayKey = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+
   ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].forEach(d=>{
     const el=document.createElement('div');
     el.className='weekday'; el.textContent=d;
@@ -2098,6 +2128,7 @@ function renderCalendar(){
 
     if(incidents?.length===1) el.classList.add('single');
     if(incidents?.length>1) el.classList.add('multi');
+    if(key===todayKey) el.classList.add('today');
 
     if(incidents){
       const icons = getIncidentTypes(incidents);
@@ -2121,9 +2152,9 @@ function renderCalendar(){
       incidentDisplay.innerHTML=incidents.map(i=>`
         <div class="incident-item">
           <b>${i.country} (<a href="${i.link}" target="_blank">source</a>)</b>
-          <b>Date:</b> ${i.date}
-          <b>Type:</b> ${i.popupType}
-          <b>Details:</b> ${i.details}
+          <span class="incident-meta-label">Date</span> ${i.date}<br>
+          <span class="incident-meta-label">Type</span> ${i.popupType}<br>
+          <span class="incident-meta-label">Details</span> ${i.details}<br>
           ${i.link ? `<a class="view-on-map-btn" href="map.html?link=${encodeURIComponent(i.link.trim())}">View on map →</a>` : ''}
         </div>
       `).join('');
