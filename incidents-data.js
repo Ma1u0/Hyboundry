@@ -2666,13 +2666,28 @@ place: 'others',
     place: 'others',
     year: '2026',
      month: '09',
-    popupType: 'Crash sighting', // shown in popup
+    popupType: 'Drone sighting', // shown in popup
     date: ' 09 Sep 2026, 16:37 - 17:02',
     details: "At 16:33 a RO-alert was activated following a drone in Moldovan airspace flying westwards. The drone entered Romanian airspace at 16:37 30km from Iași causing two Spanish F-18 fighters to be scrambled at 16:39. The drone was later reported 18 kilometers north of the town of Roman and contact was lost at 17:02 on the border between Iași county and Botoșani county. The drone later crashed in Moldova, 25 kilometers east of the Romanian border.",
     link: "https://english.mapn.ro/cpresa/6861_Updated-Press-Information",
     country: "Roman, Romania 🇷🇴",
   },
-  
+
+   {
+    lat: 44.383333,
+    lng: 28.65,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '09',
+    popupType: 'Crash site', // shown in popup
+    date: '09 Sep 2026, around 20:00',
+    details:  "Tourists reported drone debris at the beach of Corbu at around 20:00 but due to darkness further operations were postponed until the next day.. The drone measured around 1 meter and was found next to an object which looked like the wing. The drone did not contain explosives",
+    link: "https://english.mapn.ro/cpresa/6861_Updated-Press-Information",
+    country: "Corbu, Romania 🇷🇴",
+  },
+   
  /* =========================
        S P A I N
     ========================= */
