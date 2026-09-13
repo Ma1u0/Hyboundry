@@ -1327,6 +1327,39 @@ const incidentsData = [
     link: "https://www.bild.de/politik/inland/muenchen-moldauer-soll-ruestungsunternehmen-knds-ausspioniert-haben-6a5a10ab29b150f031b162f2",
     country: "KNDS plant, Munich, Germany 🇩🇪",
   },
+
+   
+  {
+    lat: 47.566667,
+    lng: 10.7,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '09',
+    popupType: 'Drone sighting', // shown in popup
+    date: '07 Sep 2026, 21:30 - 22:30',
+    details: "Police was able to confirm the sighting of multiple drones between Füssen and Halblech but they were not able to locate a pilot.",
+    link: "https://www.allgaeuer-zeitung.de/fuessen/ueber-halblech-im-allgaeu-wurde-ein-drohnenschwarm-gesichtet-und-die-polizei-in-fuessen-und-kempten-tappt-im-dunkeln-115198255",
+    country: "Füssen, Germany 🇩🇪",
+   note: "Füssen is home to Bundeswehr barracks which host the Aufklärungsbataillon 10, which is a reconnaissance unit"
+  },
+   
+     {
+    lat: 47.576667,
+    lng: 10.735278,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '09',
+    popupType: 'Drone sighting', // shown in popup
+    date: '08 Sep 2026, evening',
+    details: "The police in Füssen confirmed getting a report about a sighting of up to 15 drones north of Schwangau",
+    link: "https://www.allgaeuer-zeitung.de/fuessen/drohnensichtungen-im-allgaeu-weitere-drohnen-am-dienstag-bei-schwangau-gemeldet-a-115209915",
+    country: "Schwangau, Germany 🇩🇪",
+   note: "Füssen is home to Bundeswehr barracks which host the Aufklärungsbataillon 10, which is a reconnaissance unit <br><br> The distance between Schwangau and Füssen is about 3.5 kilometers"
+  },
     
    /* =========================
        I R E L A N D
@@ -2657,7 +2690,37 @@ place: 'others',
     link: "https://www.digi24.ro/stiri/actualitate/o-drona-prabusita-a-fost-gasita-pe-un-camp-din-vaslui-autoritatile-fac-cercetari-3930135",
     country: "Viișoara, Romania 🇷🇴",
   },
-  
+
+   {
+    lat: 46.93,
+    lng: 26.93,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '09',
+    popupType: 'Drone sighting', // shown in popup
+    date: ' 09 Sep 2026, 16:37 - 17:02',
+    details: "At 16:33 a RO-alert was activated following a drone in Moldovan airspace flying westwards. The drone entered Romanian airspace at 16:37 30km from Iași causing two Spanish F-18 fighters to be scrambled at 16:39. The drone was later reported 18 kilometers north of the town of Roman and contact was lost at 17:02 on the border between Iași county and Botoșani county. The drone later crashed in Moldova, 25 kilometers east of the Romanian border.",
+    link: "https://english.mapn.ro/cpresa/6861_Updated-Press-Information",
+    country: "Roman, Romania 🇷🇴",
+  },
+
+   {
+    lat: 44.383333,
+    lng: 28.65,
+    type: 'drone',      // used for filtering
+    risk: 'yellow',
+    place: 'others',
+    year: '2026',
+     month: '09',
+    popupType: 'Crash site', // shown in popup
+    date: '09 Sep 2026, around 20:00',
+    details:  "Tourists reported drone debris at the beach of Corbu at around 20:00 but due to darkness further operations were postponed until the next day.. The drone measured around 1 meter and was found next to an object which looked like the wing. The drone did not contain explosives",
+    link: "https://www.digi24.ro/stiri/drona-gasita-pe-plaja-din-corbu-3942105",
+    country: "Corbu, Romania 🇷🇴",
+  },
+   
  /* =========================
        S P A I N
     ========================= */
